@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Riso Group - Case Study{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <article class="case-study">
+        <div class="case-study-content">
+            {{ content | safe }}
+        </div>
+        
+        <div class="mt-5">
+            <a href="{{ url_for('index') }}#consulting" class="btn btn-outline-dark">
+                <i data-feather="arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </article>
+</div>
+{% endblock %}

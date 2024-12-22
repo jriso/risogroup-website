@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ case_study.title }} - Riso Group{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <article class="case-study">
+        {% if case_study.image_url %}
+        <img src="{{ case_study.image_url }}" class="img-fluid mb-4 rounded" alt="{{ case_study.title }}">
+        {% endif %}
+        
+        <h1 class="mb-3">{{ case_study.title }}</h1>
+        {% if case_study.subtitle %}
+        <h2 class="h4 text-muted mb-4">{{ case_study.subtitle }}</h2>
+        {% endif %}
+        
+        <div class="case-study-content">
+            {{ case_study.content | safe }}
+        </div>
+        
+        <div class="mt-5">
+            <a href="{{ url_for('index') }}" class="btn btn-outline-dark">
+                <i data-feather="arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </article>
+</div>
+{% endblock %}
