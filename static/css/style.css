@@ -19,7 +19,7 @@
 }
 
 .hero-section .logo-placeholder img {
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
     transition: all 0.3s ease;
 }
@@ -85,7 +85,7 @@ body {
 }
 
 .logo-placeholder img {
-    max-width: 20vw; /* 20% of viewport width */
+    max-width: 200px; /* Use whichever is smaller: 20vw or 200px */
     height: auto;
     width: auto;
     margin: 0 auto;
