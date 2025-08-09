@@ -140,7 +140,7 @@ section h3 {
 
 /* Capabilities section - two-column bullet lists */
 .capabilities .capability-section {
-    margin-bottom: 1.5rem; /* Reduced spacing */
+    margin-bottom: 0.75rem; /* Further reduced bottom spacing */
 }
 
 .capabilities .capability-section ul {
