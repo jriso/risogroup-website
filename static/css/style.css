@@ -47,6 +47,32 @@ body {
     font-size: 1rem;
 }
 
+/* Navbar navigation styling */
+.navbar-nav .nav-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary-color) !important;
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.2rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    letter-spacing: -0.005em;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color) !important;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 /* Hero section - no logo, larger typography */
 .hero-section {
     background-color: var(--light-gray);
@@ -97,24 +123,6 @@ section h3 {
     letter-spacing: -0.01em;
 }
 
-/* Navigation pills - compact design */
-.hero-section .btn {
-    padding: 0.4rem 0.8rem; /* Reduced to ~32px height */
-    font-size: 0.9rem; /* Slightly smaller */
-    margin: 0.2rem 0.3rem; /* Tightened gaps by ~30% */
-    border-radius: 6px;
-    font-weight: 500;
-    letter-spacing: -0.005em;
-    transition: all 0.2s ease;
-}
-
-.hero-section .button-group {
-    margin: 0.5rem 0; /* Reduced margin */
-}
-
-.hero-section .button-group .d-flex {
-    gap: 0.3rem; /* Reduced gap between pills */
-}
 
 /* Capabilities section - two-column bullet lists */
 .capabilities .capability-section {
@@ -161,12 +169,6 @@ section h3 {
     /* Single column on mobile for capabilities */
     .capabilities .capability-section ul {
         columns: 1;
-    }
-    
-    .hero-section .btn {
-        font-size: 0.85rem;
-        padding: 0.35rem 0.7rem;
-        margin: 0.15rem 0.2rem;
     }
 }
 
