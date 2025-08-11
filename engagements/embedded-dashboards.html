@@ -110,6 +110,50 @@
             color: #fff;
             text-decoration: none;
         }
+        .hero-section {
+            position: relative;
+            margin-top: 76px; /* Account for fixed navbar */
+        }
+        .hero-image-container {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 0;
+            padding: 0 1rem;
+            line-height: 1.2;
+        }
+        @media (max-width: 768px) {
+            .hero-image-container {
+                height: 250px;
+            }
+            .hero-title {
+                font-size: 1.75rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -122,12 +166,22 @@
         </div>
     </nav>
 
-    <main class="mt-5 pt-5">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-image-container">
+            <img src="../static/images/dashboards.png" alt="Enabling Critical Insights Through Dashboards Built into a SaaS Product" class="hero-image">
+            <div class="hero-overlay">
+                <div class="container">
+                    <h1 class="hero-title">Enabling Critical Insights Through Dashboards Built into a SaaS Product</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="mt-0">
         <div class="container">
             <article class="case-study">
                 <div class="content-sections">
-                    <div class="challenge">
-                        <h1 class="challenge-title">Enabling Critical Insights Through Dashboards Built into a SaaS Product</h1>
                         <div class="challenge-description">
                           <i>Case study coming soon.</i>
                         </div>
