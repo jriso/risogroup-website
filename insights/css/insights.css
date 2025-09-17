@@ -1,0 +1,470 @@
+/* Medium-inspired Insights CSS */
+
+/* Typography Variables */
+:root {
+    --insight-primary-color: #1a1a1a;
+    --insight-secondary-color: #333;
+    --insight-gray-color: #6c757d;
+    --insight-light-gray: #f8f9fa;
+    --insight-border-color: #e8e8e8;
+    --insight-max-width: 680px;
+}
+
+/* Base Typography - Medium style */
+.insight-article {
+    max-width: var(--insight-max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    line-height: 1.6;
+    color: var(--insight-secondary-color);
+}
+
+@media (min-width: 768px) {
+    .insight-article {
+        padding: 3rem 2rem;
+    }
+}
+
+/* Article Header */
+.insight-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--insight-border-color);
+}
+
+.insight-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--insight-primary-color);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .insight-title {
+        font-size: 3rem;
+    }
+}
+
+.insight-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--insight-gray-color);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .insight-subtitle {
+        font-size: 1.75rem;
+    }
+}
+
+/* Author and Date Info */
+.insight-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: var(--insight-gray-color);
+}
+
+.insight-author-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.insight-author-info {
+    text-align: left;
+}
+
+.insight-author-name {
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin: 0;
+}
+
+.insight-date {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Body Content */
+.insight-body {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--insight-secondary-color);
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .insight-body {
+        font-size: 1.375rem;
+        line-height: 1.6;
+    }
+}
+
+.insight-body p {
+    margin-bottom: 1.8rem;
+}
+
+.insight-body h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--insight-primary-color);
+    margin: 2.5rem 0 1.5rem 0;
+    line-height: 1.3;
+}
+
+.insight-body h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin: 2rem 0 1rem 0;
+    line-height: 1.4;
+}
+
+/* Links */
+.insight-body a {
+    color: var(--insight-primary-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+}
+
+.insight-body a:hover {
+    text-decoration-thickness: 2px;
+    color: var(--insight-secondary-color);
+}
+
+/* Images */
+.insight-image {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.insight-image-container {
+    margin: 2.5rem 0;
+    text-align: center;
+}
+
+/* Image variants for different content types */
+.insight-image-chart {
+    background: white;
+    padding: 1rem;
+    border: 1px solid var(--insight-border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.insight-image-screenshot {
+    border: 1px solid var(--insight-border-color);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.insight-image-hero {
+    margin: 2rem 0 3rem 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.insight-image-small {
+    max-width: 400px;
+    margin: 1.5rem auto;
+}
+
+.insight-image-medium {
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.insight-image-large {
+    width: 100%;
+    margin: 2.5rem 0;
+}
+
+/* Two column image layout */
+.insight-images-row {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    align-items: flex-start;
+}
+
+.insight-images-row .insight-image-container {
+    flex: 1;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .insight-images-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.insight-caption {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: var(--insight-gray-color);
+    text-align: center;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* Pull Quotes */
+.insight-quote {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--insight-primary-color);
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-left: 4px solid var(--insight-primary-color);
+    padding-left: 2rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .insight-quote {
+        font-size: 1.75rem;
+        margin: 3.5rem 2rem;
+    }
+}
+
+/* Chart/Embed Container */
+.insight-chart {
+    margin: 2.5rem 0;
+    padding: 1rem;
+    background: var(--insight-light-gray);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.insight-chart iframe,
+.insight-chart canvas,
+.insight-chart svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Lists */
+.insight-body ul,
+.insight-body ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.insight-body li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Code blocks (if needed) */
+.insight-code {
+    background: #f6f8fa;
+    border: 1px solid var(--insight-border-color);
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+/* Author Bio Section */
+.insight-author-bio {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--insight-border-color);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.insight-author-bio-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.insight-author-bio-content {
+    flex: 1;
+}
+
+.insight-author-bio-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin-bottom: 0.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.insight-author-bio-title {
+    font-size: 0.9rem;
+    color: var(--insight-gray-color);
+    margin-bottom: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.insight-author-bio-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--insight-secondary-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Navigation */
+.insight-navigation {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.insight-back-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--insight-primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.insight-back-link:hover {
+    background: var(--insight-secondary-color);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* End Notes */
+.insight-endnotes {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--insight-border-color);
+}
+
+.insight-endnotes-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin-bottom: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.insight-endnotes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.insight-endnote {
+    margin-bottom: 1rem;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.insight-endnote-number {
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin-right: 0.5rem;
+}
+
+.insight-endnote-content {
+    color: var(--insight-secondary-color);
+}
+
+.insight-endnote-content a {
+    color: var(--insight-primary-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.insight-endnote-content a:hover {
+    text-decoration-thickness: 2px;
+}
+
+/* End note references in text */
+.insight-endnote-ref {
+    display: inline-block;
+    background: var(--insight-primary-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-left: 2px;
+    vertical-align: super;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.insight-endnote-ref:hover {
+    background: var(--insight-secondary-color);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Back to reference links */
+.insight-endnote-back {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: var(--insight-gray-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.insight-endnote-back:hover {
+    background: var(--insight-border-color);
+    color: var(--insight-primary-color);
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .insight-author-bio {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .insight-quote {
+        margin: 2rem 0;
+        padding-left: 1rem;
+    }
+
+    .insight-endnotes {
+        margin-top: 3rem;
+    }
+
+    .insight-endnote {
+        font-size: 0.85rem;
+    }
+}

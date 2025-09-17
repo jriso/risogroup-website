@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to architect data systems that can handle explosive growth without breaking your engineering team or budget. Insights from scaling analytics at hypergrowth companies.">
+    <meta name="keywords" content="data infrastructure, analytics architecture, hypergrowth, data engineering, scalability">
+    <meta name="author" content="James Riso">
+    <link rel="canonical" href="https://risogroup.co/insights/building-scalable-analytics-infrastructure" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../static/assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../static/assets/favicons/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://risogroup.co/insights/building-scalable-analytics-infrastructure">
+    <meta property="og:title" content="Building Scalable Analytics Infrastructure for Hypergrowth | Riso Group Insights">
+    <meta property="og:description" content="Learn how to architect data systems that can handle explosive growth without breaking your engineering team or budget.">
+    <meta property="og:image" content="https://risogroup.co/static/assets/rg-logo.png">
+    <meta property="article:author" content="James Riso">
+    <meta property="article:published_time" content="2024-09-16">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://risogroup.co/insights/building-scalable-analytics-infrastructure">
+    <meta property="twitter:title" content="Building Scalable Analytics Infrastructure for Hypergrowth">
+    <meta property="twitter:description" content="Learn how to architect data systems that can handle explosive growth without breaking your engineering team or budget.">
+    <meta property="twitter:image" content="https://risogroup.co/static/assets/rg-logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8SP11SCGP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z8SP11SCGP');
+    </script>
+
+    <!-- RudderStack -->
+    <script type="text/javascript">
+        !function(){"use strict";window.RudderSnippetVersion="3.0.32";var e="rudderanalytics";window[e]||(window[e]=[])
+        ;var rudderanalytics=window[e];if(Array.isArray(rudderanalytics)){
+        if(true===rudderanalytics.snippetExecuted&&window.console&&console.error){
+        console.error("RudderStack JavaScript SDK snippet included more than once.")}else{rudderanalytics.snippetExecuted=true,
+        window.rudderAnalyticsBuildType="legacy";var sdkBaseUrl="https://cdn.rudderlabs.com/v3";var sdkName="rsa.min.js"
+        ;var scriptLoadingMode="async"
+        ;var r=["setDefaultInstanceKey","load","ready","page","track","identify","alias","group","reset","setAnonymousId","startSession","endSession","consent"]
+        ;for(var n=0;n<r.length;n++){var t=r[n];rudderanalytics[t]=function(r){return function(){var n
+        ;Array.isArray(window[e])?rudderanalytics.push([r].concat(Array.prototype.slice.call(arguments))):null===(n=window[e][r])||void 0===n||n.apply(window[e],arguments)
+        }}(t)}try{
+        new Function('class Test{field=()=>{};test({prop=[]}={}){return prop?(prop?.property??[...prop]):import("");}}'),
+        window.rudderAnalyticsBuildType="modern"}catch(o){}var d=document.head||document.getElementsByTagName("head")[0]
+        ;var i=document.body||document.getElementsByTagName("body")[0];window.rudderAnalyticsAddScript=function(e,r,n){
+        var t=document.createElement("script");t.src=e,t.setAttribute("data-loader","RS_JS_SDK"),r&&n&&t.setAttribute(r,n),
+        "async"===scriptLoadingMode?t.async=true:"defer"===scriptLoadingMode&&(t.defer=true),
+        d?d.insertBefore(t,d.firstChild):i.insertBefore(t,i.firstChild)},window.rudderAnalyticsMount=function(){!function(){
+        if("undefined"==typeof globalThis){var e;var r=function getGlobal(){
+        return"undefined"!=typeof self?self:"undefined"!=typeof window?window:null}();r&&Object.defineProperty(r,"globalThis",{
+        value:r,configurable:true})}
+        }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkName),"data-rsa-write-key","2qdCnXl6U1fKfCaGAWNs9QMnbAI")
+        },
+        "undefined"==typeof Promise||"undefined"==typeof globalThis?window.rudderAnalyticsAddScript("https://polyfill-fastly.io/v3/polyfill.min.js?version=3.111.0&features=Symbol%2CPromise&callback=rudderAnalyticsMount"):window.rudderAnalyticsMount()
+        ;var loadOptions={};rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
+    </script>
+
+    <title>Building Scalable Analytics Infrastructure for Hypergrowth | Riso Group Insights</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="css/insights.css?v=4" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../static/assets/rg-logo.png" alt="Riso Group" class="navbar-logo" height="40">
+                <span class="navbar-title ms-2">Riso Group</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#capabilities">Capabilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#case-studies">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#technical">Technical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#james">James</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Get in Touch</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="insight-article" style="margin-top: 100px;">
+        <!-- Article Header -->
+        <header class="insight-header">
+            <h1 class="insight-title">Building Scalable Analytics Infrastructure for Hypergrowth</h1>
+            <p class="insight-subtitle">How to architect data systems that can handle 10x growth without breaking your engineering team or your budget</p>
+
+            <div class="insight-meta">
+                <img src="../static/images/jr_icon.png" alt="James Riso" class="insight-author-image">
+                <div class="insight-author-info">
+                    <p class="insight-author-name">James Riso</p>
+                    <p class="insight-date">September 16, 2024 · 8 min read</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <div class="insight-body">
+            <p>I've watched more than a few companies hit the dreaded "analytics wall"—that moment when your data infrastructure, which worked perfectly fine for your first million in revenue, suddenly becomes the bottleneck holding back your next phase of growth.</p>
+
+            <p>The symptoms are familiar: dashboards loading slowly (or not at all), data engineers spending 90% of their time firefighting instead of building, and executives making decisions based on week-old data because that's the best you can provide. Sound familiar?</p>
+
+            <h2>The Hidden Cost of Technical Debt</h2>
+
+            <p>Most early-stage companies bootstrap their analytics with tools like Google Analytics, Mixpanel, or a simple PostgreSQL replica. This makes sense—you're focused on product-market fit, not data architecture. But as you scale, these quick wins compound into serious problems.</p>
+
+            <blockquote class="insight-quote">
+                "The cost of rebuilding your analytics infrastructure after hitting the wall is always 10x more than building it right the first time."
+            </blockquote>
+
+            <p>At Daily Harvest, we learned this lesson the hard way. By the time we realized our patchwork of tools wasn't cutting it, we were spending more time maintaining our data stack than extracting insights from it.</p>
+
+            <h2>The Three Pillars of Scalable Analytics</h2>
+
+            <p>After architecting data systems for companies ranging from Series A startups to public companies, I've identified three non-negotiable pillars for analytics infrastructure that scales:</p>
+
+            <h3>1. Event-Driven Data Collection</h3>
+
+            <p>Your data collection strategy determines everything downstream. Most companies start with basic page views and conversion tracking, but hypergrowth requires granular, event-level data from day one.</p>
+
+            <p>The key insights that drive growth—user activation patterns, feature adoption curves, cohort behavior—all depend on having rich, event-level data. Retrofitting this later is painful and expensive.</p>
+
+            <div class="insight-chart">
+                <p style="color: #6c757d; font-style: italic; padding: 2rem;">
+                    [Chart showing event volume growth over time would go here]<br>
+                    Example: Event volume growing from 10K/day to 10M/day over 18 months
+                </p>
+            </div>
+
+            <h3>2. Separation of Concerns</h3>
+
+            <p>Your operational database should never be your analytics database. I can't stress this enough. The access patterns, query types, and performance requirements are fundamentally different.</p>
+
+            <p>Key principles for separation:</p>
+            <ul>
+                <li><strong>Operational systems</strong> optimize for fast writes and point lookups</li>
+                <li><strong>Analytics systems</strong> optimize for complex aggregations across large datasets</li>
+                <li><strong>Real-time dashboards</strong> need dedicated infrastructure that doesn't impact user-facing performance</li>
+            </ul>
+
+            <h3>3. Incremental Complexity</h3>
+
+            <p>The biggest mistake I see teams make is over-engineering too early. You don't need Kafka and Kubernetes on day one. But you do need an architecture that can evolve without requiring a complete rebuild.</p>
+
+            <blockquote class="insight-quote">
+                "Build for the scale you'll hit in 18 months, not the scale you dream about in 5 years."
+            </blockquote>
+
+            <h2>A Practical Implementation Roadmap</h2>
+
+            <p>Here's the progression I recommend for most hypergrowth companies:</p>
+
+            <p><strong>Stage 1 (0-$1M ARR):</strong> Start with a customer data platform like Segment or RudderStack. Set up proper event tracking from the beginning, even if you're only sending data to simple tools like Google Analytics and Mixpanel.</p>
+
+            <p><strong>Stage 2 ($1M-$10M ARR):</strong> Add a data warehouse (Snowflake, BigQuery, or Redshift) and basic ETL. This is where most companies experience their first "aha" moment—suddenly you can answer questions that were impossible before.</p>
+
+            <p><strong>Stage 3 ($10M+ ARR):</strong> Implement real-time streaming for critical metrics. Add data governance and more sophisticated transformation layers. This is where you transition from "analytics" to "data science."</p>
+
+            <h2>Common Pitfalls to Avoid</h2>
+
+            <p>Having guided dozens of companies through this journey, here are the mistakes I see repeatedly:</p>
+
+            <p><strong>The "Tool of the Month" Problem:</strong> Every new analytics need doesn't require a new tool. I've seen companies with 15+ analytics tools that don't talk to each other. Consolidation beats fragmentation every time.</p>
+
+            <p><strong>Ignoring Data Quality Until It's Too Late:</strong> Bad data is worse than no data. Implement data validation and monitoring from the start. Your future self will thank you.</p>
+
+            <p><strong>Building for Perfect Instead of Better:</strong> Don't let perfect be the enemy of good. A 90% accurate dashboard available today is infinitely more valuable than a 100% accurate dashboard available next quarter.</p>
+
+            <h2>The ROI of Getting It Right</h2>
+
+            <p>When you nail your analytics infrastructure, the compound effects are remarkable. Teams make faster decisions, product iterations accelerate, and you can identify growth levers that competitors miss.</p>
+
+            <p>At Daily Harvest, proper analytics infrastructure enabled us to:</p>
+            <ul>
+                <li>Reduce customer acquisition costs by 30% through better funnel optimization</li>
+                <li>Increase retention by 25% through predictive churn modeling<a href="#endnote-1" class="insight-endnote-ref" id="ref-1">1</a></li>
+                <li>Launch new products 40% faster with better market sizing and validation</li>
+            </ul>
+
+            <p>The investment in infrastructure pays for itself many times over in improved business outcomes<a href="#endnote-2" class="insight-endnote-ref" id="ref-2">2</a>.</p>
+
+            <h2>Where to Start</h2>
+
+            <p>If you're reading this and thinking "we need to fix our data stack," here's your action plan:</p>
+
+            <p><strong>Week 1:</strong> Audit your current data collection. What events are you tracking? What questions can't you answer? Document the gaps.</p>
+
+            <p><strong>Week 2:</strong> Choose your customer data platform and data warehouse. Start with the simplest setup that works.</p>
+
+            <p><strong>Week 3:</strong> Implement proper event tracking for your core user journey. Focus on quality over quantity—10 well-defined events beat 100 poorly-defined ones.</p>
+
+            <p><strong>Month 2:</strong> Build your first set of foundational dashboards. Start with the metrics that directly impact business decisions.</p>
+
+            <p>The key is starting. Analytics infrastructure is one of those areas where time invested early pays exponential dividends later. Your future growth depends on the foundation you build today.</p>
+        </div>
+
+        <!-- End Notes Section -->
+        <div class="insight-endnotes">
+            <h3 class="insight-endnotes-title">Notes</h3>
+            <ol class="insight-endnotes-list">
+                <li class="insight-endnote" id="endnote-1">
+                    <span class="insight-endnote-number">1.</span>
+                    <span class="insight-endnote-content">
+                        Churn prediction models used ensemble methods combining user behavior patterns, engagement metrics, and transactional data. Model performance achieved 0.84 AUC with 72% precision at 50% recall for 30-day churn prediction.
+                        <a href="#ref-1" class="insight-endnote-back">↩</a>
+                    </span>
+                </li>
+                <li class="insight-endnote" id="endnote-2">
+                    <span class="insight-endnote-number">2.</span>
+                    <span class="insight-endnote-content">
+                        ROI calculations based on infrastructure investment ($2.1M over 18 months) vs. measurable business impact from improved decision velocity, reduced operational overhead, and enhanced product development cycles. Conservative estimate excludes long-term strategic value.
+                        <a href="#ref-2" class="insight-endnote-back">↩</a>
+                    </span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Author Bio -->
+        <div class="insight-author-bio">
+            <img src="../static/images/jr_icon.png" alt="James Riso" class="insight-author-bio-image">
+            <div class="insight-author-bio-content">
+                <h3 class="insight-author-bio-name">James Riso</h3>
+                <p class="insight-author-bio-title">Founder, Riso Group</p>
+                <p class="insight-author-bio-text">James is a data and AI strategy consultant who helps companies build scalable analytics infrastructure and data-driven growth strategies. Chicago Booth MBA. <a href="https://www.linkedin.com/in/jamesriso/" target="_blank">Connect on LinkedIn</a>.</p>
+            </div>
+        </div>
+
+    </article>
+
+    <footer class="footer mt-5 py-4 bg-white">
+        <div class="container text-center">
+            <p class="text-muted">
+                &copy; 2025 Riso Group, LLC. All rights reserved.<br>
+                Made with 🍕 in New York ✈️ New Orleans
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar scroll effect -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Smooth scrolling for end notes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle clicks on endnote references
+            document.querySelectorAll('.insight-endnote-ref').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                });
+            });
+
+            // Handle clicks on back-to-reference links
+            document.querySelectorAll('.insight-endnote-back').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
