@@ -1,0 +1,340 @@
+<!--
+IMAGE WORKFLOW FOR NEW ARTICLES:
+
+1. Create folder: insights/images/[article-slug]/
+2. Add your images with descriptive names:
+   - hero-image.jpg (main article image)
+   - chart-*.png (data visualizations)
+   - screenshot-*.png (UI screenshots)
+   - diagram-*.png (architecture diagrams)
+
+3. Image recommendations:
+   - Charts: PNG with white background, 2x resolution for retina
+   - Screenshots: PNG, 2x resolution, crop tightly
+   - Photos: JPG, optimized for web
+   - Max width: 1200px (will scale down automatically)
+
+4. Use appropriate CSS classes:
+   - insight-image-hero: Large, prominent images
+   - insight-image-chart: Charts/graphs (adds white bg)
+   - insight-image-screenshot: UI screenshots (adds border)
+   - insight-image-small/medium/large: Size variants
+
+5. Always include descriptive alt text and captions!
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[ARTICLE DESCRIPTION]">
+    <meta name="keywords" content="[KEYWORDS]">
+    <meta name="author" content="James Riso">
+    <link rel="canonical" href="https://risogroup.co/insights/[ARTICLE-SLUG]" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../static/assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../static/assets/favicons/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://risogroup.co/insights/[ARTICLE-SLUG]">
+    <meta property="og:title" content="[ARTICLE TITLE] | Riso Group Insights">
+    <meta property="og:description" content="[ARTICLE DESCRIPTION]">
+    <meta property="og:image" content="https://risogroup.co/insights/images/[HERO-IMAGE]">
+    <meta property="article:author" content="James Riso">
+    <meta property="article:published_time" content="[YYYY-MM-DD]">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://risogroup.co/insights/[ARTICLE-SLUG]">
+    <meta property="twitter:title" content="[ARTICLE TITLE] | Riso Group Insights">
+    <meta property="twitter:description" content="[ARTICLE DESCRIPTION]">
+    <meta property="twitter:image" content="https://risogroup.co/insights/images/[HERO-IMAGE]">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8SP11SCGP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z8SP11SCGP');
+    </script>
+
+    <!-- RudderStack -->
+    <script type="text/javascript">
+        !function(){"use strict";window.RudderSnippetVersion="3.0.32";var e="rudderanalytics";window[e]||(window[e]=[])
+        ;var rudderanalytics=window[e];if(Array.isArray(rudderanalytics)){
+        if(true===rudderanalytics.snippetExecuted&&window.console&&console.error){
+        console.error("RudderStack JavaScript SDK snippet included more than once.")}else{rudderanalytics.snippetExecuted=true,
+        window.rudderAnalyticsBuildType="legacy";var sdkBaseUrl="https://cdn.rudderlabs.com/v3";var sdkName="rsa.min.js"
+        ;var scriptLoadingMode="async"
+        ;var r=["setDefaultInstanceKey","load","ready","page","track","identify","alias","group","reset","setAnonymousId","startSession","endSession","consent"]
+        ;for(var n=0;n<r.length;n++){var t=r[n];rudderanalytics[t]=function(r){return function(){var n
+        ;Array.isArray(window[e])?rudderanalytics.push([r].concat(Array.prototype.slice.call(arguments))):null===(n=window[e][r])||void 0===n||n.apply(window[e],arguments)
+        }}(t)}try{
+        new Function('class Test{field=()=>{};test({prop=[]}={}){return prop?(prop?.property??[...prop]):import("");}}'),
+        window.rudderAnalyticsBuildType="modern"}catch(o){}var d=document.head||document.getElementsByTagName("head")[0]
+        ;var i=document.body||document.getElementsByTagName("body")[0];window.rudderAnalyticsAddScript=function(e,r,n){
+        var t=document.createElement("script");t.src=e,t.setAttribute("data-loader","RS_JS_SDK"),r&&n&&t.setAttribute(r,n),
+        "async"===scriptLoadingMode?t.async=true:"defer"===scriptLoadingMode&&(t.defer=true),
+        d?d.insertBefore(t,d.firstChild):i.insertBefore(t,i.firstChild)},window.rudderAnalyticsMount=function(){!function(){
+        if("undefined"==typeof globalThis){var e;var r=function getGlobal(){
+        return"undefined"!=typeof self?self:"undefined"!=typeof window?window:null}();r&&Object.defineProperty(r,"globalThis",{
+        value:r,configurable:true})}
+        }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkName),"data-rsa-write-key","2qdCnXl6U1fKfCaGAWNs9QMnbAI")
+        },
+        "undefined"==typeof Promise||"undefined"==typeof globalThis?window.rudderAnalyticsAddScript("https://polyfill-fastly.io/v3/polyfill.min.js?version=3.111.0&features=Symbol%2CPromise&callback=rudderAnalyticsMount"):window.rudderAnalyticsMount()
+        ;var loadOptions={};rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
+    </script>
+
+    <title>[ARTICLE TITLE] | Riso Group Insights</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="css/insights.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../static/assets/rg-logo.png" alt="Riso Group" class="navbar-logo" height="40">
+                <span class="navbar-title ms-2">Riso Group</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#capabilities">Capabilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#case-studies">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#technical">Technical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#james">James</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Get in Touch</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="insight-article" style="margin-top: 100px;">
+        <!-- Article Header -->
+        <header class="insight-header">
+            <h1 class="insight-title">[MAIN HEADLINE]</h1>
+            <p class="insight-subtitle">[SUBTITLE OR DESCRIPTION]</p>
+
+            <div class="insight-meta">
+                <img src="../static/images/jr_icon.png" alt="James Riso" class="insight-author-image">
+                <div class="insight-author-info">
+                    <p class="insight-author-name">James Riso</p>
+                    <p class="insight-date">[MONTH DAY, YEAR] · [X] min read</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Image (Optional) -->
+        <!--
+        <div class="insight-image-container">
+            <img src="images/[HERO-IMAGE].jpg" alt="[ALT TEXT]" class="insight-image">
+            <p class="insight-caption">[Image caption or attribution]</p>
+        </div>
+        -->
+
+        <!-- Article Body -->
+        <div class="insight-body">
+            <!-- Introduction paragraph -->
+            <p>[Opening paragraph that hooks the reader and sets up the main thesis or story]</p>
+
+            <!-- Main content sections -->
+            <h2>[Section Header]</h2>
+            <p>[Body content paragraph. Use this class for all main body text to get the proper Medium-style typography]</p>
+
+            <!-- IMAGE EXAMPLES - Choose the appropriate type -->
+
+            <!-- Hero/Main Image (large, prominent) -->
+            <div class="insight-image-container">
+                <img src="images/[ARTICLE-SLUG]/hero-image.jpg" alt="[DESCRIPTIVE ALT TEXT]" class="insight-image insight-image-hero">
+                <p class="insight-caption">[Caption for hero image]</p>
+            </div>
+
+            <!-- Chart/Data Visualization (with white background) -->
+            <div class="insight-image-container">
+                <img src="images/[ARTICLE-SLUG]/chart-growth.png" alt="[CHART DESCRIPTION]" class="insight-image insight-image-chart">
+                <p class="insight-caption">[Chart caption and data source]</p>
+            </div>
+
+            <!-- Screenshot (with border, good for UI/dashboards) -->
+            <div class="insight-image-container insight-image-medium">
+                <img src="images/[ARTICLE-SLUG]/dashboard-screenshot.png" alt="[SCREENSHOT DESCRIPTION]" class="insight-image insight-image-screenshot">
+                <p class="insight-caption">[Screenshot caption]</p>
+            </div>
+
+            <!-- Small Image (diagrams, icons) -->
+            <div class="insight-image-container insight-image-small">
+                <img src="images/[ARTICLE-SLUG]/diagram.png" alt="[DIAGRAM DESCRIPTION]" class="insight-image">
+                <p class="insight-caption">[Diagram caption]</p>
+            </div>
+
+            <!-- Two Images Side-by-Side -->
+            <div class="insight-images-row">
+                <div class="insight-image-container">
+                    <img src="images/[ARTICLE-SLUG]/before.png" alt="[BEFORE IMAGE]" class="insight-image insight-image-screenshot">
+                    <p class="insight-caption">[Before caption]</p>
+                </div>
+                <div class="insight-image-container">
+                    <img src="images/[ARTICLE-SLUG]/after.png" alt="[AFTER IMAGE]" class="insight-image insight-image-screenshot">
+                    <p class="insight-caption">[After caption]</p>
+                </div>
+            </div>
+
+            <!-- Pull quote example -->
+            <blockquote class="insight-quote">
+                "[Notable quote or key insight that deserves emphasis]"
+            </blockquote>
+
+            <h3>[Subsection Header]</h3>
+            <p>[More body content]</p>
+
+            <!-- Chart/embed container example -->
+            <div class="insight-chart">
+                <!-- Embed your charts, iframes, or other visualizations here -->
+                <p style="color: #6c757d; font-style: italic;">[Chart or visualization would go here]</p>
+            </div>
+
+            <!-- List example -->
+            <p>Key insights include:</p>
+            <ul>
+                <li>[List item one]</li>
+                <li>[List item two]</li>
+                <li>[List item three]</li>
+            </ul>
+
+            <!-- Code block example (if needed) -->
+            <!--
+            <pre class="insight-code"><code>[Code example or data snippet]</code></pre>
+            -->
+
+            <p>[Conclusion paragraph that ties everything together]</p>
+
+            <!-- END NOTES EXAMPLES -->
+
+            <!-- In your text, reference end notes like this: -->
+            <!-- <p>This claim is supported by recent research<a href="#endnote-1" class="insight-endnote-ref" id="ref-1">1</a> and industry data<a href="#endnote-2" class="insight-endnote-ref" id="ref-2">2</a>.</p> -->
+
+        </div>
+
+        <!-- End Notes Section -->
+        <div class="insight-endnotes">
+            <h3 class="insight-endnotes-title">Notes</h3>
+            <ol class="insight-endnotes-list">
+                <li class="insight-endnote" id="endnote-1">
+                    <span class="insight-endnote-number">1.</span>
+                    <span class="insight-endnote-content">
+                        [Your first end note with citation, link, or additional detail. Example: Smith, J. (2024). "Analytics Infrastructure Scaling." <em>Data Engineering Journal</em>, 15(3), 45-62.]
+                        <a href="#ref-1" class="insight-endnote-back">↩</a>
+                    </span>
+                </li>
+                <li class="insight-endnote" id="endnote-2">
+                    <span class="insight-endnote-number">2.</span>
+                    <span class="insight-endnote-content">
+                        [Second end note example with external link: <a href="https://example.com" target="_blank">Industry Report on Data Infrastructure Trends</a>, accessed September 2024.]
+                        <a href="#ref-2" class="insight-endnote-back">↩</a>
+                    </span>
+                </li>
+                <li class="insight-endnote" id="endnote-3">
+                    <span class="insight-endnote-number">3.</span>
+                    <span class="insight-endnote-content">
+                        [Third end note example with additional context or explanation that would interrupt the flow of the main text.]
+                        <a href="#ref-3" class="insight-endnote-back">↩</a>
+                    </span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Author Bio -->
+        <div class="insight-author-bio">
+            <img src="../static/images/jr_icon.png" alt="James Riso" class="insight-author-bio-image">
+            <div class="insight-author-bio-content">
+                <h3 class="insight-author-bio-name">James Riso</h3>
+                <p class="insight-author-bio-title">Founder, Riso Group</p>
+                <p class="insight-author-bio-text">James is a data and AI strategy consultant who helps companies build scalable analytics infrastructure and data-driven growth strategies. Chicago Booth MBA. <a href="https://www.linkedin.com/in/jamesriso/" target="_blank">Connect on LinkedIn</a>.</p>
+            </div>
+        </div>
+
+    </article>
+
+    <footer class="footer mt-5 py-4 bg-white">
+        <div class="container text-center">
+            <p class="text-muted">
+                &copy; 2025 Riso Group, LLC. All rights reserved.<br>
+                Made with 🍕 in New York ✈️ New Orleans
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar scroll effect (from main site) -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Smooth scrolling for end notes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle clicks on endnote references
+            document.querySelectorAll('.insight-endnote-ref').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                });
+            });
+
+            // Handle clicks on back-to-reference links
+            document.querySelectorAll('.insight-endnote-back').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
