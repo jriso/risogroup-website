@@ -1,0 +1,285 @@
+/* Data Salary Report - Additional Styles */
+
+/* Wider layout for report pages (data visualizations need more space) */
+.salary-report-article {
+    max-width: 900px;
+}
+
+/* Chart container */
+.salary-chart-container {
+    width: 100%;
+    height: 400px;
+    margin: 2rem 0;
+    background: #fff;
+    border: 1px solid var(--insight-border-color);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.salary-chart-container.chart-small {
+    height: 200px;
+}
+
+.salary-chart-container.chart-medium {
+    height: 300px;
+}
+
+@media (max-width: 767px) {
+    .salary-chart-container {
+        height: 350px;
+        padding: 0.5rem;
+    }
+
+    .salary-chart-container.chart-small {
+        height: 180px;
+    }
+}
+
+/* Key stat callout */
+.salary-stat-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--insight-light-gray);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.salary-stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--insight-primary-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-stat-label {
+    font-size: 1rem;
+    color: var(--insight-gray-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (max-width: 767px) {
+    .salary-stat-highlight {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .salary-stat-value {
+        font-size: 2rem;
+    }
+}
+
+/* Role cards grid */
+.salary-role-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.salary-role-card {
+    background: #fff;
+    border: 1px solid var(--insight-border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+.salary-role-card:hover {
+    border-color: var(--insight-primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: inherit;
+}
+
+.salary-role-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin-bottom: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-role-card-stat {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--insight-primary-color);
+    margin-bottom: 0.25rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-role-card-label {
+    font-size: 0.85rem;
+    color: var(--insight-gray-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-role-card-range {
+    font-size: 0.9rem;
+    color: var(--insight-gray-color);
+    margin-top: 0.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-role-card-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--insight-primary-color);
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-role-card-cta::after {
+    content: ' →';
+}
+
+/* Breadcrumb navigation */
+.salary-breadcrumb {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: var(--insight-gray-color);
+    margin-bottom: 1.5rem;
+}
+
+.salary-breadcrumb a {
+    color: var(--insight-gray-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.salary-breadcrumb a:hover {
+    color: var(--insight-primary-color);
+}
+
+.salary-breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: var(--insight-border-color);
+}
+
+/* Related roles section */
+.salary-related-roles {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--insight-border-color);
+}
+
+.salary-related-roles-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin-bottom: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-related-roles-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.salary-related-roles-list a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--insight-light-gray);
+    color: var(--insight-primary-color);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: all 0.2s ease;
+}
+
+.salary-related-roles-list a:hover {
+    background: var(--insight-primary-color);
+    color: #fff;
+}
+
+/* Back to hub CTA */
+.salary-back-to-hub {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.salary-back-to-hub a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--insight-primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.salary-back-to-hub a:hover {
+    background: var(--insight-secondary-color);
+    transform: translateY(-1px);
+}
+
+/* Methodology section */
+.salary-methodology {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--insight-light-gray);
+    border-radius: 8px;
+}
+
+.salary-methodology h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin-bottom: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-methodology p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--insight-secondary-color);
+    margin-bottom: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.salary-methodology p:last-child {
+    margin-bottom: 0;
+}
+
+/* Key findings list */
+.salary-key-findings {
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.salary-key-findings li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.salary-key-findings li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--insight-primary-color);
+    font-weight: 700;
+}
+
+/* Section headers within spoke pages */
+.salary-section-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--insight-primary-color);
+    margin: 2.5rem 0 1rem 0;
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+}
