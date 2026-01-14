@@ -468,3 +468,91 @@
         font-size: 0.85rem;
     }
 }
+
+/* =============================================
+   Data Insight Template Styles
+   ============================================= */
+
+/* Breadcrumb */
+.data-insight-breadcrumb {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: var(--insight-gray-color);
+}
+
+.data-insight-breadcrumb a {
+    color: var(--insight-primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.data-insight-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.data-insight-breadcrumb .breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: var(--insight-gray-color);
+}
+
+.data-insight-breadcrumb .breadcrumb-current {
+    color: var(--insight-gray-color);
+}
+
+/* Simplified header for data insights */
+.data-insight-header {
+    text-align: left;
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0;
+}
+
+.data-insight-header .insight-title {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .data-insight-header .insight-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Methodology section */
+.data-insight-methodology {
+    margin-top: 3rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--insight-light-gray);
+    border-left: 3px solid var(--insight-border-color);
+    border-radius: 0 6px 6px 0;
+}
+
+.data-insight-methodology .methodology-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--insight-gray-color);
+    margin: 0 0 0.5rem 0;
+}
+
+.data-insight-methodology .methodology-text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--insight-secondary-color);
+    margin: 0;
+}
+
+/* Footer with author/date */
+.data-insight-footer {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--insight-border-color);
+}
+
+.data-insight-footer .insight-meta {
+    justify-content: flex-start;
+}
