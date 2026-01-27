@@ -69,3 +69,41 @@ See these pages for reference implementations:
 - `index.html` - Homepage with RudderStack tracking
 - `insights/clickhouse-adoption.html` - Insight page with RudderStack tracking
 - `engagements/predictive-ltv.html` - Engagement page with RudderStack tracking
+
+## Structured Data (JSON-LD) for SEO
+
+All insight articles should include Article schema structured data in JSON-LD format for better SEO and rich search results. Add this in the `<head>` section after RudderStack and before the `<title>` tag:
+
+```html
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "[Article Title]",
+    "description": "[Meta description]",
+    "image": "https://risogroup.co/insights/images/[folder]/[image].png",
+    "author": {
+        "@type": "Person",
+        "name": "James Riso",
+        "url": "https://risogroup.co/index.html#james"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Riso Group",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://risogroup.co/static/assets/rg-logo.png"
+        }
+    },
+    "datePublished": "[YYYY-MM-DD]",
+    "dateModified": "[YYYY-MM-DD]",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://risogroup.co/insights/[article-slug]"
+    }
+}
+</script>
+```
+
+This helps Google show rich results with author info, images, and dates in search.
