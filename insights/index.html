@@ -225,6 +225,25 @@
     <section class="insights-grid">
         <div class="container">
             <div class="row g-4">
+                <!-- Claude Code HN Article -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="claude-code-hn.html" class="insight-card">
+                        <img src="images/claude-code-hn/claude-code-hn.png" alt="Line chart showing Claude Code mentions exploding to 3,000+ on Hacker News" class="insight-card-image">
+                        <div class="insight-card-content">
+                            <h3 class="insight-card-title">Shut Up About Claude Code</h3>
+                            <p class="insight-card-excerpt">Claude Code mentions on Hacker News hit 3,000+ in January 2026, dwarfing Cursor and Codex. AI coding assistants finally found product-market fit.</p>
+                            <div class="insight-card-meta">
+                                <div class="insight-card-author">
+                                    <img src="../static/images/jr_icon.png" alt="James Riso" class="insight-card-author-image">
+                                    <span>James Riso</span>
+                                </div>
+                                <span>•</span>
+                                <span>1 min read</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
                 <!-- BI Tool Adoption Article -->
                 <div class="col-lg-4 col-md-6">
                     <a href="bi-tool-adoption-jan-2026.html" class="insight-card">
@@ -366,7 +385,7 @@
     <footer class="footer mt-5 py-4 bg-white">
         <div class="container text-center">
             <p class="text-muted">
-                &copy; 2025 Riso Group, LLC. All rights reserved.<br>
+                &copy; 2026 Riso Group, LLC. All rights reserved.<br>
                 Made with 🍕 in New York ✈️ New Orleans
             </p>
         </div>
@@ -384,6 +403,13 @@
             } else {
                 navbar.classList.remove('navbar-scrolled');
             }
+        });
+    </script>
+
+    <!-- RudderStack Page Tracking -->
+    <script>
+        window.addEventListener("load", () => {
+            rudderanalytics.page();
         });
     </script>
 </body>
