@@ -76,10 +76,10 @@
     <title>Riso Group | Data & AI Strategy Consultants | James Riso, Founder</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css" rel="stylesheet">
-    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/style.css?v=7" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="static/assets/rg-logo.png" alt="Riso Group" class="navbar-logo" height="40">
@@ -125,7 +125,7 @@
 
         <section id="capabilities" class="capabilities py-5 bg-light">
             <div class="container">
-                <h2 class="text-center mb-5" style="font-size: 1.5rem; font-weight: 400;">Consulting, Advising, Fractional Exec</h2>
+                <h2 class="text-center mb-5"><a href="#capabilities" class="text-decoration-none text-dark section-title">Consulting, Advising, Fractional Exec</a></h2>
                 
                 <div class="capabilities-grid">
                     <div class="capability-card">
@@ -311,7 +311,7 @@
 
         <section id="technical" class="py-4 bg-light">
             <div class="container">
-                <h2 class="text-center mb-3" style="font-size: 1.5rem;">Technical</h2>
+                <h2 class="text-center mb-5"><a href="#technical" class="text-decoration-none text-dark section-title">Technical</a></h2>
                 <p class="text-center text-muted" style="max-width: 700px; margin: 0 auto;">
                     <strong>Coding:</strong> SQL, Python, JavaScript, R &nbsp;&middot;&nbsp;
                     <strong>Cloud:</strong> Snowflake, Google Cloud, AWS Redshift, Azure, Databricks &nbsp;&middot;&nbsp;
@@ -336,25 +336,27 @@
                                 display: flex;
                                 flex-wrap: wrap;
                                 justify-content: center;
-                                gap: 0.6rem;
+                                gap: 1rem;
                             }
                             .contact-btn {
                                 display: inline-block;
-                                padding: 0.4rem 0.8rem;
-                                font-size: 0.9rem;
+                                padding: 0.6rem 1.5rem;
+                                font-size: 1rem;
                                 font-weight: 500;
                                 text-decoration: none;
-                                color: #fff;
-                                background-color: #212529;
-                                border-radius: 6px;
-                                transition: all 0.2s ease;
+                                color: #1a1a1a;
+                                background-color: transparent;
+                                border: 2px solid #1a1a1a;
+                                border-radius: 50px;
+                                transition: all 0.3s ease;
                                 text-align: center;
+                                letter-spacing: 0.02em;
                             }
                             .contact-btn:hover {
-                                background-color: #000;
-                                transform: translateY(-2px);
-                                box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+                                background-color: #1a1a1a;
                                 color: #fff;
+                                transform: translateY(-2px);
+                                box-shadow: 0 6px 16px rgba(0,0,0,0.15);
                             }
                             @media (max-width: 768px) {
                                 .contact-buttons {
@@ -362,15 +364,16 @@
                                     align-items: center;
                                 }
                                 .contact-btn {
-                                    font-size: 0.85rem;
-                                    padding: 0.35rem 0.7rem;
+                                    font-size: 0.95rem;
+                                    padding: 0.5rem 1.3rem;
+                                    width: 200px;
                                 }
                             }
                         </style>
                         <script>
                             document.addEventListener('DOMContentLoaded', function() {
                                 const email = ['j', '@', 'risogroup', '.', 'co'].join('');
-                                document.getElementById('contact-email').innerHTML = `<a href="mailto:${email}" class="text-white text-decoration-none">${email}</a>`;
+                                document.getElementById('contact-email').innerHTML = `<a href="mailto:${email}" style="color: inherit; text-decoration: none;">${email}</a>`;
                             });
                         </script>
                     </div>
@@ -388,9 +391,10 @@
         </section>
     </main>
 
-    <footer class="footer mt-5 py-4 bg-white">
-        <div class="container text-center">
-            <p class="text-muted">
+    <footer class="footer py-5" style="background-color: #1a1a1a; position: relative; overflow: hidden;">
+        <img src="static/images/RG logo with transparency.png" alt="" style="position: absolute; right: -30px; bottom: -30px; width: 180px; height: 180px; opacity: 0.08; pointer-events: none;">
+        <div class="container text-center" style="position: relative;">
+            <p style="color: rgba(255,255,255,0.5); margin: 0; font-size: 0.9rem;">
                 &copy; 2026 Riso Group, LLC. All rights reserved.<br>
                 Made with 🍕 in New York ✈️ New Orleans
             </p>
@@ -399,7 +403,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="/static/js/main.js"></script>
+    <script src="/static/js/main.js?v=4"></script>
 
     <!-- Add RudderStack Page Tracking -->
     <script>
