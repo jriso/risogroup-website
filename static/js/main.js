@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navbar.classList.add('navbar-hero-visible');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (entry.intersectionRatio >= 0.4) {
                     navbar.classList.add('navbar-hero-visible');
                 } else {
                     navbar.classList.remove('navbar-hero-visible');
