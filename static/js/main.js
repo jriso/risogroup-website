@@ -19,6 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
 
+    // Hide navbar logo when hero is visible
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        navbar.classList.add('navbar-hero-visible');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navbar.classList.add('navbar-hero-visible');
+                } else {
+                    navbar.classList.remove('navbar-hero-visible');
+                }
+            });
+        }, { threshold: 0.4 });
+        observer.observe(heroSection);
+    }
+
     // Auto-hide alerts after 5 seconds
     const alerts = document.querySelectorAll('.alert');
     alerts.forEach(alert => {
@@ -28,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     });
 
-    // Smooth scroll for anchor links
+    // Smooth scroll for anchor links + close mobile menu
+    const navbarCollapse = document.querySelector('#navbarNav');
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -37,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector(href).scrollIntoView({
                     behavior: 'smooth'
                 });
+                // Close mobile menu if open
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+                }
             }
         });
     });

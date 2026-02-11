@@ -15,8 +15,9 @@ body {
 
 .navbar {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: padding 0.3s ease;
+    transition: padding 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     padding: 1rem 0;
+    background-color: #fff;
 }
 
 .navbar.navbar-scrolled {
@@ -27,6 +28,22 @@ body {
 .navbar-brand {
     display: flex;
     align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.navbar.navbar-hero-visible {
+    padding: 0.25rem 0;
+}
+
+.navbar.navbar-hero-visible .navbar-brand {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.navbar.navbar-hero-visible .navbar-toggler {
+    margin-left: auto;
 }
 
 .navbar-brand img {
