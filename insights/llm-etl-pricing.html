@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I gave Claude, Gemini, and GPT the same ETL pricing scenario 20 times each. One model quoted $2,500 and $80,000 for the same vendor.">
+    <meta name="keywords" content="ETL pricing, Fivetran cost, Airbyte pricing, Estuary pricing, LLM comparison, AI pricing research, ETL tools, data pipeline costs, Claude vs GPT vs Gemini, software cost estimation">
+    <meta name="author" content="James Riso">
+    <link rel="canonical" href="https://risogroup.co/insights/llm-etl-pricing" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../static/assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../static/assets/favicons/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://risogroup.co/insights/llm-etl-pricing">
+    <meta property="og:title" content="Using AI to Estimate Software Costs | Riso Group">
+    <meta property="og:description" content="I gave Claude, Gemini, and GPT the same ETL pricing scenario 20 times each. One model quoted $2,500 and $80,000 for the same vendor.">
+    <meta property="og:image" content="https://risogroup.co/insights/images/llm-etl-pricing/summary_bar_blog.png">
+    <meta property="article:author" content="James Riso">
+    <meta property="article:published_time" content="2026-02-18">
+    <meta property="article:section" content="Data Infrastructure">
+    <meta property="article:tag" content="ETL">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="Fivetran">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Data Infrastructure">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://risogroup.co/insights/llm-etl-pricing">
+    <meta property="twitter:title" content="Using AI to Estimate Software Costs | Riso Group">
+    <meta property="twitter:description" content="I gave Claude, Gemini, and GPT the same ETL pricing scenario 20 times each. One model quoted $2,500 and $80,000 for the same vendor.">
+    <meta property="twitter:image" content="https://risogroup.co/insights/images/llm-etl-pricing/summary_bar_blog.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8SP11SCGP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z8SP11SCGP');
+    </script>
+
+    <!-- RudderStack -->
+    <script type="text/javascript">
+        !function(){"use strict";window.RudderSnippetVersion="3.0.32";var e="rudderanalytics";window[e]||(window[e]=[])
+        ;var rudderanalytics=window[e];if(Array.isArray(rudderanalytics)){
+        if(true===rudderanalytics.snippetExecuted&&window.console&&console.error){
+        console.error("RudderStack JavaScript SDK snippet included more than once.")}else{rudderanalytics.snippetExecuted=true,
+        window.rudderAnalyticsBuildType="legacy";var sdkBaseUrl="https://cdn.rudderlabs.com/v3";var sdkName="rsa.min.js"
+        ;var scriptLoadingMode="async"
+        ;var r=["setDefaultInstanceKey","load","ready","page","track","identify","alias","group","reset","setAnonymousId","startSession","endSession","consent"]
+        ;for(var n=0;n<r.length;n++){var t=r[n];rudderanalytics[t]=function(r){return function(){var n
+        ;Array.isArray(window[e])?rudderanalytics.push([r].concat(Array.prototype.slice.call(arguments))):null===(n=window[e][r])||void 0===n||n.apply(window[e],arguments)
+        }}(t)}try{
+        new Function('class Test{field=()=>{};test({prop=[]}={}){return prop?(prop?.property??[...prop]):import("");}}'),
+        window.rudderAnalyticsBuildType="modern"}catch(o){}var d=document.head||document.getElementsByTagName("head")[0]
+        ;var i=document.body||document.getElementsByTagName("body")[0];window.rudderAnalyticsAddScript=function(e,r,n){
+        var t=document.createElement("script");t.src=e,t.setAttribute("data-loader","RS_JS_SDK"),r&&n&&t.setAttribute(r,n),
+        "async"===scriptLoadingMode?t.async=true:"defer"===scriptLoadingMode&&(t.defer=true),
+        d?d.insertBefore(t,d.firstChild):i.insertBefore(t,i.firstChild)},window.rudderAnalyticsMount=function(){!function(){
+        if("undefined"==typeof globalThis){var e;var r=function getGlobal(){
+        return"undefined"!=typeof self?self:"undefined"!=typeof window?window:null}();r&&Object.defineProperty(r,"globalThis",{
+        value:r,configurable:true})}
+        }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkName),"data-rsa-write-key","2qdCnXl6U1fKfCaGAWNs9QMnbAI")
+        },
+        "undefined"==typeof Promise||"undefined"==typeof globalThis?window.rudderAnalyticsAddScript("https://polyfill-fastly.io/v3/polyfill.min.js?version=3.111.0&features=Symbol%2CPromise&callback=rudderAnalyticsMount"):window.rudderAnalyticsMount()
+        ;var loadOptions={};rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Using AI to Estimate Software Costs",
+        "description": "I gave Claude, Gemini, and GPT the same ETL pricing scenario 20 times each. One model quoted $2,500 and $80,000 for the same vendor.",
+        "image": "https://risogroup.co/insights/images/llm-etl-pricing/summary_bar_blog.png",
+        "author": {
+            "@type": "Person",
+            "name": "James Riso",
+            "url": "https://risogroup.co/index.html#james"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Riso Group",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://risogroup.co/static/assets/rg-logo.png"
+            }
+        },
+        "datePublished": "2026-02-18",
+        "dateModified": "2026-02-18",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://risogroup.co/insights/llm-etl-pricing"
+        }
+    }
+    </script>
+
+    <title>Using AI to Estimate Software Costs | Riso Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="css/insights.css" rel="stylesheet">
+    <style>
+        /* Force author bio to stay properly positioned */
+        .insight-author-bio {
+            clear: both;
+            overflow: hidden;
+            position: relative;
+            margin-top: 4rem !important;
+            padding-top: 2rem !important;
+            border-top: 1px solid #e8e8e8 !important;
+            display: flex !important;
+            gap: 1.5rem !important;
+            align-items: flex-start !important;
+        }
+        .insight-author-bio-image {
+            position: static !important;
+            float: none !important;
+            width: 80px !important;
+            height: 80px !important;
+            flex-shrink: 0 !important;
+            margin: 0 !important;
+        }
+
+        /* Section headers — bigger, more breathing room for skimming */
+        .insight-body h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-top: 3.5rem;
+            margin-bottom: 1.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e8e8e8;
+        }
+        .insight-body h2:first-of-type {
+            border-top: none;
+            margin-top: 2.5rem;
+            padding-top: 0;
+        }
+        /* Tighten the takeaways block: heading → chart → bullets */
+        .insight-body h2:first-of-type + .insight-image-container {
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .insight-body h2:first-of-type + .insight-image-container .insight-image {
+            margin: 0;
+        }
+        .insight-body h2:first-of-type + .insight-image-container + ul {
+            margin-top: 0.5rem;
+        }
+        .insight-body h3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Vendor consensus blocks */
+        .vendor-block {
+            border: 1px solid #e8e8e8;
+            border-radius: 6px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .vendor-block:hover {
+            background-color: #f8f9fa;
+            border-color: #d0d0d0;
+        }
+        .vendor-block-name {
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .vendor-block-estimate {
+            font-weight: 600;
+            color: #4a4a4a;
+            margin-left: 0.75rem;
+        }
+        .vendor-block-notes {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Prompt code block */
+        .prompt-block {
+            background: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 1.25rem;
+            font-family: 'SF Mono', 'Consolas', 'Liberation Mono', Menlo, monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #24292e;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            margin: 1rem 0 1.5rem;
+        }
+
+        /* Appendix section */
+        .appendix-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e8e8e8;
+        }
+        .appendix-section h2 {
+            font-size: 1.5rem;
+            color: #6A737D;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Scroll offset for fixed navbar on anchor targets */
+        .insight-endnote, .insight-endnote-ref[id] {
+            scroll-margin-top: 100px;
+        }
+
+        /* Full run data table */
+        .full-run-table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1rem 0;
+        }
+        .full-run-table {
+            border-collapse: collapse;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            width: 100%;
+        }
+        .full-run-table th {
+            text-align: left;
+            font-weight: 600;
+            padding: 0.4rem 0.6rem;
+            border-bottom: 2px solid #1a1a1a;
+            position: sticky;
+            top: 0;
+            background: white;
+            cursor: pointer;
+            user-select: none;
+        }
+        .full-run-table th:hover {
+            background: #f4f4f4;
+        }
+        .full-run-table th .sort-arrow {
+            display: inline-block;
+            width: 0.7em;
+            text-align: right;
+            margin-left: 0.2em;
+            color: #999;
+        }
+        .full-run-table td {
+            text-align: left;
+            padding: 0.3rem 0.6rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        .full-run-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Endnote reference styling */
+        .insight-endnote-ref {
+            display: inline !important;
+            background: none !important;
+            color: #1a1a1a !important;
+            font-size: 0.8rem !important;
+            font-weight: 500 !important;
+            padding: 0 !important;
+            border: none !important;
+            text-decoration: underline !important;
+            text-decoration-color: #ccc !important;
+            margin-left: 1px !important;
+            vertical-align: super !important;
+            line-height: 1 !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        }
+        .insight-endnote-ref:hover {
+            color: #333 !important;
+            text-decoration-color: #1a1a1a !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../static/assets/rg-logo.png" alt="Riso Group" class="navbar-logo" height="40">
+                <span class="navbar-title ms-2">Riso Group</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#capabilities">Capabilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#case-studies">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#technical">Technical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#james">James</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Get in Touch</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="insight-article" style="margin-top: 100px;">
+        <!-- Article Header -->
+        <header class="insight-header">
+            <h1 class="insight-title">Using AI to Estimate Software Costs</h1>
+            <p class="insight-subtitle">Testing how Claude, Gemini, and ChatGPT handle ETL pricing over 20 runs each.</p>
+
+            <p class="insight-date" style="text-align: center; color: #6A737D; margin-top: 0.5rem;">February 18, 2026 · 7 min read</p>
+        </header>
+
+        <!-- Article Body -->
+        <div class="insight-body">
+
+            <!--
+                Pricing concept verification (Feb 2026):
+                - Usage-based tiers: All three vendors
+                - Connector fees: Estuary (explicit $100/mo per connector), Fivetran (indirect $5 base per connection + no MAR pooling)
+                - Row counts: Fivetran (MAR), Airbyte (API sources: credits per million rows)
+                - Volume discounts: All three (Fivetran reduced theirs March 2025 by killing account-level MAR pooling)
+            -->
+            <p>ETL pricing is complicated. Row counts, connector fees, usage-based tiers, volume discounts. It's exactly the kind of thing we want to use AI to help figure out.</p>
+
+            <p>To test frontier model capabilities, I gave Claude, Gemini, and ChatGPT the same scenario: estimate monthly ETL cost for a tech company spending $10M/year on digital ads. I ran the same prompt 20 times per model for consistency. (See <a href="#appendix">appendix</a> for full prompt and methodology.)</p>
+
+            <p>Here's what I learned.</p>
+
+            <h2>Key Takeaways</h2>
+
+            <ul>
+                <li><strong>Cost estimates vary widely, <em>even when using the exact same prompt.</em></strong></li>
+                <li><strong>Most of the spread comes from assumptions about price, not volume (how much data needs to move).</strong></li>
+                <li><strong>Each LLM has its own view on software pricing. Gemini comes in lowest for all three vendors tested.</strong></li>
+                <li><strong>AI models seem to agree more when clear pricing information is available.</strong></li>
+            </ul>
+
+            <h2>Cost Estimates Vary Widely</h2>
+
+            <p>Here's how each model estimated costs for the three vendors across 20 runs each of the same prompt.</p>
+
+            <div class="insight-image-container" style="margin-top: 0.5rem;">
+                <img src="images/llm-etl-pricing/summary_box_blog.png"
+                     alt="Box plot showing distribution of monthly ETL cost estimates by LLM and vendor. Gemini clusters tightly at low values for all three vendors. Claude has moderate spread. GPT scatters widely, especially for Fivetran ($2,500 to $80,000). Median across all 60 runs: Fivetran $5.8K, Airbyte $2.2K, Estuary $1.2K."
+                     class="insight-image insight-image-chart">
+            </div>
+
+            <p>In the plots below, each dot is one run (midpoint of the model's stated range). Lines mark the median. See <a href="#appendix">appendix</a> for full run data.</p>
+
+            <h3>Fivetran</h3>
+
+            <div class="insight-image-container" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                <img src="images/llm-etl-pricing/fivetran_strip_blog.png"
+                     alt="Strip plot showing Fivetran monthly cost estimates by LLM. Gemini 3 Pro clusters tightly around $4,000, Claude Opus 4.6 centers around $6,250 with wider spread, and GPT-5.2 scatters widely from $2,500 to $80,000 with a median around $16,000."
+                     class="insight-image insight-image-chart"
+                     style="margin: 0;">
+            </div>
+
+            <h3>Airbyte</h3>
+
+            <div class="insight-image-container" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                <img src="images/llm-etl-pricing/airbyte_strip_blog.png"
+                     alt="Strip plot showing Airbyte monthly cost estimates by LLM. Gemini 3 Pro clusters tightly around $900, GPT-5.2 centers around $2,000, and Claude Opus 4.6 scatters from $1,250 to $45,000 with a median around $5,125."
+                     class="insight-image insight-image-chart"
+                     style="margin: 0;">
+            </div>
+
+            <h3>Estuary</h3>
+
+            <div class="insight-image-container" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                <img src="images/llm-etl-pricing/estuary_strip_blog.png"
+                     alt="Strip plot showing Estuary monthly cost estimates by LLM. Gemini 3 Pro clusters very tightly around $200, Claude Opus 4.6 centers around $1,250, and GPT-5.2 scatters from $500 to $8,000 with a median around $2,375."
+                     class="insight-image insight-image-chart"
+                     style="margin: 0;">
+            </div>
+
+            <h2>Most of the Spread Comes from Assumptions About Price, Not Data Volume</h2>
+
+            <p>I extracted the assumptions and reasoning baked into each LLM response. Across all three models, the inputs were reasonable: 5–7 ad platforms, 15-minute to daily syncs, etc. No run was nonsensical. Each one built a defensible estimate from its own assumptions.</p>
+
+            <p>Net net, the models are relatively close on how much data needs to move. Medians range from 18M to 28M rows per month:</p>
+
+            <div class="insight-image-container" style="margin-top: 0.5rem;">
+                <img src="images/llm-etl-pricing/appendix_mar_assumptions.png"
+                     alt="Strip plot showing assumed monthly active rows by model. Medians cluster between 18M (GPT) and 28M (Claude), with most estimates in the 10M–40M range. A few outliers reach 100M–150M."
+                     class="insight-image insight-image-chart">
+            </div>
+
+            <p>But they are much farther apart on what they expect it costs to move each row of that data. For example, Fivetran median price per million rows per month ranges from $150 (Gemini) to $1,138 (GPT):</p>
+
+            <div class="insight-image-container" style="margin-top: 0.5rem;">
+                <img src="images/llm-etl-pricing/price_per_row.png"
+                     alt="Strip plot showing implied price per million rows by vendor and model. For Fivetran, GPT assumes ~$1,138/million rows while Gemini assumes ~$150/million. For Airbyte, Claude assumes ~$278/million while Gemini assumes ~$40/million. For Estuary, GPT assumes ~$158/million while Gemini assumes ~$8/million."
+                     class="insight-image insight-image-chart">
+            </div>
+
+            <p>That's almost an 8x spread at the median for Fivetran, 7x for Airbyte, and 20x for Estuary — compared to just 1.6x on volume.</p>
+
+            <p>Price per row, not volume, drives nearly all the variance.<a href="#endnote-1" class="insight-endnote-ref" id="ref-1">1</a></p>
+
+            <h2>Putting It All Together</h2>
+
+            <p>Each model appears to have a relatively consistent point of view on pricing. <strong>Gemini estimated the lowest and tightest pricing for all three vendors:</strong></p>
+
+            <div class="insight-image-container">
+                <img src="images/llm-etl-pricing/summary_bar_blog.png"
+                     alt="Grouped bar chart showing median monthly ETL cost estimates by LLM. For Fivetran: Gemini $4K, Claude $6K, GPT $16K. For Airbyte: Gemini $900, Claude $5K, GPT $2K. For Estuary: Gemini $200, Claude $1K, GPT $2K."
+                     class="insight-image insight-image-chart">
+            </div>
+
+            <h3>Combined Estimates</h3>
+
+            <p>Here's where things land all together:</p>
+
+            <div class="vendor-block">
+                <div class="vendor-block-name">Fivetran <span class="vendor-block-estimate">$4K–$16K/mo</span></div>
+                <p class="vendor-block-notes">Tightest consensus across models (300% spread). Consistent with published rates.<a href="#endnote-2" class="insight-endnote-ref" id="ref-2">2</a></p>
+            </div>
+
+            <div class="vendor-block">
+                <div class="vendor-block-name">Airbyte Cloud <span class="vendor-block-estimate">$900–$5.1K/mo</span></div>
+                <p class="vendor-block-notes">Wider spread across models (467% spread).<a href="#endnote-3" class="insight-endnote-ref" id="ref-3">3</a></p>
+            </div>
+
+            <div class="vendor-block">
+                <div class="vendor-block-name">Estuary <span class="vendor-block-estimate">$200–$2,400/mo</span></div>
+                <p class="vendor-block-notes">Widest spread across models (1,100% spread).</p>
+            </div>
+
+            <p>It's probably not a coincidence that consensus tightens with how much the models have to go on.</p>
+
+            <ul>
+                <li>Fivetran's MAR-based pricing is well-documented and widely benchmarked, so the models converge.</li>
+                <li>Estuary's GB-based pricing is simple arithmetic but sparsely documented, giving it the widest spread.</li>
+                <li>Airbyte's credit system is the most opaque: credits vary by connector type, and the system has evolved significantly. It's the only vendor where the model rank order flips.</li>
+            </ul>
+
+            <h2>Practical Takeaways</h2>
+
+            <p>Based on these findings, a few tips if you're using AI for vendor pricing research with complex structures:</p>
+
+            <ol>
+                <li>Consider running the same prompt across multiple models, multiple times. There's enough variability in any single LLM response to caution making decisions on it.</li>
+                <li>Expect less accuracy on newer or less-documented vendors where the models have less to go on.</li>
+                <li>Check the assumptions behind each answer — the reasoning tends to be sound, but the inputs can vary by an order of magnitude.</li>
+            </ol>
+
+            <p>Whether these patterns generalize — tighter estimates for market leaders, Gemini consistently anchoring low — is worth testing in other categories. Any vendor with a pricing calculator is a candidate.</p>
+
+            <p>If you're a buyer or SaaS company interested in applying this approach, <a href="../index.html#contact" style="color: #1a1a1a; font-weight: 600;">get in touch</a>.</p>
+
+        </div>
+
+        <!-- Author Bio -->
+        <div class="insight-author-bio">
+            <img src="../static/images/jr_icon.png" alt="James Riso" class="insight-author-bio-image">
+            <div class="insight-author-bio-content">
+                <h3 class="insight-author-bio-name"><a href="../index.html#james" style="color: inherit; text-decoration: none;">James Riso</a></h3>
+                <p class="insight-author-bio-title">Founder, <a href="../index.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid #ccc;">Riso Group</a></p>
+                <p class="insight-author-bio-text">James is a data and AI strategy consultant who helps companies build scalable analytics infrastructure and data-driven growth strategies. <a href="https://www.linkedin.com/in/jamesriso/" target="_blank" style="color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a;">Connect on LinkedIn</a>.</p>
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="appendix-section">
+            <h2>Notes</h2>
+            <ol class="insight-endnotes-list">
+                <li class="insight-endnote" id="endnote-1">
+                    <span class="insight-endnote-number">1.</span>
+                    <span class="insight-endnote-content">
+                        A counterfactual confirms this: equalize the rate across models and the cost estimates converge. Equalize the volume instead and the spread remains.
+                        <a href="#ref-1" class="insight-endnote-back">↩</a>
+                    </span>
+                </li>
+                <li class="insight-endnote" id="endnote-2">
+                    <span class="insight-endnote-number">2.</span>
+                    <span class="insight-endnote-content">
+                        Fivetran Standard plan rates (post-March 2025): $2.50/M for first 5M MAR, $2.00/M for 5–20M, $1.50/M for 20–100M, plus $5/mo minimum per connection and $12K/yr annual minimum. March 2025 change moved MAR billing from account-level to per-connector, increasing costs 40–70% for multi-connector setups. <a href="https://www.fivetran.com/pricing" target="_blank">Fivetran Pricing</a>
+                        <a href="#ref-2" class="insight-endnote-back">↩</a>
+                    </span>
+                </li>
+                <li class="insight-endnote" id="endnote-3">
+                    <span class="insight-endnote-number">3.</span>
+                    <span class="insight-endnote-content">
+                        Sticker price understates total cost since Airbyte requires more hands-on engineering. Most Airbyte Cloud source connectors are community-maintained with no uptime SLA. Schema changes default to manual approval, and retry/rate-limit tuning falls on the user. Fivetran maintains all connectors in-house. <a href="https://docs.airbyte.com/integrations/connector-support-levels" target="_blank">Airbyte Connector Support Levels</a>
+                        <a href="#ref-3" class="insight-endnote-back">↩</a>
+                    </span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Appendix -->
+        <div class="appendix-section" id="appendix">
+            <h2>Appendix: Methodology</h2>
+
+            <h3>Setup</h3>
+
+            <p>The same prompt was sent to all three models, unmodified:</p>
+
+            <div class="prompt-block">Act as a Senior Data Engineer. Using your knowledge and any necessary tools, you will estimate the monthly cost to ETL marketing data (Meta, Google, LinkedIn, etc.) for a tech business spending $10M/year on advertising. The data ingested needs to be granular, timely, and land in an existing data warehouse. Ignore the warehousing costs, we are focused only in the cost of data movement.
+
+Compare these specific vendors: Fivetran, Airbyte (Cloud), Estuary
+
+Output Requirements:
+
+Summary Table: Columns for Vendor, Est. Cost, Pricing Model, and Notes
+Express all cost estimates as monthly USD amounts.
+Return the Summary Table in markdown format.
+
+Final Recommendation: Give a recommendation assuming the team has minimal engineering resources to devote to this task</div>
+
+            <p>Three models — Claude Opus 4.6 (Anthropic), GPT-5.2 (OpenAI), and Gemini 3 Pro (Google) — accessed via the <a href="https://openrouter.ai/" target="_blank">OpenRouter</a> API. Each was run 20 times at temperature 1.0.</p>
+
+            <h3>Parsing</h3>
+
+            <p>Responses were parsed with a 3-tier fallback:</p>
+
+            <ol>
+                <li><strong>JSON</strong> — structured responses with a summary_table array</li>
+                <li><strong>Markdown table</strong> — pipe-delimited tables (most common)</li>
+                <li><strong>Text fallback</strong> — keyword scan for vendor names and dollar amounts</li>
+            </ol>
+
+            <p>Most models returned cost estimates as ranges (e.g., "$10,000–$16,000/month"). The charts plot the midpoint of each range; single-value estimates are used as-is. Monthly Active Row (MAR) assumptions were extracted via regex (e.g., "10–15M MAR", "~25M rows/month"). For runs with explicit MAR figures, I derived an effective price per million rows to produce the price-per-row chart.</p>
+
+            <h3>Full Run Data</h3>
+
+            <p>All 60 runs (20 per model) with extracted assumptions and cost estimates. Calculated-midpoint columns show the values plotted in the charts above.</p>
+
+            <div class="full-run-table-wrapper">
+                <table class="full-run-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Run</th>
+                            <th>MAR (M rows)</th>
+                            <th>Sync Freq</th>
+                            <th># Platforms</th>
+                            <th>Fivetran (stated range)</th>
+                            <th>Fivetran (calc. midpoint)*</th>
+                            <th>Airbyte (stated range)</th>
+                            <th>Airbyte (calc. midpoint)*</th>
+                            <th>Estuary (stated range)</th>
+                            <th>Estuary (calc. midpoint)*</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Claude Opus 4.6</td><td>1</td><td>12M</td><td>hourly</td><td>7</td><td>$10,000 – $16,000</td><td>$13,000</td><td>$2,000 – $4,500</td><td>$3,250</td><td>$625 – $2,000</td><td>$1,312</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>2</td><td>38M</td><td>real-time</td><td>7</td><td>$20,000 – $35,000</td><td>$27,500</td><td>$8,000 – $15,000</td><td>$11,500</td><td>$2,000 – $5,000</td><td>$3,500</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>3</td><td>22M</td><td>6-hour</td><td>6</td><td>$2,500 – $5,000</td><td>$3,750</td><td>$750 – $2,250</td><td>$1,500</td><td>$500 – $1,500</td><td>$1,000</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>4</td><td>32M</td><td>daily</td><td>7</td><td>$3,000 – $7,000</td><td>$5,000</td><td>$2,000 – $6,000</td><td>$4,000</td><td>$500 – $2,000</td><td>$1,250</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>5</td><td>15M</td><td>real-time</td><td>7</td><td>$12,000 – $20,000</td><td>$16,000</td><td>$4,000 – $8,000</td><td>$6,000</td><td>$400 – $800</td><td>$600</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>6</td><td>14M</td><td>real-time</td><td>8</td><td>$10,000 – $16,000</td><td>$13,000</td><td>$5,000 – $7,000</td><td>$6,000</td><td>$2,000 – $4,000</td><td>$3,000</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>7</td><td>48M</td><td>real-time</td><td>7</td><td>$3,000 – $6,000</td><td>$4,500</td><td>$8,000 – $18,000</td><td>$13,000</td><td>$400 – $700</td><td>$550</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>8</td><td>10M</td><td>6-hour</td><td>7</td><td>$5,000 – $8,000</td><td>$6,500</td><td>$2,500 – $4,500</td><td>$3,500</td><td>$500 – $900</td><td>$700</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>9</td><td>32M</td><td>hourly</td><td>9</td><td>$20,000 – $50,000</td><td>$35,000</td><td>$8,000 – $20,000</td><td>$14,000</td><td>$2,000 – $5,000</td><td>$3,500</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>10</td><td>32M</td><td>hourly</td><td>4</td><td>$4,000 – $7,000</td><td>$5,500</td><td>$12,000 – $20,000</td><td>$16,000</td><td>$500 – $2,000</td><td>$1,250</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>11</td><td>22M</td><td>real-time</td><td>6</td><td>$6,000 – $10,000</td><td>$8,000</td><td>$500 – $2,000</td><td>$1,250</td><td>$500 – $2,000</td><td>$1,250</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>12</td><td>45M</td><td>hourly</td><td>6</td><td>$4,000 – $8,000</td><td>$6,000</td><td>$500 – $2,000</td><td>$1,250</td><td>$250 – $750</td><td>$500</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>13</td><td>45M</td><td>real-time</td><td>6</td><td>$3,000 – $5,000</td><td>$4,000</td><td>$4,000 – $8,000</td><td>$6,000</td><td>$750 – $2,000</td><td>$1,375</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>14</td><td>20M</td><td>real-time</td><td>7</td><td>$20,000 – $40,000</td><td>$30,000</td><td>$20,000 – $50,000</td><td>$35,000</td><td>$1,000 – $3,000</td><td>$2,000</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>15</td><td>115M</td><td>6-hour</td><td>8</td><td>$15,000 – $30,000</td><td>$22,500</td><td>$10,000 – $25,000</td><td>$17,500</td><td>$500 – $2,000</td><td>$1,250</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>16</td><td>150M</td><td>hourly</td><td>7</td><td>$4,000 – $7,000</td><td>$5,500</td><td>$2,500 – $6,000</td><td>$4,250</td><td>$500 – $2,000</td><td>$1,250</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>17</td><td>16M</td><td>6-hour</td><td>7</td><td>$4,000 – $7,000</td><td>$5,500</td><td>$2,500 – $5,000</td><td>$3,750</td><td>$1,000 – $2,500</td><td>$1,750</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>18</td><td>10M</td><td>real-time</td><td>7</td><td>$3,000 – $6,000</td><td>$4,500</td><td>$2,000 – $4,500</td><td>$3,250</td><td>$800 – $1,500</td><td>$1,150</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>19</td><td>100M</td><td>real-time</td><td>7</td><td>$25,000 – $50,000</td><td>$37,500</td><td>$30,000 – $60,000</td><td>$45,000</td><td>$2,000 – $5,000</td><td>$3,500</td></tr>
+                        <tr><td>Claude Opus 4.6</td><td>20</td><td>22M</td><td>real-time</td><td>7</td><td>$4,000 – $8,000</td><td>$6,000</td><td>$1,500 – $4,000</td><td>$2,750</td><td>$500 – $1,500</td><td>$1,000</td></tr>
+                        <tr><td>GPT-5.2</td><td>1</td><td>10M</td><td>daily</td><td>2</td><td>~$4,000/mo (typ. ~$3k–$6k depending on MAR)</td><td>$4,500</td><td>~$1,000–$2,000/mo</td><td>$1,500</td><td>~$1,000–$2,500/mo</td><td>$1,750</td></tr>
+                        <tr><td>GPT-5.2</td><td>2</td><td>60M</td><td>hourly</td><td>3</td><td>~$80,000/mo</td><td>$80,000</td><td>~$4,000/mo</td><td>$4,000</td><td>~$1,500/mo</td><td>$1,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>3</td><td>30M</td><td>hourly</td><td>5</td><td>~$40,000–$55,000/mo</td><td>$47,500</td><td>~$1,000–$3,000/mo</td><td>$2,000</td><td>~$1,500–$4,000/mo</td><td>$2,750</td></tr>
+                        <tr><td>GPT-5.2</td><td>4</td><td>155M</td><td>hourly</td><td>2</td><td>~$60,000/mo</td><td>$60,000</td><td>~$800/mo</td><td>$800</td><td>~$500/mo</td><td>$500</td></tr>
+                        <tr><td>GPT-5.2</td><td>5</td><td>60M</td><td>hourly</td><td>3</td><td>~$28,000/mo</td><td>$28,000</td><td>~$1,800/mo</td><td>$1,800</td><td>~$2,500/mo</td><td>$2,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>6</td><td>15M</td><td>hourly</td><td>2</td><td>~$20k–$35k/mo</td><td>$27,500</td><td>~$1k–$3k/mo</td><td>$2,000</td><td>~$1k–$4k/mo</td><td>$2,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>7</td><td>10M</td><td>real-time</td><td>3</td><td>~$9,000/mo</td><td>$9,000</td><td>~$1,200/mo</td><td>$1,200</td><td>~$1,500/mo</td><td>$1,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>8</td><td>50M</td><td>real-time</td><td>2</td><td>$25,000/mo</td><td>$25,000</td><td>$8,000/mo</td><td>$8,000</td><td>$4,000/mo</td><td>$4,000</td></tr>
+                        <tr><td>GPT-5.2</td><td>9</td><td>—</td><td>hourly</td><td>3</td><td>~$12,000/mo (typical range ~$8k–$20k)</td><td>$14,000</td><td>~$900/mo (typical range ~$500–$1.5k)</td><td>$1,000</td><td>~$1,200/mo (typical range ~$1k–$2k)</td><td>$1,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>10</td><td>25M</td><td>hourly</td><td>3</td><td>~$30,000/mo (typical range $20k–$40k)</td><td>$30,000</td><td>~$2,000/mo (typical range $1k–$5k)</td><td>$3,000</td><td>~$2,500/mo (typical range $1.5k–$6k)</td><td>$3,750</td></tr>
+                        <tr><td>GPT-5.2</td><td>11</td><td>5M</td><td>hourly</td><td>2</td><td>~$6,000/mo</td><td>$6,000</td><td>~$3,500/mo</td><td>$3,500</td><td>~$1,500/mo</td><td>$1,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>12</td><td>45M</td><td>hourly</td><td>3</td><td>$12,000–$22,000/mo</td><td>$17,000</td><td>$800–$2,500/mo</td><td>$1,650</td><td>$1,000–$3,500/mo</td><td>$2,250</td></tr>
+                        <tr><td>GPT-5.2</td><td>13</td><td>60M</td><td>hourly</td><td>4</td><td>$15,000/mo</td><td>$15,000</td><td>$4,000/mo</td><td>$4,000</td><td>$2,500/mo</td><td>$2,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>14</td><td>6M</td><td>hourly</td><td>3</td><td>~$6,000/mo</td><td>$6,000</td><td>~$2,000/mo</td><td>$2,000</td><td>~$1,200/mo</td><td>$1,200</td></tr>
+                        <tr><td>GPT-5.2</td><td>15</td><td>—</td><td>daily</td><td>2</td><td>$4,000–$9,000/mo</td><td>$6,500</td><td>$1,200–$3,500/mo</td><td>$2,350</td><td>$2,000–$5,000/mo</td><td>$3,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>16</td><td>15M</td><td>hourly</td><td>2</td><td>~$20,000–$30,000/mo</td><td>$25,000</td><td>~$5,000–$10,000/mo</td><td>$7,500</td><td>~$2,000–$6,000/mo</td><td>$4,000</td></tr>
+                        <tr><td>GPT-5.2</td><td>17</td><td>4M</td><td>hourly</td><td>4</td><td>~$3,500/mo</td><td>$3,500</td><td>~$1,500/mo</td><td>$1,500</td><td>~$900/mo</td><td>$900</td></tr>
+                        <tr><td>GPT-5.2</td><td>18</td><td>2M</td><td>hourly</td><td>2</td><td>~$2,500/mo</td><td>$2,500</td><td>~$1,300/mo</td><td>$1,300</td><td>~$900/mo</td><td>$900</td></tr>
+                        <tr><td>GPT-5.2</td><td>19</td><td>10M</td><td>hourly</td><td>3</td><td>$15,000/mo</td><td>$15,000</td><td>$4,000/mo</td><td>$4,000</td><td>$2,500/mo</td><td>$2,500</td></tr>
+                        <tr><td>GPT-5.2</td><td>20</td><td>20M</td><td>hourly</td><td>3</td><td>~$25,000 / mo (typ. band: $20k–$35k)</td><td>$27,500</td><td>~$10,000 / mo (typ. band: $7k–$15k)</td><td>$11,000</td><td>~$6,000 / mo (typ. band: $4k–$12k)</td><td>$8,000</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>1</td><td>20M</td><td>15-minute</td><td>3</td><td>$2,200–$2,800</td><td>$2,500</td><td>$400–$800</td><td>$600</td><td>$100–$200</td><td>$150</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>2</td><td>28M</td><td>hourly</td><td>2</td><td>$2,500–$3,200</td><td>$2,850</td><td>$600–$900</td><td>$750</td><td>&lt;$100</td><td>$100</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>3</td><td>25M</td><td>hourly</td><td>4</td><td>$4,500–$6,000</td><td>$5,250</td><td>$1,500–$2,500</td><td>$2,000</td><td>$200–$400</td><td>$300</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>4</td><td>10M</td><td>daily</td><td>1</td><td>$3,200–$4,000</td><td>$3,600</td><td>$600–$900</td><td>$750</td><td>$100–$200</td><td>$150</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>5</td><td>35M</td><td>daily</td><td>1</td><td>$4,500–$6,000</td><td>$5,250</td><td>$600–$1,000</td><td>$800</td><td>$200–$500</td><td>$350</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>6</td><td>3M</td><td>daily</td><td>2</td><td>$1,200–$1,800</td><td>$1,500</td><td>$750–$1,100</td><td>$925</td><td>$50–$200</td><td>$125</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>7</td><td>38M</td><td>hourly</td><td>2</td><td>$4,500–$6,000</td><td>$5,250</td><td>$2,000–$3,000</td><td>$2,500</td><td>$50–$250</td><td>$150</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>8</td><td>50M</td><td>daily</td><td>1</td><td>$3,500–$4,500</td><td>$4,000</td><td>$750–$1,000</td><td>$875</td><td>$100–$300</td><td>$200</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>9</td><td>20M</td><td>daily</td><td>1</td><td>$3,500–$4,500</td><td>$4,000</td><td>$500–$800</td><td>$650</td><td>$0–$50</td><td>$25</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>10</td><td>20M</td><td>hourly</td><td>2</td><td>$3,000–$4,500</td><td>$3,750</td><td>$800–$1,200</td><td>$1,000</td><td>$100–$300</td><td>$200</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>11</td><td>25M</td><td>15-minute</td><td>4</td><td>$5,500–$7,000</td><td>$6,250</td><td>$3,000–$4,500</td><td>$3,750</td><td>$200–$600</td><td>$400</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>12</td><td>32M</td><td>15-minute</td><td>3</td><td>$3,500–$4,500</td><td>$4,000</td><td>$500–$800</td><td>$650</td><td>$100–$250</td><td>$175</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>13</td><td>62M</td><td>hourly</td><td>4</td><td>$4,500–$6,500</td><td>$5,500</td><td>$2,200–$3,000</td><td>$2,600</td><td>$400–$800</td><td>$600</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>14</td><td>40M</td><td>daily</td><td>2</td><td>$3,500–$4,500</td><td>$4,000</td><td>$1,800–$2,200</td><td>$2,000</td><td>$200–$400</td><td>$300</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>15</td><td>10M</td><td>—</td><td>2</td><td>~$2,100–$2,500</td><td>$2,300</td><td>~$400–$600</td><td>$500</td><td>&lt;$50–$250</td><td>$150</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>16</td><td>20M</td><td>—</td><td>3</td><td>$3,500–$4,500</td><td>$4,000</td><td>$2,000–$2,800</td><td>$2,400</td><td>$200–$500</td><td>$350</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>17</td><td>25M</td><td>—</td><td>3</td><td>$3,000–$4,500</td><td>$3,750</td><td>$600–$1,000</td><td>$800</td><td>$100–$300</td><td>$200</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>18</td><td>40M</td><td>15-minute</td><td>2</td><td>$2,500–$3,500</td><td>$3,000</td><td>$1,200–$1,800</td><td>$1,500</td><td>$100–$300</td><td>$200</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>19</td><td>25M</td><td>15-minute</td><td>2</td><td>$3,500–$5,000</td><td>$4,250</td><td>$600–$900</td><td>$750</td><td>$50–$150</td><td>$100</td></tr>
+                        <tr><td>Gemini 3 Pro</td><td>20</td><td>50M</td><td>hourly</td><td>1</td><td>$2,500–$3,800</td><td>$3,150</td><td>$800–$1,200</td><td>$1,000</td><td>$100–$300</td><td>$200</td></tr>
+                    </tbody>
+                </table>
+                <p class="table-footnote" style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">* Calculated midpoint is the simple average of the low and high ends of the stated range. When a model returned a single figure, that figure is used as-is. These are the values plotted in the charts above.</p>
+            </div>
+        </div>
+
+    </article>
+
+    <div id="site-footer"></div>
+    <script src="../static/js/footer.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar scroll effect -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+
+    <!-- Image Lightbox -->
+    <script src="js/lightbox.js"></script>
+
+    <!-- Sortable table -->
+    <script>
+    (function() {
+        const table = document.querySelector('.full-run-table');
+        if (!table) return;
+        const thead = table.querySelector('thead');
+        const tbody = table.querySelector('tbody');
+        const headers = thead.querySelectorAll('th');
+        let sortCol = -1, sortAsc = true;
+
+        // Add sort arrows to headers
+        headers.forEach(th => {
+            const arrow = document.createElement('span');
+            arrow.className = 'sort-arrow';
+            arrow.textContent = '';
+            th.appendChild(arrow);
+        });
+
+        // Extract a sortable value from cell text
+        function parseVal(text, colIndex) {
+            text = text.trim();
+            // Numeric-ish columns: Run, MAR, # Platforms, midpoints
+            // Strip $, commas, ~, /mo, letters for dollar columns
+            const num = text.replace(/[~$,]/g, '').replace(/\/\s*mo.*/i, '').replace(/\(.*\)/, '').trim();
+            const m = num.match(/^([\d.]+)/);
+            if (m) {
+                let v = parseFloat(m[1]);
+                // MAR column: "10M" → 10, "150M" → 150
+                if (/M$/i.test(text.replace(/[,$]/g, '')) && colIndex === 2) return v;
+                // If the cleaned text had a 'k' suffix (e.g., ~$20k), multiply
+                if (/k/i.test(num)) v *= 1000;
+                return v;
+            }
+            if (text === '—') return -1;
+            return text.toLowerCase();
+        }
+
+        headers.forEach((th, colIdx) => {
+            th.addEventListener('click', () => {
+                if (sortCol === colIdx) { sortAsc = !sortAsc; }
+                else { sortCol = colIdx; sortAsc = true; }
+
+                // Update arrows
+                headers.forEach(h => h.querySelector('.sort-arrow').textContent = '');
+                th.querySelector('.sort-arrow').textContent = sortAsc ? ' ▲' : ' ▼';
+
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                rows.sort((a, b) => {
+                    const va = parseVal(a.children[colIdx].textContent, colIdx);
+                    const vb = parseVal(b.children[colIdx].textContent, colIdx);
+                    if (typeof va === 'number' && typeof vb === 'number') return sortAsc ? va - vb : vb - va;
+                    if (typeof va === 'string' && typeof vb === 'string') return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+                    return 0;
+                });
+                rows.forEach(r => tbody.appendChild(r));
+            });
+        });
+    })();
+    </script>
+
+    <!-- RudderStack Page Tracking -->
+    <script>
+        window.addEventListener("load", () => {
+            rudderanalytics.page();
+        });
+    </script>
+</body>
+</html>
