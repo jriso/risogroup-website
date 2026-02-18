@@ -107,3 +107,41 @@ All insight articles should include Article schema structured data in JSON-LD fo
 ```
 
 This helps Google show rich results with author info, images, and dates in search.
+
+## Featured Insights (Homepage)
+
+The homepage (`index.html`) displays 3 **editorially curated** insight cards in the "Featured Insights" section. These are **not** auto-generated or sorted by date — they are hand-picked.
+
+### How to Change the Featured Insights
+
+1. Open `index.html` and find the `<!-- FEATURED INSIGHTS -->` comment (inside the `<section id="insights">` block)
+2. Replace any of the 3 `<div class="col-md-4 mb-4">` card blocks with a new card
+3. Each card needs:
+   - Link to the insight page (`href`)
+   - Card image (`src`, `alt`)
+   - Title (`card-title`)
+   - Excerpt (`card-text`)
+   - Author info (name + avatar)
+   - Read time
+
+### Card Template
+
+```html
+<div class="col-md-4 mb-4">
+    <a href="insights/[slug].html" class="text-decoration-none">
+        <div class="card h-100 border-0 shadow-sm">
+            <img src="insights/images/[folder]/[image].png" class="card-img-top" alt="[descriptive alt text]" style="height: 200px; object-fit: cover; object-position: top;">
+            <div class="card-body">
+                <h5 class="card-title text-dark mb-3">[Title]</h5>
+                <p class="card-text text-muted mb-3">[Short excerpt]</p>
+                <div class="d-flex align-items-center text-muted small">
+                    <img src="static/images/jr_icon.png" alt="James Riso" style="width: 24px; height: 24px; border-radius: 50%; margin-right: 8px;">
+                    <span>James Riso</span>
+                    <span class="mx-2">&bull;</span>
+                    <span>1 min read</span>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+```
