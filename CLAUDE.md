@@ -70,6 +70,31 @@ See these pages for reference implementations:
 - `insights/clickhouse-adoption.html` - Insight page with RudderStack tracking
 - `engagements/predictive-ltv.html` - Engagement page with RudderStack tracking
 
+## Shared Navbar Component
+
+The navbar is defined once in `static/js/navbar.js` and injected into all subpages (insights, engagements) via a placeholder div — the same pattern as `footer.js`.
+
+### Usage in subpages
+
+Add this to the `<body>` where the navbar should appear:
+
+```html
+<div id="site-navbar"></div>
+<script src="../static/js/navbar.js"></script>
+```
+
+The script auto-detects the base path from its `src` attribute, so relative links work from any subdirectory.
+
+### Nav link order
+
+**Capabilities, Insights, Case Studies, James, Technical, Get in Touch**
+
+### Important
+
+- **Do NOT add inline navbar HTML** to new subpages — use the shared component above
+- The **homepage (`index.html`)** still uses its own inline navbar (it has special hero behavior via `main.js`)
+- To change nav links site-wide, edit `static/js/navbar.js` (and update the homepage inline navbar to match)
+
 ## Structured Data (JSON-LD) for SEO
 
 All insight articles should include Article schema structured data in JSON-LD format for better SEO and rich search results. Add this in the `<head>` section after RudderStack and before the `<title>` tag:
