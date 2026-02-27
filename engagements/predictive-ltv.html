@@ -48,7 +48,7 @@
     <title>LTV Prediction for Meta Ad Spend | Riso Group</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css" rel="stylesheet">
-    <link href="./static/css/style.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
     <style>
         .case-study {
             max-width: 1000px;
@@ -111,7 +111,7 @@
             color: #fff;
             text-decoration: none;
         }
-        .hero-section {
+        .engagement-hero {
             position: relative;
             margin-top: 76px; /* Account for fixed navbar */
         }
@@ -158,17 +158,11 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../static/assets/rg-logo.png" alt="Riso Group" class="navbar-logo" height="40">
-                <span class="navbar-title ms-2">Riso Group</span>
-            </a>
-        </div>
-    </nav>
+    <div id="site-navbar"></div>
+    <script src="../static/js/navbar.js"></script>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="engagement-hero">
         <div class="hero-image-container">
             <img src="../static/images/predictive-analytics.png" alt="Driving Meta Ad Spend Efficiency with LTV Prediction Machine Learning Models" class="hero-image">
             <div class="hero-overlay">
@@ -218,6 +212,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="./static/js/main.js"></script>
+
+    <!-- Navbar scroll effect -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
 
     <!-- Add RudderStack Page Tracking -->
     <script>
