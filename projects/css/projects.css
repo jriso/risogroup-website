@@ -14,7 +14,7 @@
    ============================================= */
 
 .projects-hero {
-    padding: 100px 0 40px 0;
+    padding: 100px 0 20px 0;
     background-color: white;
     text-align: center;
 }
@@ -45,7 +45,16 @@
 }
 
 .projects-grid {
-    padding: 20px 0 60px;
+    padding: 30px 0 60px;
+}
+
+@media (max-width: 767px) {
+    .projects-hero {
+        padding: 90px 0 10px 0;
+    }
+    .projects-grid {
+        padding: 20px 0 40px;
+    }
 }
 
 /* Card on listing page */
