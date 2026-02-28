@@ -306,17 +306,57 @@
             </div>
         </section>
 
-        <section id="technical" class="py-4 bg-light">
+        <section id="technical" class="py-5 bg-light">
             <div class="container">
                 <h2 class="text-center mb-5"><a href="#technical" class="text-decoration-none text-dark section-title">Technical</a></h2>
-                <p class="text-center text-muted" style="max-width: 700px; margin: 0 auto;">
-                    <strong>Data Warehouses:</strong> Snowflake, Google BigQuery, AWS Redshift, Databricks, ClickHouse &nbsp;&middot;&nbsp;
-                    <strong>BI:</strong> Looker, Sigma, Omni, Metabase, Hex, Tableau, Streamlit &nbsp;&middot;&nbsp;
-                    <strong>CDP &amp; Product Analytics:</strong> RudderStack, Segment, Amplitude, Mixpanel, Heap, Hightouch, Google Analytics &nbsp;&middot;&nbsp;
-                    <strong>ETL:</strong> Fivetran, Airbyte, Hevo, Polytomic &nbsp;&middot;&nbsp;
-                    <strong>AI/LLM:</strong> Claude Code, Anthropic API, OpenAI API, Vertex AI &nbsp;&middot;&nbsp;
-                    <strong>More:</strong> SQL, Python, JavaScript, R, dbt, Excel
-                </p>
+                <!-- Projects -->
+                <div class="row g-3 justify-content-center" style="max-width: 900px; margin: 0 auto;">
+                    <div class="col-md-6">
+                        <a href="projects/metabase-snapshot.html" class="text-decoration-none">
+                            <div class="bg-white rounded-3 overflow-hidden h-100" style="box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.2s ease;">
+                                <div style="background: #1a1a1a; padding: 0.5rem 1rem; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.8rem; color: rgba(255,255,255,0.6);">jriso / <strong style="color: #fff;">metabase-snapshot</strong></div>
+                                <div class="p-3">
+                                    <p class="text-muted small mb-2" style="line-height: 1.5;">Track every dashboard change and give AI agents readable context on your BI layer.</p>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        <span style="display: inline-block; padding: 0.15rem 0.45rem; font-family: monospace; font-size: 0.7rem; color: #333; background: #f8f9fa; border: 1px solid #e8e8e8; border-radius: 3px;">Python</span>
+                                        <span style="display: inline-block; padding: 0.15rem 0.45rem; font-family: monospace; font-size: 0.7rem; color: #333; background: #f8f9fa; border: 1px solid #e8e8e8; border-radius: 3px;">CLI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="projects/granola-to-markdown.html" class="text-decoration-none">
+                            <div class="bg-white rounded-3 overflow-hidden h-100" style="box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.2s ease;">
+                                <div style="background: #1a1a1a; padding: 0.5rem 1rem; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.8rem; color: rgba(255,255,255,0.6);">jriso / <strong style="color: #fff;">granola-to-markdown</strong></div>
+                                <div class="p-3">
+                                    <p class="text-muted small mb-2" style="line-height: 1.5;">Export Granola meeting notes to markdown for AI agents.</p>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        <span style="display: inline-block; padding: 0.15rem 0.45rem; font-family: monospace; font-size: 0.7rem; color: #333; background: #f8f9fa; border: 1px solid #e8e8e8; border-radius: 3px;">Python</span>
+                                        <span style="display: inline-block; padding: 0.15rem 0.45rem; font-family: monospace; font-size: 0.7rem; color: #333; background: #f8f9fa; border: 1px solid #e8e8e8; border-radius: 3px;">Shell</span>
+                                        <span style="display: inline-block; padding: 0.15rem 0.45rem; font-family: monospace; font-size: 0.7rem; color: #333; background: #f8f9fa; border: 1px solid #e8e8e8; border-radius: 3px;">macOS</span>
+                                        <span style="display: inline-block; padding: 0.15rem 0.45rem; font-family: monospace; font-size: 0.7rem; color: #333; background: #f8f9fa; border: 1px solid #e8e8e8; border-radius: 3px;">MCP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center mt-4 mb-5">
+                    <a href="projects/index.html" class="btn btn-outline-dark btn-sm">View All Projects</a>
+                </div>
+
+                <!-- Tools & Stack -->
+                <div style="max-width: 700px; margin: 0 auto; font-size: 0.85rem; color: #6c757d;">
+                    <div class="text-center">
+                        <strong style="color: #333;">Data Warehouses</strong><br>Snowflake &middot; BigQuery &middot; Redshift &middot; Databricks &middot; ClickHouse
+                        <div style="margin-top: 1rem;"><strong style="color: #333;">BI</strong><br>Looker &middot; Sigma &middot; Omni &middot; Metabase &middot; Hex &middot; Tableau &middot; Streamlit</div>
+                        <div style="margin-top: 1rem;"><strong style="color: #333;">CDP &amp; Product Analytics</strong><br>RudderStack &middot; Segment &middot; Amplitude &middot; Mixpanel &middot; Heap &middot; Hightouch</div>
+                        <div style="margin-top: 1rem;"><strong style="color: #333;">ETL</strong><br>Fivetran &middot; Airbyte &middot; Hevo &middot; Polytomic</div>
+                        <div style="margin-top: 1rem;"><strong style="color: #333;">AI / LLM</strong><br>Claude Code &middot; Anthropic API &middot; OpenAI API &middot; Vertex AI</div>
+                        <div style="margin-top: 1rem;"><strong style="color: #333;">Languages</strong><br>SQL &middot; Python &middot; JavaScript &middot; R &middot; dbt</div>
+                    </div>
+                </div>
             </div>
         </section>
 
