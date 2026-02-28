@@ -95,6 +95,36 @@ The script auto-detects the base path from its `src` attribute, so relative link
 - The **homepage (`index.html`)** still uses its own inline navbar (it has special hero behavior via `main.js`)
 - To change nav links site-wide, edit `static/js/navbar.js` (and update the homepage inline navbar to match)
 
+## Projects Section
+
+The `/projects/` directory showcases tools and utilities. It mirrors the `/insights/` structure: a listing page + individual detail pages.
+
+### Directory structure
+
+```
+projects/
+  index.html              # Listing page (2-column grid)
+  css/projects.css        # Project-specific styles
+  metabase-snapshot.html  # Detail page
+  granola-to-markdown.html
+  images/{slug}/          # Optional hero/screenshot images per project
+```
+
+### Adding a new project
+
+1. Create `projects/{slug}.html` using an existing detail page as template
+2. Add a card to `projects/index.html` at the top of the grid
+3. Add a compact card to the homepage `index.html` inside `#technical` section
+4. Include: RudderStack (head + page tracking), Google Analytics, shared navbar/footer, JSON-LD (`SoftwareApplication` schema)
+
+### Homepage integration
+
+Project cards live inside the existing `#technical` section (below the tools paragraph), not a separate section. No new navbar link — "Technical" already anchors there.
+
+### Canonical URLs
+
+Canonical URLs do **not** include `.html` (e.g., `https://risogroup.co/projects/metabase-snapshot`). Internal links between pages use `.html` since the actual files are `.html`. This matches the pattern across the rest of the site.
+
 ## Structured Data (JSON-LD) for SEO
 
 All insight articles should include Article schema structured data in JSON-LD format for better SEO and rich search results. Add this in the `<head>` section after RudderStack and before the `<title>` tag:
