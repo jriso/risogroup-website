@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Self-hosted agentic analytics stack: point an LLM at BigQuery, Snowflake, or ClickHouse and query your data warehouse in plain English via MCP and text-to-SQL.">
+    <meta name="description" content="Ask BigQuery or Snowflake questions in plain English — no BI subscription required. Open-source agentic analytics built on LibreChat and Langfuse.">
     <meta name="author" content="James Riso">
     <link rel="canonical" href="https://risogroup.co/projects/agentic-data-stack" />
 
@@ -18,14 +18,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://risogroup.co/projects/agentic-data-stack">
     <meta property="og:title" content="agentic-data-stack | Riso Group">
-    <meta property="og:description" content="Self-hosted agentic analytics stack: point an LLM at BigQuery, Snowflake, or ClickHouse and query your data warehouse in plain English via MCP and text-to-SQL.">
+    <meta property="og:description" content="Ask BigQuery or Snowflake questions in plain English — no BI subscription required. Open-source agentic analytics built on LibreChat and Langfuse.">
     <meta property="og:image" content="https://risogroup.co/static/assets/rg-logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://risogroup.co/projects/agentic-data-stack">
     <meta property="twitter:title" content="agentic-data-stack | Riso Group">
-    <meta property="twitter:description" content="Self-hosted agentic analytics stack: point an LLM at BigQuery, Snowflake, or ClickHouse and query your data warehouse in plain English via MCP and text-to-SQL.">
+    <meta property="twitter:description" content="Ask BigQuery or Snowflake questions in plain English — no BI subscription required. Open-source agentic analytics built on LibreChat and Langfuse.">
     <meta property="twitter:image" content="https://risogroup.co/static/assets/rg-logo.png">
 
     <!-- Google tag (gtag.js) -->
@@ -108,14 +108,13 @@
         <!-- Header -->
         <header class="project-header">
             <h1>agentic-data-stack</h1>
-            <p class="project-subtitle">Self-hosted agentic analytics &mdash; LibreChat, MCP Toolbox, and Langfuse with BigQuery, Snowflake, and ClickHouse support</p>
+            <p class="project-subtitle">Ask BigQuery or Snowflake questions in plain English &mdash; no BI subscription required</p>
             <div class="project-meta-row">
                 <span style="font-size: 0.85rem; color: #6c757d;">forked from <a href="https://github.com/ClickHouse/agentic-data-stack" target="_blank" rel="noopener noreferrer" style="color: #6c757d; text-decoration: underline;">ClickHouse/agentic-data-stack</a></span>
                 <a href="https://github.com/jriso/agentic-data-stack" target="_blank" rel="noopener noreferrer" class="project-card-link">
                     <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
                     GitHub
                 </a>
-                <span class="project-badge">Docker</span>
                 <span class="project-badge">MCP</span>
                 <span class="project-badge">BigQuery</span>
                 <span class="project-badge">Snowflake</span>
@@ -126,8 +125,8 @@
         <!-- Body -->
         <div class="project-body">
             <h2>Overview</h2>
-            <p>This is a self-hosted stack that lets you point an LLM at your data warehouse and ask questions in plain English. Instead of writing SQL by hand, you describe what you want to know &mdash; &ldquo;what were our top 10 customers by revenue last quarter?&rdquo; &mdash; and the agent writes and executes the query for you. It uses the Model Context Protocol (MCP) so the LLM can discover your schema, run SQL, and return results as part of a natural conversation.</p>
-            <p>The original project was built by ClickHouse for their database. This fork extends it with BigQuery and Snowflake support, so you can use the same agentic analytics setup regardless of which warehouse you run.</p>
+            <p>Point an LLM at your data warehouse and ask questions in plain English. The agent writes the SQL, runs it, and returns results.</p>
+            <p>ClickHouse built the original stack around two open-source projects they acquired: <a href="https://www.librechat.ai/" target="_blank" rel="noopener noreferrer">LibreChat</a> (chat interface) and <a href="https://langfuse.com/" target="_blank" rel="noopener noreferrer">Langfuse</a> (LLM observability). This fork extends it with BigQuery and Snowflake support.</p>
 
             <h2>What&rsquo;s Included</h2>
             <table class="table" style="font-size: 0.95rem;">
@@ -143,24 +142,12 @@
                         <td>Chat UI with multi-model support (Claude, GPT, Gemini)</td>
                     </tr>
                     <tr>
-                        <td><strong>MCP Toolbox for Databases</strong></td>
-                        <td>Exposes warehouse schema and SQL execution as MCP tools</td>
-                    </tr>
-                    <tr>
                         <td><strong>Langfuse</strong></td>
                         <td>Observability &mdash; trace every query, token, and tool call</td>
                     </tr>
                     <tr>
-                        <td><strong>PostgreSQL</strong></td>
-                        <td>Backing store for LibreChat and Langfuse</td>
-                    </tr>
-                    <tr>
-                        <td><strong>MongoDB</strong></td>
-                        <td>LibreChat conversation storage</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Redis</strong></td>
-                        <td>Caching and session management</td>
+                        <td><strong>MCP Toolbox for Databases</strong></td>
+                        <td>Exposes warehouse schema and SQL execution as MCP tools</td>
                     </tr>
                 </tbody>
             </table>
