@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /templates/
+Disallow: /insights/includes/
+
+Sitemap: https://risogroup.co/sitemap.xml
