@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hiring trends across 1,100+ high-growth tech companies. See which roles are growing, shrinking, and how the market is shifting. Updated twice weekly.">
+    <meta name="author" content="James Riso">
+    <link rel="canonical" href="https://risogroup.co/projects/hiring-pulse/" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../static/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../static/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../static/assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../../static/assets/favicons/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://risogroup.co/projects/hiring-pulse/">
+    <meta property="og:title" content="Hiring Pulse | Riso Group">
+    <meta property="og:description" content="Hiring trends across 1,100+ innovative tech companies. See which roles are growing, shrinking, and how the market is shifting.">
+    <meta property="og:image" content="https://risogroup.co/static/assets/rg-logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://risogroup.co/projects/hiring-pulse/">
+    <meta property="twitter:title" content="Hiring Pulse | Riso Group">
+    <meta property="twitter:description" content="Hiring trends across 1,100+ innovative tech companies. See which roles are growing, shrinking, and how the market is shifting.">
+    <meta property="twitter:image" content="https://risogroup.co/static/assets/rg-logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8SP11SCGP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z8SP11SCGP');
+    </script>
+
+    <!-- RudderStack -->
+    <script type="text/javascript">
+        !function(){"use strict";window.RudderSnippetVersion="3.0.32";var e="rudderanalytics";window[e]||(window[e]=[])
+        ;var rudderanalytics=window[e];if(Array.isArray(rudderanalytics)){
+        if(true===rudderanalytics.snippetExecuted&&window.console&&console.error){
+        console.error("RudderStack JavaScript SDK snippet included more than once.")}else{rudderanalytics.snippetExecuted=true,
+        window.rudderAnalyticsBuildType="legacy";var sdkBaseUrl="https://cdn.rudderlabs.com/v3";var sdkName="rsa.min.js"
+        ;var scriptLoadingMode="async"
+        ;var r=["setDefaultInstanceKey","load","ready","page","track","identify","alias","group","reset","setAnonymousId","startSession","endSession","consent"]
+        ;for(var n=0;n<r.length;n++){var t=r[n];rudderanalytics[t]=function(r){return function(){var n
+        ;Array.isArray(window[e])?rudderanalytics.push([r].concat(Array.prototype.slice.call(arguments))):null===(n=window[e][r])||void 0===n||n.apply(window[e],arguments)
+        }}(t)}try{
+        new Function('class Test{field=()=>{};test({prop=[]}={}){return prop?(prop?.property??[...prop]):import("");}}'),
+        window.rudderAnalyticsBuildType="modern"}catch(o){}var d=document.head||document.getElementsByTagName("head")[0]
+        ;var i=document.body||document.getElementsByTagName("body")[0];window.rudderAnalyticsAddScript=function(e,r,n){
+        var t=document.createElement("script");t.src=e,t.setAttribute("data-loader","RS_JS_SDK"),r&&n&&t.setAttribute(r,n),
+        "async"===scriptLoadingMode?t.async=true:"defer"===scriptLoadingMode&&(t.defer=true),
+        d?d.insertBefore(t,d.firstChild):i.insertBefore(t,i.firstChild)},window.rudderAnalyticsMount=function(){!function(){
+        if("undefined"==typeof globalThis){var e;var r=function getGlobal(){
+        return"undefined"!=typeof self?self:"undefined"!=typeof window?window:null}();r&&Object.defineProperty(r,"globalThis",{
+        value:r,configurable:true})}
+        }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkName),"data-rsa-write-key","2qdCnXl6U1fKfCaGAWNs9QMnbAI")
+        },
+        window.rudderAnalyticsMount()
+        ;var loadOptions={};rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
+    </script>
+
+    <title>Hiring Pulse | Riso Group</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/css/style.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+    <script src="../../static/js/navbar.js"></script>
+
+    <main class="pulse-main" style="margin-top: 90px;">
+        <div class="page-header">
+            <h1>Hiring Pulse</h1>
+            <p class="subtitle">1,100+ high-growth tech companies</p>
+            <p class="subtitle header-date" id="header-date"></p>
+        </div>
+
+        <!-- Hero: role selector + chart -->
+        <section id="hero-section">
+            <div class="hero-pills-wrap"><nav class="hero-pills" id="hero-pills"></nav></div>
+            <div class="hero-stat-row">
+                <div class="hero-stat" id="hero-stat"></div>
+                <div class="market-stat" id="market-stat"></div>
+            </div>
+
+            <div class="hero-chart-wrap">
+                <div class="hero-chart-header">
+                    <div class="dual-chart-label" id="hero-chart-label">Change in Share (%)</div>
+                    <div class="toggle-pill" id="chart-mode-toggle">
+                        <button class="pill-btn" data-mode="abs">Absolute (pp)</button>
+                        <button class="pill-btn active" data-mode="rel">Relative (%)</button>
+                    </div>
+                </div>
+                <div class="chart-container hero-chart">
+                    <canvas id="chart-delta"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary table -->
+        <section id="table-section">
+            <h2 class="section-title section-title-muted" id="table-title">Role Breakdown</h2>
+            <div class="summary-table-wrap">
+                <table class="summary-table" id="summary-table">
+                    <thead>
+                        <tr>
+                            <th class="col-role" rowspan="2">Role</th>
+                            <th class="col-num" rowspan="2" id="th-jobs">Jobs</th>
+                            <th class="col-num col-group-border" rowspan="2" id="th-share">Share</th>
+                            <th class="col-num col-group-border" colspan="3" id="th-change-group" style="text-align:center">Change vs Jan 8</th>
+                        </tr>
+                        <tr>
+                            <th class="col-num col-group-border" id="th-abs">Abs (pp) <span class="th-info" data-tip="How many percentage points the role's share has moved since baseline. For example, +0.3 means the role went from 5.0% to 5.3% of all jobs.">?</span></th>
+                            <th class="col-num" id="th-rel">Rel (%) <span class="th-info" data-tip="The percentage change relative to where the role started. For example, going from 5.0% to 5.3% is a +6% relative increase.">?</span></th>
+                            <th class="col-num col-sig" id="th-sig">Sig? <span class="th-info" data-tip="Marked with * when the change is statistically significant, meaning the confidence interval does not include zero.">?</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="summary-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Deep dive -->
+        <section id="deep-dive-section">
+            <div id="deep-dive-content" class="hidden">
+                <p class="role-narrative" id="role-narrative"></p>
+
+                <div class="deep-dive-grid">
+                    <div class="grid-row-header">
+                        <div class="grid-label">Open Roles</div>
+                        <div class="grid-stat" id="volume-stat"></div>
+                    </div>
+                    <div class="deep-dive-chart-cell">
+                        <h3>Share of All Jobs</h3>
+                        <div class="chart-container"><canvas id="chart-share"></canvas></div>
+                    </div>
+                    <div class="deep-dive-chart-cell">
+                        <h3>% Companies Hiring</h3>
+                        <div class="chart-container"><canvas id="chart-breadth-level"></canvas></div>
+                    </div>
+
+                    <div class="grid-row-header">
+                        <div class="grid-label">New Postings</div>
+                    </div>
+                    <div class="deep-dive-chart-cell">
+                        <h3>Share of New Postings</h3>
+                        <div class="chart-container"><canvas id="chart-flow-intensity"></canvas></div>
+                    </div>
+                    <div class="deep-dive-chart-cell">
+                        <h3>% Companies Posting</h3>
+                        <div class="chart-container"><canvas id="chart-flow-breadth"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Role Definition -->
+        <section class="role-definition" id="role-definition"></section>
+
+        <!-- Sample -->
+        <section class="role-definition" id="sample-info">
+            <h3 class="role-def-heading">Which Companies Are in Our Sample?</h3>
+            <p class="role-def-body">Our dataset includes 1,100+ companies that post jobs on public career pages, from early-stage startups to established players like Databricks, DoorDash, Waymo, and Anthropic. The sample is curated toward venture-backed and technology-driven businesses across SaaS, fintech, healthtech, AI, e-commerce, and other high-growth sectors. It is not a representative sample of the entire US labor market; it reflects hiring patterns among innovative, fast-moving companies specifically.</p>
+        </section>
+
+        <!-- Methodology -->
+        <section class="methodology">
+            <h3>Methodology</h3>
+            <p>Data from twice-weekly scrapes of public career pages. US roles only. Change metrics use paired intersection bootstrap (1,000 resamples, 80% CI) comparing each scrape date to a fixed baseline, controlling for changes in which companies are tracked.</p>
+            <p>The "Share of All Jobs" and "% Companies Hiring" charts show raw values, which can exhibit step changes when large companies join the dataset mid-series. The change-from-baseline chart uses bootstrapped estimates that are robust to these single-company effects.</p>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="../../static/js/footer.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar scroll effect -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+
+    <!-- Dashboard -->
+    <script src="app.js"></script>
+
+    <!-- RudderStack Page Tracking -->
+    <script>
+        window.addEventListener("load", () => {
+            rudderanalytics.page();
+        });
+    </script>
+</body>
+</html>
