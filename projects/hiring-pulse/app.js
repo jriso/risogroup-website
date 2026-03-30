@@ -236,6 +236,7 @@ function setupChartModeToggle() {
             btn.classList.add('active');
             heroChartMode = btn.dataset.mode;
             updateChartLabel();
+            renderHeroStat();
             renderHeroCharts();
         });
     });
@@ -316,13 +317,14 @@ function renderHeroStat() {
         `Since then it has ${Math.abs(intensityDelta) < 0.005 ? 'remained unchanged' : (intensityDelta > 0 ? 'increased' : 'decreased') + ' by ' + Math.abs(intensityDelta).toFixed(2) + ' percentage points'} ` +
         `(a ${Math.abs(relDelta).toFixed(1)}% ${relDelta >= 0 ? 'increase' : 'decrease'} relative to where it started).`;
 
+    const heroVal = heroChartMode === 'rel'
+        ? `${relSign}${relDelta.toFixed(1)}%`
+        : `${sign}${intensityDelta.toFixed(2)}pp`;
+
     document.getElementById('hero-stat').innerHTML =
-        `<div class="hero-role-name">${label}</div>` +
-        `<span class="hero-metrics">` +
-        `${pct.toFixed(1)}% of open roles &middot; ` +
-        `<span class="hero-delta ${cls}">${sign}${intensityDelta.toFixed(2)}pp (${relSign}${relDelta.toFixed(1)}%) vs ${bLabel}${isSig ? ' *' : ''}</span>` +
-        ` <span class="th-info" data-tip="${metricsExplainer}">?</span>` +
-        `</span>`;
+        `<div class="market-stat-label">${label} Share <span class="th-info" data-tip="${metricsExplainer}">?</span></div>` +
+        `<div class="market-stat-value">${heroVal}</div>` +
+        `<div class="market-stat-sub">vs ${bLabel}${isSig ? ' *' : ''} &middot; ${pct.toFixed(1)}% of roles</div>`;
 }
 
 

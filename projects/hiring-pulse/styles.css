@@ -14,52 +14,53 @@
     --muted-line: #d1d5da;
 }
 
-/* No global reset — Bootstrap handles box-sizing and base styles */
+/* Bootstrap handles base styles; we override selectively */
+
+.pulse-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+    overflow-x: hidden;
+}
 
 .pulse-main, .pulse-main * {
     box-sizing: border-box;
 }
 
-/* Header handled by shared navbar.js */
-
-.page-header {
-    margin-bottom: 1rem;
+.pulse-main p {
+    margin-bottom: 0.5rem;
 }
 
-.page-header .header-date {
-    margin-top: 0.1rem;
-    font-size: 0.8rem;
+/* --- Page header --- */
+
+.page-header {
+    margin-bottom: 0.5rem;
 }
 
 .page-header h1 {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: -0.03em;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.1rem;
 }
 
 .page-header .subtitle {
     font-size: 0.85rem;
     color: var(--text-muted);
+    margin-bottom: 0;
 }
 
-/* volume stat card removed — now in header */
-
-/* --- Main --- */
-
-.pulse-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem 1.5rem 3rem;
-    overflow-x: hidden;
-    box-sizing: border-box;
+.page-header .header-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
 }
 
-.pulse-main * {
-    box-sizing: border-box;
+.pulse-main section {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-top: 0;
 }
-
-section { margin-bottom: 2.5rem; }
 
 .section-title {
     font-size: 1.1rem;
@@ -80,7 +81,7 @@ section { margin-bottom: 2.5rem; }
 
 .hero-pills-wrap {
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-pills {
@@ -115,28 +116,13 @@ section { margin-bottom: 2.5rem; }
 
 .hero-stat {
     margin-bottom: 0;
+    padding: 0.4rem 0.7rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
 }
 
-.hero-role-name {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin-bottom: 0.2rem;
-}
-
-.hero-metrics {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-.hero-stat .hero-delta {
-    font-weight: 600;
-}
-
-.hero-stat .hero-delta.positive { color: var(--positive); }
-.hero-stat .hero-delta.negative { color: var(--negative); }
-.hero-stat .hero-delta.neutral { color: var(--gray); }
+/* hero-stat now uses market-stat-* classes for consistency */
 
 .hero-stat-row {
     display: flex;
@@ -413,7 +399,7 @@ section { margin-bottom: 2.5rem; }
 .role-narrative {
     font-size: 0.95rem;
     color: var(--text);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
     line-height: 1.6;
 }
 
@@ -475,17 +461,24 @@ section { margin-bottom: 2.5rem; }
 /* --- Role Definition (contextual) --- */
 
 .role-definition {
-    margin-top: 1.5rem;
-    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    padding: 1.25rem 1.5rem !important;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 8px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.role-definition p:last-child {
+    margin-bottom: 0;
 }
 
 .role-def-heading {
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--text);
+    margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
@@ -513,9 +506,8 @@ section { margin-bottom: 2.5rem; }
 /* --- Methodology --- */
 
 .methodology {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+    padding-top: 0;
 }
 
 .methodology h3 {
@@ -538,12 +530,12 @@ section { margin-bottom: 2.5rem; }
 @media (max-width: 768px) {
     /* navbar handled by shared navbar.js with Bootstrap hamburger */
     .page-header h1 { font-size: 1.4rem; }
-    .subtitle { font-size: 0.75rem; }
-    main { padding: 1rem 0.75rem 2rem; }
+    .page-header .subtitle { font-size: 0.75rem; }
+    .pulse-main { padding: 0.75rem 1rem 2rem; }
 
     .hero-chart-wrap { max-width: 100%; }
-    .hero-stat-row { max-width: 100%; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-    .market-stat { align-self: flex-start; }
+    .hero-stat-row { max-width: 100%; gap: 0.5rem; }
+    .hero-stat, .market-stat { flex: 1; }
     .deep-dive-grid { grid-template-columns: 1fr; }
     .chart-container.hero-chart { height: 280px; }
 
@@ -572,8 +564,7 @@ section { margin-bottom: 2.5rem; }
         padding: 0.3rem 0.65rem;
     }
 
-    .hero-role-name { font-size: 1.3rem; }
-    .hero-metrics { font-size: 0.85rem; }
+    /* hero stat uses market-stat-* classes */
 
     .section-title { font-size: 1rem; }
     .dual-chart-cell { padding: 0.75rem; }
@@ -585,13 +576,14 @@ section { margin-bottom: 2.5rem; }
 }
 
 @media (max-width: 480px) {
-    main { padding: 0.75rem 0.5rem 1.5rem; }
-    .header-inner { padding: 0 0.75rem; }
+    .pulse-main { padding: 0.75rem 0.75rem 1.5rem; }
 
     .summary-table { font-size: 0.75rem; }
     .summary-table th, .summary-table td { padding: 0.35rem 0.5rem; }
 
-    .hero-role-name { font-size: 1.1rem; }
-    .hero-metrics { font-size: 0.8rem; }
     .chart-container.hero-chart { height: 250px; }
+
+    .market-stat-value { font-size: 0.9rem; }
+    .market-stat-sub { font-size: 0.6rem; }
+    .market-stat-label { font-size: 0.55rem; }
 }
