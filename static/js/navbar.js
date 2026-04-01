@@ -4,11 +4,15 @@
     var scriptSrc = document.currentScript.getAttribute('src');
     var base = scriptSrc.replace('static/js/navbar.js', '');
 
-    // Determine the Insights link based on current page location
+    // Determine section links based on current page location
     var path = window.location.pathname;
     var insightsHref = base + 'insights/index.html';
     if (path.indexOf('/insights/') !== -1) {
         insightsHref = 'index.html';
+    }
+    var projectsHref = base + 'projects/index.html';
+    if (path.indexOf('/projects/') !== -1) {
+        projectsHref = 'index.html';
     }
 
     var el = document.getElementById('site-navbar');
@@ -39,7 +43,7 @@
                             '<a class="nav-link" href="' + base + 'index.html#james">James</a>' +
                         '</li>' +
                         '<li class="nav-item">' +
-                            '<a class="nav-link" href="' + base + 'index.html#technical">Technical</a>' +
+                            '<a class="nav-link" href="' + projectsHref + '">Projects</a>' +
                         '</li>' +
                         '<li class="nav-item">' +
                             '<a class="nav-link" href="' + base + 'index.html#contact">Get in Touch</a>' +
