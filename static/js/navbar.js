@@ -11,7 +11,7 @@
         insightsHref = 'index.html';
     }
     var projectsHref = base + 'projects/index.html';
-    if (path.indexOf('/projects/') !== -1) {
+    if (/\/projects\/[^/]*$/.test(path)) {
         projectsHref = 'index.html';
     }
 
