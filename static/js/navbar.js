@@ -39,7 +39,7 @@
                             '<a class="nav-link" href="' + base + 'index.html#james">James</a>' +
                         '</li>' +
                         '<li class="nav-item">' +
-                            '<a class="nav-link" href="' + base + 'index.html#technical">Technical</a>' +
+                            '<a class="nav-link" href="' + base + 'projects/index.html">Projects</a>' +
                         '</li>' +
                         '<li class="nav-item">' +
                             '<a class="nav-link" href="' + base + 'index.html#contact">Get in Touch</a>' +

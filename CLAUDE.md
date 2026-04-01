@@ -87,7 +87,7 @@ The script auto-detects the base path from its `src` attribute, so relative link
 
 ### Nav link order
 
-**Capabilities, Insights, Case Studies, James, Technical, Get in Touch**
+**Capabilities, Insights, Case Studies, James, Projects, Get in Touch**
 
 ### Important
 
@@ -114,12 +114,12 @@ projects/
 
 1. Create `projects/{slug}.html` using an existing detail page as template
 2. Add a card to `projects/index.html` at the top of the grid
-3. Add a compact card to the homepage `index.html` inside `#technical` section
+3. Add a compact card to the homepage `index.html` inside `#projects` section
 4. Include: RudderStack (head + page tracking), Google Analytics, shared navbar/footer, JSON-LD (`SoftwareApplication` schema)
 
 ### Homepage integration
 
-Project cards live inside the existing `#technical` section (below the tools paragraph), not a separate section. No new navbar link — "Technical" already anchors there.
+Project cards live inside the `#projects` section on the homepage. The "Projects" nav link scrolls to this section on the homepage; from subpages it links directly to `projects/index.html`.
 
 ### Canonical URLs
 
