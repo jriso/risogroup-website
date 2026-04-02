@@ -262,10 +262,111 @@ function renderVolumeSparkline() {
     const latestJobs = Math.round(latest.value / 100) * 100;
     const overallTip = `Job postings are ${relDelta >= 0 ? 'up' : 'down'} ${Math.abs(relDelta).toFixed(1)}% since ${bLabel} (from ~${baselineJobs.toLocaleString()} to ~${latestJobs.toLocaleString()} postings). This is the net effect of new roles added and existing roles filled. Estimated using statistical resampling across 1,000 iterations, which controls for changes in which companies we track over time.`;
 
-    document.getElementById('market-stat').innerHTML =
+    const marketEl = document.getElementById('market-stat');
+    marketEl.classList.add('clickable');
+    marketEl.innerHTML =
         `<div class="market-stat-label">Overall Hiring <span class="th-info" data-tip="${overallTip}">?</span></div>` +
         `<div class="market-stat-value">${sign}${relDelta.toFixed(1)}%</div>` +
-        `<div class="market-stat-sub">vs ${bLabel}${sig}</div>`;
+        `<div class="market-stat-sub">vs ${bLabel}${sig} &middot; <span class="chart-hint" style="font-size:0.6rem;opacity:0.7">▼ chart</span></div>`;
+
+    let overallChartRendered = false;
+    const chartHint = marketEl.querySelector('.chart-hint');
+    marketEl.addEventListener('click', (e) => {
+        if (e.target.closest('.th-info')) return; // don't toggle on tooltip hover
+        const wrap = document.getElementById('overall-chart-wrap');
+        const isCollapsed = wrap.classList.toggle('collapsed');
+        chartHint.textContent = isCollapsed ? '▼ chart' : '▲ chart';
+        if (!overallChartRendered) {
+            requestAnimationFrame(() => {
+                renderOverallChart();
+                overallChartRendered = true;
+            });
+        }
+    });
+}
+
+function renderOverallChart() {
+    destroyChart('chart-overall');
+    const ctx = document.getElementById('chart-overall').getContext('2d');
+    const stock = DATA.stock[HERO_ROLES[0]];
+    const dates = stock.map(d => d.date);
+    const baselineValue = stock[0].total_jobs.value;
+
+    // Convert bootstrapped delta to % change from baseline
+    // Use delta (not value) — delta is composition-controlled, value includes new companies
+    const values = stock.map(d => (d.total_jobs.delta / baselineValue) * 100);
+    const ciUpper = stock.map(d => (d.total_jobs.ci_upper / baselineValue) * 100);
+    const ciLower = stock.map(d => (d.total_jobs.ci_lower / baselineValue) * 100);
+    const color = '#1A5276';
+
+    charts['chart-overall'] = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [
+                {
+                    label: 'Overall Hiring',
+                    data: values,
+                    borderColor: color,
+                    backgroundColor: color,
+                    pointBackgroundColor: color,
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointRadius: 3,
+                    borderWidth: 2.5,
+                    fill: false,
+                    tension: 0,
+                },
+                {
+                    label: '_ci_upper',
+                    data: ciUpper,
+                    borderColor: 'transparent',
+                    pointRadius: 0,
+                    fill: false,
+                },
+                {
+                    label: '_ci_lower',
+                    data: ciLower,
+                    borderColor: 'transparent',
+                    pointRadius: 0,
+                    fill: '-1',
+                    backgroundColor: color + '18',
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            scales: {
+                x: {
+                    type: 'time',
+                    time: { unit: 'week', displayFormats: { week: 'MMM d' } },
+                    grid: { display: false },
+                    ticks: { maxTicksLimit: 8, font: { size: 11 } },
+                },
+                y: {
+                    grid: { color: '#e1e4e833', lineWidth: 0.5 },
+                    ticks: {
+                        font: { size: 11 },
+                        callback: v => (v >= 0 ? '+' : '') + v.toFixed(0) + '%',
+                    },
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: ctx => {
+                            if (ctx.dataset.label.startsWith('_')) return null;
+                            const v = ctx.parsed.y;
+                            const abs = Math.round(baselineValue + (v / 100) * baselineValue);
+                            return `${v >= 0 ? '+' : ''}${v.toFixed(1)}% (${abs.toLocaleString()} jobs)`;
+                        },
+                    }
+                }
+            }
+        }
+    });
 }
 
 
