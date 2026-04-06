@@ -3,6 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- RudderStack -->
+<script type="text/javascript">
+    !function(){"use strict";window.RudderSnippetVersion="3.0.32";var e="rudderanalytics";window[e]||(window[e]=[])
+    ;var rudderanalytics=window[e];if(Array.isArray(rudderanalytics)){
+    if(true===rudderanalytics.snippetExecuted&&window.console&&console.error){
+    console.error("RudderStack JavaScript SDK snippet included more than once.")}else{rudderanalytics.snippetExecuted=true,
+    window.rudderAnalyticsBuildType="legacy";var sdkBaseUrl="https://cdn.rudderlabs.com/v3";var sdkName="rsa.min.js"
+    ;var scriptLoadingMode="async"
+    ;var r=["setDefaultInstanceKey","load","ready","page","track","identify","alias","group","reset","setAnonymousId","startSession","endSession","consent"]
+    ;for(var n=0;n<r.length;n++){var t=r[n];rudderanalytics[t]=function(r){return function(){var n
+    ;Array.isArray(window[e])?rudderanalytics.push([r].concat(Array.prototype.slice.call(arguments))):null===(n=window[e][r])||void 0===n||n.apply(window[e],arguments)
+    }}(t)}try{
+    new Function('class Test{field=()=>{};test({prop=[]}={}){return prop?(prop?.property??[...prop]):import("");}}'),
+    window.rudderAnalyticsBuildType="modern"}catch(o){}var d=document.head||document.getElementsByTagName("head")[0]
+    ;var i=document.body||document.getElementsByTagName("body")[0];window.rudderAnalyticsAddScript=function(e,r,n){
+    var t=document.createElement("script");t.src=e,t.setAttribute("data-loader","RS_JS_SDK"),r&&n&&t.setAttribute(r,n),
+    "async"===scriptLoadingMode?t.async=true:"defer"===scriptLoadingMode&&(t.defer=true),
+    d?d.insertBefore(t,d.firstChild):i.insertBefore(t,i.firstChild)},window.rudderAnalyticsMount=function(){!function(){
+    if("undefined"==typeof globalThis){var e;var r=function getGlobal(){
+    return"undefined"!=typeof self?self:"undefined"!=typeof window?window:null}();r&&Object.defineProperty(r,"globalThis",{
+    value:r,configurable:true})}
+    }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkName),"data-rsa-write-key","2qdCnXl6U1fKfCaGAWNs9QMnbAI")
+    },
+    window.rudderAnalyticsMount()
+    ;var loadOptions={};rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8SP11SCGP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z8SP11SCGP');
+</script>
 <title>Claude Code Cost Calculator — Riso Group</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -197,7 +231,7 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
     <h1 class="page-title">How much would your Claude subscription usage cost at API list price?</h1>
     <div class="trust-line">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <strong>Your data never leaves your browser.</strong> All calculations happen locally.
+      <strong>All processing happens locally.</strong> Nothing is sent to any server. Script outputs summary data, you paste it here for pretty output. We don't store anything.
     </div>
     <div class="instructions">
       <div class="inst-step">
@@ -471,6 +505,12 @@ document.querySelectorAll('.plan-btn').forEach(b=>{
     b.classList.add('on');render(false);
   });
 });
+</script>
+<!-- Add RudderStack Page Tracking -->
+<script>
+    window.addEventListener("load", () => {
+        rudderanalytics.page();
+    });
 </script>
 </body>
 </html>
