@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code Cost Calculator — Riso Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1a1a1a;--ink-light:#444;--ink-faint:#888;--ink-ghost:#bbb;
+  --paper:#fafaf8;--paper-warm:#f5f4f0;--paper-card:#fff;
+  --rule:#ddd;--rule-light:#eee;
+  --accent:#2c8c7c;--accent-light:#e8f5f2;--accent-dark:#1e6b5e;
+  --blue:#2E86AB;--orange:#d4622b;--purple:#6b3fa0;
+  --green:#1a7a52;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;background:var(--paper);
+  color:var(--ink);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+.wrap{max-width:600px;margin:0 auto;padding:56px 28px 72px}
+
+/* ═══ INPUT VIEW ═══ */
+#input-section{animation:rise .5s ease both}
+
+.page-title{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;
+  font-size:clamp(1.4rem,4vw,1.75rem);font-weight:700;line-height:1.3;letter-spacing:-.01em;
+  text-align:center;margin-bottom:24px}
+
+.trust-line{text-align:center;margin-bottom:32px;font-size:.8rem;color:var(--ink-faint)}
+.trust-line svg{vertical-align:-2px;margin-right:3px;stroke:var(--ink-ghost)}
+.trust-line strong{color:var(--ink-light);font-weight:600}
+
+.instructions{border-top:2px solid var(--ink);padding-top:24px}
+.inst-step{margin-bottom:24px}
+.inst-step:last-child{margin-bottom:0}
+.inst-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--ink-faint);margin-bottom:8px}
+
+.cmd-box{position:relative;background:var(--ink);border-radius:6px;padding:14px 16px;padding-right:64px}
+.cmd-box code{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#b8d4ce;
+  line-height:1.6;word-break:break-all;display:block}
+.cmd-box .copy-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);padding:4px 10px;
+  border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:.65rem;cursor:pointer;
+  transition:all .15s}
+.cmd-box .copy-btn:hover{background:rgba(255,255,255,.15);color:rgba(255,255,255,.8)}
+
+.paste-box{width:100%;height:72px;background:var(--paper-card);border:1.5px dashed var(--rule);
+  border-radius:6px;padding:14px;font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  color:var(--ink);resize:none;transition:all .15s;line-height:1.5}
+.paste-box:focus{outline:none;border-color:var(--accent);border-style:solid;
+  box-shadow:0 0 0 3px rgba(44,140,124,.08)}
+.paste-box::placeholder{color:var(--ink-ghost)}
+
+.scope-note{font-size:.75rem;color:var(--ink-faint);margin-top:16px;text-align:center;
+  font-style:italic}
+
+/* ═══ RESULTS VIEW ═══ */
+#results{display:none}
+#results.on{display:block;animation:rise .4s ease both}
+
+/* Hero */
+.hero{text-align:center;padding:8px 0 0;margin-bottom:8px}
+.hero-above{font-size:1.05rem;color:var(--ink-light);letter-spacing:.01em;margin-bottom:16px;font-weight:500}
+.hero-num{font-family:'JetBrains Mono',monospace;font-size:clamp(3rem,11vw,4.5rem);
+  font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.hero-context{font-size:.88rem;color:var(--ink-light);margin-top:14px;line-height:1.5}
+.hero-context strong{color:var(--green);font-weight:600}
+.hero-badge{display:inline-block;margin-top:12px;font-size:.68rem;color:var(--orange);
+  font-weight:500;letter-spacing:.02em;border:1px solid rgba(212,98,43,.2);
+  background:rgba(212,98,43,.05);padding:3px 10px;border-radius:3px}
+
+/* ═══ RANGE ═══ */
+.range-block{margin:36px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:24px 0}
+.range-heading{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--ink-faint);margin-bottom:16px;text-align:center}
+
+.range-bar-wrap{position:relative;margin:0 52px;height:72px}
+.range-bar{position:absolute;top:28px;left:0;right:0;height:20px;border-radius:4px;
+  background:linear-gradient(90deg,var(--accent-light) 0%,#d5eae5 30%,#c4dce6 70%,#bdd3e0 100%);
+  border:1px solid var(--rule);overflow:hidden}
+.range-bar-inner{position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(90deg,var(--accent),var(--blue));opacity:.22;border-radius:3px}
+
+/* Marker + label */
+.range-pin{position:absolute;top:0;transform:translateX(-50%);transition:left .2s ease;z-index:2}
+.range-pin-label{font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:500;
+  color:var(--ink);text-align:center;white-space:nowrap;margin-bottom:4px}
+.range-pin-line{width:2px;height:12px;background:var(--ink);margin:0 auto}
+.range-pin-dot{width:12px;height:12px;background:var(--ink);border:2px solid var(--paper);
+  border-radius:50%;margin:-2px auto 0;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+
+/* End labels */
+.range-ends{position:absolute;top:52px;left:-52px;right:-52px;display:flex;justify-content:space-between}
+.range-end{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink-faint)}
+
+/* ═══ BREAKDOWN BAR ═══ */
+.section-head{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--ink-faint);margin-bottom:10px}
+.breakdown{margin-bottom:28px}
+.stacked-bar{height:20px;border-radius:4px;overflow:hidden;display:flex;border:1px solid var(--rule)}
+.stacked-bar div{height:100%;transition:width .3s}
+.bar-leg{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}
+.bar-leg-item{font-size:.7rem;color:var(--ink-light);display:flex;align-items:center;gap:4px}
+.bar-leg-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+
+/* ═══ STAT CARDS ═══ */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-bottom:28px}
+.stat{background:var(--paper-card);padding:16px 18px}
+.stat-label{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--ink-faint);margin-bottom:3px}
+.stat-val{font-family:'JetBrains Mono',monospace;font-size:1.15rem;font-weight:500;color:var(--ink)}
+.stat-detail{font-size:.68rem;color:var(--ink-faint);margin-top:2px}
+
+/* ═══ ASSUMPTIONS ═══ */
+.controls{border:2px solid var(--accent);border-radius:8px;padding:20px 22px;margin-bottom:28px;
+  background:var(--accent-light)}
+.controls-head{font-size:.78rem;font-weight:600;color:var(--accent-dark);margin-bottom:2px}
+.controls-sub{font-size:.7rem;color:var(--ink-light);margin-bottom:16px}
+.ctrl-row{margin-bottom:18px}
+.ctrl-row:last-child{margin-bottom:0}
+.ctrl-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.ctrl-name{font-size:.78rem;color:var(--ink)}
+.ctrl-val{font-family:'JetBrains Mono',monospace;font-size:.76rem;color:var(--accent-dark)}
+
+input[type="range"]{-webkit-appearance:none;width:100%;height:3px;border-radius:2px;
+  background:rgba(0,0,0,.12);outline:none;cursor:pointer}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;
+  border-radius:50%;background:var(--accent-dark);border:2px solid var(--paper);cursor:pointer;
+  box-shadow:0 1px 4px rgba(0,0,0,.2);transition:transform .15s}
+input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.15)}
+input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
+  background:var(--accent-dark);border:2px solid var(--paper);cursor:pointer}
+.tick-labels{display:flex;justify-content:space-between;font-size:.62rem;color:var(--ink-faint);
+  margin-top:4px;font-family:'JetBrains Mono',monospace}
+
+.plan-btns{display:flex;gap:6px}
+.plan-btn{flex:1;padding:7px 0;border:1.5px solid var(--rule);border-radius:5px;
+  background:var(--paper-card);color:var(--ink-light);font-family:'Source Sans 3',sans-serif;
+  font-size:.74rem;font-weight:500;cursor:pointer;transition:all .12s}
+.plan-btn:hover{border-color:var(--ink-ghost);color:var(--ink)}
+.plan-btn.on{border-color:var(--accent-dark);background:white;color:var(--accent-dark);font-weight:600}
+
+/* ═══ METHODOLOGY (collapsible) ═══ */
+.method-toggle{width:100%;background:none;border:1px solid var(--rule);border-radius:6px;
+  padding:12px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  font-family:'Source Sans 3',sans-serif;font-size:.8rem;font-weight:600;color:var(--ink-light);
+  transition:all .15s;margin-bottom:2px}
+.method-toggle:hover{border-color:var(--ink-ghost);color:var(--ink)}
+.method-toggle svg{transition:transform .2s}
+.method-toggle.open svg{transform:rotate(180deg)}
+.method-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.method-body.open{max-height:2000px}
+.method-inner{border:1px solid var(--rule);border-top:none;border-radius:0 0 6px 6px;
+  padding:20px;background:var(--paper-card);margin-bottom:28px}
+.m-section{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--rule-light)}
+.m-section:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.m-heading{font-size:.75rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.m-text{font-size:.72rem;color:var(--ink-light);line-height:1.7}
+.m-text code{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--accent-dark);
+  background:var(--accent-light);padding:1px 4px;border-radius:2px}
+.m-text a{color:var(--accent-dark)}
+.m-text strong{color:var(--ink);font-weight:500}
+.m-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.7rem}
+.m-table th{text-align:left;color:var(--ink-faint);font-weight:500;padding:4px 6px;
+  border-bottom:1.5px solid var(--rule);font-size:.65rem;text-transform:uppercase;letter-spacing:.04em}
+.m-table td{padding:3px 6px;color:var(--ink-light);font-family:'JetBrains Mono',monospace;font-size:.68rem;
+  border-bottom:1px solid var(--rule-light)}
+.m-table td:first-child{font-family:'Source Sans 3',sans-serif;color:var(--ink)}
+
+/* ═══ FOOTER ═══ */
+.foot{text-align:center;padding-top:24px;border-top:1px solid var(--rule)}
+.foot-links{margin-bottom:12px;font-size:.75rem;color:var(--ink-light)}
+.foot-links a{color:var(--accent-dark);text-decoration:none;margin:0 6px}
+.foot-links a:hover{text-decoration:underline}
+.foot-legal{font-size:.65rem;color:var(--ink-ghost);font-style:italic}
+.reset-btn{display:inline-flex;align-items:center;gap:5px;margin-bottom:14px;
+  background:none;border:1.5px solid var(--rule);color:var(--ink-faint);padding:5px 14px;
+  border-radius:50px;font-family:'Source Sans 3',sans-serif;font-size:.72rem;cursor:pointer;
+  transition:all .12s}
+.reset-btn:hover{border-color:var(--ink);color:var(--ink)}
+.reset-btn svg{width:11px;height:11px}
+
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ═══ INPUT ═══ -->
+  <div id="input-section">
+    <h1 class="page-title">How much would your Claude subscription usage cost at API list price?</h1>
+    <div class="trust-line">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <strong>Your data never leaves your browser.</strong> All calculations happen locally.
+    </div>
+    <div class="instructions">
+      <div class="inst-step">
+        <div class="inst-label">Step 1 &mdash; Run in your terminal</div>
+        <div class="cmd-box">
+          <code id="cmd-text">python3 &lt;(curl -sL https://raw.githubusercontent.com/jriso/claude-code-cost/main/cost.py)</code>
+          <button class="copy-btn" onclick="copyCmd()">Copy</button>
+        </div>
+      </div>
+      <div class="inst-step">
+        <div class="inst-label">Step 2 &mdash; Paste the output</div>
+        <textarea class="paste-box" id="json-input" placeholder="Paste the JSON output here..." spellcheck="false"></textarea>
+      </div>
+    </div>
+    <p class="scope-note">
+      Claude Code only (CLI + IDE). Does not include claude.ai web or mobile usage.<br>
+      Nervous about running a script? <a href="https://claude.ai/new?q=Review%20this%20script%20for%20security%20and%20correctness%2C%20then%20run%20it%20and%20paste%20me%20the%20JSON%20output%3A%20https%3A%2F%2Fraw.githubusercontent.com%2Fjriso%2Fclaude-code-cost%2Fmain%2Fcost.py" target="_blank" style="color:var(--accent-dark)">Ask your Claude to review and run it for you.</a>
+    </p>
+  </div>
+
+  <!-- ═══ RESULTS ═══ -->
+  <div id="results">
+    <div class="hero">
+      <div class="hero-above">Your Claude Code usage last month would have cost</div>
+      <div class="hero-num" id="hero-num">$0</div>
+      <div class="hero-context" id="hero-ctx"></div>
+      <div class="hero-badge">Conservative — Claude Code only, not web or mobile</div>
+    </div>
+
+    <div class="range-block">
+      <div class="range-heading">Estimate range</div>
+      <div class="range-bar-wrap">
+        <div class="range-pin" id="range-pin">
+          <div class="range-pin-label" id="pin-label">$0</div>
+          <div class="range-pin-line"></div>
+          <div class="range-pin-dot"></div>
+        </div>
+        <div class="range-bar"><div class="range-bar-inner"></div></div>
+        <div class="range-ends">
+          <span class="range-end" id="r-lo">$0</span>
+          <span class="range-end" id="r-hi">$0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="breakdown">
+      <div class="section-head">Cost breakdown</div>
+      <div class="stacked-bar" id="sbar"></div>
+      <div class="bar-leg" id="bleg"></div>
+    </div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="controls">
+      <div class="controls-head">Adjust assumptions</div>
+      <div class="controls-sub">These controls update the estimate in real time.</div>
+      <div class="ctrl-row">
+        <div class="ctrl-header">
+          <span class="ctrl-name">Cache read rate</span>
+          <span class="ctrl-val" id="cr-v">$0.50/MTok</span>
+        </div>
+        <input type="range" id="cr-slider" min="0.375" max="0.625" step="0.025" value="0.50">
+        <div class="tick-labels"><span>$0.375</span><span>$0.50 (listed)</span><span>$0.625</span></div>
+      </div>
+      <div class="ctrl-row">
+        <div class="ctrl-header"><span class="ctrl-name">Your subscription</span></div>
+        <div class="plan-btns" id="plan-btns">
+          <button class="plan-btn" data-p="0">Pro $20</button>
+          <button class="plan-btn on" data-p="1">Max 5x $100</button>
+          <button class="plan-btn" data-p="2">Max 20x $200</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="method-toggle" id="method-toggle" onclick="toggleMethod()">
+      Sources &amp; methodology
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="method-body" id="method-body">
+      <div class="method-inner">
+        <div class="m-section">
+          <div class="m-heading">Where the token counts come from</div>
+          <div class="m-text">Claude Code writes JSONL logs in <code>~/.claude/projects/</code>. Each assistant message includes a <code>usage</code> object — the same one Anthropic's API returns for billing. This tool scans those files and aggregates by model, deduplicating by <code>requestId</code>.</div>
+        </div>
+        <div class="m-section">
+          <div class="m-heading">Why requestId deduplication matters</div>
+          <div class="m-text">Claude Code writes multiple events per API request (streaming). Each carries the same <code>cache_read_input_tokens</code> but increasing <code>output_tokens</code>. Naively summing overcounts by ~1.5x. We keep the last event per <code>requestId</code>.</div>
+        </div>
+        <div class="m-section">
+          <div class="m-heading">Pricing</div>
+          <div class="m-text">All rates from <a href="https://docs.anthropic.com/en/docs/about-claude/pricing" target="_blank">Anthropic's pricing page</a>. Cache writes split by tier:</div>
+          <table class="m-table">
+            <thead><tr><th>Model</th><th>Input</th><th>Output</th><th>Cache Read</th><th>CW 5m</th><th>CW 1h</th></tr></thead>
+            <tbody>
+              <tr><td>Opus 4.6</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
+              <tr><td>Sonnet 4.6</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
+              <tr><td>Haiku 4.5</td><td>$1</td><td>$5</td><td>$0.10</td><td>$1.25</td><td>$2</td></tr>
+            </tbody>
+          </table>
+          <div class="m-text" style="margin-top:4px">Per million tokens. Additional legacy models supported.</div>
+        </div>
+        <div class="m-section">
+          <div class="m-heading">What the range represents</div>
+          <div class="m-text">Cache read rate &plusmn;25% around listed price. Cache reads dominate cost (60-70%). Other factors ruled out: fast mode (zero usage), data residency (not applied), extended thinking (in output tokens), web search (zero).</div>
+        </div>
+        <div class="m-section">
+          <div class="m-heading">Limitations</div>
+          <div class="m-text"><strong>Claude Code only.</strong> Web/mobile/API usage not captured — this is a lower bound.<br><strong>JSONL retention.</strong> ~30 days complete; older data may be pruned.<br><strong>List prices, not cost.</strong> Actual compute cost to Anthropic is significantly lower.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="reset-btn" onclick="resetView()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+        Start over
+      </button>
+      <div class="foot-links">
+        <a href="https://github.com/jriso/claude-code-cost" target="_blank">Source &amp; methodology on GitHub</a>
+      </div>
+      <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const P={
+  'claude-opus-4-6':{i:5,o:25,cr:.5,c5:6.25,c1:10},
+  'claude-sonnet-4-6':{i:3,o:15,cr:.3,c5:3.75,c1:6},
+  'claude-haiku-4-5-20251001':{i:1,o:5,cr:.1,c5:1.25,c1:2},
+  'claude-opus-4-5-20251101':{i:5,o:25,cr:.5,c5:6.25,c1:10},
+  'claude-opus-4-1-20250805':{i:15,o:75,cr:1.5,c5:18.75,c1:30},
+  'claude-sonnet-4-5-20250929':{i:3,o:15,cr:.3,c5:3.75,c1:6},
+  'claude-sonnet-4-20250514':{i:3,o:15,cr:.3,c5:3.75,c1:6},
+  'claude-opus-4-20250514':{i:15,o:75,cr:1.5,c5:18.75,c1:30},
+  'claude-haiku-3-5-20241022':{i:.8,o:4,cr:.08,c5:1,c1:1.6},
+  'claude-3-haiku-20240307':{i:.25,o:1.25,cr:.03,c5:.3,c1:.5},
+  'claude-3-opus-20240229':{i:15,o:75,cr:1.5,c5:18.75,c1:30},
+  'claude-3-5-sonnet-20241022':{i:3,o:15,cr:.3,c5:3.75,c1:6},
+  'claude-3-5-sonnet-20240620':{i:3,o:15,cr:.3,c5:3.75,c1:6},
+};
+const PLANS=[{n:'Pro',p:20},{n:'Max 5x',p:100},{n:'Max 20x',p:200}];
+const C={cache_read:'#4ECDC4',cache_write:'#2E86AB',output:'#d4622b',input:'#6b3fa0'};
+const L={cache_read:'Cache Read',cache_write:'Cache Write',output:'Output',input:'Input'};
+let D=null,af=null;
+
+function copyCmd(){
+  navigator.clipboard.writeText(document.getElementById('cmd-text').textContent);
+  const b=document.querySelector('.copy-btn');b.textContent='Copied!';
+  setTimeout(()=>b.textContent='Copy',1500);
+}
+function rate(m){
+  if(P[m])return P[m];
+  for(const[k,v]of Object.entries(P))if(m.startsWith(k.split('-20')[0]))return v;
+  return P['claude-opus-4-6'];
+}
+function calc(d,cr){
+  const c={input:0,output:0,cache_read:0,cache_write:0},mul=cr/.5;
+  for(const[m,t]of Object.entries(d.models)){
+    const r=rate(m);
+    c.input+=t.i/1e6*r.i;c.output+=t.o/1e6*r.o;
+    c.cache_read+=t.cr/1e6*(r.cr*mul);c.cache_write+=t.c5/1e6*r.c5+t.c1/1e6*r.c1;
+  }
+  return{total:Object.values(c).reduce((a,b)=>a+b,0),c};
+}
+function fmt(n){return n>=1e9?(n/1e9).toFixed(1)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':n.toString()}
+function $(id){return document.getElementById(id)}
+
+function anim(el,to,dur=700){
+  const t0=performance.now();
+  function tick(now){
+    const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);
+    el.textContent='$'+Math.round(to*e).toLocaleString();
+    if(p<1)af=requestAnimationFrame(tick);
+  }
+  if(af)cancelAnimationFrame(af);af=requestAnimationFrame(tick);
+}
+
+function render(an){
+  if(!D)return;
+  const cr=parseFloat($('cr-slider').value);
+  const ab=document.querySelector('.plan-btn.on');
+  const plan=PLANS[parseInt(ab?ab.dataset.p:'1')];
+  $('cr-v').textContent=`$${cr.toFixed(3)}/MTok`;
+
+  const b=calc(D,cr),lo=calc(D,.375),hi=calc(D,.625);
+
+  if(an)anim($('hero-num'),Math.round(b.total));
+  else $('hero-num').textContent='$'+Math.round(b.total).toLocaleString();
+
+  const mult=Math.round(b.total/plan.p);
+  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> your ${plan.n} subscription &middot; ${D.month} &middot; ${D.days}/${D.month_days} days`;
+
+  // Range
+  $('r-lo').textContent='$'+Math.round(lo.total).toLocaleString();
+  $('r-hi').textContent='$'+Math.round(hi.total).toLocaleString();
+  $('pin-label').textContent='$'+Math.round(b.total).toLocaleString();
+  const pct=hi.total>lo.total?(b.total-lo.total)/(hi.total-lo.total)*100:50;
+  $('range-pin').style.left=Math.max(6,Math.min(94,pct))+'%';
+
+  // Bar
+  const sb=$('sbar'),lg=$('bleg');sb.innerHTML='';lg.innerHTML='';
+  for(const k of['cache_read','cache_write','output','input']){
+    const p=b.c[k]/b.total*100;if(p<.3)continue;
+    const d=document.createElement('div');d.style.width=p+'%';d.style.background=C[k];d.style.opacity='.8';
+    d.title=`${L[k]}: $${Math.round(b.c[k]).toLocaleString()}`;sb.appendChild(d);
+    const s=document.createElement('div');s.className='bar-leg-item';
+    s.innerHTML=`<span class="bar-leg-dot" style="background:${C[k]}"></span>${L[k]} $${Math.round(b.c[k]).toLocaleString()} (${p.toFixed(0)}%)`;
+    lg.appendChild(s);
+  }
+
+  // Stats
+  let tt=0;for(const t of Object.values(D.models))tt+=t.i+t.o+t.cr+t.c5+t.c1;
+  let crt=0,is=0;for(const t of Object.values(D.models)){crt+=t.cr;is+=t.i+t.cr+t.c5+t.c1}
+  const sess=D.sessions||'—',rpd=Math.round(D.requests/D.days);
+  const cards=[
+    {l:'Sessions',v:typeof sess==='number'?sess.toLocaleString():sess,d:typeof sess==='number'?`${Math.round(sess/D.days)}/day across ${D.days} days`:`${D.days} days with data`},
+    {l:'Messages',v:D.requests.toLocaleString(),d:`${rpd}/day (prompts + tool rounds)`},
+    {l:'Total Tokens',v:fmt(tt),d:`${(crt/is*100).toFixed(1)}% cache hit rate`},
+    {l:'Cost / Day',v:`$${Math.round(b.total/D.days)}`,d:Object.keys(D.models).map(m=>m.replace('claude-','').split('-20')[0]).join(', ')},
+  ];
+  const se=$('stats');se.innerHTML='';
+  cards.forEach(c=>{
+    const d=document.createElement('div');d.className='stat';
+    d.innerHTML=`<div class="stat-label">${c.l}</div><div class="stat-val">${c.v}</div><div class="stat-detail">${c.d}</div>`;
+    se.appendChild(d);
+  });
+}
+
+function toggleMethod(){
+  $('method-toggle').classList.toggle('open');
+  $('method-body').classList.toggle('open');
+}
+function resetView(){
+  $('results').classList.remove('on');$('results').style.display='none';
+  $('input-section').style.display='block';$('json-input').value='';D=null;
+}
+function extractJSON(t){
+  t=t.trim();
+  // Direct parse
+  try{return JSON.parse(t)}catch(e){}
+  // Find first { and try balanced-brace extraction
+  const start=t.indexOf('{');
+  if(start===-1)return null;
+  let depth=0;
+  for(let i=start;i<t.length;i++){
+    if(t[i]==='{')depth++;
+    if(t[i]==='}'){depth--;if(depth===0){
+      try{
+        const obj=JSON.parse(t.slice(start,i+1));
+        if(obj.month&&obj.models)return obj;
+      }catch(e){}
+    }}
+  }
+  return null;
+}
+function go(){
+  const r=$('json-input').value;if(!r.trim())return;
+  const p=extractJSON(r);if(!p||!p.month||!p.models)return;
+  D=p;$('input-section').style.display='none';
+  const res=$('results');res.style.display='block';
+  requestAnimationFrame(()=>res.classList.add('on'));render(true);
+}
+$('json-input').addEventListener('input',go);
+$('json-input').addEventListener('paste',()=>setTimeout(go,50));
+$('json-input').addEventListener('change',go);
+$('cr-slider').addEventListener('input',()=>render(false));
+document.querySelectorAll('.plan-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.plan-btn').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');render(false);
+  });
+});
+</script>
+</body>
+</html>
