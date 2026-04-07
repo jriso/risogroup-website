@@ -698,7 +698,7 @@ function initFromShare(){
   res.classList.add('on');
   // Hero
   $('hero-num').textContent='$'+Math.round(data.total).toLocaleString();
-  document.querySelector('.hero-above').textContent='Claude Code at API list price?';
+  document.querySelector('.hero-above').textContent='My Claude Code usage would have cost (est.)';
   const plan=PLANS[data.plan]||PLANS[1];
   const mult=Math.round(data.total/plan.p);
   $('hero-ctx').innerHTML=`<strong>${mult}x</strong> a ${plan.n} subscription<br>${data.monthName} &middot; ${data.days} of ${data.monthDays} days with usage data`;
@@ -737,8 +737,9 @@ function initFromShare(){
     d.innerHTML='<div class="stat-label">'+c.l+'</div><div class="stat-val">'+c.v+'</div><div class="stat-detail">'+c.d+'</div>';
     se.appendChild(d);
   });
-  // Hide controls (no raw data)
+  // Hide controls and reset button (no raw data)
   document.querySelector('.controls').style.display='none';
+  document.querySelector('.reset-btn').style.display='none';
   // CTA
   const cta=document.createElement('a');
   cta.href=location.pathname;
