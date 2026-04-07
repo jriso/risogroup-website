@@ -234,6 +234,9 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
 .foot-links{margin-bottom:12px;font-size:.75rem;color:var(--ink-light)}
 .foot-links a{color:var(--accent-dark);text-decoration:none;margin:0 6px}
 .foot-links a:hover{text-decoration:underline}
+.foot-oss{font-size:.72rem;color:var(--ink-light);margin-bottom:10px}
+.foot-oss a{color:var(--accent-dark);text-decoration:none}
+.foot-oss a:hover{text-decoration:underline}
 .foot-legal{font-size:.65rem;color:var(--ink-ghost);font-style:italic;text-align:center}
 .reset-btn{display:inline-flex;align-items:center;gap:5px;margin-bottom:14px;
   background:none;border:1.5px solid var(--rule);color:var(--ink-faint);padding:5px 14px;
@@ -355,6 +358,10 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
     <div class="method-body" id="method-body">
       <div class="method-inner">
         <div class="m-section">
+          <div class="m-heading">What is this?</div>
+          <div class="m-text">This calculator estimates what your Claude Code usage would cost at API prices. You run a <a href="https://github.com/jriso/claude-code-cost" target="_blank">Python script</a> locally that reads the JSONL logs Claude Code stores on your machine, tallies up every token by model, and outputs a JSON summary. Paste that summary here and the calculator applies current API rates to show your estimated monthly cost.</div>
+        </div>
+        <div class="m-section">
           <div class="m-heading">Where the token counts come from</div>
           <div class="m-text">Claude Code writes JSONL logs in <code>~/.claude/projects/</code>. Each assistant message includes a <code>usage</code> object — the same one Anthropic's API returns for billing. This tool scans those files and aggregates by model, deduplicating by <code>requestId</code>.</div>
         </div>
@@ -404,6 +411,7 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
       <div class="foot-links">
         <a href="https://github.com/jriso/claude-code-cost" target="_blank">Source &amp; methodology on GitHub</a>
       </div>
+      <div class="foot-oss">This project is <a href="https://github.com/jriso/claude-code-cost" target="_blank">open source</a>. Contributions, bug reports, and ideas are welcome.</div>
       <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices. If you share results, only a summary (total cost, message count) is encoded in the link. This site uses analytics to count visits.</div>
     </div>
   </div>
@@ -524,6 +532,11 @@ function resetView(){
   // Clean up shared view elements
   const banner=document.querySelector('.shared-banner');if(banner)banner.remove();
   const cta=document.querySelector('.share-cta');if(cta)cta.remove();
+  // Restore share button if it was replaced by CTA
+  const heroShare=document.querySelector('.hero-share');
+  if(!heroShare.querySelector('#share-btn')){
+    heroShare.innerHTML='<button class="share-btn" id="share-btn" onclick="shareResults()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share results</button>';
+  }
   document.querySelector('.controls').style.display='';
   document.querySelector('.hero-above').textContent='Your Claude Code usage last month would have cost (est.)';
   // Remove ?r= from URL
@@ -740,12 +753,9 @@ function initFromShare(){
   // Hide controls and reset button (no raw data)
   document.querySelector('.controls').style.display='none';
   document.querySelector('.reset-btn').style.display='none';
-  // CTA
-  const cta=document.createElement('a');
-  cta.href=location.pathname;
-  cta.className='share-cta';
-  cta.textContent='Find out your cost \u2192';
-  document.querySelector('.foot').prepend(cta);
+  // Replace share button with CTA for shared view
+  const heroShare=document.querySelector('.hero-share');
+  heroShare.innerHTML='<a href="'+location.pathname+'" class="share-cta">Find out your cost \u2192</a>';
   // Update OG tags for share previews
   const cost='$'+Math.round(data.total).toLocaleString();
   const desc='My Claude Code usage would have cost '+cost+'/mo at API prices. What about you?';
