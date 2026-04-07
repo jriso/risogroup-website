@@ -37,7 +37,30 @@
     gtag('js', new Date());
     gtag('config', 'G-Z8SP11SCGP');
 </script>
-<title>Claude Code Cost Calculator — Riso Group</title>
+<title>Claude Code Cost Calculator</title>
+<meta name="description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
+<meta name="author" content="James Riso">
+<link rel="canonical" href="https://risogroup.co/projects/claude-cost" />
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="../static/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="../static/assets/favicons/site.webmanifest">
+<link rel="shortcut icon" href="../static/assets/favicons/favicon.ico">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://risogroup.co/projects/claude-cost">
+<meta property="og:title" content="Claude Code Cost Calculator">
+<meta property="og:description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary">
+<meta property="twitter:url" content="https://risogroup.co/projects/claude-cost">
+<meta property="twitter:title" content="Claude Code Cost Calculator">
+<meta property="twitter:description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -74,7 +97,7 @@ body{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;backgrou
   color:var(--ink-faint);margin-bottom:8px}
 
 .cmd-box{position:relative;background:var(--ink);border-radius:6px;padding:14px 16px;padding-right:64px}
-.cmd-box code{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#b8d4ce;
+.cmd-box code{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#b8d4ce;
   line-height:1.6;word-break:break-all;display:block}
 .cmd-box .copy-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);padding:4px 10px;
@@ -103,28 +126,27 @@ body{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;backgrou
   font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--ink)}
 .hero-context{font-size:.88rem;color:var(--ink-light);margin-top:14px;line-height:1.5}
 .hero-context strong{color:var(--green);font-weight:600}
-.hero-badge{display:inline-block;margin-top:12px;font-size:.68rem;color:var(--orange);
-  font-weight:500;letter-spacing:.02em;border:1px solid rgba(212,98,43,.2);
-  background:rgba(212,98,43,.05);padding:3px 10px;border-radius:3px}
+.hero-badge{margin-top:12px;font-size:.78rem;color:var(--ink-light);
+  font-weight:400;font-style:italic}
+.hero-share{text-align:center;margin-top:18px;position:relative}
 
 /* ═══ RANGE ═══ */
-.range-block{margin:36px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  padding:24px 0}
-.range-heading{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
-  color:var(--ink-faint);margin-bottom:16px;text-align:center}
+.range-block{margin:36px 0;padding:24px 0}
 
 .range-bar-wrap{position:relative;margin:0 52px;height:72px}
-.range-bar{position:absolute;top:28px;left:0;right:0;height:20px;border-radius:4px;
-  background:linear-gradient(90deg,var(--accent-light) 0%,#d5eae5 30%,#c4dce6 70%,#bdd3e0 100%);
-  border:1px solid var(--rule);overflow:hidden}
-.range-bar-inner{position:absolute;top:0;left:0;right:0;bottom:0;
-  background:linear-gradient(90deg,var(--accent),var(--blue));opacity:.22;border-radius:3px}
+.range-bar{position:absolute;top:36px;left:0;right:0;height:3px;
+  background:var(--ink-faint);border-radius:2px}
+.range-bar-inner{display:none}
+.range-bar::before,.range-bar::after{content:'';position:absolute;top:50%;transform:translateY(-50%);
+  width:10px;height:10px;background:var(--ink-faint);border-radius:50%}
+.range-bar::before{left:-5px}
+.range-bar::after{right:-5px}
 
 /* Marker + label */
 .range-pin{position:absolute;top:0;transform:translateX(-50%);transition:left .2s ease;z-index:2}
 .range-pin-label{font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:500;
   color:var(--ink);text-align:center;white-space:nowrap;margin-bottom:4px}
-.range-pin-line{width:2px;height:12px;background:var(--ink);margin:0 auto}
+.range-pin-line{width:2px;height:14px;background:var(--ink);margin:0 auto}
 .range-pin-dot{width:12px;height:12px;background:var(--ink);border:2px solid var(--paper);
   border-radius:50%;margin:-2px auto 0;box-shadow:0 1px 3px rgba(0,0,0,.2)}
 
@@ -212,13 +234,27 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
 .foot-links{margin-bottom:12px;font-size:.75rem;color:var(--ink-light)}
 .foot-links a{color:var(--accent-dark);text-decoration:none;margin:0 6px}
 .foot-links a:hover{text-decoration:underline}
-.foot-legal{font-size:.65rem;color:var(--ink-ghost);font-style:italic}
+.foot-legal{font-size:.65rem;color:var(--ink-ghost);font-style:italic;text-align:center}
 .reset-btn{display:inline-flex;align-items:center;gap:5px;margin-bottom:14px;
   background:none;border:1.5px solid var(--rule);color:var(--ink-faint);padding:5px 14px;
   border-radius:50px;font-family:'Source Sans 3',sans-serif;font-size:.72rem;cursor:pointer;
   transition:all .12s}
 .reset-btn:hover{border-color:var(--ink);color:var(--ink)}
 .reset-btn svg{width:11px;height:11px}
+
+/* ═══ SHARE ═══ */
+.share-btn{display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;
+  background:none;border:none;color:var(--accent-dark);padding:0;
+  font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:500;
+  cursor:pointer;transition:color .12s;text-decoration:underline;text-underline-offset:3px}
+.share-btn:hover{color:var(--ink)}
+.share-btn svg{width:16px;height:16px}
+.shared-banner{font-size:.72rem;color:var(--accent-dark);background:var(--accent-light);
+  display:inline-block;padding:4px 12px;border-radius:3px;margin-bottom:12px;font-weight:500}
+.share-cta{display:inline-block;margin-bottom:16px;padding:8px 20px;background:var(--accent);
+  color:white;text-decoration:none;border-radius:5px;font-size:.82rem;font-weight:500;
+  transition:background .12s}
+.share-cta:hover{background:var(--accent-dark);color:white}
 
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 </style>
@@ -229,39 +265,46 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
   <!-- ═══ INPUT ═══ -->
   <div id="input-section">
     <h1 class="page-title">How much would your Claude subscription usage cost at API list price?</h1>
-    <div class="trust-line">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <strong>All processing happens on your machine.</strong> Script outputs summary data, you paste it here for pretty output. We don't store anything. Nervous about running a script? <a href="https://claude.ai/new?q=Review%20this%20script%20for%20security%20and%20correctness%2C%20then%20run%20it%20and%20paste%20me%20the%20JSON%20output%3A%20https%3A%2F%2Fraw.githubusercontent.com%2Fjriso%2Fclaude-code-cost%2Fmain%2Fcost.py" target="_blank" style="color:var(--accent-dark)">Ask your Claude to review and run it for you.</a>
-    </div>
     <div class="instructions">
       <div class="inst-step">
-        <div class="inst-label">Step 1 &mdash; Run in your terminal</div>
+        <div class="inst-label">1. Run in your terminal</div>
         <div class="cmd-box">
           <code id="cmd-text">python3 &lt;(curl -sL https://raw.githubusercontent.com/jriso/claude-code-cost/main/cost.py)</code>
           <button class="copy-btn" onclick="copyCmd()">Copy</button>
         </div>
       </div>
       <div class="inst-step">
-        <div class="inst-label">Step 2 &mdash; Paste the output</div>
+        <div class="inst-label">2. Paste the output to see your breakdown</div>
         <textarea class="paste-box" id="json-input" placeholder="Paste the JSON output here..." spellcheck="false"></textarea>
       </div>
     </div>
-    <p class="scope-note">
-      Claude Code only (CLI + IDE). Does not include claude.ai web or mobile usage.
+    <div class="trust-line">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <strong>Your token data stays private.</strong> The script runs locally. We never see your usage data.<br>Nervous about running a script? <a href="https://claude.ai/new?q=Review%20this%20script%20for%20security%20and%20correctness%2C%20then%20run%20it%20and%20paste%20me%20the%20JSON%20output%3A%20https%3A%2F%2Fraw.githubusercontent.com%2Fjriso%2Fclaude-code-cost%2Fmain%2Fcost.py" target="_blank" style="color:var(--accent-dark)">Ask your Claude to review and run it for you.</a>
+    </div>
+    <p class="scope-note" style="margin-top:20px;">
+      Run this on the machine where you use Claude Code.
     </p>
+    <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices.</div>
   </div>
 
   <!-- ═══ RESULTS ═══ -->
   <div id="results">
     <div class="hero">
-      <div class="hero-above">Your Claude Code usage last month would have cost</div>
+      <div class="hero-above">Your Claude Code usage last month would have cost (est.)</div>
       <div class="hero-num" id="hero-num">$0</div>
       <div class="hero-context" id="hero-ctx"></div>
-      <div class="hero-badge">Conservative — Claude Code only, not web or mobile</div>
+      <div class="hero-badge">Does not count usage on other devices, Claude.ai, or the mobile app.</div>
+    </div>
+
+    <div class="hero-share">
+      <button class="share-btn" id="share-btn" onclick="shareResults()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Share results
+      </button>
     </div>
 
     <div class="range-block">
-      <div class="range-heading">Estimate range</div>
       <div class="range-bar-wrap">
         <div class="range-pin" id="range-pin">
           <div class="range-pin-label" id="pin-label">$0</div>
@@ -328,9 +371,19 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
               <tr><td>Opus 4.6</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Sonnet 4.6</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
               <tr><td>Haiku 4.5</td><td>$1</td><td>$5</td><td>$0.10</td><td>$1.25</td><td>$2</td></tr>
+              <tr><td>Opus 4.5</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
+              <tr><td>Opus 4.1</td><td>$15</td><td>$75</td><td>$1.50</td><td>$18.75</td><td>$30</td></tr>
+              <tr><td>Sonnet 4.5</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
+              <tr><td>Sonnet 4</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
+              <tr><td>Opus 4</td><td>$15</td><td>$75</td><td>$1.50</td><td>$18.75</td><td>$30</td></tr>
+              <tr><td>Haiku 3.5</td><td>$0.80</td><td>$4</td><td>$0.08</td><td>$1</td><td>$1.60</td></tr>
+              <tr><td>Haiku 3</td><td>$0.25</td><td>$1.25</td><td>$0.03</td><td>$0.30</td><td>$0.50</td></tr>
+              <tr><td>Opus 3</td><td>$15</td><td>$75</td><td>$1.50</td><td>$18.75</td><td>$30</td></tr>
+              <tr><td>Sonnet 3.5v2</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
+              <tr><td>Sonnet 3.5</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
             </tbody>
           </table>
-          <div class="m-text" style="margin-top:4px">Per million tokens. Additional legacy models supported.</div>
+          <div class="m-text" style="margin-top:4px">Per million tokens.</div>
         </div>
         <div class="m-section">
           <div class="m-heading">What the range represents</div>
@@ -351,7 +404,7 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
       <div class="foot-links">
         <a href="https://github.com/jriso/claude-code-cost" target="_blank">Source &amp; methodology on GitHub</a>
       </div>
-      <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices.</div>
+      <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices. If you share results, only a summary (total cost, message count) is encoded in the link. This site uses analytics to count visits.</div>
     </div>
   </div>
 </div>
@@ -422,7 +475,8 @@ function render(an){
   else $('hero-num').textContent='$'+Math.round(b.total).toLocaleString();
 
   const mult=Math.round(b.total/plan.p);
-  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> your ${plan.n} subscription &middot; ${D.month} &middot; ${D.days}/${D.month_days} days`;
+  const friendlyMonth=D.month.match(/^\d{4}-(\d{2})$/)?MONTHS[parseInt(D.month.split('-')[1])-1]+' '+D.month.split('-')[0]:D.month;
+  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> a ${plan.n} subscription<br>${friendlyMonth} &middot; ${D.days} of ${D.month_days} days with usage data`;
 
   // Range
   $('r-lo').textContent='$'+Math.round(lo.total).toLocaleString();
@@ -466,7 +520,21 @@ function toggleMethod(){
 }
 function resetView(){
   $('results').classList.remove('on');$('results').style.display='none';
-  $('input-section').style.display='block';$('json-input').value='';D=null;
+  $('input-section').style.display='block';$('json-input').value='';D=null;SD=null;
+  // Clean up shared view elements
+  const banner=document.querySelector('.shared-banner');if(banner)banner.remove();
+  const cta=document.querySelector('.share-cta');if(cta)cta.remove();
+  document.querySelector('.controls').style.display='';
+  document.querySelector('.hero-above').textContent='Your Claude Code usage last month would have cost (est.)';
+  // Remove ?r= from URL
+  if(location.search)history.replaceState(null,'',location.pathname);
+  // Re-bind input listeners if coming from shared view
+  if(!$('json-input')._bound){
+    $('json-input').addEventListener('input',go);
+    $('json-input').addEventListener('paste',()=>setTimeout(go,50));
+    $('json-input').addEventListener('change',go);
+    $('json-input')._bound=true;
+  }
 }
 function extractJSON(t){
   t=t.trim();
@@ -493,10 +561,209 @@ function go(){
   D=p;$('input-section').style.display='none';
   const res=$('results');res.style.display='block';
   requestAnimationFrame(()=>res.classList.add('on'));render(true);
+  // Track calculator results
+  try{
+    const cr=parseFloat($('cr-slider').value);
+    const b=calc(D,cr);
+    const ab=document.querySelector('.plan-btn.on');
+    const plan=PLANS[parseInt(ab?ab.dataset.p:'1')];
+    rudderanalytics.track('calculator_results',{total_cost:Math.round(b.total*100),plan:plan.n});
+  }catch(e){}
 }
-$('json-input').addEventListener('input',go);
-$('json-input').addEventListener('paste',()=>setTimeout(go,50));
-$('json-input').addEventListener('change',go);
+
+// ═══ SHARE: encode/decode ═══
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function encodeShare(){
+  const cr=parseFloat($('cr-slider').value);
+  const ab=document.querySelector('.plan-btn.on');
+  const pi=parseInt(ab?ab.dataset.p:'1');
+  const b=calc(D,cr),lo=calc(D,.375),hi=calc(D,.625);
+  let tt=0;for(const t of Object.values(D.models))tt+=t.i+t.o+t.cr+t.c5+t.c1;
+  let mi,yearOff;
+  if(D.month.match(/^\d{4}-\d{2}$/)){
+    const p=D.month.split('-');yearOff=parseInt(p[0])-2025;mi=parseInt(p[1])-1;
+  }else{
+    const parts=D.month.split(' ');mi=Math.max(0,MONTHS.indexOf(parts[0]));yearOff=parts[1]?parseInt(parts[1])-2025:1;
+  }
+  const monthByte=((yearOff&0xF)<<4)|(mi&0xF);
+  const buf=new ArrayBuffer(41);
+  const dv=new DataView(buf);
+  let o=0;
+  dv.setUint8(o,1);o+=1;
+  dv.setUint8(o,pi);o+=1;
+  dv.setUint32(o,Math.round(b.total*100));o+=4;
+  dv.setUint32(o,Math.round(lo.total*100));o+=4;
+  dv.setUint32(o,Math.round(hi.total*100));o+=4;
+  dv.setUint32(o,Math.round(b.c.input*100));o+=4;
+  dv.setUint32(o,Math.round(b.c.output*100));o+=4;
+  dv.setUint32(o,Math.round(b.c.cache_read*100));o+=4;
+  dv.setUint32(o,Math.round(b.c.cache_write*100));o+=4;
+  dv.setUint16(o,D.sessions||0);o+=2;
+  dv.setUint16(o,Math.min(D.requests,65535));o+=2;
+  dv.setUint32(o,Math.round(tt/1000));o+=4;
+  dv.setUint8(o,D.days);o+=1;
+  dv.setUint8(o,D.month_days);o+=1;
+  dv.setUint8(o,monthByte);o+=1;
+  const bytes=new Uint8Array(buf);
+  let s='';for(const b of bytes)s+=String.fromCharCode(b);
+  return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+}
+function decodeShare(str){
+  try{
+    const b64=str.replace(/-/g,'+').replace(/_/g,'/');
+    const bin=atob(b64);
+    if(bin.length!==41)return null;
+    const buf=new ArrayBuffer(41);
+    const bytes=new Uint8Array(buf);
+    for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+    const dv=new DataView(buf);
+    let o=0;
+    const ver=dv.getUint8(o);o+=1;
+    if(ver!==1)return null;
+    const plan=dv.getUint8(o);o+=1;
+    const total=dv.getUint32(o)/100;o+=4;
+    const lo=dv.getUint32(o)/100;o+=4;
+    const hi=dv.getUint32(o)/100;o+=4;
+    const ci=dv.getUint32(o)/100;o+=4;
+    const co=dv.getUint32(o)/100;o+=4;
+    const ccr=dv.getUint32(o)/100;o+=4;
+    const ccw=dv.getUint32(o)/100;o+=4;
+    const sessions=dv.getUint16(o);o+=2;
+    const messages=dv.getUint16(o);o+=2;
+    const tokensK=dv.getUint32(o);o+=4;
+    const days=dv.getUint8(o);o+=1;
+    const monthDays=dv.getUint8(o);o+=1;
+    const mb=dv.getUint8(o);o+=1;
+    const mi=mb&0xF;
+    const yearOff=(mb>>4)&0xF;
+    const monthName=MONTHS[mi]+(yearOff?' '+(2025+yearOff):'');
+    return{total,lo,hi,c:{input:ci,output:co,cache_read:ccr,cache_write:ccw},
+      plan,sessions,messages,totalTokens:tokensK*1000,days,monthDays,monthName};
+  }catch(e){return null}
+}
+
+// ═══ SHARE: UI functions ═══
+let SD=null; // shared data (for re-sharing from shared view)
+function shareResults(){
+  const cost=$('hero-num').textContent;
+  const url=location.origin+location.pathname+'?r='+(D?encodeShare():encodeShareFromSD());
+  const msg='Last month my Claude Code usage would\'ve cost '+cost+' at API prices. What about you?\n'+url;
+  const btn=$('share-btn');
+  navigator.clipboard.writeText(msg).then(()=>{
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    setTimeout(()=>{btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share results'},1500);
+  }).catch(()=>{});
+  try{rudderanalytics.track('share_results',{method:'copy',cost:cost})}catch(e){}
+}
+function encodeShareFromSD(){
+  if(!SD)return'';
+  // Re-encode from decoded shared data
+  const buf=new ArrayBuffer(41);
+  const dv=new DataView(buf);
+  let o=0;
+  dv.setUint8(o,1);o+=1;
+  dv.setUint8(o,SD.plan);o+=1;
+  dv.setUint32(o,Math.round(SD.total*100));o+=4;
+  dv.setUint32(o,Math.round(SD.lo*100));o+=4;
+  dv.setUint32(o,Math.round(SD.hi*100));o+=4;
+  dv.setUint32(o,Math.round(SD.c.input*100));o+=4;
+  dv.setUint32(o,Math.round(SD.c.output*100));o+=4;
+  dv.setUint32(o,Math.round(SD.c.cache_read*100));o+=4;
+  dv.setUint32(o,Math.round(SD.c.cache_write*100));o+=4;
+  dv.setUint16(o,SD.sessions||0);o+=2;
+  dv.setUint16(o,Math.min(SD.messages,65535));o+=2;
+  dv.setUint32(o,Math.round(SD.totalTokens/1000));o+=4;
+  dv.setUint8(o,SD.days);o+=1;
+  dv.setUint8(o,SD.monthDays);o+=1;
+  const parts=SD.monthName.split(' ');
+  const mi=Math.max(0,MONTHS.indexOf(parts[0]));
+  const yearOff=parts[1]?parseInt(parts[1])-2025:1;
+  dv.setUint8(o,((yearOff&0xF)<<4)|(mi&0xF));o+=1;
+  const bytes=new Uint8Array(buf);
+  let s='';for(const b of bytes)s+=String.fromCharCode(b);
+  return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+}
+
+// ═══ SHARE: init from URL ═══
+function initFromShare(){
+  const params=new URLSearchParams(location.search);
+  const r=params.get('r');
+  if(!r)return false;
+  const data=decodeShare(r);
+  if(!data)return false;
+  SD=data;
+  // Hide input, show results
+  $('input-section').style.display='none';
+  const res=$('results');res.style.display='block';
+  res.classList.add('on');
+  // Hero
+  $('hero-num').textContent='$'+Math.round(data.total).toLocaleString();
+  document.querySelector('.hero-above').textContent='Claude Code at API list price?';
+  const plan=PLANS[data.plan]||PLANS[1];
+  const mult=Math.round(data.total/plan.p);
+  $('hero-ctx').innerHTML=`<strong>${mult}x</strong> a ${plan.n} subscription<br>${data.monthName} &middot; ${data.days} of ${data.monthDays} days with usage data`;
+  // Banner
+  const banner=document.createElement('div');
+  banner.className='shared-banner';
+  banner.textContent='Shared result \u00B7 '+data.monthName;
+  document.querySelector('.hero').prepend(banner);
+  // Range
+  $('r-lo').textContent='$'+Math.round(data.lo).toLocaleString();
+  $('r-hi').textContent='$'+Math.round(data.hi).toLocaleString();
+  $('pin-label').textContent='$'+Math.round(data.total).toLocaleString();
+  const pct=data.hi>data.lo?(data.total-data.lo)/(data.hi-data.lo)*100:50;
+  $('range-pin').style.left=Math.max(6,Math.min(94,pct))+'%';
+  // Breakdown bar
+  const sb=$('sbar'),lg=$('bleg');sb.innerHTML='';lg.innerHTML='';
+  for(const k of['cache_read','cache_write','output','input']){
+    const val=data.c[k];const p=val/data.total*100;if(p<.3)continue;
+    const d=document.createElement('div');d.style.width=p+'%';d.style.background=C[k];d.style.opacity='.8';
+    d.title=L[k]+': $'+Math.round(val).toLocaleString();sb.appendChild(d);
+    const s=document.createElement('div');s.className='bar-leg-item';
+    s.innerHTML='<span class="bar-leg-dot" style="background:'+C[k]+'"></span>'+L[k]+' $'+Math.round(val).toLocaleString()+' ('+p.toFixed(0)+'%)';
+    lg.appendChild(s);
+  }
+  // Stats
+  const sess=data.sessions||0;
+  const cards=[
+    {l:'Sessions',v:sess?sess.toLocaleString():'\u2014',d:sess?Math.round(sess/data.days)+'/day across '+data.days+' days':data.days+' days with data'},
+    {l:'Messages',v:data.messages.toLocaleString(),d:Math.round(data.messages/data.days)+'/day'},
+    {l:'Total Tokens',v:fmt(data.totalTokens),d:'Shared result'},
+    {l:'Cost / Day',v:'$'+Math.round(data.total/data.days),d:data.monthName},
+  ];
+  const se=$('stats');se.innerHTML='';
+  cards.forEach(c=>{
+    const d=document.createElement('div');d.className='stat';
+    d.innerHTML='<div class="stat-label">'+c.l+'</div><div class="stat-val">'+c.v+'</div><div class="stat-detail">'+c.d+'</div>';
+    se.appendChild(d);
+  });
+  // Hide controls (no raw data)
+  document.querySelector('.controls').style.display='none';
+  // CTA
+  const cta=document.createElement('a');
+  cta.href=location.pathname;
+  cta.className='share-cta';
+  cta.textContent='Find out your cost \u2192';
+  document.querySelector('.foot').prepend(cta);
+  // Update OG tags for share previews
+  const cost='$'+Math.round(data.total).toLocaleString();
+  const desc='My Claude Code usage would have cost '+cost+'/mo at API prices. What about you?';
+  document.querySelector('meta[property="og:title"]').content=cost+'/mo — Claude Code Cost Calculator';
+  document.querySelector('meta[property="og:description"]').content=desc;
+  document.querySelector('meta[property="twitter:title"]').content=cost+'/mo — Claude Code Cost Calculator';
+  document.querySelector('meta[property="twitter:description"]').content=desc;
+  document.title=cost+'/mo — Claude Code Cost Calculator';
+  // Analytics
+  try{rudderanalytics.track('view_shared_results',{cost:Math.round(data.total)})}catch(e){}
+  return true;
+}
+const isShared=initFromShare();
+if(!isShared){
+  $('json-input').addEventListener('input',go);
+  $('json-input').addEventListener('paste',()=>setTimeout(go,50));
+  $('json-input').addEventListener('change',go);
+  $('json-input')._bound=true;
+}
 $('cr-slider').addEventListener('input',()=>render(false));
 document.querySelectorAll('.plan-btn').forEach(b=>{
   b.addEventListener('click',()=>{
