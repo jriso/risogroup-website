@@ -37,7 +37,7 @@
     gtag('js', new Date());
     gtag('config', 'G-Z8SP11SCGP');
 </script>
-<title>Claude Code Cost Calculator — Riso Group</title>
+<title>Claude Code Cost Calculator</title>
 <meta name="description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
 <meta name="author" content="James Riso">
 <link rel="canonical" href="https://risogroup.co/projects/claude-cost" />
@@ -52,16 +52,14 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://risogroup.co/projects/claude-cost">
-<meta property="og:title" content="Claude Code Cost Calculator — Riso Group">
+<meta property="og:title" content="Claude Code Cost Calculator">
 <meta property="og:description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
-<meta property="og:image" content="https://risogroup.co/static/assets/rg-logo.png">
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:card" content="summary">
 <meta property="twitter:url" content="https://risogroup.co/projects/claude-cost">
-<meta property="twitter:title" content="Claude Code Cost Calculator — Riso Group">
+<meta property="twitter:title" content="Claude Code Cost Calculator">
 <meta property="twitter:description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
-<meta property="twitter:image" content="https://risogroup.co/static/assets/rg-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -99,7 +97,7 @@ body{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;backgrou
   color:var(--ink-faint);margin-bottom:8px}
 
 .cmd-box{position:relative;background:var(--ink);border-radius:6px;padding:14px 16px;padding-right:64px}
-.cmd-box code{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#b8d4ce;
+.cmd-box code{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#b8d4ce;
   line-height:1.6;word-break:break-all;display:block}
 .cmd-box .copy-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);padding:4px 10px;
@@ -128,28 +126,27 @@ body{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;backgrou
   font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--ink)}
 .hero-context{font-size:.88rem;color:var(--ink-light);margin-top:14px;line-height:1.5}
 .hero-context strong{color:var(--green);font-weight:600}
-.hero-badge{display:inline-block;margin-top:12px;font-size:.68rem;color:var(--orange);
-  font-weight:500;letter-spacing:.02em;border:1px solid rgba(212,98,43,.2);
-  background:rgba(212,98,43,.05);padding:3px 10px;border-radius:3px}
+.hero-badge{margin-top:12px;font-size:.78rem;color:var(--ink-light);
+  font-weight:400;font-style:italic}
+.hero-share{text-align:center;margin-top:18px;position:relative}
 
 /* ═══ RANGE ═══ */
-.range-block{margin:36px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  padding:24px 0}
-.range-heading{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
-  color:var(--ink-faint);margin-bottom:16px;text-align:center}
+.range-block{margin:36px 0;padding:24px 0}
 
 .range-bar-wrap{position:relative;margin:0 52px;height:72px}
-.range-bar{position:absolute;top:28px;left:0;right:0;height:20px;border-radius:4px;
-  background:linear-gradient(90deg,var(--accent-light) 0%,#d5eae5 30%,#c4dce6 70%,#bdd3e0 100%);
-  border:1px solid var(--rule);overflow:hidden}
-.range-bar-inner{position:absolute;top:0;left:0;right:0;bottom:0;
-  background:linear-gradient(90deg,var(--accent),var(--blue));opacity:.22;border-radius:3px}
+.range-bar{position:absolute;top:36px;left:0;right:0;height:3px;
+  background:var(--ink-faint);border-radius:2px}
+.range-bar-inner{display:none}
+.range-bar::before,.range-bar::after{content:'';position:absolute;top:50%;transform:translateY(-50%);
+  width:10px;height:10px;background:var(--ink-faint);border-radius:50%}
+.range-bar::before{left:-5px}
+.range-bar::after{right:-5px}
 
 /* Marker + label */
 .range-pin{position:absolute;top:0;transform:translateX(-50%);transition:left .2s ease;z-index:2}
 .range-pin-label{font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:500;
   color:var(--ink);text-align:center;white-space:nowrap;margin-bottom:4px}
-.range-pin-line{width:2px;height:12px;background:var(--ink);margin:0 auto}
+.range-pin-line{width:2px;height:14px;background:var(--ink);margin:0 auto}
 .range-pin-dot{width:12px;height:12px;background:var(--ink);border:2px solid var(--paper);
   border-radius:50%;margin:-2px auto 0;box-shadow:0 1px 3px rgba(0,0,0,.2)}
 
@@ -237,7 +234,7 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
 .foot-links{margin-bottom:12px;font-size:.75rem;color:var(--ink-light)}
 .foot-links a{color:var(--accent-dark);text-decoration:none;margin:0 6px}
 .foot-links a:hover{text-decoration:underline}
-.foot-legal{font-size:.65rem;color:var(--ink-ghost);font-style:italic}
+.foot-legal{font-size:.65rem;color:var(--ink-ghost);font-style:italic;text-align:center}
 .reset-btn{display:inline-flex;align-items:center;gap:5px;margin-bottom:14px;
   background:none;border:1.5px solid var(--rule);color:var(--ink-faint);padding:5px 14px;
   border-radius:50px;font-family:'Source Sans 3',sans-serif;font-size:.72rem;cursor:pointer;
@@ -246,31 +243,12 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
 .reset-btn svg{width:11px;height:11px}
 
 /* ═══ SHARE ═══ */
-.share-btn{display:inline-flex;align-items:center;gap:5px;margin-bottom:8px;
-  background:var(--accent);border:1.5px solid var(--accent-dark);color:white;padding:6px 16px;
-  border-radius:50px;font-family:'Source Sans 3',sans-serif;font-size:.74rem;font-weight:500;
-  cursor:pointer;transition:all .12s}
-.share-btn:hover{background:var(--accent-dark)}
-.share-btn svg{width:13px;height:13px}
-.share-pop{display:none;margin-bottom:14px;animation:rise .2s ease both}
-.share-pop.on{display:block}
-.share-pop-inner{background:var(--paper-card);border:1px solid var(--rule);border-radius:8px;
-  padding:14px 16px;text-align:left;max-width:400px;margin:0 auto}
-.share-url-row{display:flex;gap:6px;margin-bottom:10px}
-.share-url{flex:1;font-family:'JetBrains Mono',monospace;font-size:.68rem;padding:7px 10px;
-  border:1px solid var(--rule);border-radius:4px;background:var(--paper);color:var(--ink);
-  outline:none;min-width:0}
-.share-copy-btn{padding:7px 14px;background:var(--ink);color:white;border:none;border-radius:4px;
-  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:500;cursor:pointer;
-  white-space:nowrap;transition:background .12s}
-.share-copy-btn:hover{background:var(--accent-dark)}
-.share-social{display:flex;gap:8px}
-.share-social-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;
-  padding:7px 0;border:1px solid var(--rule);border-radius:4px;background:var(--paper-card);
-  font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--ink-light);cursor:pointer;
-  transition:all .12s}
-.share-social-btn:hover{border-color:var(--ink-ghost);color:var(--ink)}
-.share-social-btn svg{width:14px;height:14px}
+.share-btn{display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;
+  background:none;border:none;color:var(--accent-dark);padding:0;
+  font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:500;
+  cursor:pointer;transition:color .12s;text-decoration:underline;text-underline-offset:3px}
+.share-btn:hover{color:var(--ink)}
+.share-btn svg{width:16px;height:16px}
 .shared-banner{font-size:.72rem;color:var(--accent-dark);background:var(--accent-light);
   display:inline-block;padding:4px 12px;border-radius:3px;margin-bottom:12px;font-weight:500}
 .share-cta{display:inline-block;margin-bottom:16px;padding:8px 20px;background:var(--accent);
@@ -287,40 +265,46 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
   <!-- ═══ INPUT ═══ -->
   <div id="input-section">
     <h1 class="page-title">How much would your Claude subscription usage cost at API list price?</h1>
-    <div class="trust-line">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <strong>Your token data stays in your browser.</strong> The script runs locally, and calculations happen client-side. We never see your usage data. If you share results, only a summary (total cost, message count) is encoded in the link. This site uses analytics to count visits. Nervous about running a script? <a href="https://claude.ai/new?q=Review%20this%20script%20for%20security%20and%20correctness%2C%20then%20run%20it%20and%20paste%20me%20the%20JSON%20output%3A%20https%3A%2F%2Fraw.githubusercontent.com%2Fjriso%2Fclaude-code-cost%2Fmain%2Fcost.py" target="_blank" style="color:var(--accent-dark)">Ask your Claude to review and run it for you.</a>
-    </div>
     <div class="instructions">
       <div class="inst-step">
-        <div class="inst-label">Step 1 &mdash; Run in your terminal</div>
+        <div class="inst-label">1. Run in your terminal</div>
         <div class="cmd-box">
           <code id="cmd-text">python3 &lt;(curl -sL https://raw.githubusercontent.com/jriso/claude-code-cost/main/cost.py)</code>
           <button class="copy-btn" onclick="copyCmd()">Copy</button>
         </div>
       </div>
       <div class="inst-step">
-        <div class="inst-label">Step 2 &mdash; Paste the output</div>
+        <div class="inst-label">2. Paste the output to see your breakdown</div>
         <textarea class="paste-box" id="json-input" placeholder="Paste the JSON output here..." spellcheck="false"></textarea>
       </div>
     </div>
-    <p class="scope-note">
-      Claude Code only (CLI + IDE). Does not include claude.ai web or mobile usage.<br>
+    <div class="trust-line">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <strong>Your token data stays private.</strong> The script runs locally. We never see your usage data.<br>Nervous about running a script? <a href="https://claude.ai/new?q=Review%20this%20script%20for%20security%20and%20correctness%2C%20then%20run%20it%20and%20paste%20me%20the%20JSON%20output%3A%20https%3A%2F%2Fraw.githubusercontent.com%2Fjriso%2Fclaude-code-cost%2Fmain%2Fcost.py" target="_blank" style="color:var(--accent-dark)">Ask your Claude to review and run it for you.</a>
+    </div>
+    <p class="scope-note" style="margin-top:20px;">
       Run this on the machine where you use Claude Code.
     </p>
+    <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices.</div>
   </div>
 
   <!-- ═══ RESULTS ═══ -->
   <div id="results">
     <div class="hero">
-      <div class="hero-above">Your Claude Code usage last month would have cost</div>
+      <div class="hero-above">Your Claude Code usage last month would have cost (est.)</div>
       <div class="hero-num" id="hero-num">$0</div>
       <div class="hero-context" id="hero-ctx"></div>
-      <div class="hero-badge">Conservative — Claude Code only, not web or mobile</div>
+      <div class="hero-badge">Does not count usage on other devices, Claude.ai, or the mobile app.</div>
+    </div>
+
+    <div class="hero-share">
+      <button class="share-btn" id="share-btn" onclick="shareResults()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Share results
+      </button>
     </div>
 
     <div class="range-block">
-      <div class="range-heading">Estimate range</div>
       <div class="range-bar-wrap">
         <div class="range-pin" id="range-pin">
           <div class="range-pin-label" id="pin-label">$0</div>
@@ -387,9 +371,19 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
               <tr><td>Opus 4.6</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Sonnet 4.6</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
               <tr><td>Haiku 4.5</td><td>$1</td><td>$5</td><td>$0.10</td><td>$1.25</td><td>$2</td></tr>
+              <tr><td>Opus 4.5</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
+              <tr><td>Opus 4.1</td><td>$15</td><td>$75</td><td>$1.50</td><td>$18.75</td><td>$30</td></tr>
+              <tr><td>Sonnet 4.5</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
+              <tr><td>Sonnet 4</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
+              <tr><td>Opus 4</td><td>$15</td><td>$75</td><td>$1.50</td><td>$18.75</td><td>$30</td></tr>
+              <tr><td>Haiku 3.5</td><td>$0.80</td><td>$4</td><td>$0.08</td><td>$1</td><td>$1.60</td></tr>
+              <tr><td>Haiku 3</td><td>$0.25</td><td>$1.25</td><td>$0.03</td><td>$0.30</td><td>$0.50</td></tr>
+              <tr><td>Opus 3</td><td>$15</td><td>$75</td><td>$1.50</td><td>$18.75</td><td>$30</td></tr>
+              <tr><td>Sonnet 3.5v2</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
+              <tr><td>Sonnet 3.5</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
             </tbody>
           </table>
-          <div class="m-text" style="margin-top:4px">Per million tokens. Additional legacy models supported.</div>
+          <div class="m-text" style="margin-top:4px">Per million tokens.</div>
         </div>
         <div class="m-section">
           <div class="m-heading">What the range represents</div>
@@ -403,28 +397,6 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
     </div>
 
     <div class="foot">
-      <button class="share-btn" id="share-btn" onclick="shareResults()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        Share results
-      </button>
-      <div class="share-pop" id="share-pop">
-        <div class="share-pop-inner">
-          <div class="share-url-row">
-            <input type="text" class="share-url" id="share-url" readonly>
-            <button class="share-copy-btn" id="share-copy-btn" onclick="copyShareUrl()">Copy link</button>
-          </div>
-          <div class="share-social">
-            <button class="share-social-btn" onclick="shareTwitter()">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              Post on X
-            </button>
-            <button class="share-social-btn" onclick="shareLinkedIn()">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </button>
-          </div>
-        </div>
-      </div>
       <button class="reset-btn" onclick="resetView()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
         Start over
@@ -432,7 +404,7 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
       <div class="foot-links">
         <a href="https://github.com/jriso/claude-code-cost" target="_blank">Source &amp; methodology on GitHub</a>
       </div>
-      <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices.</div>
+      <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices. If you share results, only a summary (total cost, message count) is encoded in the link. This site uses analytics to count visits.</div>
     </div>
   </div>
 </div>
@@ -503,7 +475,8 @@ function render(an){
   else $('hero-num').textContent='$'+Math.round(b.total).toLocaleString();
 
   const mult=Math.round(b.total/plan.p);
-  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> your ${plan.n} subscription &middot; ${D.month} &middot; ${D.days}/${D.month_days} days`;
+  const friendlyMonth=D.month.match(/^\d{4}-(\d{2})$/)?MONTHS[parseInt(D.month.split('-')[1])-1]+' '+D.month.split('-')[0]:D.month;
+  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> a ${plan.n} subscription<br>${friendlyMonth} &middot; ${D.days} of ${D.month_days} days with usage data`;
 
   // Range
   $('r-lo').textContent='$'+Math.round(lo.total).toLocaleString();
@@ -551,9 +524,8 @@ function resetView(){
   // Clean up shared view elements
   const banner=document.querySelector('.shared-banner');if(banner)banner.remove();
   const cta=document.querySelector('.share-cta');if(cta)cta.remove();
-  const pop=$('share-pop');if(pop)pop.classList.remove('on');
   document.querySelector('.controls').style.display='';
-  document.querySelector('.hero-above').textContent='Your Claude Code usage last month would have cost';
+  document.querySelector('.hero-above').textContent='Your Claude Code usage last month would have cost (est.)';
   // Remove ?r= from URL
   if(location.search)history.replaceState(null,'',location.pathname);
   // Re-bind input listeners if coming from shared view
@@ -607,9 +579,12 @@ function encodeShare(){
   const pi=parseInt(ab?ab.dataset.p:'1');
   const b=calc(D,cr),lo=calc(D,.375),hi=calc(D,.625);
   let tt=0;for(const t of Object.values(D.models))tt+=t.i+t.o+t.cr+t.c5+t.c1;
-  const parts=D.month.split(' ');
-  const mi=Math.max(0,MONTHS.indexOf(parts[0]));
-  const yearOff=parts[1]?parseInt(parts[1])-2025:1;
+  let mi,yearOff;
+  if(D.month.match(/^\d{4}-\d{2}$/)){
+    const p=D.month.split('-');yearOff=parseInt(p[0])-2025;mi=parseInt(p[1])-1;
+  }else{
+    const parts=D.month.split(' ');mi=Math.max(0,MONTHS.indexOf(parts[0]));yearOff=parts[1]?parseInt(parts[1])-2025:1;
+  }
   const monthByte=((yearOff&0xF)<<4)|(mi&0xF);
   const buf=new ArrayBuffer(41);
   const dv=new DataView(buf);
@@ -670,20 +645,15 @@ function decodeShare(str){
 // ═══ SHARE: UI functions ═══
 let SD=null; // shared data (for re-sharing from shared view)
 function shareResults(){
+  const cost=$('hero-num').textContent;
   const url=location.origin+location.pathname+'?r='+(D?encodeShare():encodeShareFromSD());
-  if(navigator.share){
-    navigator.share({
-      title:'My Claude Code bill would\'ve been '+$('hero-num').textContent+'/mo. Find out yours',
-      url:url
-    }).catch(()=>{});
-    try{rudderanalytics.track('share_results',{method:'native',cost:$('hero-num').textContent})}catch(e){}
-    return;
-  }
-  const pop=$('share-pop');
-  if(pop.classList.contains('on')){pop.classList.remove('on');return}
-  $('share-url').value=url;
-  pop.classList.add('on');
-  $('share-url').select();
+  const msg='Last month my Claude Code usage would\'ve cost '+cost+' at API prices. What about you?\n'+url;
+  const btn=$('share-btn');
+  navigator.clipboard.writeText(msg).then(()=>{
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    setTimeout(()=>{btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share results'},1500);
+  }).catch(()=>{});
+  try{rudderanalytics.track('share_results',{method:'copy',cost:cost})}catch(e){}
 }
 function encodeShareFromSD(){
   if(!SD)return'';
@@ -713,26 +683,6 @@ function encodeShareFromSD(){
   let s='';for(const b of bytes)s+=String.fromCharCode(b);
   return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
 }
-function copyShareUrl(){
-  const url=$('share-url').value;
-  navigator.clipboard.writeText(url).then(()=>{
-    const b=$('share-copy-btn');b.textContent='Copied!';
-    setTimeout(()=>b.textContent='Copy link',1500);
-  }).catch(()=>{$('share-url').select()});
-  try{rudderanalytics.track('share_results',{method:'copy',cost:$('hero-num').textContent})}catch(e){}
-}
-function shareTwitter(){
-  const cost=$('hero-num').textContent;
-  const text='Last month my Claude Code usage would\'ve cost '+cost+' at API prices. What\'s yours?';
-  const url=$('share-url').value;
-  window.open('https://x.com/intent/tweet?text='+encodeURIComponent(text)+'&url='+encodeURIComponent(url),'_blank');
-  try{rudderanalytics.track('share_results',{method:'twitter',cost:cost})}catch(e){}
-}
-function shareLinkedIn(){
-  const url=$('share-url').value;
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(url),'_blank');
-  try{rudderanalytics.track('share_results',{method:'linkedin',cost:$('hero-num').textContent})}catch(e){}
-}
 
 // ═══ SHARE: init from URL ═══
 function initFromShare(){
@@ -751,7 +701,7 @@ function initFromShare(){
   document.querySelector('.hero-above').textContent='Claude Code at API list price?';
   const plan=PLANS[data.plan]||PLANS[1];
   const mult=Math.round(data.total/plan.p);
-  $('hero-ctx').innerHTML=`<strong>${mult}x</strong> a ${plan.n} subscription &middot; ${data.monthName} &middot; ${data.days}/${data.monthDays} days`;
+  $('hero-ctx').innerHTML=`<strong>${mult}x</strong> a ${plan.n} subscription<br>${data.monthName} &middot; ${data.days} of ${data.monthDays} days with usage data`;
   // Banner
   const banner=document.createElement('div');
   banner.className='shared-banner';
@@ -795,6 +745,14 @@ function initFromShare(){
   cta.className='share-cta';
   cta.textContent='Find out your cost \u2192';
   document.querySelector('.foot').prepend(cta);
+  // Update OG tags for share previews
+  const cost='$'+Math.round(data.total).toLocaleString();
+  const desc='My Claude Code usage would have cost '+cost+'/mo at API prices. What about you?';
+  document.querySelector('meta[property="og:title"]').content=cost+'/mo — Claude Code Cost Calculator';
+  document.querySelector('meta[property="og:description"]').content=desc;
+  document.querySelector('meta[property="twitter:title"]').content=cost+'/mo — Claude Code Cost Calculator';
+  document.querySelector('meta[property="twitter:description"]').content=desc;
+  document.title=cost+'/mo — Claude Code Cost Calculator';
   // Analytics
   try{rudderanalytics.track('view_shared_results',{cost:Math.round(data.total)})}catch(e){}
   return true;
