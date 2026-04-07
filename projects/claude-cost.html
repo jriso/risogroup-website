@@ -54,14 +54,11 @@
 <meta property="og:url" content="https://risogroup.co/projects/claude-cost">
 <meta property="og:title" content="Claude Code Cost Calculator">
 <meta property="og:description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
-<meta property="og:image" content="https://risogroup.co/static/assets/rg-logo.png">
-
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:card" content="summary">
 <meta property="twitter:url" content="https://risogroup.co/projects/claude-cost">
 <meta property="twitter:title" content="Claude Code Cost Calculator">
 <meta property="twitter:description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
-<meta property="twitter:image" content="https://risogroup.co/static/assets/rg-logo.png">
 
 <!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json">
@@ -319,10 +316,10 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
   <!-- ═══ RESULTS ═══ -->
   <div id="results">
     <div class="hero">
-      <div class="hero-above">Your Claude Code usage last month would have cost (est.)</div>
+      <div class="hero-above">Your Claude Code usage last month would have cost</div>
       <div class="hero-num" id="hero-num">$0</div>
       <div class="hero-context" id="hero-ctx"></div>
-      <div class="hero-badge">Does not count usage on other devices, Claude.ai, or the mobile app.</div>
+      <div class="hero-badge">Estimated. Does not count usage on other devices, Claude.ai, or the mobile app.</div>
     </div>
 
     <div class="hero-share">
@@ -508,8 +505,9 @@ function render(an){
   else $('hero-num').textContent='$'+Math.round(b.total).toLocaleString();
 
   const mult=Math.round(b.total/plan.p);
+  const discount=mult>1?Math.round((1-1/mult)*100):0;
   const friendlyMonth=D.month.match(/^\d{4}-(\d{2})$/)?MONTHS[parseInt(D.month.split('-')[1])-1]+' '+D.month.split('-')[0]:D.month;
-  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> a ${plan.n} subscription<br>${friendlyMonth} &middot; ${D.days} of ${D.month_days} days with usage data`;
+  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> a ${plan.n} subscription`+(discount>0?` <strong>(-${discount}%)</strong>`:``)+`<br>${friendlyMonth} &middot; ${D.days} of ${D.month_days} days with usage data`;
 
   // Range
   $('r-lo').textContent='$'+Math.round(lo.total).toLocaleString();
@@ -563,7 +561,7 @@ function resetView(){
     heroShare.innerHTML='<button class="share-btn" id="share-btn" onclick="shareResults()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share results</button>';
   }
   document.querySelector('.controls').style.display='';
-  document.querySelector('.hero-above').textContent='Your Claude Code usage last month would have cost (est.)';
+  document.querySelector('.hero-above').textContent='Your Claude Code usage last month would have cost';
   // Remove ?r= from URL
   if(location.search)history.replaceState(null,'',location.pathname);
   // Re-bind input listeners if coming from shared view
@@ -736,10 +734,11 @@ function initFromShare(){
   res.classList.add('on');
   // Hero
   $('hero-num').textContent='$'+Math.round(data.total).toLocaleString();
-  document.querySelector('.hero-above').textContent='My Claude Code usage would have cost (est.)';
+  document.querySelector('.hero-above').textContent='My Claude Code usage would have cost';
   const plan=PLANS[data.plan]||PLANS[1];
   const mult=Math.round(data.total/plan.p);
-  $('hero-ctx').innerHTML=`<strong>${mult}x</strong> a ${plan.n} subscription<br>${data.monthName} &middot; ${data.days} of ${data.monthDays} days with usage data`;
+  const discount=mult>1?Math.round((1-1/mult)*100):0;
+  $('hero-ctx').innerHTML=`<strong>${mult}x</strong> a ${plan.n} subscription`+(discount>0?` <strong>(-${discount}%)</strong>`:``)+`<br>${data.monthName} &middot; ${data.days} of ${data.monthDays} days with usage data`;
   // Banner
   const banner=document.createElement('div');
   banner.className='shared-banner';
