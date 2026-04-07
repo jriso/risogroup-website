@@ -54,12 +54,34 @@
 <meta property="og:url" content="https://risogroup.co/projects/claude-cost">
 <meta property="og:title" content="Claude Code Cost Calculator">
 <meta property="og:description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
-
 <!-- Twitter -->
 <meta property="twitter:card" content="summary">
 <meta property="twitter:url" content="https://risogroup.co/projects/claude-cost">
 <meta property="twitter:title" content="Claude Code Cost Calculator">
 <meta property="twitter:description" content="How much does your Claude Code usage actually cost at API prices? Find out in seconds.">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Claude Code Cost Calculator",
+    "description": "Estimate what your Claude Code usage would cost at API prices. Paste your local usage JSON and see a full cost breakdown by model.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Cross-platform",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "James Riso",
+        "url": "https://risogroup.co/index.html#james"
+    },
+    "license": "https://opensource.org/licenses/MIT"
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -234,6 +256,9 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
 .foot-links{margin-bottom:12px;font-size:.75rem;color:var(--ink-light)}
 .foot-links a{color:var(--accent-dark);text-decoration:none;margin:0 6px}
 .foot-links a:hover{text-decoration:underline}
+.foot-oss{font-size:.72rem;color:var(--ink-light);margin-bottom:10px}
+.foot-oss a{color:var(--accent-dark);text-decoration:none}
+.foot-oss a:hover{text-decoration:underline}
 .foot-legal{font-size:.65rem;color:var(--ink-ghost);font-style:italic;text-align:center}
 .reset-btn{display:inline-flex;align-items:center;gap:5px;margin-bottom:14px;
   background:none;border:1.5px solid var(--rule);color:var(--ink-faint);padding:5px 14px;
@@ -291,10 +316,10 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
   <!-- ═══ RESULTS ═══ -->
   <div id="results">
     <div class="hero">
-      <div class="hero-above">Your Claude Code usage last month would have cost (est.)</div>
+      <div class="hero-above">Your Claude Code usage last month would have cost</div>
       <div class="hero-num" id="hero-num">$0</div>
       <div class="hero-context" id="hero-ctx"></div>
-      <div class="hero-badge">Does not count usage on other devices, Claude.ai, or the mobile app.</div>
+      <div class="hero-badge">Estimated. Does not count usage on other devices, Claude.ai, or the mobile app.</div>
     </div>
 
     <div class="hero-share">
@@ -355,6 +380,10 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
     <div class="method-body" id="method-body">
       <div class="method-inner">
         <div class="m-section">
+          <div class="m-heading">What is this?</div>
+          <div class="m-text">This calculator estimates what your Claude Code usage would cost at API prices. You run a <a href="https://github.com/jriso/claude-code-cost" target="_blank">Python script</a> locally that reads the JSONL logs Claude Code stores on your machine, tallies up every token by model, and outputs a JSON summary. Paste that summary here and the calculator applies current API rates to show your estimated monthly cost.</div>
+        </div>
+        <div class="m-section">
           <div class="m-heading">Where the token counts come from</div>
           <div class="m-text">Claude Code writes JSONL logs in <code>~/.claude/projects/</code>. Each assistant message includes a <code>usage</code> object — the same one Anthropic's API returns for billing. This tool scans those files and aggregates by model, deduplicating by <code>requestId</code>.</div>
         </div>
@@ -404,6 +433,7 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
       <div class="foot-links">
         <a href="https://github.com/jriso/claude-code-cost" target="_blank">Source &amp; methodology on GitHub</a>
       </div>
+      <div class="foot-oss">This project is <a href="https://github.com/jriso/claude-code-cost" target="_blank">open source</a>. Contributions, bug reports, and ideas are welcome.</div>
       <div class="foot-legal">Not affiliated with or endorsed by Anthropic. Estimates based on published list prices. If you share results, only a summary (total cost, message count) is encoded in the link. This site uses analytics to count visits.</div>
     </div>
   </div>
@@ -475,8 +505,9 @@ function render(an){
   else $('hero-num').textContent='$'+Math.round(b.total).toLocaleString();
 
   const mult=Math.round(b.total/plan.p);
+  const discount=mult>1?Math.round((1-1/mult)*100):0;
   const friendlyMonth=D.month.match(/^\d{4}-(\d{2})$/)?MONTHS[parseInt(D.month.split('-')[1])-1]+' '+D.month.split('-')[0]:D.month;
-  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> a ${plan.n} subscription<br>${friendlyMonth} &middot; ${D.days} of ${D.month_days} days with usage data`;
+  $('hero-ctx').innerHTML=`That's <strong>${mult}x</strong> a ${plan.n} subscription`+(discount>0?` <strong>(-${discount}%)</strong>`:``)+`<br>${friendlyMonth} &middot; ${D.days} of ${D.month_days} days with usage data`;
 
   // Range
   $('r-lo').textContent='$'+Math.round(lo.total).toLocaleString();
@@ -524,8 +555,13 @@ function resetView(){
   // Clean up shared view elements
   const banner=document.querySelector('.shared-banner');if(banner)banner.remove();
   const cta=document.querySelector('.share-cta');if(cta)cta.remove();
+  // Restore share button if it was replaced by CTA
+  const heroShare=document.querySelector('.hero-share');
+  if(!heroShare.querySelector('#share-btn')){
+    heroShare.innerHTML='<button class="share-btn" id="share-btn" onclick="shareResults()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share results</button>';
+  }
   document.querySelector('.controls').style.display='';
-  document.querySelector('.hero-above').textContent='Your Claude Code usage last month would have cost (est.)';
+  document.querySelector('.hero-above').textContent='Your Claude Code usage last month would have cost';
   // Remove ?r= from URL
   if(location.search)history.replaceState(null,'',location.pathname);
   // Re-bind input listeners if coming from shared view
@@ -698,10 +734,11 @@ function initFromShare(){
   res.classList.add('on');
   // Hero
   $('hero-num').textContent='$'+Math.round(data.total).toLocaleString();
-  document.querySelector('.hero-above').textContent='My Claude Code usage would have cost (est.)';
+  document.querySelector('.hero-above').textContent='My Claude Code usage would have cost';
   const plan=PLANS[data.plan]||PLANS[1];
   const mult=Math.round(data.total/plan.p);
-  $('hero-ctx').innerHTML=`<strong>${mult}x</strong> a ${plan.n} subscription<br>${data.monthName} &middot; ${data.days} of ${data.monthDays} days with usage data`;
+  const discount=mult>1?Math.round((1-1/mult)*100):0;
+  $('hero-ctx').innerHTML=`<strong>${mult}x</strong> a ${plan.n} subscription`+(discount>0?` <strong>(-${discount}%)</strong>`:``)+`<br>${data.monthName} &middot; ${data.days} of ${data.monthDays} days with usage data`;
   // Banner
   const banner=document.createElement('div');
   banner.className='shared-banner';
@@ -740,12 +777,9 @@ function initFromShare(){
   // Hide controls and reset button (no raw data)
   document.querySelector('.controls').style.display='none';
   document.querySelector('.reset-btn').style.display='none';
-  // CTA
-  const cta=document.createElement('a');
-  cta.href=location.pathname;
-  cta.className='share-cta';
-  cta.textContent='Find out your cost \u2192';
-  document.querySelector('.foot').prepend(cta);
+  // Replace share button with CTA for shared view
+  const heroShare=document.querySelector('.hero-share');
+  heroShare.innerHTML='<a href="'+location.pathname+'" class="share-cta">Find out your cost \u2192</a>';
   // Update OG tags for share previews
   const cost='$'+Math.round(data.total).toLocaleString();
   const desc='My Claude Code usage would have cost '+cost+'/mo at API prices. What about you?';
