@@ -123,7 +123,9 @@ Project cards live inside the `#projects` section on the homepage. The "Projects
 
 ### Canonical URLs
 
-Canonical URLs do **not** include `.html` (e.g., `https://risogroup.co/projects/metabase-snapshot`). Internal links between pages use `.html` since the actual files are `.html`. This matches the pattern across the rest of the site.
+Canonical URLs and internal `<a href>` links both omit `.html` (e.g., canonical `https://risogroup.co/projects/metabase-snapshot`, internal link `projects/metabase-snapshot`). GitHub Pages serves both forms from the same `.html` file, so existing `.html` URLs continue to work as non-canonical aliases. Keeping the link form aligned with the canonical form ensures link equity flows to the canonical URL and avoids Ahrefs/SEO "canonical URL has no incoming internal links" warnings.
+
+For directory indexes, use the trailing-slash form (`insights/`, `projects/`, `../` for parent) instead of `index.html`.
 
 ## Structured Data (JSON-LD) for SEO
 
@@ -141,7 +143,7 @@ All insight articles should include Article schema structured data in JSON-LD fo
     "author": {
         "@type": "Person",
         "name": "James Riso",
-        "url": "https://risogroup.co/index.html#james"
+        "url": "https://risogroup.co/#james"
     },
     "publisher": {
         "@type": "Organization",
@@ -183,7 +185,7 @@ The homepage (`index.html`) displays 3 **editorially curated** insight cards in 
 
 ```html
 <div class="col-md-4 mb-4">
-    <a href="insights/[slug].html" class="text-decoration-none">
+    <a href="insights/[slug]" class="text-decoration-none">
         <div class="card h-100 border-0 shadow-sm">
             <img src="insights/images/[folder]/[image].png" class="card-img-top" alt="[descriptive alt text]" style="height: 200px; object-fit: cover; object-position: top;">
             <div class="card-body">
