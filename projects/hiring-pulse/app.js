@@ -786,7 +786,13 @@ function renderDeepDive(role) {
             { color: colors.primary, yFormat: 'pct' }
         );
         makeSimpleLine('chart-flow-breadth',
-            flow.map(d => ({ date: d.date, value: d.breadth })),
+            // breadth_per_day is window-invariant; raw `breadth` inflates over longer
+            // scrape gaps and would misrepresent activity. Fall back to breadth/days
+            // for older rows that pre-date the new field.
+            flow.map(d => ({
+                date: d.date,
+                value: d.breadth_per_day !== undefined ? d.breadth_per_day : (d.breadth / (d.days || 3))
+            })),
             { color: colors.primary, yFormat: 'pct' }
         );
     }
