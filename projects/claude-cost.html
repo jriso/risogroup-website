@@ -397,6 +397,8 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
           <table class="m-table">
             <thead><tr><th>Model</th><th>Input</th><th>Output</th><th>Cache Read</th><th>CW 5m</th><th>CW 1h</th></tr></thead>
             <tbody>
+              <tr><td>Opus 4.8</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
+              <tr><td>Opus 4.7</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Opus 4.6</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Sonnet 4.6</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
               <tr><td>Haiku 4.5</td><td>$1</td><td>$5</td><td>$0.10</td><td>$1.25</td><td>$2</td></tr>
@@ -441,6 +443,8 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
 
 <script>
 const P={
+  'claude-opus-4-8':{i:5,o:25,cr:.5,c5:6.25,c1:10},
+  'claude-opus-4-7':{i:5,o:25,cr:.5,c5:6.25,c1:10},
   'claude-opus-4-6':{i:5,o:25,cr:.5,c5:6.25,c1:10},
   'claude-sonnet-4-6':{i:3,o:15,cr:.3,c5:3.75,c1:6},
   'claude-haiku-4-5-20251001':{i:1,o:5,cr:.1,c5:1.25,c1:2},
@@ -465,10 +469,14 @@ function copyCmd(){
   const b=document.querySelector('.copy-btn');b.textContent='Copied!';
   setTimeout(()=>b.textContent='Copy',1500);
 }
+// Current-gen list rates by family — fallback for models not in P, so an
+// unknown future model can't silently inherit a higher-priced legacy entry.
+const DR={opus:{i:5,o:25,cr:.5,c5:6.25,c1:10},sonnet:{i:3,o:15,cr:.3,c5:3.75,c1:6},haiku:{i:1,o:5,cr:.1,c5:1.25,c1:2}};
 function rate(m){
   if(P[m])return P[m];
-  for(const[k,v]of Object.entries(P))if(m.startsWith(k.split('-20')[0]))return v;
-  return P['claude-opus-4-6'];
+  for(const[k,v]of Object.entries(P))if(m.startsWith(k+'-'))return v; // dated variant of a known alias
+  for(const f of['opus','sonnet','haiku'])if(m.includes(f))return DR[f];
+  return DR.opus;
 }
 function calc(d,cr){
   const c={input:0,output:0,cache_read:0,cache_write:0},mul=cr/.5;
