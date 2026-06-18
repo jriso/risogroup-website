@@ -150,6 +150,12 @@ body{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;backgrou
 .hero-context strong{color:var(--green);font-weight:600}
 .hero-badge{margin-top:12px;font-size:.78rem;color:var(--ink-light);
   font-weight:400;font-style:italic}
+.model-warn{margin-top:18px;padding:12px 14px;border-radius:6px;text-align:left;
+  background:#fdf3e7;border:1px solid #e8c79a;color:#7a4a12;font-size:.82rem;line-height:1.5}
+.model-warn strong{font-weight:600}
+.model-warn a{color:#7a4a12;text-decoration:underline}
+.model-warn code{font-family:'JetBrains Mono',monospace;font-size:.78rem;
+  background:rgba(122,74,18,.1);padding:1px 5px;border-radius:3px}
 .hero-share{text-align:center;margin-top:18px;position:relative}
 
 /* ═══ RANGE ═══ */
@@ -329,6 +335,8 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
       </button>
     </div>
 
+    <div class="model-warn" id="model-warn" style="display:none"></div>
+
     <div class="range-block">
       <div class="range-bar-wrap">
         <div class="range-pin" id="range-pin">
@@ -397,6 +405,8 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
           <table class="m-table">
             <thead><tr><th>Model</th><th>Input</th><th>Output</th><th>Cache Read</th><th>CW 5m</th><th>CW 1h</th></tr></thead>
             <tbody>
+              <tr><td>Fable 5</td><td>$10</td><td>$50</td><td>$1.00</td><td>$12.50</td><td>$20</td></tr>
+              <tr><td>Mythos 5</td><td>$10</td><td>$50</td><td>$1.00</td><td>$12.50</td><td>$20</td></tr>
               <tr><td>Opus 4.8</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Opus 4.7</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Opus 4.6</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
@@ -443,6 +453,8 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
 
 <script>
 const P={
+  'claude-fable-5':{i:10,o:50,cr:1,c5:12.5,c1:20},
+  'claude-mythos-5':{i:10,o:50,cr:1,c5:12.5,c1:20},
   'claude-opus-4-8':{i:5,o:25,cr:.5,c5:6.25,c1:10},
   'claude-opus-4-7':{i:5,o:25,cr:.5,c5:6.25,c1:10},
   'claude-opus-4-6':{i:5,o:25,cr:.5,c5:6.25,c1:10},
@@ -471,12 +483,22 @@ function copyCmd(){
 }
 // Current-gen list rates by family — fallback for models not in P, so an
 // unknown future model can't silently inherit a higher-priced legacy entry.
-const DR={opus:{i:5,o:25,cr:.5,c5:6.25,c1:10},sonnet:{i:3,o:15,cr:.3,c5:3.75,c1:6},haiku:{i:1,o:5,cr:.1,c5:1.25,c1:2}};
+const DR={fable:{i:10,o:50,cr:1,c5:12.5,c1:20},mythos:{i:10,o:50,cr:1,c5:12.5,c1:20},opus:{i:5,o:25,cr:.5,c5:6.25,c1:10},sonnet:{i:3,o:15,cr:.3,c5:3.75,c1:6},haiku:{i:1,o:5,cr:.1,c5:1.25,c1:2}};
+const FAMILIES=['fable','mythos','opus','sonnet','haiku'];
 function rate(m){
   if(P[m])return P[m];
   for(const[k,v]of Object.entries(P))if(m.startsWith(k+'-'))return v; // dated variant of a known alias
-  for(const f of['opus','sonnet','haiku'])if(m.includes(f))return DR[f];
+  const seg=m.split('-');for(const f of FAMILIES)if(seg.includes(f))return DR[f]; // family token, not bare substring
   return DR.opus;
+}
+// How confidently is a model priced? 'exact' = published rate for this exact id
+// (or a dated pin of a known alias); 'family:<tier>' = estimated from its tier;
+// 'default' = no tier match, priced as opus (least reliable).
+function coverage(m){
+  if(P[m])return'exact';
+  for(const k of Object.keys(P))if(m.startsWith(k+'-'))return'exact';
+  const seg=m.split('-');for(const f of FAMILIES)if(seg.includes(f))return'family:'+f; // family token, not bare substring
+  return'default';
 }
 function calc(d,cr){
   const c={input:0,output:0,cache_read:0,cache_write:0},mul=cr/.5;
@@ -502,6 +524,21 @@ function anim(el,to,dur=700){
 
 function render(an){
   if(!D)return;
+
+  // Alert when a pasted model isn't an exact entry in our pricing table.
+  const esc=s=>s.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+  const tag=m=>`<code>${esc(m)}</code>`;
+  const est=Object.keys(D.models).map(m=>({m,c:coverage(m)})).filter(x=>x.c!=='exact');
+  const mw=$('model-warn');
+  if(est.length){
+    const fam=est.filter(x=>x.c.startsWith('family:')),def=est.filter(x=>x.c==='default');
+    let h=`<strong>Heads up — estimated pricing for ${est.length>1?'models':'a model'} not in our table.</strong> `;
+    if(fam.length)h+=`Priced ${fam.map(x=>tag(x.m)).join(', ')} at current ${fam.length>1?'tier rates':fam[0].c.split(':')[1]+' rates'}. `;
+    if(def.length)h+=`No tier match for ${def.map(x=>tag(x.m)).join(', ')} — priced at Opus rates as a fallback, which may be inaccurate. `;
+    h+=`Our pricing table may be out of date; <a href="https://github.com/jriso/claude-code-cost/issues" target="_blank" rel="noopener">report it</a> and we'll add the real rate.`;
+    mw.innerHTML=h;mw.style.display='';
+  }else{mw.style.display='none';mw.innerHTML='';}
+
   const cr=parseFloat($('cr-slider').value);
   const ab=document.querySelector('.plan-btn.on');
   const plan=PLANS[parseInt(ab?ab.dataset.p:'1')];
