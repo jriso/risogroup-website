@@ -488,7 +488,7 @@ const FAMILIES=['fable','mythos','opus','sonnet','haiku'];
 function rate(m){
   if(P[m])return P[m];
   for(const[k,v]of Object.entries(P))if(m.startsWith(k+'-'))return v; // dated variant of a known alias
-  for(const f of FAMILIES)if(m.includes(f))return DR[f];
+  const seg=m.split('-');for(const f of FAMILIES)if(seg.includes(f))return DR[f]; // family token, not bare substring
   return DR.opus;
 }
 // How confidently is a model priced? 'exact' = published rate for this exact id
@@ -497,7 +497,7 @@ function rate(m){
 function coverage(m){
   if(P[m])return'exact';
   for(const k of Object.keys(P))if(m.startsWith(k+'-'))return'exact';
-  for(const f of FAMILIES)if(m.includes(f))return'family:'+f;
+  const seg=m.split('-');for(const f of FAMILIES)if(seg.includes(f))return'family:'+f; // family token, not bare substring
   return'default';
 }
 function calc(d,cr){
