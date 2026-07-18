@@ -258,9 +258,7 @@ function renderVolumeSparkline() {
     const sign = relDelta >= 0 ? '+' : '';
     const sig = (latest.ci_lower > 0 || latest.ci_upper < 0) ? ' *' : '';
 
-    const baselineJobs = Math.round(baseline.value / 100) * 100;
-    const latestJobs = Math.round(latest.value / 100) * 100;
-    const overallTip = `Job postings are ${relDelta >= 0 ? 'up' : 'down'} ${Math.abs(relDelta).toFixed(1)}% since ${bLabel} (from ~${baselineJobs.toLocaleString()} to ~${latestJobs.toLocaleString()} postings). This is the net effect of new roles added and existing roles filled. Estimated using statistical resampling across 1,000 iterations, which controls for changes in which companies we track over time.`;
+    const overallTip = `Job postings are ${relDelta >= 0 ? 'up' : 'down'} ${Math.abs(relDelta).toFixed(1)}% since ${bLabel}, comparing the same companies over time (companies added to our tracking since ${bLabel} aren't counted in this change). It reflects new roles posted and existing roles filled, estimated by resampling across 1,000 iterations.`;
 
     const marketEl = document.getElementById('market-stat');
     marketEl.classList.add('clickable');
