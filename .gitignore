@@ -1,3 +1,4 @@
 .DS_Store
-.claude/
+.claude/*
+!.claude/CLAUDE.md
 static/.DS_Store
