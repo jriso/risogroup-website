@@ -11,25 +11,25 @@ This guide documents the process for creating chart-based "Data Insight" posts f
 
 ## Working From a Jupyter Notebook (two-repo flow)
 
-Some posts start not from a single finished chart but from a full **exploratory notebook** in the analysis repo (`~/code/virgil`). In that case, work spans two repos and Claude acts as **editor** first, then follows the normal workflow below.
+Some posts start not from a single finished chart but from a full **exploratory notebook** in the separate analysis repo. In that case, work spans two repos and Claude acts as **editor** first, then follows the normal workflow below.
 
 ### Division of labor
 
-**Repo A — analysis (`~/code/virgil`)**: source notebook lives here, and the slimmed artifact is archived here.
-**Repo B — website (this repo)**: only the final PNG crosses over into `insights/images/[slug]/`.
+**Repo A, the analysis repo**: source notebook lives here, and the slimmed artifact is archived here.
+**Repo B, the website (this repo)**: only the final PNG crosses over into `insights/images/[slug]/`.
 
-### Step 0 — Distill (happens before Step 1 below)
+### Step 0: Distill (happens before Step 1 below)
 
 1. **Read the whole notebook.** It's exploratory: many candidate charts, dead ends, and the "story" is usually not the notebook's own cell order. Ignore cell order as a signal of importance.
 2. **Propose a ranked shortlist** of postable findings + a recommendation; James picks the one (or ones). Wait for approval before drafting anything. A rich notebook is often 2-3 posts, not one.
-3. **Write a slimmed-down "bite" notebook** that reproduces *only* the chosen chart(s) — no scratch cells or abandoned branches. This becomes the reproducible artifact **and** the methodology source of truth (write the post's Methodology by reading this, not the messy original).
+3. **Write a slimmed-down "bite" notebook** that reproduces *only* the chosen chart(s), with no scratch cells or abandoned branches. This becomes the reproducible artifact **and** the methodology source of truth (write the post's Methodology by reading this, not the messy original).
 
 ### The `published/` archive convention
 
-Follow the existing pattern in virgil (`jobs/analysis/published/`, `secdata/published/`, `hackernews/published/`):
+Follow the existing `published/` pattern already used in the analysis repo (each analysis directory gets its own `published/` subfolder):
 
 - **Location:** a `published/` folder **in the same directory as the working analysis** (e.g. `jobs/analysis/published/`).
-- **Artifact:** a self-contained notebook named **`bite_<slug>.ipynb`** — small (typically 3-10 cells), runnable, regenerates exactly the figure.
+- **Artifact:** a self-contained notebook named **`bite_<slug>.ipynb`**, small (typically 3-10 cells), runnable, and regenerating exactly the figure.
 - **Image:** the PNG alongside it, named off the slug (`bite_<slug>.png`, or `bite_<slug>_<variant>.png`). When the shared graphic differs from the raw chart, keep both: `_posted.png` (final graphic as shared) and `_chart.png` (reproduced source chart).
 - **README:** optional one-row-per-share index table (see `secdata/published/README.md`). Skip unless useful.
 - **Data snapshots:** usually **not** frozen. The `jobs/analysis` bites re-run against live data. Only freeze a CSV/JSON snapshot for genuinely one-off pulls (as `secdata` did). Default: no snapshot.
@@ -401,7 +401,7 @@ Data Analyst 8%, Analytics Engineer 6%, Other 2%"
 - Breadcrumb says "Data Insight" (singular) not "Insights"
 - Header has `data-insight-header` class
 - All margins set to 0 between title and chart
-- **Never add `box-shadow` to images** — the CSS has no shadows by default; do not add inline shadow styles
+- **Never add `box-shadow` to images**: the CSS has no shadows by default; do not add inline shadow styles
 - Methodology uses `data-insight-methodology` class (not `insight-methodology`)
 
 ### Step 7: Update Insights Index
@@ -549,7 +549,7 @@ active posting. Other includes BI, Applied Scientist, Decision Scientist.
 
 1. **Breadcrumb:** Must say "Data Insight" (singular), not "Insights"
 2. **Methodology class:** Use `data-insight-methodology`, not `insight-methodology`
-3. **No image shadows:** Never add `box-shadow` to images — the CSS has no shadows by default. Do not add inline shadow or border styles.
+3. **No image shadows:** Never add `box-shadow` to images; the CSS has no shadows by default. Do not add inline shadow or border styles.
 4. **Zero margins:** Title to chart transition needs all margins set to 0
 5. **Image URLs:** OG/Twitter images must be absolute URLs (https://...)
 6. **Index order:** Add new posts to TOP of grid, not bottom
