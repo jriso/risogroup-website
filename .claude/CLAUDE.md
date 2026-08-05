@@ -427,6 +427,21 @@ Add new post to `insights/index.html` at the **TOP** of the grid:
 
 **Note:** Data Insight posts are always "1 min read"
 
+### Step 7b: Add to sitemap.xml
+
+Add a `<url>` entry to `sitemap.xml`, alongside the other insight entries:
+
+```xml
+  <url>
+    <loc>https://risogroup.co/insights/[ARTICLE-SLUG]</loc>
+    <lastmod>[YYYY-MM-DD]</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+```
+
+Insight URLs are extensionless, `changefreq` is `monthly`, and `priority` is `0.7`. Nothing in the repo tests for this, so a missing entry is a silent SEO miss.
+
 ### Step 8: Pre-Publication Checklist
 
 Before finalizing, verify:
@@ -465,9 +480,12 @@ Before finalizing, verify:
 
 **Links & Updates:**
 - [ ] Article added to top of `insights/index.html`
-- [ ] Homepage `index.html` "Latest Insight" section updated with new post
+- [ ] Homepage `index.html` "Featured Insights" section updated with new post
+- [ ] `sitemap.xml` entry added
 - [ ] No typos or formatting issues
 - [ ] Preview in browser before committing
+
+**Publishing a Data Insight touches 5 files:** the post HTML, the chart PNG under `insights/images/[slug]/`, `insights/index.html`, `index.html`, and `sitemap.xml`.
 
 ---
 
