@@ -367,6 +367,19 @@ Data Analyst 8%, Analytics Engineer 6%, Other 2%"
             </div>
         </div>
 
+        <!-- Related - see Step 6b -->
+        <nav class="insight-related" aria-label="Related insights">
+            <h4 class="insight-related-title">Related</h4>
+            <ul class="insight-related-list">
+                <li class="insight-related-item">
+                    <a class="insight-related-link" href="[SLUG]">[TITLE]</a>
+                </li>
+                <li class="insight-related-item">
+                    <a class="insight-related-link" href="[SLUG]">[TITLE]</a>
+                </li>
+            </ul>
+        </nav>
+
     </article>
 
     <div id="site-footer"></div>
@@ -403,6 +416,42 @@ Data Analyst 8%, Analytics Engineer 6%, Other 2%"
 - All margins set to 0 between title and chart
 - **Never add `box-shadow` to images**: the CSS has no shadows by default; do not add inline shadow styles
 - Methodology uses `data-insight-methodology` class (not `insight-methodology`)
+- Related block goes **after** the Author Bio, as the last thing inside `</article>` (see Step 6b)
+
+### Step 6b: Add Related Links
+
+Every post ends with a **Related** block linking to 2 topically adjacent posts. This exists because Ahrefs flags any page with only one incoming internal link, and without this block a post's only inbound link is the `insights/` index. It also just helps readers: the BI and data platform studies are recurring series, and the hiring posts all read as one body of work.
+
+**Claude should propose the links, not wait to be asked.** When creating a new post, read the existing posts in `insights/` and suggest the 2 most topically relevant, plus which 2 posts should link back. Present them for approval like this:
+
+```
+Related links for this post:
+  → Top 10 BI Tools by Adoption: January 2026   (same series, six months earlier)
+  → Data Platform Adoption: July 2026           (same scrape, same month)
+
+Reciprocal links I'll add back to this post:
+  → bi-tool-adoption-jan-2026    (replacing its link to posthog-product-analytics)
+  → data-platform-adoption-july-2026  (replacing its link to clickhouse-adoption)
+```
+
+If nothing is genuinely relevant, say so rather than forcing a weak pairing, and link the 2 most recent posts as a fallback so the post still ships with inbound links.
+
+**Titles only, no descriptions.** The link text is the target post's title and nothing else. Do not add a summary line under each link.
+
+**Placement:** after the Author Bio, immediately before `</article>`. The bio is attribution and belongs with the article; Related is an exit ramp and belongs last, next to the footer. This matches Medium, Ghost, and most WordPress themes.
+
+**Two edits are required, not one:**
+
+1. **Outbound.** Add the Related block to the new post, linking 2 existing posts.
+2. **Reciprocal (easy to forget).** Open those same 2 posts and add the new post to *their* Related lists, replacing the weakest existing link. Without this the new post ships with 1 inbound link and the Ahrefs counter ticks up again.
+
+**Choosing the 2 links:** prefer the same series first (a July study links to its January predecessor), then the same topic cluster. The existing clusters are BI/product analytics, data platforms/warehouses, hiring, and AI tooling.
+
+**Link text:** use a short form of the target's title, not the full `<title>` tag. For example `Hiring Pulse: Q1 2026`, not `Hiring Pulse: Tech job openings were up in Q1, with Software Engineering losing share`.
+
+**Link format:** bare sibling slug, no `.html` and no path, e.g. `href="clickhouse-adoption"`.
+
+**Never** link a post to itself, and keep it at exactly 2 links so the block stays scannable.
 
 ### Step 7: Update Insights Index
 
@@ -482,10 +531,12 @@ Before finalizing, verify:
 - [ ] Article added to top of `insights/index.html`
 - [ ] Homepage `index.html` "Featured Insights" section updated with new post
 - [ ] `sitemap.xml` entry added
+- [ ] Related block on the new post filled in with 2 links (Step 6b)
+- [ ] **Reciprocal links added**: those 2 posts now link back to the new post
 - [ ] No typos or formatting issues
 - [ ] Preview in browser before committing
 
-**Publishing a Data Insight touches 5 files:** the post HTML, the chart PNG under `insights/images/[slug]/`, `insights/index.html`, `index.html`, and `sitemap.xml`.
+**Publishing a Data Insight touches 7 files:** the post HTML, the chart PNG under `insights/images/[slug]/`, `insights/index.html`, `index.html`, `sitemap.xml`, and the **2 existing posts** that gain a reciprocal Related link.
 
 ---
 
@@ -586,12 +637,13 @@ When user provides a chart, this is the exact sequence:
 4. **Draft methodology** → Show to user
 5. **User provides chart image** → Verify specs and save location
 6. **Create HTML file** using exact structure above
+6b. **Propose Related links** → Scan the existing posts, suggest the 2 most relevant, and name which 2 posts will link back. Show to user
 7. **Update insights/index.html AND homepage index.html**
    - Add to top of insights grid
    - Replace "Latest Insight" section on homepage
 8. **Run pre-publication checklist**
 
-**User feedback loop:** Get approval at Steps 2, 3, and 4 before proceeding to implementation.
+**User feedback loop:** Get approval at Steps 2, 3, 4, and 6b before proceeding to implementation.
 
 **Analytics:** The template includes:
 - Google Analytics (gtag.js) configuration in `<head>`
