@@ -1,0 +1,2161 @@
+{
+ "meta": {
+  "generated": "2026-08-10",
+  "vendors": [
+   {
+    "slug": "hex",
+    "label": "Hex",
+    "archive_starts": "2020-12-17"
+   },
+   {
+    "slug": "metabase",
+    "label": "Metabase",
+    "archive_starts": "2015-12-01"
+   },
+   {
+    "slug": "omni",
+    "label": "Omni",
+    "archive_starts": "2023-07-26"
+   },
+   {
+    "slug": "sigma",
+    "label": "Sigma",
+    "archive_starts": "2023-06-30"
+   }
+  ],
+  "docs_corpus": {
+   "pages": 2270,
+   "chars": 17301261,
+   "by_vendor": {
+    "hex": 186,
+    "metabase": 291,
+    "omni": 1077,
+    "sigma": 716
+   }
+  },
+  "changelog": {
+   "items": 2887,
+   "features": 2977,
+   "entries": 401,
+   "window_opens": "2023-07-26"
+  },
+  "gates": [
+   {
+    "cmd": "ladders/evidence.py --check",
+    "pass": true,
+    "output": [
+     "PASS \u2014 every charted cell, doc-derived and census-derived, needs a quote and a resolvable link"
+    ]
+   },
+   {
+    "cmd": "ladders/refinements.py",
+    "pass": true,
+    "output": [
+     "    refined  arrival order: metabase 2026-05-20 \u00b7 sigma 2026-06-12 \u00b7 hex 2026-06-16 \u00b7 omni 2026-07-20"
+    ]
+   }
+  ],
+  "counts": {
+   "cells": 52,
+   "doc_sourced": 52,
+   "disagreements": 2
+  }
+ },
+ "labels": {
+  "verbatim": "THEIR WORDS",
+  "verbatim_sub": "verbatim from the source, unedited",
+  "ours": "OUR READING",
+  "ours_sub": "our conclusion, not the vendor's claim",
+  "mapping": "WE CODED THIS AS",
+  "normalized": "NORMALIZED",
+  "normalized_sub": "the same list, made legible \u2014 inventory only, no conclusion",
+  "absence": "WHAT WE SEARCHED FOR AND DID NOT FIND"
+ },
+ "groups": [
+  {
+   "name": "AI FEATURES",
+   "sub": "the AI built into the product",
+   "rows": [
+    {
+     "id": "I2",
+     "label": "The AI writes the query",
+     "sub": "describe what you want, get SQL back",
+     "ladder": "I"
+    },
+    {
+     "id": "I3",
+     "label": "Back-and-forth, not one-shot",
+     "sub": "refine by asking a follow-up instead of re-prompting",
+     "ladder": "I"
+    },
+    {
+     "id": "V3",
+     "label": "The AI shows its work",
+     "sub": "see which tables it used and what steps it took",
+     "ladder": "V"
+    },
+    {
+     "id": "KEY",
+     "label": "Bring your own API key",
+     "sub": "point it at your own OpenAI, Anthropic or warehouse account",
+     "ladder": null
+    },
+    {
+     "id": "I5",
+     "label": "Saved, named agents",
+     "sub": "an agent you configure once with its own instructions and tools",
+     "ladder": "I"
+    },
+    {
+     "id": "SPEND",
+     "label": "AI spend limits",
+     "sub": "a hard cap on what a user can burn",
+     "ladder": null
+    }
+   ]
+  },
+  {
+   "name": "OUTSIDE AGENTS",
+   "sub": "e.g. Claude Code reaching into the tool",
+   "rows": [
+    {
+     "id": "X2",
+     "label": "Ask a question, get an answer",
+     "sub": "run a query and read the result \u2014 all four, via MCP",
+     "ladder": "X"
+    },
+    {
+     "id": "DEFS",
+     "label": "Read what things mean",
+     "sub": "column and metric definitions \u00b7 MCP for sigma + metabase, CLI for omni",
+     "ladder": null
+    },
+    {
+     "id": "LINEAGE",
+     "label": "Read how it was built",
+     "sub": "lineage \u2014 in nobody\u2019s agent surface, though it sits in their APIs",
+     "ladder": null
+    },
+    {
+     "id": "WCONTENT",
+     "label": "Write content",
+     "sub": "create a dashboard, question or notebook \u00b7 CLI, and MCP for metabase",
+     "ladder": null
+    },
+    {
+     "id": "WMODEL",
+     "label": "Write the model",
+     "sub": "change the semantic layer itself \u00b7 only omni, only via CLI",
+     "ladder": null
+    }
+   ]
+  },
+  {
+   "name": "CONTEXT LAYER",
+   "sub": "what both of them read",
+   "rows": [
+    {
+     "id": "C4",
+     "label": "Hand-written AI context",
+     "sub": "plain-English guidance \u2014 not schema, not metrics",
+     "ladder": "C"
+    },
+    {
+     "id": "C5",
+     "label": "Context under version control",
+     "sub": "sync from git, validate before it goes live",
+     "ladder": "C"
+    }
+   ]
+  }
+ ],
+ "cells": {
+  "I2|hex": {
+   "row": "I2",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "The Agent is capable of creating and modifying Python, SQL, Markdown, Pivot, and Chart cells."
+    ],
+    "enumeration": null,
+    "url": "https://learn.hex.tech/docs/getting-started/ai-overview",
+    "checked": "2026-08-09",
+    "note": null,
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260608074258/https://learn.hex.tech/docs/getting-started/ai-overview",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2023-02-02",
+    "prewindow": true,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I2|metabase": {
+   "row": "I2",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Generate SQL in the native editor from natural language. (Currently, only SQL is supported.)"
+    ],
+    "enumeration": null,
+    "url": "https://www.metabase.com/docs/latest/ai/metabot",
+    "checked": "2026-08-09",
+    "note": null,
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260520175813/https://www.metabase.com/docs/latest/ai/metabot",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2025-08-07",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I2|omni": {
+   "row": "I2",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Ask questions, generate queries and visualizations, and create dashboards \u2014 no workbook setup needed."
+    ],
+    "enumeration": null,
+    "url": "https://docs.omni.co/ai",
+    "checked": "2026-08-09",
+    "note": null,
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260418042654/https://docs.omni.co/ai",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2024-01-26",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I2|sigma": {
+   "row": "I2",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "The formula assistant evaluates your description of calculations, data references, manipulations, and other context, then suggests a formula to achieve the desired output."
+    ],
+    "enumeration": null,
+    "url": "https://help.sigmacomputing.com/docs/use-ai-with-formulas",
+    "checked": "2026-08-09",
+    "note": "Sourced to formulas rather than SQL, deliberately. Four Sigma pages that should have said 'generates SQL' \u2014 the AI overview, the Assistant NLQ page, the in-workbook Assistant page and assistant-usage \u2014 none does. Sigma's authoring language is the formula, so this is the honest local form of 'the AI writes the query'. Do not upgrade it to 'writes SQL' without a page that says so.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810034353/https://help.sigmacomputing.com/docs/use-ai-with-formulas",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2023-08-04",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I3|hex": {
+   "row": "I3",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Use Threads to self-serve data questions based on curated data in a conversational interface."
+    ],
+    "enumeration": null,
+    "url": "https://learn.hex.tech/docs/getting-started/ai-overview",
+    "checked": "2026-08-09",
+    "note": null,
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260608074258/https://learn.hex.tech/docs/getting-started/ai-overview",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2024-06-26",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I3|metabase": {
+   "row": "I3",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Metabot will keep the context of the current question with each new prompt"
+    ],
+    "enumeration": null,
+    "url": "https://www.metabase.com/docs/latest/ai/metabot",
+    "checked": "2026-08-09",
+    "note": null,
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260520175813/https://www.metabase.com/docs/latest/ai/metabot",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-01-13",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I3|omni": {
+   "row": "I3",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Build and refine queries using natural language inside a workbook."
+    ],
+    "enumeration": null,
+    "url": "https://docs.omni.co/ai",
+    "checked": "2026-08-09",
+    "note": null,
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260418042654/https://docs.omni.co/ai",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2024-07-02",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I3|sigma": {
+   "row": "I3",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Ask follow-up questions to refine the analysis"
+    ],
+    "enumeration": null,
+    "url": "https://help.sigmacomputing.com/docs/getting-started-with-ai",
+    "checked": "2026-08-09",
+    "note": null,
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810031526/https://help.sigmacomputing.com/docs/getting-started-with-ai",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2025-04-04",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "V3|hex": {
+   "row": "V3",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": "user",
+    "quotes": [
+     "Threads will display the agent's thinking text and show you the tools the agent is calling, as well as the results of those tool calls, in real time."
+    ],
+    "enumeration": null,
+    "url": "https://learn.hex.tech/docs/explore-data/threads",
+    "checked": "2026-08-10",
+    "note": "SCOPE CORRECTED 2026-08-10, by the docs corpus rather than by reading. The earlier version cited Agent Observability and recorded scope=admin, on the strength of 'Only Admins can view individual conversations.' That sentence is true and describes Context Studio \u2014 the workspace-wide review surface. It says nothing about the asker, and I generalised it into a claim that the person who asked the question cannot audit the answer. They can, live, in the Thread itself: the same page adds that tool calls and thinking text collapse when the agent finishes and 'You can always expand the tool calls and thinking text to understand how the agent arrived at a particular result.' Admin observability sits on top of user-visible reasoning; it does not replace it.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260621094934/https://learn.hex.tech/docs/explore-data/threads",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2024-10-18",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "V3|metabase": {
+   "row": "V3",
+   "vendor": "metabase",
+   "docs": {
+    "state": "partial",
+    "scope": null,
+    "quotes": [
+     "Metabot will generate the SQL for you, but it won't run the query. This gives you a chance to inspect the code before running it."
+    ],
+    "enumeration": null,
+    "url": "https://www.metabase.com/docs/latest/ai/metabot",
+    "checked": "2026-08-09",
+    "note": "You see the ARTIFACT, not the reasoning. The generated SQL names the tables, so a reader can work out what it touched \u2014 but there is no step trace, and the docs are silent on how it chose. Sigma shows an 'Analysis breakdown' of the steps; Hex shows tools used and assets referenced but only to admins. Three genuinely different answers on one row.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260520175813/https://www.metabase.com/docs/latest/ai/metabot",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-07-21",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "V3|omni": {
+   "row": "V3",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": "user",
+    "quotes": [
+     "When the Omni Agent generates a query, you can view details about the fields used in the results. This helps you understand what data the AI selected and how each field is defined.",
+     "**Definition** - The SQL or calculation that defines the field"
+    ],
+    "enumeration": null,
+    "url": "https://docs.omni.co/ai/chat",
+    "checked": "2026-08-10",
+    "note": "RAISED FROM partial 2026-08-10. The row asks whether a user can see which tables or fields the AI used. Omni's answer is yes and it is explicit \u2014 the page states the purpose in those words. The earlier partial came from holding this against a different standard: Sigma narrates the steps, Omni shows the fields, and I marked Omni down for the gap. But 'which fields, and what each one means' is the thing the row names; a step trace is a different and stricter capability that the row does not ask for. Scoring against the best vendor rather than against the row is how a comparison quietly becomes a ranking.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810033735/https://docs.omni.co/ai/chat",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-04-26",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "V3|sigma": {
+   "row": "V3",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": "user",
+    "quotes": [
+     "If you want to review the step-by-step decision logic Sigma Assistant used to determine the answer, select Analysis breakdown and review the steps that Sigma Assistant took."
+    ],
+    "enumeration": null,
+    "url": "https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant",
+    "checked": "2026-08-09",
+    "note": "USER-FACING, and that is the interesting part. Hex has richer per-run introspection but gates it to Admin/Manager; Sigma puts a step-by-step breakdown in front of the person who asked. On the row as written \u2014 can the asker see the work \u2014 these are opposite answers, and a chart that shows both as a plain tick hides the difference.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260520041502/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-06-12",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "KEY|hex": {
+   "row": "KEY",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "BYOK (Enterprise plan only): Option to route requests via your own API keys for supported AI providers."
+    ],
+    "enumeration": null,
+    "url": "https://learn.hex.tech/docs/getting-started/ai-overview",
+    "checked": "2026-08-09",
+    "note": "Enterprise plan only \u2014 worth stating if the row is ever read as 'available to any customer'.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260608074258/https://learn.hex.tech/docs/getting-started/ai-overview",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2025-04-23",
+    "prewindow": false,
+    "headline": "Magic bring your own key (BYOK) -- own OpenAI key"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "KEY|metabase": {
+   "row": "KEY",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "You can specify your own API key and model for Metabot from one of the supported providers."
+    ],
+    "enumeration": null,
+    "url": "https://www.metabase.com/docs/latest/ai/settings",
+    "checked": "2026-08-09",
+    "note": "Amazon Bedrock, Anthropic, Microsoft Azure, OpenAI, OpenRouter. Note the asymmetry: on Cloud it is optional, but self-hosted it is mandatory \u2014 'If you're self-hosting Metabase and want to use Metabot, you need to bring your own AI API key.'",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/settings",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-04-16",
+    "prewindow": false,
+    "headline": "Bring your own key to power AI features"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "KEY|omni": {
+   "row": "KEY",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "If you prefer to use a different provider or your own API key, Omni also supports the following providers"
+    ],
+    "enumeration": null,
+    "url": "https://docs.omni.co/ai/settings/model-providers",
+    "checked": "2026-08-09",
+    "note": "RE-SOURCED 2026-08-09. The original quote came off the /ai overview and was NOT present in the newest Wayback capture of that page \u2014 the archive check caught it. This page is the specific one and names AWS Bedrock (default), Anthropic Direct, Google Vertex AI, OpenAI, Snowflake Cortex, Databricks Genie, Grok. Organization Admin required, and 'may not be available depending on the terms of your contract.'",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810031816/https://docs.omni.co/ai/settings/model-providers",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-01-25",
+    "prewindow": false,
+    "headline": "Snowflake Cortex as an AI model provider"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "KEY|sigma": {
+   "row": "KEY",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "you can use the AI models available in your connected data platform as your AI provider to power Sigma AI features."
+    ],
+    "enumeration": null,
+    "url": "https://help.sigmacomputing.com/docs/configure-warehouse-ai-model-integration",
+    "checked": "2026-08-09",
+    "note": "Two routes: warehouse-hosted (BigQuery/Vertex, Databricks Foundation Models, Snowflake Cortex) and external API providers (OpenAI, Gemini, Anthropic). Embeddings provider is separately configurable.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810034531/https://help.sigmacomputing.com/docs/configure-warehouse-ai-model-integration",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2025-05-23",
+    "prewindow": false,
+    "headline": "Warehouse AI models -- your Snowflake/Databricks account"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I5|hex": {
+   "row": "I5",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "A Task is a saved prompt, with context, that runs the Threads agent on a recurring schedule and delivers the result to a Slack channel or email."
+    ],
+    "enumeration": null,
+    "url": "https://learn.hex.tech/docs/explore-data/tasks",
+    "checked": "2026-08-09",
+    "note": "CORRECTED 2026-08-09 \u2014 this cell was scored `no` earlier the same day and that was wrong. The absence was argued from an enumeration of /docs/agent-management/, which is a real enumeration of a section that does not contain Tasks; Tasks live under /docs/explore-data/. An enumeration only proves absence if it is the enumeration of the right thing, and a section index is not a product index. The capability is unambiguous: configure title, prompt, context, schedule and recipients once, then list, edit, pause and resume from a Tasks page \u2014 'A paused Task stops firing immediately and can be resumed later without losing its configuration or history.' \u26a0\ufe0f The census is still wrong on the DATE. It put Hex on this rung at 2026-03-24 from CL00391 and CL00046, both about SUBAGENTS \u2014 internal task decomposition, not a configurable named agent. The correct item is CL00237, 'Introducing Agent Tasks', 2026-06-16. Hex belongs on the rung; it arrives three months later than plotted.",
+    "archived": {
+     "tier": "local",
+     "url": null,
+     "file": "ladders/snapshots/learn-hex-tech-docs-explore-data-tasks.html",
+     "note": "Wayback has no capture and did not index a fresh save; self-hosted copy, weaker than a third-party archive"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-06-16",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I5|metabase": {
+   "row": "I5",
+   "vendor": "metabase",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "Metabot; AI settings; Customization (system prompts); Usage controls; MCP server; Agent API"
+    ],
+    "enumeration": [
+     "Metabot",
+     "AI settings",
+     "Usage controls",
+     "MCP server",
+     "Agent API"
+    ],
+    "url": "https://www.metabase.com/docs/latest/ai/start",
+    "checked": "2026-08-09",
+    "note": "ABSENCE BY ENUMERATION. The AI documentation index lists every AI surface Metabase ships and none of them creates a named agent. Confirmed on the two pages that would carry it if it existed: the Metabot page has no mention, and the system-prompts page customises Metabot's existing tools rather than creating agents. Metabase has one assistant you configure, not agents you create. RE-TESTED 2026-08-09 after getting the equivalent Hex cell wrong: the Agent API was the remaining candidate and it is not this. It is 'a REST API for building headless, agentic BI applications on top of Metabase's semantic layer' \u2014 the raw material for building an agent yourself, not a saved agent object. The `no` stands.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810033346/https://www.metabase.com/docs/latest/ai/start",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-05-20",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "marketed-not-found"
+  },
+  "I5|omni": {
+   "row": "I5",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Set up a routine once, and Omni runs your prompt through the Omni Agent on the schedule you define and then delivers the result to the people you choose."
+    ],
+    "enumeration": null,
+    "url": "https://docs.omni.co/ai/routines",
+    "checked": "2026-08-09",
+    "note": "The strongest version of this rung in the field: a persistent named object with its own prompt, schedule and recipients, managed from a Routines page where each can be paused or edited. Omni also ships Agent Skills \u2014 'package a set of instructions into a button' \u2014 defined at the model root and reusable across topics. Two independent routes to the rung.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810034045/https://docs.omni.co/ai/routines",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-07-20",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "I5|sigma": {
+   "row": "I5",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": "workbook",
+    "quotes": [
+     "An agent can exist in only 1 workbook."
+    ],
+    "enumeration": null,
+    "url": "https://help.sigmacomputing.com/docs/build-agents",
+    "checked": "2026-08-09",
+    "note": "Persistent and named, configured with instructions, data sources and actions \u2014 so the rung is met. But it is bound to one workbook, which is a materially narrower object than Omni's routines or a workspace-level agent. Public beta. The quote chosen is the LIMIT rather than the capability, because the limit is the part a reader would otherwise assume away.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260725044545/https://help.sigmacomputing.com/docs/build-agents",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-06-12",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "SPEND|hex": {
+   "row": "SPEND",
+   "vendor": "hex",
+   "docs": {
+    "state": "partial",
+    "scope": null,
+    "quotes": [
+     "Regardless of their allocation, users will be limited to the auto top-up spend limit or to the workspace credit pool balance if auto top-ups are disabled."
+    ],
+    "enumeration": null,
+    "url": "https://learn.hex.tech/docs/administration/credits",
+    "checked": "2026-08-09",
+    "note": "Real controls, but not the row's claim. Admins can cap auto top-up purchases monthly and can allocate credits per user/group/workspace, including 'No access' which does block a user outright. What is missing is an absolute organisational spend cap: an allocated user who exhausts their grant can still draw on the shared workspace pool. Compare Metabase ('Metabot stops responding') and Omni ('Disables AI features'), which stop at a threshold.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260421070111/https://learn.hex.tech/docs/administration/credits",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-07-14",
+    "prewindow": false,
+    "headline": "Spend limits for auto top-ups / Credit usage controls"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "SPEND|metabase": {
+   "row": "SPEND",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Once this limit is hit, Metabot stops responding to requests until the next reset."
+    ],
+    "enumeration": null,
+    "url": "https://www.metabase.com/docs/latest/ai/usage-controls",
+    "checked": "2026-08-09",
+    "note": "An enforced block, not a warning \u2014 which is the test for this row. Instance-wide, per-group and per-tenant scopes; tokens or message count; daily, weekly or monthly reset.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810033603/https://www.metabase.com/docs/latest/ai/usage-controls",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-05-20",
+    "prewindow": false,
+    "headline": "Set token limits so AI doesn't drain your bank account"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "SPEND|omni": {
+   "row": "SPEND",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Disables AI features when the specified credit threshold is reached."
+    ],
+    "enumeration": null,
+    "url": "https://docs.omni.co/ai/settings/usage",
+    "checked": "2026-08-09",
+    "note": "A real cap, not reporting \u2014 org-level threshold plus a per-user limit ('To set a cap, enter a whole number'). This is the distinction the row turns on and the one Sigma's AI cost templates fail.",
+    "archived": {
+     "tier": "local",
+     "url": null,
+     "file": "ladders/snapshots/docs-omni-co-ai-settings-usage.html",
+     "note": "Wayback has no capture and did not index a fresh save; self-hosted copy, weaker than a third-party archive"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-06-22",
+    "prewindow": false,
+    "headline": "APIs to retrieve and update org AI credit control settings"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "SPEND|sigma": {
+   "row": "SPEND",
+   "vendor": "sigma",
+   "docs": {
+    "state": "partial",
+    "scope": null,
+    "quotes": [
+     "Token usage limits are enforced based on usage estimates and are not exact. Actual consumption may exceed the limit."
+    ],
+    "enumeration": null,
+    "url": "https://help.sigmacomputing.com/docs/configure-ai-column-token-limit",
+    "checked": "2026-08-09",
+    "note": "Scored partial, and the reasoning matters because three different Sigma things could be mistaken for a spend cap. (1) The org AI settings page is an ENUMERATION and contains no cap \u2014 it offers only enable/disable per account type, provider config, data sources and data-access permissions. (2) Sigma's AI cost TEMPLATES are dashboards for monitoring your Claude/OpenAI/Cortex bill; they control nothing in Sigma. (3) This page is a genuine monthly token limit, but scoped to AI COLUMNS only and explicitly non-binding. Metabase blocks ('Metabot stops responding') and Omni blocks ('Disables AI features'). Sigma estimates and may overshoot, on one feature. Not the same claim.",
+    "archived": {
+     "tier": "local",
+     "url": null,
+     "file": "ladders/snapshots/help-sigmacomputing-com-docs-configure-ai-column-token-limit.html",
+     "note": "Wayback has no capture and did not index a fresh save; self-hosted copy, weaker than a third-party archive"
+    },
+    "origin": "present"
+   },
+   "changelog": null,
+   "quadrant": "shipped-quietly"
+  },
+  "X2|hex": {
+   "row": "X2",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": "MCP",
+    "quotes": [
+     "The Hex MCP server provides four Tools",
+     "search_projects : Find projects in your Hex workspace",
+     "create_thread : Start a new Thread conversation",
+     "get_thread : Retrieve messages and results from a Thread"
+    ],
+    "normalized": "Hex MCP \u2014 4 tools: search_projects (find projects), create_thread (start a thread), get_thread (retrieve messages and results), continue_thread (add follow-ups).",
+    "url": "https://learn.hex.tech/docs/api-integrations/mcp-server",
+    "checked": "2026-08-08",
+    "note": "create_thread / continue_thread run an analysis and return the result.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260804172057/https://learn.hex.tech/docs/api-integrations/mcp-server",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Hex MCP Server \u2014 Learn Hex",
+      "url": "https://learn.hex.tech/docs/api-integrations/mcp-server",
+      "archived": "https://web.archive.org/web/20260804172057/https://learn.hex.tech/docs/api-integrations/mcp-server",
+      "accessed": "2026-08-08"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2025-10-29",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "X2|metabase": {
+   "row": "X2",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": "MCP",
+    "quotes": [
+     "Read resource ( read_resource ): Read up to five Metabase entities (or lists) per call by metabase:// URI.",
+     "Entities available to read include: collection dashboard database metric model question schema table transform",
+     "Search tables and metrics ( search ): Find tables and metrics using keyword or natural language search."
+    ],
+    "normalized": "Metabase MCP read \u2014 read_resource over collection, dashboard, database, metric, model, question, schema, table, transform; search over tables and metrics; construct_query and execute_query.",
+    "url": "https://www.metabase.com/docs/latest/ai/mcp",
+    "checked": "2026-08-08",
+    "note": "construct_query builds against a table or metric and returns a handle; execute_query runs it. Two steps rather than one, but the outside agent gets an answer.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "MCP server \u2014 Metabase Documentation",
+      "url": "https://www.metabase.com/docs/latest/ai/mcp",
+      "archived": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+      "accessed": "2026-08-08"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-16",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "X2|omni": {
+   "row": "X2",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": "MCP",
+    "quotes": [
+     "pickModel pickTopic getData Advanced agentic queries askOmni checkStatus Search Omni documentation (searchOmniDocs)"
+    ],
+    "normalized": "Omni MCP \u2014 6 tools: pickModel, pickTopic, getData (querying); askOmni, checkStatus (agentic queries); searchOmniDocs (documentation).",
+    "url": "https://docs.omni.co/ai/mcp/tools",
+    "checked": "2026-08-07",
+    "note": "pickModel and pickTopic narrow the target, getData runs it. askOmni is the one-shot version of the same path.",
+    "confidence": "high",
+    "archived": {
+     "tier": "local",
+     "url": null,
+     "file": "ladders/snapshots/omni-mcp-tools.2026-08-09.html",
+     "note": "NO third-party snapshot. Wayback accepted the save three times on 2026-08-09 (HTTP 302) and then started returning 429; nothing under docs.omni.co/ai/ has ever been captured. Held instead as a hash-stamped local capture, which for THIS cell is unusually good evidence: the file contains pickModel, pickTopic, getData, askOmni, checkStatus and searchOmniDocs and zero occurrences of 'lineage' \u2014 the complete enumeration is the absence proof. Self-hosted provenance is weaker than a third-party archive; keep retrying Wayback before publishing."
+    },
+    "sources": [
+     {
+      "title": "MCP server tools \u2014 Omni Docs",
+      "url": "https://docs.omni.co/ai/mcp/tools",
+      "archived": null,
+      "accessed": "2026-08-07"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2025-06-22",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "X2|sigma": {
+   "row": "X2",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": "MCP",
+    "quotes": [
+     "MCP server supports several features for interacting with Sigma using natural language, including: Searching for data in your organization Exploring data sources and their contents Analyzing your data"
+    ],
+    "normalized": "Sigma MCP \u2014 3 capabilities: search for data in the organization; explore data sources and their contents; analyze data.",
+    "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+    "checked": "2026-08-07",
+    "note": "The third of the three advertised capabilities. Sigma frames it as analysis rather than query execution, but an outside agent asking a question gets an answer back, which is what the row asks.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Use the Sigma MCP Server \u2014 Sigma Documentation",
+      "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "archived": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "accessed": "2026-08-07"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-17",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "DEFS|hex": {
+   "row": "DEFS",
+   "vendor": "hex",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "The Hex MCP server provides four Tools \u2026 search_projects : Find projects in your Hex workspace \u2026 create_thread : Start a new Thread conversation \u2026 get_thread : Retrieve messages and results from a Thread  ||  Commands: app Manage and run Hex apps auth Manage authentication with Hex cell Manage project cells collection Manage project collections config Manage CLI configuration connection Manage data connections group Manage workspace groups install Manage additional tools provided by the Hex CLI project Manage and run Hex projects run Manage running Hex projects and apps suggestion Manage context suggestions from the Context Studio thread Manage Hex agent threads user Manage workspace users guide Manage guides context Manage context help Print this message or the help of the given subcommand(s)"
+    ],
+    "normalized": null,
+    "url": "https://learn.hex.tech/docs/api-integrations/mcp-server",
+    "checked": "2026-08-08",
+    "note": "ABSENCE. Neither enumeration contains a column, field, metric or semantic-model object. search_projects returns project id/title/description/summary/URL. The Hex agent reads semantic models; the outside agent is given answers, not definitions.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260804172057/https://learn.hex.tech/docs/api-integrations/mcp-server",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Hex MCP Server \u2014 Learn Hex",
+      "url": "https://learn.hex.tech/docs/api-integrations/mcp-server",
+      "archived": "https://web.archive.org/web/20260804172057/https://learn.hex.tech/docs/api-integrations/mcp-server",
+      "accessed": "2026-08-08"
+     },
+     {
+      "title": "Command Line Interface (CLI) \u2014 Learn Hex",
+      "url": "https://learn.hex.tech/docs/api-integrations/cli",
+      "archived": "https://web.archive.org/web/20260809233213/https://learn.hex.tech/docs/api-integrations/cli",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "DEFS|metabase": {
+   "row": "DEFS",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": "MCP",
+    "quotes": [
+     "Read resource ( read_resource ): Read up to five Metabase entities (or lists) per call by metabase:// URI.",
+     "Entities available to read include: collection dashboard database metric model question schema table transform",
+     "Search tables and metrics ( search ): Find tables and metrics using keyword or natural language search."
+    ],
+    "normalized": "Metabase MCP read \u2014 read_resource over collection, dashboard, database, metric, model, question, schema, table, transform; search over tables and metrics; construct_query and execute_query.",
+    "url": "https://www.metabase.com/docs/latest/ai/mcp",
+    "checked": "2026-08-08",
+    "note": "read_resource names 'metric' and 'model' among readable entity types.",
+    "confidence": "medium",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "MCP server \u2014 Metabase Documentation",
+      "url": "https://www.metabase.com/docs/latest/ai/mcp",
+      "archived": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+      "accessed": "2026-08-08"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-16",
+    "prewindow": false,
+    "headline": "MCP: read_resource returns metric and model entities"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "DEFS|omni": {
+   "row": "DEFS",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": "CLI",
+    "quotes": [
+     "omni models < comman d > Command Description list List models create Create a model create-branch Create a branch of a model get-views Get model views update-view Update a view delete-view Delete a view create-field Create a field"
+    ],
+    "normalized": "omni models \u2014 list, create, create-branch, get-views, update-view, delete-view, create-field, update-field, delete-field, list-topics, get-topic, update-topic, delete-topic, refresh, validate, migrate, yaml-get, yaml-create, yaml-delete.",
+    "url": "https://docs.omni.co/developers/cli/commands",
+    "checked": "2026-08-09",
+    "note": "get-views, get-topic and yaml-get return field and topic definitions. NOTE: Omni's MCP server does NOT do this \u2014 pickModel/pickTopic return names only. Judging Omni by its MCP server alone produced the wrong answer here once already.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233037/https://docs.omni.co/developers/cli/commands",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Commands \u2014 Omni CLI reference",
+      "url": "https://docs.omni.co/developers/cli/commands",
+      "archived": "https://web.archive.org/web/20260809233037/https://docs.omni.co/developers/cli/commands",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-05",
+    "prewindow": false,
+    "headline": "CLI: models get-views / get-topic / yaml-get"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "DEFS|sigma": {
+   "row": "DEFS",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": "MCP",
+    "quotes": [
+     "Explore data sources and documents in Sigma by asking questions about column names, definitions, and descriptions. Check structure, data types, and column attributes to confirm the source meets your analytics needs."
+    ],
+    "normalized": "Sigma MCP explore \u2014 column names, definitions and descriptions; structure, data types and column attributes.",
+    "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+    "checked": "2026-08-07",
+    "note": "Sigma is the only vendor whose MCP server states outright that it returns definitions rather than identifiers. That is the distinction this row turns on: a name tells an agent a column exists, a definition tells it what the number means.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Use the Sigma MCP Server \u2014 Sigma Documentation",
+      "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "archived": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "accessed": "2026-08-07"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-17",
+    "prewindow": false,
+    "headline": "MCP: column names, definitions, types, primary keys"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "LINEAGE|hex": {
+   "row": "LINEAGE",
+   "vendor": "hex",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "The Hex MCP server provides four Tools \u2026 search_projects : Find projects in your Hex workspace \u2026 create_thread : Start a new Thread conversation \u2026 get_thread : Retrieve messages and results from a Thread  ||  Commands: app Manage and run Hex apps auth Manage authentication with Hex cell Manage project cells collection Manage project collections config Manage CLI configuration connection Manage data connections group Manage workspace groups install Manage additional tools provided by the Hex CLI project Manage and run Hex projects run Manage running Hex projects and apps suggestion Manage context suggestions from the Context Studio thread Manage Hex agent threads user Manage workspace users guide Manage guides context Manage context help Print this message or the help of the given subcommand(s)"
+    ],
+    "normalized": null,
+    "url": "https://learn.hex.tech/docs/api-integrations/mcp-server",
+    "checked": "2026-08-08",
+    "note": "ABSENCE. No lineage or dependency command at either surface.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260804172057/https://learn.hex.tech/docs/api-integrations/mcp-server",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Hex MCP Server \u2014 Learn Hex",
+      "url": "https://learn.hex.tech/docs/api-integrations/mcp-server",
+      "archived": "https://web.archive.org/web/20260804172057/https://learn.hex.tech/docs/api-integrations/mcp-server",
+      "accessed": "2026-08-08"
+     },
+     {
+      "title": "Command Line Interface (CLI) \u2014 Learn Hex",
+      "url": "https://learn.hex.tech/docs/api-integrations/cli",
+      "archived": "https://web.archive.org/web/20260809233213/https://learn.hex.tech/docs/api-integrations/cli",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "LINEAGE|metabase": {
+   "row": "LINEAGE",
+   "vendor": "metabase",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "Read resource ( read_resource ): Read up to five Metabase entities (or lists) per call by metabase:// URI. \u2026 Entities available to read include: collection dashboard database metric model question schema table transform \u2026 Search tables and metrics ( search ): Find tables and metrics using keyword or natural language search.  ||  Create question ( create_question ): Save a query as a named question. \u2026 Create dashboard ( create_dashboard ): Create a new dashboard, optionally populated with saved questions. \u2026 Update question ( update_question ): Update a saved question."
+    ],
+    "normalized": null,
+    "url": "https://www.metabase.com/docs/latest/ai/mcp",
+    "checked": "2026-08-08",
+    "note": "ABSENCE. No dependency tool in the MCP enumeration. Metabase does ship a dependency graph, but as a Data Studio UI feature, not an agent tool.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "MCP server \u2014 Metabase Documentation",
+      "url": "https://www.metabase.com/docs/latest/ai/mcp",
+      "archived": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+      "accessed": "2026-08-08"
+     },
+     {
+      "title": "Metabase CLI \u2014 Metabase Documentation",
+      "url": "https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli",
+      "archived": "https://web.archive.org/web/20260809233154/https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "LINEAGE|omni": {
+   "row": "LINEAGE",
+   "vendor": "omni",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "pickModel pickTopic getData Advanced agentic queries askOmni checkStatus Search Omni documentation (searchOmniDocs)  ||  By using the Omni REST API, you can construct a complete, queryable lineage graph that gives you a picture of how data is consumed across your organization."
+    ],
+    "normalized": null,
+    "url": "https://docs.omni.co/ai/mcp/tools",
+    "checked": "2026-08-07",
+    "note": "ABSENCE. No lineage tool. Omni's own guide is instructions for BUILDING a lineage integration yourself off the REST API \u2014 the opposite of shipping one.",
+    "confidence": "high",
+    "archived": {
+     "tier": "local",
+     "url": null,
+     "file": "ladders/snapshots/omni-mcp-tools.2026-08-09.html",
+     "note": "NO third-party snapshot. Wayback accepted the save three times on 2026-08-09 (HTTP 302) and then started returning 429; nothing under docs.omni.co/ai/ has ever been captured. Held instead as a hash-stamped local capture, which for THIS cell is unusually good evidence: the file contains pickModel, pickTopic, getData, askOmni, checkStatus and searchOmniDocs and zero occurrences of 'lineage' \u2014 the complete enumeration is the absence proof. Self-hosted provenance is weaker than a third-party archive; keep retrying Wayback before publishing."
+    },
+    "sources": [
+     {
+      "title": "MCP server tools \u2014 Omni Docs",
+      "url": "https://docs.omni.co/ai/mcp/tools",
+      "archived": null,
+      "accessed": "2026-08-07"
+     },
+     {
+      "title": "Commands \u2014 Omni CLI reference",
+      "url": "https://docs.omni.co/developers/cli/commands",
+      "archived": "https://web.archive.org/web/20260809233037/https://docs.omni.co/developers/cli/commands",
+      "accessed": "2026-08-09"
+     },
+     {
+      "title": "Build a data lineage integration with the Omni API",
+      "url": "https://docs.omni.co/guides/api/data-lineage-integration",
+      "archived": "https://web.archive.org/web/20260414004602/https://docs.omni.co/guides/api/data-lineage-integration",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "LINEAGE|sigma": {
+   "row": "LINEAGE",
+   "vendor": "sigma",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "MCP server supports several features for interacting with Sigma using natural language, including: Searching for data in your organization Exploring data sources and their contents Analyzing your data  ||  List lineage for a data model \u2026 List lineage for a report \u2026 List lineage of a report element \u2026 List lineage for a workbook \u2026 List lineage of a workbook element"
+    ],
+    "normalized": null,
+    "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+    "checked": "2026-08-07",
+    "note": "ABSENCE FROM THE AGENT SURFACE, NOT FROM THE PRODUCT. Sigma has five REST lineage endpoints and exposes none as an MCP tool. On the count of five: three of them (data model, workbook, workbook element) are already in the 2026-02-08 archive of llms.txt under the pre-rename slugs; the two report-level ones are not, so 'five' is true as of 2026-08-07 and would have been 'three' in February. Say 'multiple' if the sentence has to survive another rename. \u26a0\ufe0f A third-party aggregator republishes Sigma's REST API as a 44-tool 'Sigma Computing MCP server' including 'Get Workbook Lineage'; that is not Sigma's server and a web search will surface it.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Use the Sigma MCP Server \u2014 Sigma Documentation",
+      "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "archived": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "accessed": "2026-08-07"
+     },
+     {
+      "title": "Sigma documentation index (llms.txt)",
+      "url": "https://help.sigmacomputing.com/llms.txt",
+      "archived": "https://web.archive.org/web/20260208075312/https://help.sigmacomputing.com/llms.txt",
+      "accessed": "2026-08-07"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "WCONTENT|hex": {
+   "row": "WCONTENT",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": "CLI",
+    "quotes": [
+     "Commands: app Manage and run Hex apps auth Manage authentication with Hex cell Manage project cells collection Manage project collections config Manage CLI configuration connection Manage data connections group Manage workspace groups install Manage additional tools provided by the Hex CLI project Manage and run Hex projects run Manage running Hex projects and apps suggestion Manage context suggestions from the Context Studio thread Manage Hex agent threads user Manage workspace users guide Manage guides context Manage context help Print this message or the help of the given subcommand(s)"
+    ],
+    "normalized": "Hex CLI \u2014 16 commands: app, auth, cell, collection, config, connection, group, install, project, run, suggestion, thread, user, guide, context, help.",
+    "url": "https://learn.hex.tech/docs/api-integrations/cli",
+    "checked": "2026-08-09",
+    "note": "The CLI writes the artefacts, not just reads them \u2014 project and cell create and modify notebook content, app publishes it. Hex's MCP server does none of this; the write path is the CLI only.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233213/https://learn.hex.tech/docs/api-integrations/cli",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Command Line Interface (CLI) \u2014 Learn Hex",
+      "url": "https://learn.hex.tech/docs/api-integrations/cli",
+      "archived": "https://web.archive.org/web/20260809233213/https://learn.hex.tech/docs/api-integrations/cli",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-07",
+    "prewindow": false,
+    "headline": "CLI: projects, cells, apps"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "WCONTENT|metabase": {
+   "row": "WCONTENT",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": "CLI+MCP",
+    "quotes": [
+     "Create question ( create_question ): Save a query as a named question.",
+     "Create dashboard ( create_dashboard ): Create a new dashboard, optionally populated with saved questions.",
+     "Update question ( update_question ): Update a saved question."
+    ],
+    "normalized": "Metabase MCP write/delete \u2014 create_collection, create_dashboard, create_question, execute_sql, update_dashboard, update_question.",
+    "url": "https://www.metabase.com/docs/latest/ai/mcp",
+    "checked": "2026-08-08",
+    "note": "create_question and create_dashboard, plus file-based editing in the CLI over questions, dashboards, collections and transforms.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "MCP server \u2014 Metabase Documentation",
+      "url": "https://www.metabase.com/docs/latest/ai/mcp",
+      "archived": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+      "accessed": "2026-08-08"
+     },
+     {
+      "title": "Metabase CLI \u2014 Metabase Documentation",
+      "url": "https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli",
+      "archived": "https://web.archive.org/web/20260809233154/https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-16",
+    "prewindow": false,
+    "headline": "CLI + MCP: questions, dashboards, collections"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "WCONTENT|omni": {
+   "row": "WCONTENT",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": "CLI",
+    "quotes": [
+     "An array of query presentation objects, each representing a query in the document's workbook"
+    ],
+    "normalized": "POST /v1/documents \u2014 body accepts modelId, name, description, identifier and queryPresentations (each with name, description, query and visConfig).",
+    "url": "https://docs.omni.co/developers/cli/commands",
+    "checked": "2026-08-09",
+    "note": "QUOTE TRIMMED 2026-08-09 to what a string check can confirm on the live page. The visConfig sub-fields ('The query definition object', 'Visualization configuration for the query') ARE in the 2026-05-12 archived snapshot but do not appear in a raw fetch of the page today \u2014 most likely because the API reference collapses nested object properties, which a fetch does not expand. Not treated as removal, but not cited as live text either. The load-bearing phrase, queryPresentations, verifies on both. RESOLVED 2026-08-09, was the softest cell on the chart. The CLI page alone was ambiguous \u2014 `create` is described only as \"Create a document\" and `update` only renames \u2014 so the question was whether an agent can populate a document or only make an empty one. The endpoint the CLI wraps settles it: queries AND their visualization config go in the create body. Real content authoring. CAVEAT worth stating if the row is ever split: create-populated yes, edit-content no \u2014 the full documents enumeration has no update-queries or set-content operation, so an agent can write a document but not revise one.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233037/https://docs.omni.co/developers/cli/commands",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Commands \u2014 Omni CLI reference",
+      "url": "https://docs.omni.co/developers/cli/commands",
+      "archived": "https://web.archive.org/web/20260809233037/https://docs.omni.co/developers/cli/commands",
+      "accessed": "2026-08-09"
+     },
+     {
+      "title": "Create document \u2014 Omni API reference",
+      "url": "https://docs.omni.co/api/documents/create-document",
+      "archived": "https://web.archive.org/web/20260512162107/https://docs.omni.co/api/documents/create-document",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-05",
+    "prewindow": false,
+    "headline": "CLI: documents create / duplicate"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "WCONTENT|sigma": {
+   "row": "WCONTENT",
+   "vendor": "sigma",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "MCP server supports several features for interacting with Sigma using natural language, including: Searching for data in your organization Exploring data sources and their contents Analyzing your data"
+    ],
+    "normalized": "Sigma MCP \u2014 3 capabilities: search for data in the organization; explore data sources and their contents; analyze data.",
+    "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+    "checked": "2026-08-07",
+    "note": "ABSENCE, AND THE ONE A PRACTITIONER HIT. Sigma's MCP is read-only and Sigma ships no CLI. Data-models-as-code writes models over plain REST, not content. There is no content-authoring path for an agent.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Use the Sigma MCP Server \u2014 Sigma Documentation",
+      "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "archived": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "accessed": "2026-08-07"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "WMODEL|hex": {
+   "row": "WMODEL",
+   "vendor": "hex",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "Commands: app Manage and run Hex apps auth Manage authentication with Hex cell Manage project cells collection Manage project collections config Manage CLI configuration connection Manage data connections group Manage workspace groups install Manage additional tools provided by the Hex CLI project Manage and run Hex projects run Manage running Hex projects and apps suggestion Manage context suggestions from the Context Studio thread Manage Hex agent threads user Manage workspace users guide Manage guides context Manage context help Print this message or the help of the given subcommand(s)"
+    ],
+    "normalized": "Hex CLI \u2014 16 commands: app, auth, cell, collection, config, connection, group, install, project, run, suggestion, thread, user, guide, context, help.",
+    "url": "https://learn.hex.tech/docs/api-integrations/cli",
+    "checked": "2026-08-09",
+    "note": "ABSENCE. No semantic-model command. `guide` and `context` write prose context, which is the context-layer rows, not the semantic layer.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233213/https://learn.hex.tech/docs/api-integrations/cli",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Command Line Interface (CLI) \u2014 Learn Hex",
+      "url": "https://learn.hex.tech/docs/api-integrations/cli",
+      "archived": "https://web.archive.org/web/20260809233213/https://learn.hex.tech/docs/api-integrations/cli",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "WMODEL|metabase": {
+   "row": "WMODEL",
+   "vendor": "metabase",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "Create question ( create_question ): Save a query as a named question.",
+     "Create dashboard ( create_dashboard ): Create a new dashboard, optionally populated with saved questions.",
+     "Update question ( update_question ): Update a saved question."
+    ],
+    "normalized": "Metabase MCP write/delete \u2014 create_collection, create_dashboard, create_question, execute_sql, update_dashboard, update_question.",
+    "url": "https://www.metabase.com/docs/latest/ai/mcp",
+    "checked": "2026-08-08",
+    "note": "RESOLVED 2026-08-09. The open question was whether create_question reaches models and metrics, since both are card types in Metabase. It does not, and the doc's own structure is the evidence: metrics appear only in the READ tools \u2014 search (\"Find tables and metrics\") and construct_query (\"Construct a query against a table or metric\") \u2014 while the write/delete group names question, dashboard and collection and nothing else. Metabase's agent surface reads the semantic layer and writes on top of it.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "MCP server \u2014 Metabase Documentation",
+      "url": "https://www.metabase.com/docs/latest/ai/mcp",
+      "archived": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+      "accessed": "2026-08-08"
+     },
+     {
+      "title": "Metabase CLI \u2014 Metabase Documentation",
+      "url": "https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli",
+      "archived": "https://web.archive.org/web/20260809233154/https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "WMODEL|omni": {
+   "row": "WMODEL",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": "CLI",
+    "quotes": [
+     "omni models < comman d > Command Description list List models create Create a model create-branch Create a branch of a model get-views Get model views update-view Update a view delete-view Delete a view create-field Create a field"
+    ],
+    "normalized": "omni models \u2014 list, create, create-branch, get-views, update-view, delete-view, create-field, update-field, delete-field, list-topics, get-topic, update-topic, delete-topic, refresh, validate, migrate, yaml-get, yaml-create, yaml-delete.",
+    "url": "https://docs.omni.co/developers/cli/commands",
+    "checked": "2026-08-09",
+    "note": "create-field, update-field, update-view, update-topic, yaml-create \u2014 full CRUD on the semantic layer. The only vendor on this row.",
+    "confidence": "high",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233037/https://docs.omni.co/developers/cli/commands",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Commands \u2014 Omni CLI reference",
+      "url": "https://docs.omni.co/developers/cli/commands",
+      "archived": "https://web.archive.org/web/20260809233037/https://docs.omni.co/developers/cli/commands",
+      "accessed": "2026-08-09"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": {
+    "date": "2026-04-05",
+    "prewindow": false,
+    "headline": "CLI: models create-field / update-view / yaml-create"
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "WMODEL|sigma": {
+   "row": "WMODEL",
+   "vendor": "sigma",
+   "docs": {
+    "state": "no",
+    "scope": null,
+    "quotes": [
+     "MCP server supports several features for interacting with Sigma using natural language, including: Searching for data in your organization Exploring data sources and their contents Analyzing your data"
+    ],
+    "normalized": "Sigma MCP \u2014 3 capabilities: search for data in the organization; explore data sources and their contents; analyze data.",
+    "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+    "checked": "2026-08-07",
+    "note": "ABSENCE FROM THE AGENT SURFACE. Sigma writes data models via data-models-as-code, but that is the plain REST API; the MCP server is read-only and there is no CLI.",
+    "confidence": "medium",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+     "file": null,
+     "note": null
+    },
+    "sources": [
+     {
+      "title": "Use the Sigma MCP Server \u2014 Sigma Documentation",
+      "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "archived": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+      "accessed": "2026-08-07"
+     }
+    ],
+    "origin": "evidence"
+   },
+   "changelog": null,
+   "quadrant": "absent"
+  },
+  "C4|hex": {
+   "row": "C4",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Provide unstructured context that helps agents interpret questions and respond appropriately."
+    ],
+    "enumeration": null,
+    "url": "https://learn.hex.tech/docs/agent-management/context-management/guides",
+    "checked": "2026-08-09",
+    "note": null,
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810034202/https://learn.hex.tech/docs/agent-management/context-management/guides",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2023-10-05",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "C4|metabase": {
+   "row": "C4",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "System prompts let you customize instructions for Metabot."
+    ],
+    "enumeration": null,
+    "url": "https://www.metabase.com/docs/latest/ai/system-prompts",
+    "checked": "2026-08-09",
+    "note": "Separate prompts for Metabot chat, natural-language queries and SQL generation. Pro and Enterprise only. The docs draw a line worth keeping: 'System prompts can only influence Metabot's behavior, not its access.'",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810033646/https://www.metabase.com/docs/latest/ai/system-prompts",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2025-11-19",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "C4|omni": {
+   "row": "C4",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Free text that provides context to the Omni Agent for all topics in the model."
+    ],
+    "enumeration": null,
+    "url": "https://docs.omni.co/modeling/models/ai-context",
+    "checked": "2026-08-09",
+    "note": "QUOTE CORRECTED 2026-08-09. The first version \u2014 'that is applicable for the entire model' \u2014 was two sentences from this page welded together by the fetch tool's summariser and appeared on no page at all. Caught by the machine check, not by reading. The claim itself is unchanged and the page separately says ai_context can 'include behavioral prompting, instructions for tone, or other guidance'.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810033834/https://docs.omni.co/modeling/models/ai-context",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2024-11-14",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "C4|sigma": {
+   "row": "C4",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "You can add AI context to a data model to help Sigma Assistant better understand how to use your data model as a data source."
+    ],
+    "enumeration": null,
+    "url": "https://help.sigmacomputing.com/docs/manage-ai-context-for-data-models",
+    "checked": "2026-08-09",
+    "note": "Public beta as of this check \u2014 the page carries 'This documentation describes one or more public beta features that are in development.' Open beta counts as available under this project's rule; private beta does not.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260520044323/https://help.sigmacomputing.com/docs/manage-ai-context-for-data-models",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2026-04-17",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "C5|hex": {
+   "row": "C5",
+   "vendor": "hex",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "hex context preview - stages your changes and returns a link you can use to test them against real threads before they're live"
+    ],
+    "enumeration": null,
+    "url": "https://learn.hex.tech/docs/agent-management/context-management/context-sync",
+    "checked": "2026-08-09",
+    "note": "Both halves of the rung, not just git sync: the CLI syncs context from a repo, a GitHub Action automates it, and PRs get a comment with a preview link. Validation before live, which is the part most vendors lack.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810034238/https://learn.hex.tech/docs/agent-management/context-management/context-sync",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2025-11-19",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "C5|metabase": {
+   "row": "C5",
+   "vendor": "metabase",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Check the exported files into version control and audit changes to them, as the YAML files contained within the export are pretty readable."
+    ],
+    "enumeration": null,
+    "url": "https://www.metabase.com/docs/latest/installation-and-operation/serialization",
+    "checked": "2026-08-09",
+    "note": "And it reaches the AI context specifically, which is what the rung is about: the export includes 'Metabot configuration (AI assistant settings and prompts)', with settings named metabot-chat-system-prompt and metabot-nlq-system-prompt. Supports a staging-to-production workflow.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260810033219/https://www.metabase.com/docs/latest/installation-and-operation/serialization",
+     "file": null,
+     "note": null
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2025-11-19",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "C5|omni": {
+   "row": "C5",
+   "vendor": "omni",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Create a new Git configuration for a shared model."
+    ],
+    "enumeration": null,
+    "url": "https://docs.omni.co/api/model-git-configuration/create-git-configuration",
+    "checked": "2026-08-09",
+    "note": "The model is what carries Omni's AI context, so putting the model under git puts the context under git. The config exposes authentication, branch settings and pull-request requirements; branch mode and a content validator exist separately in the modeling IDE. Sourced to the API reference because the prose docs describe branching without naming git.",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260211194033/https://docs.omni.co/api/model-git-configuration/create-git-configuration",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2024-03-13",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  },
+  "C5|sigma": {
+   "row": "C5",
+   "vendor": "sigma",
+   "docs": {
+    "state": "yes",
+    "scope": null,
+    "quotes": [
+     "Users can tag specific versions of workbooks, data models, and reports to support testing and publishing workflows."
+    ],
+    "enumeration": null,
+    "url": "https://help.sigmacomputing.com/docs/create-and-manage-version-tags",
+    "checked": "2026-08-09",
+    "note": "Not git, but it satisfies the rung's substance \u2014 tagged versions for QA/UAT/Production, plus protected tags that gate promotion behind approval: users outside the allowed list 'must submit a request to apply the tag, which must be approved.' Review before it reaches consumers, which is the part that matters. Separately, data-models-as-code exposes endpoints to 'Manage data models as part of your CI/CD pipeline.'",
+    "archived": {
+     "tier": "wayback",
+     "url": "https://web.archive.org/web/20260309125842/https://help.sigmacomputing.com/docs/create-and-manage-version-tags",
+     "file": null,
+     "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it"
+    },
+    "origin": "present"
+   },
+   "changelog": {
+    "date": "2024-08-09",
+    "prewindow": false,
+    "headline": null
+   },
+   "quadrant": "shipped-and-marketed"
+  }
+ },
+ "disagreements": [
+  {
+   "row": "I5",
+   "label": "Saved, named agents",
+   "vendor": "metabase",
+   "kind": "marketed-not-found",
+   "detail": "Announced May 2026, not in today's docs."
+  },
+  {
+   "row": "SPEND",
+   "label": "AI spend limits",
+   "vendor": "sigma",
+   "kind": "shipped-quietly",
+   "detail": "In the docs today, never announced in the changelog."
+  }
+ ],
+ "refinements": [
+  {
+   "rung": "I5",
+   "keeps": "the customer creates a named agent object",
+   "drops": "the vendor's own agent is internally composed",
+   "affected": [
+    "CL00046",
+    "CL00391"
+   ],
+   "why": "Both are Hex describing its own agent's internals \u2014 subagents that split an analysis into parallel workstreams, and one built to improve charts. The customer creates, names and configures nothing. Sanctioned by the rung's Test clause, excluded by its Boundary clause; the chart row says 'an agent you configure once with its own instructions and tools', which is the Boundary reading."
+  }
+ ],
+ "sources": [
+  {
+   "url": "https://docs.omni.co/ai",
+   "archived": "https://web.archive.org/web/20260418042654/https://docs.omni.co/ai",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260418042654"
+  },
+  {
+   "url": "https://docs.omni.co/ai/chat",
+   "archived": "https://web.archive.org/web/20260810033735/https://docs.omni.co/ai/chat",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810033735"
+  },
+  {
+   "url": "https://docs.omni.co/ai/mcp/tools",
+   "checked": "2026-08-07",
+   "file": "ladders/snapshots/omni-mcp-tools.2026-08-09.html",
+   "migrated_from": "evidence.SOURCES['omni-mcp']",
+   "note": "NO third-party snapshot. Wayback accepted the save three times on 2026-08-09 (HTTP 302) and then started returning 429; nothing under docs.omni.co/ai/ has ever been captured. Held instead as a hash-stamped local capture, which for THIS cell is unusually good evidence: the file contains pickModel, pickTopic, getData, askOmni, checkStatus and searchOmniDocs and zero occurrences of 'lineage' \u2014 the complete enumeration is the absence proof. Self-hosted provenance is weaker than a third-party archive; keep retrying Wayback before publishing.",
+   "sha256": "c1f3a28ef67e274fd3f6beac9042dd96f4b9b063847641e629e9604d96dc2830",
+   "tier": "local"
+  },
+  {
+   "url": "https://docs.omni.co/ai/routines",
+   "archived": "https://web.archive.org/web/20260810034045/https://docs.omni.co/ai/routines",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810034045"
+  },
+  {
+   "url": "https://docs.omni.co/ai/settings/model-providers",
+   "archived": "https://web.archive.org/web/20260810031816/https://docs.omni.co/ai/settings/model-providers",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810031816"
+  },
+  {
+   "url": "https://docs.omni.co/ai/settings/usage",
+   "bytes": 506091,
+   "checked": "2026-08-09",
+   "file": "ladders/snapshots/docs-omni-co-ai-settings-usage.html",
+   "note": "Wayback has no capture and did not index a fresh save; self-hosted copy, weaker than a third-party archive",
+   "sha256": "0e750387283ab9a2eb775b50c4f5add1736948eeffdce9ab3e3100a85f71d955",
+   "tier": "local"
+  },
+  {
+   "url": "https://docs.omni.co/api/documents/create-document",
+   "archived": "https://web.archive.org/web/20260512162107/https://docs.omni.co/api/documents/create-document",
+   "checked": "2026-08-09",
+   "migrated_from": "evidence.SOURCES['omni-documents-api']",
+   "note": "capture predates our read by three months and CORROBORATES it rather than merely dating it \u2014 verified 2026-08-09 that the snapshot itself contains queryPresentations (8x), visConfig and 'query definition object', so the field is not a recent addition",
+   "tier": "wayback",
+   "timestamp": "20260512162107"
+  },
+  {
+   "url": "https://docs.omni.co/api/model-git-configuration/create-git-configuration",
+   "archived": "https://web.archive.org/web/20260211194033/https://docs.omni.co/api/model-git-configuration/create-git-configuration",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260211194033"
+  },
+  {
+   "url": "https://docs.omni.co/developers/cli/commands",
+   "archived": "https://web.archive.org/web/20260809233037/https://docs.omni.co/developers/cli/commands",
+   "checked": "2026-08-09",
+   "migrated_from": "evidence.SOURCES['omni-cli']",
+   "tier": "wayback",
+   "timestamp": "20260809233037"
+  },
+  {
+   "url": "https://docs.omni.co/guides/api/data-lineage-integration",
+   "archived": "https://web.archive.org/web/20260414004602/https://docs.omni.co/guides/api/data-lineage-integration",
+   "checked": "2026-08-09",
+   "migrated_from": "evidence.SOURCES['omni-lineage']",
+   "note": "capture predates our read but carries the load-bearing sentence verbatim \u2014 'By using the Omni REST API, you can construct a complete, queryable lineage graph' \u2014 which is the build-it-yourself framing the claim rests on",
+   "tier": "wayback",
+   "timestamp": "20260414004602"
+  },
+  {
+   "url": "https://docs.omni.co/modeling/models/ai-context",
+   "archived": "https://web.archive.org/web/20260810033834/https://docs.omni.co/modeling/models/ai-context",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810033834"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant",
+   "archived": "https://web.archive.org/web/20260520041502/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260520041502"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/build-agents",
+   "archived": "https://web.archive.org/web/20260725044545/https://help.sigmacomputing.com/docs/build-agents",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260725044545"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/configure-ai-column-token-limit",
+   "bytes": 1081808,
+   "checked": "2026-08-09",
+   "file": "ladders/snapshots/help-sigmacomputing-com-docs-configure-ai-column-token-limit.html",
+   "note": "Wayback has no capture and did not index a fresh save; self-hosted copy, weaker than a third-party archive",
+   "sha256": "1a2347f0ee304137370fbfae5c4f73b5c436d2aaf0dce95a5308e71202c14ad5",
+   "tier": "local"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/configure-warehouse-ai-model-integration",
+   "archived": "https://web.archive.org/web/20260810034531/https://help.sigmacomputing.com/docs/configure-warehouse-ai-model-integration",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810034531"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/create-and-manage-version-tags",
+   "archived": "https://web.archive.org/web/20260309125842/https://help.sigmacomputing.com/docs/create-and-manage-version-tags",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260309125842"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/getting-started-with-ai",
+   "archived": "https://web.archive.org/web/20260810031526/https://help.sigmacomputing.com/docs/getting-started-with-ai",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810031526"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/manage-ai-context-for-data-models",
+   "archived": "https://web.archive.org/web/20260520044323/https://help.sigmacomputing.com/docs/manage-ai-context-for-data-models",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260520044323"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/use-ai-with-formulas",
+   "archived": "https://web.archive.org/web/20260810034353/https://help.sigmacomputing.com/docs/use-ai-with-formulas",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810034353"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+   "archived": "https://web.archive.org/web/20260809233123/https://help.sigmacomputing.com/docs/use-sigma-mcp-server",
+   "checked": "2026-08-07",
+   "migrated_from": "evidence.SOURCES['sigma-mcp']",
+   "tier": "wayback",
+   "timestamp": "20260809233123"
+  },
+  {
+   "url": "https://help.sigmacomputing.com/llms.txt",
+   "archived": "https://web.archive.org/web/20260208075312/https://help.sigmacomputing.com/llms.txt",
+   "checked": "2026-08-07",
+   "migrated_from": "evidence.SOURCES['sigma-llms']",
+   "note": "capture is 2026-02-08, six months before our read. Checked 2026-08-09: it DOES carry the lineage endpoints, but under un-hyphenated slugs Sigma has since renamed \u2014 listdatamodellineagetree, listlineagetree, listlineage. So the snapshot corroborates that Sigma ships REST lineage (which is the whole point of the claim) but not the number five: the two report-level endpoints are absent in February and look newer. A grep of this capture for the current slugs returns nothing \u2014 that is a rename, not a contradiction. Fresh save submitted 2026-08-09, not yet indexed",
+   "tier": "wayback",
+   "timestamp": "20260208075312"
+  },
+  {
+   "url": "https://learn.hex.tech/docs/administration/credits",
+   "archived": "https://web.archive.org/web/20260421070111/https://learn.hex.tech/docs/administration/credits",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260421070111"
+  },
+  {
+   "url": "https://learn.hex.tech/docs/agent-management/context-management/context-sync",
+   "archived": "https://web.archive.org/web/20260810034238/https://learn.hex.tech/docs/agent-management/context-management/context-sync",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810034238"
+  },
+  {
+   "url": "https://learn.hex.tech/docs/agent-management/context-management/guides",
+   "archived": "https://web.archive.org/web/20260810034202/https://learn.hex.tech/docs/agent-management/context-management/guides",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810034202"
+  },
+  {
+   "url": "https://learn.hex.tech/docs/api-integrations/cli",
+   "archived": "https://web.archive.org/web/20260809233213/https://learn.hex.tech/docs/api-integrations/cli",
+   "checked": "2026-08-09",
+   "migrated_from": "evidence.SOURCES['hex-cli']",
+   "tier": "wayback",
+   "timestamp": "20260809233213"
+  },
+  {
+   "url": "https://learn.hex.tech/docs/api-integrations/mcp-server",
+   "archived": "https://web.archive.org/web/20260804172057/https://learn.hex.tech/docs/api-integrations/mcp-server",
+   "checked": "2026-08-08",
+   "migrated_from": "evidence.SOURCES['hex-mcp']",
+   "tier": "wayback",
+   "timestamp": "20260804172057"
+  },
+  {
+   "url": "https://learn.hex.tech/docs/explore-data/tasks",
+   "bytes": 52525,
+   "checked": "2026-08-10",
+   "file": "ladders/snapshots/learn-hex-tech-docs-explore-data-tasks.html",
+   "note": "Wayback has no capture and did not index a fresh save; self-hosted copy, weaker than a third-party archive",
+   "sha256": "12c0d5f851a628dfb8f583a1650b5bb6e144cde9e383fe710736c4ca87e6bb1f",
+   "tier": "local"
+  },
+  {
+   "url": "https://learn.hex.tech/docs/explore-data/threads",
+   "archived": "https://web.archive.org/web/20260621094934/https://learn.hex.tech/docs/explore-data/threads",
+   "checked": "2026-08-10",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260621094934"
+  },
+  {
+   "url": "https://learn.hex.tech/docs/getting-started/ai-overview",
+   "archived": "https://web.archive.org/web/20260608074258/https://learn.hex.tech/docs/getting-started/ai-overview",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260608074258"
+  },
+  {
+   "url": "https://www.metabase.com/docs/latest/ai/mcp",
+   "archived": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/mcp",
+   "checked": "2026-08-08",
+   "migrated_from": "evidence.SOURCES['metabase-mcp']",
+   "tier": "wayback",
+   "timestamp": "20260809064649"
+  },
+  {
+   "url": "https://www.metabase.com/docs/latest/ai/metabot",
+   "archived": "https://web.archive.org/web/20260520175813/https://www.metabase.com/docs/latest/ai/metabot",
+   "checked": "2026-08-09",
+   "note": "capture predates this check \u2014 verify the quote is in the snapshot before citing it",
+   "tier": "wayback",
+   "timestamp": "20260520175813"
+  },
+  {
+   "url": "https://www.metabase.com/docs/latest/ai/settings",
+   "archived": "https://web.archive.org/web/20260809064649/https://www.metabase.com/docs/latest/ai/settings",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260809064649"
+  },
+  {
+   "url": "https://www.metabase.com/docs/latest/ai/start",
+   "archived": "https://web.archive.org/web/20260810033346/https://www.metabase.com/docs/latest/ai/start",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810033346"
+  },
+  {
+   "url": "https://www.metabase.com/docs/latest/ai/system-prompts",
+   "archived": "https://web.archive.org/web/20260810033646/https://www.metabase.com/docs/latest/ai/system-prompts",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810033646"
+  },
+  {
+   "url": "https://www.metabase.com/docs/latest/ai/usage-controls",
+   "archived": "https://web.archive.org/web/20260810033603/https://www.metabase.com/docs/latest/ai/usage-controls",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810033603"
+  },
+  {
+   "url": "https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli",
+   "archived": "https://web.archive.org/web/20260809233154/https://www.metabase.com/docs/latest/installation-and-operation/metabase-cli",
+   "checked": "2026-08-09",
+   "migrated_from": "evidence.SOURCES['metabase-cli']",
+   "tier": "wayback",
+   "timestamp": "20260809233154"
+  },
+  {
+   "url": "https://www.metabase.com/docs/latest/installation-and-operation/serialization",
+   "archived": "https://web.archive.org/web/20260810033219/https://www.metabase.com/docs/latest/installation-and-operation/serialization",
+   "checked": "2026-08-09",
+   "tier": "wayback",
+   "timestamp": "20260810033219"
+  }
+ ]
+}
