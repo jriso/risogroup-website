@@ -20,7 +20,9 @@ urls=()
 if [[ "${1:-}" == "--all" ]]; then
     while IFS= read -r url; do
         urls+=("$url")
-    done < <(grep -o '<loc>[^<]*</loc>' "$REPO_ROOT/sitemap.xml" | sed 's|</\?loc>||g')
+    # Portable tag stripping: BSD sed has no \? operator, so match each tag.
+    done < <(grep -o '<loc>[^<]*</loc>' "$REPO_ROOT/sitemap.xml" \
+        | sed -e 's|<loc>||' -e 's|</loc>||')
 else
     urls=("$@")
 fi
