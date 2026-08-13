@@ -1,0 +1,69 @@
+name: Submit to IndexNow
+
+# Pings IndexNow (Bing, Yandex, Seznam, Naver) whenever a page changes on main,
+# so new posts get crawled without waiting for sitemap rediscovery.
+# Google does not participate in IndexNow and is unaffected.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect changed pages
+        id: pages
+        run: |
+          before="${{ github.event.before }}"
+          # All-zeros on a new branch, and a force-push can leave a stale ref.
+          if [ -z "$before" ] || [ "$before" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "$before^{commit}" 2>/dev/null; then
+            before="${{ github.sha }}~1"
+          fi
+
+          urls=""
+          while IFS= read -r file; do
+            case "$file" in
+              templates/*|insights/includes/*) continue ;;
+              *.html) ;;
+              *) continue ;;
+            esac
+
+            # Canonical URLs are extensionless; directory indexes keep the slash.
+            if [ "$file" = "index.html" ]; then
+              path=""
+            else
+              path="${file%.html}"
+              case "$path" in */index) path="${path%index}" ;; esac
+            fi
+            urls="$urls https://risogroup.co/$path"
+          done < <(git diff --name-only --diff-filter=d "$before" "${{ github.sha }}")
+
+          echo "urls=$(echo $urls)" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for GitHub Pages to serve the changes
+        if: steps.pages.outputs.urls != ''
+        run: |
+          # Pages builds after the push lands, so give the deploy time to go live.
+          # A URL that never comes up is not fatal: IndexNow only records the URL,
+          # and the actual crawl happens minutes to hours later.
+          for url in ${{ steps.pages.outputs.urls }}; do
+            for _ in $(seq 1 20); do
+              if curl -fsS -o /dev/null "$url"; then break; fi
+              sleep 15
+            done
+          done
+
+      - name: Submit
+        if: steps.pages.outputs.urls != ''
+        run: ./scripts/indexnow-submit.sh ${{ steps.pages.outputs.urls }}
