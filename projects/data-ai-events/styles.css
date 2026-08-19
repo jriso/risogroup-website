@@ -174,7 +174,9 @@ h1{font-size:2.4rem;font-weight:700;letter-spacing:-.035em;margin:0 0 1.5rem;}
 
 /* ---- Mobile ---- */
 @media(max-width:640px){
-  main{padding:1rem 1.1rem 3rem;margin-top:64px;}
+  /* margin-top must clear the 82px fixed navbar — only the side and
+     bottom padding are worth reclaiming on a phone */
+  main{padding:1.5rem 1.1rem 3rem;}
   h1{font-size:2rem;margin-bottom:1.2rem;}
 
   /* The attribution note is fine print, not part of the timezone line */
