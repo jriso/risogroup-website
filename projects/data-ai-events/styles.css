@@ -18,10 +18,9 @@ h1{font-size:2.4rem;font-weight:700;letter-spacing:-.035em;margin:0 0 1.5rem;}
 
 .filters{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin:0 0 1rem;}
 
-.tznote{font-size:.8rem;color:var(--text-muted);margin:0 0 2rem;
-  display:flex;align-items:center;gap:.4rem;}
-.tznote::before{content:'';width:6px;height:6px;border-radius:50%;
-  background:var(--accent);flex:none;}
+.tznote{font-size:.8rem;color:var(--text-muted);margin:0 0 2rem;}
+.tznote::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--accent);margin-right:.5rem;vertical-align:.15em;}
 .tznote b{color:var(--text);font-weight:600;}
 .tznote .sep2{color:var(--muted-line);margin:0 .1rem;}
 
@@ -62,7 +61,7 @@ h1{font-size:2.4rem;font-weight:700;letter-spacing:-.035em;margin:0 0 1.5rem;}
   letter-spacing:.07em;color:var(--text-muted);flex:none;min-width:6.5rem;text-align:left;}
 .colabel:hover{color:var(--text)}
 .colabel[aria-pressed="false"]{color:var(--muted-line)}
-@media(max-width:600px){.colabel{min-width:0;width:100%;margin-bottom:.1rem}}
+@media(max-width:640px){.colabel{min-width:0;width:100%;margin-bottom:.1rem}}
 .cochips{display:flex;gap:.4rem;flex-wrap:wrap;}
 .cochip{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .6rem;
   border:1px solid var(--border);border-radius:14px;background:var(--card-bg);
@@ -121,7 +120,8 @@ h1{font-size:2.4rem;font-weight:700;letter-spacing:-.035em;margin:0 0 1.5rem;}
 .when-t .dow{display:block;font-weight:600;color:var(--text-muted);font-size:.75rem;
   margin-bottom:.1rem;}
 .when-t .tba{font-weight:500;color:var(--muted-line);}
-.ttl{font-size:1.08rem;line-height:1.35;font-weight:600;margin-bottom:.2rem;}
+.ttl{font-size:1.08rem;line-height:1.35;font-weight:600;margin-bottom:.2rem;
+  overflow-wrap:anywhere;}
 .ttl a{color:var(--text);text-decoration:none;}
 .ttl a:hover{text-decoration:underline;text-underline-offset:3px;}
 
@@ -170,3 +170,37 @@ h1{font-size:2.4rem;font-weight:700;letter-spacing:-.035em;margin:0 0 1.5rem;}
 .fine .freshness time{color:var(--text);font-weight:600;}
 
 .fine p{margin:0;font-size:.75rem;line-height:1.6;color:#9299a1;}
+
+
+/* ---- Mobile ---- */
+@media(max-width:640px){
+  main{padding:1rem 1.1rem 3rem;margin-top:64px;}
+  h1{font-size:2rem;margin-bottom:1.2rem;}
+
+  /* The attribution note is fine print, not part of the timezone line */
+  .tznote{margin-bottom:1.5rem;}
+  .tznote .sep2{display:none}
+  .tznote .whose{display:block;margin-top:.35rem;padding-left:calc(6px + .5rem);
+    font-size:.75rem;line-height:1.45;}
+
+  /* Label on its own line, then two calendars side by side, .ics full width */
+  .subrow{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.8rem;}
+  .sublabel{grid-column:1/-1;margin:0;}
+  .calbtn{justify-content:center;padding:.55rem .5rem;}
+  .calbtn.plain{grid-column:1/-1;}
+
+  .when{margin:2rem 0 .7rem;}
+  .when h2{font-size:1.3rem}
+
+  /* Stack: date/time reads as a kicker above the title instead of a
+     92px column that squeezes the title into ~190px */
+  .ev{display:block;padding:.85rem 1rem;}
+  .when-t{font-size:.78rem;font-weight:600;color:var(--text-muted);
+    margin-bottom:.25rem;white-space:normal;}
+  .when-t .dow{display:inline;font-size:inherit;margin-bottom:0;color:inherit;}
+  .when-t .dow::after{content:'\00b7';margin:0 .35rem;color:var(--muted-line);}
+  .ttl{font-size:1rem;}
+
+  .recent summary{font-size:1.3rem}
+  .fine{margin-top:2.2rem}
+}
