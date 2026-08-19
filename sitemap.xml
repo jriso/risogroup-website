@@ -157,4 +157,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://risogroup.co/projects/data-ai-events/</loc>
+    <!-- No lastmod: the publish workflow only writes projects/data-ai-events/, so a date
+         here would freeze on the day it was added while changefreq claims daily. A stale
+         lastmod beside a daily changefreq is the combination crawlers discount. -->
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

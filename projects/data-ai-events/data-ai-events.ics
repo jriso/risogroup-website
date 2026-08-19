@@ -1,0 +1,182 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Riso Group//Data & AI Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+NAME:Data & AI Events
+X-WR-CALNAME:Data & AI Events
+DESCRIPTION:Webinars\, livestreams and meetups from the companies building 
+ data and AI tools. https://risogroup.co/projects/data-ai-events/
+X-WR-CALDESC:Webinars\, livestreams and meetups from the companies building
+  data and AI tools. https://risogroup.co/projects/data-ai-events/
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:898ba76d22c8a3b40ccd@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART;VALUE=DATE:20260819
+DTEND;VALUE=DATE:20260820
+SUMMARY:Sigma: Migrate off Looker with Coding Agents
+DESCRIPTION:Sigma — Online. A practical walk-through of a Looker migratio
+ n using Coding Agents. https://events.sigmacomputing.com/migrateofflookerw
+ ithagents\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://events.sigmacomputing.com/migrateofflookerwithagents
+CATEGORIES:Sigma
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:51495791c8af6cc23128@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART:20260825T160000Z
+DTEND:20260825T170000Z
+SUMMARY:Metabase: AI Analytics\, with receipts
+DESCRIPTION:Metabase — Online. Building a dashboard is trivial now. Verif
+ ying what it tells you is the hard part. In this session we'll show you ho
+ w to build in context to make sure the answers are correct. https://www.me
+ tabase.com/events/ai-analytics-with-receipts\n\nEnd time is an assumed 1 h
+ our.
+LOCATION:Online
+URL:https://www.metabase.com/events/ai-analytics-with-receipts
+CATEGORIES:Metabase
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:2c782393cb684cde80d8@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART:20260826T160000Z
+DTEND:20260826T170000Z
+SUMMARY:Metabase: AI Analytics\, on your terms\, on your infrastructure
+DESCRIPTION:Metabase — Online. You don't have to choose between shipping 
+ AI and staying in control. See the rollout playbook: who gets access\, wha
+ t it costs\, and the audit trail to prove it later. https://www.metabase.c
+ om/events/ai-analytics-on-your-terms-on-your-infrastructure\n\nEnd time is
+  an assumed 1 hour.
+LOCATION:Online
+URL:https://www.metabase.com/events/ai-analytics-on-your-terms-on-your-infr
+ astructure
+CATEGORIES:Metabase
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:96929704054213301b4b@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART:20260826T160000Z
+DTEND:20260826T170000Z
+SUMMARY:MotherDuck: Do AI Agents Need a Semantic Layer?
+DESCRIPTION:MotherDuck — Online. Half the industry says AI agents are use
+ less without a semantic layer. The other half ships agents that run fine o
+ n a pile of markdown files. Jacob Matson and Alex Monahan ran the evals an
+ d share what plain-text context vs a Malloy semantic layer showed. https:/
+ /motherduck.com/events/do-ai-agents-need-a-semantic-layer-2026/\n\nEnd tim
+ e is an assumed 1 hour.
+LOCATION:Online
+URL:https://motherduck.com/events/do-ai-agents-need-a-semantic-layer-2026/
+CATEGORIES:MotherDuck
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:9b5a132720d085873540@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART:20260827T160000Z
+DTEND:20260827T170000Z
+SUMMARY:Metabase: AI Analytics\, with a build button
+DESCRIPTION:Metabase — Online. The most interesting thing you can build i
+ sn't a dashboard\, it's an app. See what teams have shipped on Metabase\, 
+ then watch one built live. https://www.metabase.com/events/ai-analytics-wi
+ th-a-build-button\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://www.metabase.com/events/ai-analytics-with-a-build-button
+CATEGORIES:Metabase
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:5d0bb1966c9db6672f16@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART;VALUE=DATE:20260902
+DTEND;VALUE=DATE:20260903
+SUMMARY:Sigma: Migrate off Domo with Coding Agents
+DESCRIPTION:Sigma — Online. Accelerate Domo-to-Sigma migrations with codi
+ ng agents. https://events.sigmacomputing.com/migrateoffdomowithcodingagent
+ s\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://events.sigmacomputing.com/migrateoffdomowithcodingagents
+CATEGORIES:Sigma
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:879d2d2e41370f78ac1c@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART:20260902T090000Z
+DTEND:20260902T100000Z
+SUMMARY:Snowflake: Getting Started with Apache Iceberg: Practical Training 
+ for Partners
+DESCRIPTION:Snowflake — Online. Live webinar https://www.snowflake.com/we
+ binars/getting-started-with-apache-iceberg-practical-training-for-ee-partn
+ ers-2026/\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://www.snowflake.com/webinars/getting-started-with-apache-iceberg-
+ practical-training-for-ee-partners-2026/
+CATEGORIES:Snowflake
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:3494f16d588af8f6be36@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART:20260903T160000Z
+DTEND:20260903T170000Z
+SUMMARY:MotherDuck: Time Travel & Schema Evolution: DuckLake Handles Change
+DESCRIPTION:MotherDuck — Online. Schemas drift\, bad loads slip in\, and 
+ someone always needs last Tuesday's numbers. Alex Monahan\, co-author of D
+ uckLake: The Definitive Guide\, joins Hoyt Emerson (Early Signal) to walk 
+ through time travel\, schema evolution\, and the change feed live. https:/
+ /motherduck.com/events/time-travel-schema-evolution-ducklake-handles-chang
+ e-2026/\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://motherduck.com/events/time-travel-schema-evolution-ducklake-han
+ dles-change-2026/
+CATEGORIES:MotherDuck
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:0d4ee7587dcff52877d5@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+SUMMARY:Snowflake: SPN PULSE
+DESCRIPTION:Snowflake — Online. Partners: Stay Ahead with the Latest Busi
+ ness\, Product\, and Customer Insights https://www.snowflake.com/webinars/
+ partner/spn-pulse-apj/\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://www.snowflake.com/webinars/partner/spn-pulse-apj/
+CATEGORIES:Snowflake
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:94e9ded59daaa9f822dd@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260909
+SUMMARY:Snowflake: SPN Pulse Q3
+DESCRIPTION:Snowflake — Online. https://www.snowflake.com/webinars/partne
+ r/spn-pulse-2026/\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://www.snowflake.com/webinars/partner/spn-pulse-2026/
+CATEGORIES:Snowflake
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:2b45bf5883ec2965d35d@risogroup.co
+DTSTAMP:20260819T142635Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:Snowflake: SPN Partner Enablement Series - APJ
+DESCRIPTION:Snowflake — Online. Partner Technical Deep Dive: Innovate\, A
+ ccelerate\, and Win https://www.snowflake.com/webinars/partner/enablement-
+ series-apj/\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://www.snowflake.com/webinars/partner/enablement-series-apj/
+CATEGORIES:Snowflake
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

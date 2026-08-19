@@ -1,0 +1,304 @@
+# This file is generated from a template kept alongside the collector. Edit it there
+# and reinstall; a change made only here will be overwritten.
+name: Publish Data & AI Events
+
+# Refreshes projects/data-ai-events/ from a build staged in Cloud Storage.
+#
+# A pull, not a push. The machine that builds the page holds no credential for this
+# repository; this job runs on the repo's own GITHUB_TOKEN, which is scoped here and
+# expires when the job ends. Nothing outside GitHub can write to this repo.
+#
+# 06:30 UTC, twenty minutes after the build is staged. The gap is slack for a slow run,
+# not a handoff — if the build is late this job finds yesterday's marker, sees nothing
+# new, and exits without committing.
+
+on:
+  schedule:
+    - cron: '30 6 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Commit even if the staged build is stale'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: publish-data-ai-events
+  cancel-in-progress: false
+
+env:
+  BASE: https://storage.googleapis.com/risogroup-data-ai-events/data-ai-events
+  DEST: projects/data-ai-events
+  # A staged build older than this is treated as the builder having stopped, and is not
+  # republished. Two days rather than one, because the build is allowed to skip a run
+  # when the machine is busy, and one skipped day is not an incident.
+  MAX_AGE_DAYS: 2
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch the staged build
+        id: fetch
+        run: |
+          set -euo pipefail
+          mkdir -p staged
+
+          # PUBLISHED.json is written LAST by the builder, and only after every other
+          # artifact uploaded cleanly and passed its content checks. Its presence is the
+          # signal that a complete, approved build is sitting in the bucket — so it is
+          # fetched first and its absence stops everything.
+          # A missing marker means nothing has been staged yet — the builder is not
+          # deployed, or has not run. That is a state to report, not a failure: treating
+          # it as one puts a red X on this repository every day until the other side
+          # lands, and trains everyone to ignore the run. A marker that EXISTS while its
+          # artifacts do not is different, and still fatal.
+          if ! curl -fsS --retry 3 --retry-delay 5 -o staged/PUBLISHED.json "$BASE/PUBLISHED.json"; then
+            echo "::warning::no staged build in the bucket yet — nothing to publish"
+            echo "absent=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "absent=false" >> "$GITHUB_OUTPUT"
+
+          for f in index.html styles.css data-ai-events.ics; do
+            if ! curl -fsS --retry 3 --retry-delay 5 -o "staged/$f" "$BASE/$f"; then
+              echo "::error::PUBLISHED.json exists but $f does not — partial upload"
+              exit 1
+            fi
+          done
+
+          # The page references its own icons/, so they are part of the payload. Which
+          # files to fetch comes from PUBLISHED.json rather than from listing the bucket,
+          # so this needs no list permission and cannot pick up a stale object.
+          mkdir -p staged/icons
+          jq -r '.icons[]? // empty' staged/PUBLISHED.json > staged/.iconlist
+          while IFS= read -r icon; do
+            # Basename only — a name from the marker must never escape staged/icons/.
+            case "$icon" in ""|*/*|.*) echo "::error::bad icon name '$icon'"; exit 1 ;; esac
+            if ! curl -fsS --retry 3 --retry-delay 5 -o "staged/icons/$icon" "$BASE/icons/$icon"; then
+              echo "::error::could not fetch icons/$icon"
+              exit 1
+            fi
+          done < staged/.iconlist
+          rm -f staged/.iconlist
+          echo "fetched $(ls -1 staged/icons | wc -l) icons"
+          ls -l staged staged/icons
+
+      - name: Check the build is fresh and intact
+        id: check
+        if: steps.fetch.outputs.absent == 'false' 
+        # Via env, never `${{ }}` inside the script. GitHub pastes those in textually
+        # before bash parses the line, so any value carrying a quote and $( ) executes on
+        # the runner with this job's write token.
+        env:
+          FORCE: ${{ inputs.force }}
+        run: |
+          set -euo pipefail
+
+          # Everything below comes out of a bucket, so it is untrusted input and is
+          # validated before it is allowed anywhere near $GITHUB_OUTPUT. A multi-line
+          # value would otherwise write extra key=value lines, and later keys override
+          # earlier ones — so an unchecked `.events` can forge `skip` and change which
+          # branch of this job runs.
+          PUBLISHED_AT=$(jq -r '.published_at' staged/PUBLISHED.json)
+          EVENTS=$(jq -r '.events' staged/PUBLISHED.json)
+
+          if ! [[ "$EVENTS" =~ ^[0-9]+$ ]]; then
+            echo "::error::events count in PUBLISHED.json is not a plain integer"
+            exit 1
+          fi
+          # "YYYY-MM-DD HH:MM:SS UTC" and nothing else. `date -d` happily accepts "now"
+          # and "tomorrow", either of which would make a stale build permanently fresh.
+          if ! [[ "$PUBLISHED_AT" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}\ [0-9]{2}:[0-9]{2}:[0-9]{2}\ UTC$ ]]; then
+            echo "::error::published_at is not 'YYYY-MM-DD HH:MM:SS UTC' (got '$PUBLISHED_AT')"
+            exit 1
+          fi
+          echo "staged build: $PUBLISHED_AT, $EVENTS events"
+
+          # `published_at` is written as "YYYY-MM-DD HH:MM:SS UTC"; date -d parses that.
+          # Parsed as its own statement rather than inline in the arithmetic: a failed
+          # `date` inside $(( )) produces a bash syntax error whose exit status is easy to
+          # read as something else, and this must fail closed. An unparseable stamp is
+          # itself a symptom, and treating it as fresh republishes whatever is in the
+          # bucket.
+          if ! STAMP_S=$(date -u -d "$PUBLISHED_AT" +%s 2>/dev/null) || [ -z "$STAMP_S" ]; then
+            echo "::error::could not parse published_at ('$PUBLISHED_AT')"
+            exit 1
+          fi
+          AGE_D=$(( ( $(date -u +%s) - STAMP_S ) / 86400 ))
+          echo "age: ${AGE_D}d"
+
+          # A future stamp gives a negative age, which is never greater than the
+          # threshold — so one mis-stamped or clock-skewed build would disable the
+          # stopped-builder guard permanently and republish forever. The format regex
+          # above rejects "now" and "tomorrow" but cannot reject 2099-01-01.
+          if [ "$AGE_D" -lt 0 ]; then
+            echo "::error::published_at is in the future ('$PUBLISHED_AT') — refusing"
+            exit 1
+          fi
+
+          if [ "$AGE_D" -gt "$MAX_AGE_DAYS" ] && [ "${FORCE:-false}" != "true" ]; then
+            # Not an error. If the build has stopped, monitoring elsewhere reports it;
+            # the correct action here is to leave the last good page alone rather than
+            # re-commit a stale one.
+            echo "::warning::staged build is ${AGE_D}d old — leaving the live page alone"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Structural checks only. The full content gate runs at build time, where the
+          # code that understands the page lives; these catch a truncated or empty
+          # transfer between there and here.
+          test -s staged/index.html || { echo "::error::index.html is empty"; exit 1; }
+          test -s staged/styles.css || { echo "::error::styles.css is empty"; exit 1; }
+          # Upper bound as well as lower. `test -s` passes a 50 MB page just as happily
+          # as a good one, and this repo is the thing that would carry it forever.
+          SIZE=$(wc -c < staged/index.html)
+          if [ "$SIZE" -gt 5000000 ]; then
+            echo "::error::index.html is ${SIZE} bytes — refusing to commit it"
+            exit 1
+          fi
+          grep -q 'rel="canonical" href="https://risogroup.co/projects/data-ai-events/"' \
+            staged/index.html || { echo "::error::index.html has the wrong canonical"; exit 1; }
+          grep -q 'id="site-navbar"' staged/index.html \
+            || { echo "::error::index.html lost the shared navbar"; exit 1; }
+          head -1 staged/data-ai-events.ics | grep -q '^BEGIN:VCALENDAR' \
+            || { echo "::error::the calendar feed is not an iCalendar file"; exit 1; }
+
+          # Tail checks, because every check above reads the HEAD of the file. A transfer
+          # cut off at 40 KB keeps its canonical link, its navbar div and its
+          # BEGIN:VCALENDAR, and publishes a page that stops mid-listing with unclosed
+          # tags — and a feed with no END:VCALENDAR, which clients reject outright,
+          # blanking every subscriber's calendar rather than degrading.
+          tail -c 200 staged/index.html | grep -q '</html>' \
+            || { echo "::error::index.html is truncated — no closing </html>"; exit 1; }
+          tail -5 staged/data-ai-events.ics | grep -q '^END:VCALENDAR' \
+            || { echo "::error::the calendar feed is truncated — no END:VCALENDAR"; exit 1; }
+
+          # Every icon the page references must have arrived. Without this a partial
+          # fetch publishes a page whose every row renders a broken image.
+          MISSING=0
+          while IFS= read -r ref; do
+            [ -s "staged/$ref" ] || { echo "::error::page references $ref, not in the payload"; MISSING=1; }
+          done < <(grep -o 'src="icons/[^"]*"' staged/index.html | sed 's/src="//;s/"//' | sort -u)
+          [ "$MISSING" -eq 0 ] || exit 1
+
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          echo "events=$EVENTS" >> "$GITHUB_OUTPUT"
+
+      - name: Stage into the site
+        if: steps.check.outputs.skip == 'false'
+        id: stage
+        run: |
+          set -euo pipefail
+          mkdir -p "$DEST"
+          cp staged/index.html staged/styles.css staged/data-ai-events.ics "$DEST/"
+          # rsync-style: mirror icons/ exactly, so an icon the page stopped referencing
+          # is removed rather than left behind to be served forever.
+          rm -rf "$DEST/icons" && mkdir -p "$DEST/icons"
+          cp staged/icons/* "$DEST/icons/"
+          # PUBLISHED.json is a staging marker, not site content — deliberately not copied.
+
+          # This fires when the SAME staged build is fetched twice — a second
+          # workflow_dispatch, or a scheduled run after the builder skipped a day. It
+          # does not fire day to day, because the page carries the collection timestamp
+          # and the feed a DTSTAMP, so consecutive builds always differ. That is
+          # intended: the page states when it was last collected, and a daily commit of
+          # ~110 KB of mostly-identical HTML deltas to very little.
+          # `git add` first: `git diff` inspects tracked paths only, so if any of the three
+          # destination files were ever removed from the repo the `cp` would recreate it
+          # untracked, this would report no change, and the job would log "already
+          # current" while publishing nothing.
+          git add -A -- "$DEST"
+          if git diff --cached --quiet -- "$DEST"; then
+            echo "no change — the page already matches the staged build"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git diff --cached --stat -- "$DEST"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open and merge the publish PR
+        if: steps.stage.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENTS: ${{ steps.check.outputs.events }}
+        run: |
+          set -euo pipefail
+
+          # main requires a pull request. This deliberately goes through one rather than
+          # looking for a way around it: every publish then has a diff, an author and a
+          # revert button, which is what makes an unattended writer to a public site
+          # acceptable in the first place.
+          # Bail if a previous run's PR is still open. The merge step can fail for
+          # reasons that persist — protection tightened, a required check added — and
+          # this runs on a daily cron, so without this the repo accumulates one orphan
+          # branch and one open PR per day until somebody notices.
+          # --limit, because the default 30 would silently return 0 once the repo has
+          # more open PRs than that — which is exactly the state this guard exists to
+          # detect after it has already been failing for a while.
+          OPEN=$(gh pr list --state open --base main --limit 100 --json headRefName,number \
+                   --jq '[.[] | select(.headRefName | startswith("publish/data-ai-events-"))] | length')
+          if [ "${OPEN:-0}" -gt 0 ]; then
+            echo "::warning::${OPEN} publish PR(s) already open — not opening another."
+            echo "The previous one did not merge; resolve it and this resumes on its own."
+            exit 0
+          fi
+
+          BRANCH="publish/data-ai-events-$(date -u +%Y%m%d-%H%M%S)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add "$DEST"
+          # Indented to exactly the block-scalar depth: YAML strips that common prefix,
+          # so git receives these lines at column 0. Unindented they would terminate the
+          # `run: |` block and make the whole workflow unparseable.
+          git commit -m "Data & AI Events: refresh listing (${EVENTS} events)
+
+          Generated automatically and committed by
+          .github/workflows/data-ai-events.yml. Do not edit these files by hand — the
+          next scheduled run overwrites them."
+          git push origin "$BRANCH"
+
+          # If `gh pr create` fails after the push — a transient API error, or PR
+          # creation disabled in repo settings — the branch is orphaned and the open-PR
+          # guard above cannot see it, so tomorrow pushes another. Delete it on the way
+          # out rather than accumulating one per day.
+          trap 'git push origin --delete "$BRANCH" >/dev/null 2>&1 || true' ERR
+
+          PR=$(gh pr create --base main --head "$BRANCH" \
+                 --title "Data & AI Events: refresh listing (${EVENTS} events)" \
+                 --body "Automated daily refresh of \`${DEST}\`.
+
+          Built and content-checked before staging. This job re-checks that the
+          transfer is intact, then commits.
+
+          Close this PR to skip one day's update; the next run opens a fresh one.")
+          echo "opened $PR"
+
+          # 0 required approvals and no required checks, so this merges immediately. If
+          # protection ever tightens, this step fails loudly and the PR is left open for a
+          # human — which is the right failure, not a reason to add --admin.
+          gh pr merge "$PR" --squash --delete-branch
+          trap - ERR
+
+      # Two different quiet outcomes, said differently on purpose: "already current" is
+      # the healthy no-op, "stale" means the collector is the thing to look at. A single
+      # message for both is how a broken collector reads as a calm day.
+      - name: Nothing to publish
+        if: steps.stage.outputs.changed != 'true'
+        env:
+          SKIP: ${{ steps.check.outputs.skip }}
+        run: |
+          if [ "${SKIP:-}" = "true" ]; then
+            echo "Staged build was too old to publish — no fresh build has been"
+            echo "produced. The live page is unchanged."
+          else
+            echo "Live page already matches the staged build — no commit made."
+          fi
