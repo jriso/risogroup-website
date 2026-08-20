@@ -45,7 +45,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Fetch the staged build
-        id: fetch
         run: |
           set -euo pipefail
           mkdir -p staged
@@ -54,17 +53,28 @@ jobs:
           # artifact uploaded cleanly and passed its content checks. Its presence is the
           # signal that a complete, approved build is sitting in the bucket — so it is
           # fetched first and its absence stops everything.
-          # A missing marker means nothing has been staged yet — the builder is not
-          # deployed, or has not run. That is a state to report, not a failure: treating
-          # it as one puts a red X on this repository every day until the other side
-          # lands, and trains everyone to ignore the run. A marker that EXISTS while its
-          # artifacts do not is different, and still fatal.
+          #
+          # This was a warning-and-exit-0 while the collector was still being deployed,
+          # on the reasoning that a red X every day until the other side landed would
+          # train everyone to ignore the run. The collector landed, and the cost of that
+          # choice showed up immediately: on 2026-08-20 its page build died on a
+          # SyntaxError, staged nothing, and this job reported success for two days while
+          # the live page sat frozen. A green run that published nothing is worse than a
+          # red one, because nobody looks at it.
+          #
+          # A missing marker is now fatal. It cannot mean "not deployed yet" any more, and
+          # it does not mean "skipped a day" either — a skipped run leaves the PREVIOUS
+          # marker in place, which is stale rather than absent, and MAX_AGE_DAYS below is
+          # what handles that. Absence means the bucket lost its marker or the builder has
+          # never once completed. Both need a human.
           if ! curl -fsS --retry 3 --retry-delay 5 -o staged/PUBLISHED.json "$BASE/PUBLISHED.json"; then
-            echo "::warning::no staged build in the bucket yet — nothing to publish"
-            echo "absent=true" >> "$GITHUB_OUTPUT"
-            exit 0
+            echo "::error::no staged build in the bucket — $BASE/PUBLISHED.json is unreadable"
+            echo "The collector stages this marker last, so its absence means no run has"
+            echo "ever completed, or the bucket has lost it. The live page is unchanged."
+            echo "Check the collector log on openclaw-bot:"
+            echo "  ~/workspace/virgil/vendorwatch/data/.events-refresh.log"
+            exit 1
           fi
-          echo "absent=false" >> "$GITHUB_OUTPUT"
 
           for f in index.html styles.css data-ai-events.ics; do
             if ! curl -fsS --retry 3 --retry-delay 5 -o "staged/$f" "$BASE/$f"; then
@@ -92,7 +102,6 @@ jobs:
 
       - name: Check the build is fresh and intact
         id: check
-        if: steps.fetch.outputs.absent == 'false' 
         # Via env, never `${{ }}` inside the script. GitHub pastes those in textually
         # before bash parses the line, so any value carrying a quote and $( ) executes on
         # the runner with this job's write token.
@@ -299,6 +308,17 @@ jobs:
           if [ "${SKIP:-}" = "true" ]; then
             echo "Staged build was too old to publish — no fresh build has been"
             echo "produced. The live page is unchanged."
-          else
+          elif [ "${SKIP:-}" = "false" ]; then
             echo "Live page already matches the staged build — no commit made."
+          else
+            # Neither value set means the freshness check never ran, so nothing here
+            # knows whether the live page is current. Saying "already matches" on this
+            # path is what made a two-day publishing outage read as a healthy no-op:
+            # the marker was missing, the check was skipped, SKIP was empty, and the
+            # else branch printed a reassurance it had not checked. Fail instead.
+            echo "::error::reached the no-op step without a freshness verdict"
+            echo "The 'Check the build is fresh and intact' step did not run, so whether"
+            echo "the live page matches the staged build is unknown. This is a bug in"
+            echo "the workflow, not a state the collector can produce."
+            exit 1
           fi
