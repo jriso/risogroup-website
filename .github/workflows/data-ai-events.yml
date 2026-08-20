@@ -33,9 +33,11 @@ concurrency:
 env:
   BASE: https://storage.googleapis.com/risogroup-data-ai-events/data-ai-events
   DEST: projects/data-ai-events
-  # A staged build older than this is treated as the builder having stopped, and is not
-  # republished. Two days rather than one, because the build is allowed to skip a run
-  # when the machine is busy, and one skipped day is not an incident.
+  # A staged build older than this is treated as the builder having stopped: the run
+  # fails and the live page is left serving the last good build. Two days rather than
+  # one, because the build is allowed to skip a run when the machine is busy, and one
+  # skipped day is not an incident.
+  # Integer-day arithmetic that truncates, so the effective threshold is "under 3 days".
   MAX_AGE_DAYS: 2
 
 jobs:
@@ -45,7 +47,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Fetch the staged build
-        id: fetch
         run: |
           set -euo pipefail
           mkdir -p staged
@@ -54,17 +55,28 @@ jobs:
           # artifact uploaded cleanly and passed its content checks. Its presence is the
           # signal that a complete, approved build is sitting in the bucket — so it is
           # fetched first and its absence stops everything.
-          # A missing marker means nothing has been staged yet — the builder is not
-          # deployed, or has not run. That is a state to report, not a failure: treating
-          # it as one puts a red X on this repository every day until the other side
-          # lands, and trains everyone to ignore the run. A marker that EXISTS while its
-          # artifacts do not is different, and still fatal.
+          #
+          # This was a warning-and-exit-0 while the collector was still being deployed,
+          # on the reasoning that a red X every day until the other side landed would
+          # train everyone to ignore the run. The collector landed, and the cost of that
+          # choice showed up immediately: on 2026-08-20 its page build died on a
+          # SyntaxError, staged nothing, and this job reported success for two days while
+          # the live page sat frozen. A green run that published nothing is worse than a
+          # red one, because nobody looks at it.
+          #
+          # A missing marker is now fatal. It cannot mean "not deployed yet" any more, and
+          # it does not mean "skipped a day" either — a skipped run leaves the PREVIOUS
+          # marker in place, which is stale rather than absent, and MAX_AGE_DAYS below is
+          # what handles that. Absence means the bucket lost its marker or the builder has
+          # never once completed. Both need a human.
           if ! curl -fsS --retry 3 --retry-delay 5 -o staged/PUBLISHED.json "$BASE/PUBLISHED.json"; then
-            echo "::warning::no staged build in the bucket yet — nothing to publish"
-            echo "absent=true" >> "$GITHUB_OUTPUT"
-            exit 0
+            echo "::error::no staged build in the bucket — $BASE/PUBLISHED.json is unreadable"
+            echo "The collector stages this marker last, so its absence means no run has"
+            echo "ever completed, or the bucket has lost it. The live page is unchanged."
+            echo "Check the collector log on openclaw-bot:"
+            echo "  ~/workspace/virgil/vendorwatch/data/.events-refresh.log"
+            exit 1
           fi
-          echo "absent=false" >> "$GITHUB_OUTPUT"
 
           for f in index.html styles.css data-ai-events.ics; do
             if ! curl -fsS --retry 3 --retry-delay 5 -o "staged/$f" "$BASE/$f"; then
@@ -80,7 +92,12 @@ jobs:
           jq -r '.icons[]? // empty' staged/PUBLISHED.json > staged/.iconlist
           while IFS= read -r icon; do
             # Basename only — a name from the marker must never escape staged/icons/.
-            case "$icon" in ""|*/*|.*) echo "::error::bad icon name '$icon'"; exit 1 ;; esac
+            # An explicit allowed charset rather than a blocklist of separators: the old
+            # ""|*/*|.* form let through `?` and `#`, which are not path traversal but do
+            # change which GCS object the fetch below actually asks for.
+            case "$icon" in
+              ""|.*|*[!A-Za-z0-9._-]*) echo "::error::bad icon name '$icon'"; exit 1 ;;
+            esac
             if ! curl -fsS --retry 3 --retry-delay 5 -o "staged/icons/$icon" "$BASE/icons/$icon"; then
               echo "::error::could not fetch icons/$icon"
               exit 1
@@ -92,7 +109,6 @@ jobs:
 
       - name: Check the build is fresh and intact
         id: check
-        if: steps.fetch.outputs.absent == 'false' 
         # Via env, never `${{ }}` inside the script. GitHub pastes those in textually
         # before bash parses the line, so any value carrying a quote and $( ) executes on
         # the runner with this job's write token.
@@ -144,12 +160,24 @@ jobs:
           fi
 
           if [ "$AGE_D" -gt "$MAX_AGE_DAYS" ] && [ "${FORCE:-false}" != "true" ]; then
-            # Not an error. If the build has stopped, monitoring elsewhere reports it;
-            # the correct action here is to leave the last good page alone rather than
-            # re-commit a stale one.
-            echo "::warning::staged build is ${AGE_D}d old — leaving the live page alone"
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            exit 0
+            # The live page is still deliberately left alone — republishing a stale build
+            # is worse than continuing to serve the last good one. But this now exits RED
+            # rather than green.
+            #
+            # It was a warning-and-exit-0, on the reasoning that "monitoring elsewhere
+            # reports it". That monitor (openclaw-events-freshness) runs on the same VM as
+            # the collector, so the single failure that takes out the builder takes out its
+            # alerting with it — leaving this job as the only remaining signal, reporting
+            # success. That is the same lesson as the missing marker above.
+            #
+            # MAX_AGE_DAYS already absorbs a legitimately skipped run. Past it, "the
+            # builder has stopped" is not a thing to note quietly and move on from.
+            echo "::error::staged build is ${AGE_D}d old — the collector has stopped"
+            echo "The live page is unchanged and still serving the last good build."
+            echo "Check the collector log on openclaw-bot:"
+            echo "  ~/workspace/virgil/vendorwatch/data/.events-refresh.log"
+            echo "To publish the stale build anyway, re-run this workflow with force=true."
+            exit 1
           fi
 
           # Structural checks only. The full content gate runs at build time, where the
@@ -189,11 +217,11 @@ jobs:
           done < <(grep -o 'src="icons/[^"]*"' staged/index.html | sed 's/src="//;s/"//' | sort -u)
           [ "$MISSING" -eq 0 ] || exit 1
 
-          echo "skip=false" >> "$GITHUB_OUTPUT"
+          # No `skip` output any more: every path out of this step is now either a hard
+          # failure or a green light to publish, so there is no verdict left to carry.
           echo "events=$EVENTS" >> "$GITHUB_OUTPUT"
 
       - name: Stage into the site
-        if: steps.check.outputs.skip == 'false'
         id: stage
         run: |
           set -euo pipefail
@@ -202,7 +230,10 @@ jobs:
           # rsync-style: mirror icons/ exactly, so an icon the page stopped referencing
           # is removed rather than left behind to be served forever.
           rm -rf "$DEST/icons" && mkdir -p "$DEST/icons"
-          cp staged/icons/* "$DEST/icons/"
+          # `icons/.` rather than `icons/*`: an empty icon set leaves the glob unexpanded,
+          # and `cp` then fails on a literal `staged/icons/*` under `set -e`. A build that
+          # legitimately references no icons should publish, not go red.
+          cp -R staged/icons/. "$DEST/icons/"
           # PUBLISHED.json is a staging marker, not site content — deliberately not copied.
 
           # This fires when the SAME staged build is fetched twice — a second
@@ -246,9 +277,15 @@ jobs:
           OPEN=$(gh pr list --state open --base main --limit 100 --json headRefName,number \
                    --jq '[.[] | select(.headRefName | startswith("publish/data-ai-events-"))] | length')
           if [ "${OPEN:-0}" -gt 0 ]; then
-            echo "::warning::${OPEN} publish PR(s) already open — not opening another."
-            echo "The previous one did not merge; resolve it and this resumes on its own."
-            exit 0
+            # Red, not a warning. This is the same shape as the missing-marker case: the
+            # job would otherwise report success every day while publishing nothing,
+            # because the reason a publish PR did not merge (protection tightened, a
+            # required check added) is exactly the kind that persists. An unmerged PR
+            # means the live page is frozen, and that has to look like what it is.
+            echo "::error::${OPEN} publish PR(s) already open — not opening another."
+            echo "The previous one did not merge, so the live page is frozen at whatever"
+            echo "it last published. Resolve or close it and this resumes on its own."
+            exit 1
           fi
 
           BRANCH="publish/data-ai-events-$(date -u +%Y%m%d-%H%M%S)"
@@ -282,23 +319,37 @@ jobs:
           Close this PR to skip one day's update; the next run opens a fresh one.")
           echo "opened $PR"
 
+          # Cleared BEFORE the merge, not after. The trap exists to clean up a branch that
+          # was pushed but never got a PR; once the PR exists it is the wrong tool. Left
+          # armed across the merge, a failed `gh pr merge` deletes the head branch, and
+          # GitHub auto-closes a PR whose head branch is gone — so the "left open for a
+          # human" below silently became "closed, branch deleted, and tomorrow's open-PR
+          # guard counts zero and opens another."
+          trap - ERR
+
           # 0 required approvals and no required checks, so this merges immediately. If
           # protection ever tightens, this step fails loudly and the PR is left open for a
           # human — which is the right failure, not a reason to add --admin.
           gh pr merge "$PR" --squash --delete-branch
-          trap - ERR
 
-      # Two different quiet outcomes, said differently on purpose: "already current" is
-      # the healthy no-op, "stale" means the collector is the thing to look at. A single
-      # message for both is how a broken collector reads as a calm day.
+      # The only quiet outcome left. "Stale" is now a hard failure in the check step, so
+      # this can no longer double as the report for a stopped collector — which is what
+      # let one read as the other.
       - name: Nothing to publish
         if: steps.stage.outputs.changed != 'true'
         env:
-          SKIP: ${{ steps.check.outputs.skip }}
+          CHANGED: ${{ steps.stage.outputs.changed }}
         run: |
-          if [ "${SKIP:-}" = "true" ]; then
-            echo "Staged build was too old to publish — no fresh build has been"
-            echo "produced. The live page is unchanged."
-          else
+          if [ "${CHANGED:-}" = "false" ]; then
             echo "Live page already matches the staged build — no commit made."
+          else
+            # `changed` unset means the staging step never ran, so nothing here has
+            # compared anything. Printing "already matches" on that path is precisely
+            # what made a two-day publishing outage read as a healthy no-op. Never
+            # report a state this step has not established.
+            echo "::error::reached the no-op step without a staging verdict"
+            echo "The 'Stage into the site' step did not run, so whether the live page"
+            echo "matches the staged build is unknown. This is a bug in the workflow,"
+            echo "not a state the collector can produce."
+            exit 1
           fi
