@@ -12,8 +12,23 @@ X-WR-CALDESC:Webinars\, livestreams and meetups from the companies building
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
+UID:445d9cd1e0c3034ee4d3@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART:20260825T170000Z
+DTEND:20260825T180000Z
+SUMMARY:Fivetran: How to build the data foundation your AI agents can trust
+DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/how-to-bu
+ ild-the-data-foundation-your-ai-agents-can-trust\n\nEnd time is an assumed
+  1 hour.
+LOCATION:Online
+URL:https://go.fivetran.com/webinars/how-to-build-the-data-foundation-your-
+ ai-agents-can-trust
+CATEGORIES:Fivetran
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:51495791c8af6cc23128@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART:20260825T160000Z
 DTEND:20260825T170000Z
 SUMMARY:Metabase: AI Analytics\, with receipts
@@ -29,7 +44,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:2c782393cb684cde80d8@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART:20260826T160000Z
 DTEND:20260826T170000Z
 SUMMARY:Metabase: AI Analytics\, on your terms\, on your infrastructure
@@ -46,7 +61,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:96929704054213301b4b@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART:20260826T160000Z
 DTEND:20260826T170000Z
 SUMMARY:MotherDuck: Do AI Agents Need a Semantic Layer?
@@ -63,7 +78,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:9b5a132720d085873540@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART:20260827T160000Z
 DTEND:20260827T170000Z
 SUMMARY:Metabase: AI Analytics\, with a build button
@@ -77,8 +92,27 @@ CATEGORIES:Metabase
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:1e11661c41601ee63104@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART:20260827T160000Z
+DTEND:20260827T170000Z
+SUMMARY:Mixpanel: Office Hours: Ecommerce Analytics in Action
+DESCRIPTION:Mixpanel — Online. AI has compressed your buyer’s journey. 
+ Shoppers are discovering\, comparing\, and purchasing in a fraction of the
+  time they used to. How are leading product and growth teams keeping pace?
+  Mixpanel has recently released a wave of AI analytics features to help te
+ ams move from data to action faster\, with proactive product intelligence 
+ . Join us for a walkthrough of what's new\, built specifically for e https
+ ://events.mixpanel.com/officehours/ecommerce/\n\nEnd time is an assumed 1 
+ hour.
+LOCATION:Online
+URL:https://events.mixpanel.com/officehours/ecommerce/
+CATEGORIES:Mixpanel
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:5d0bb1966c9db6672f16@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART;VALUE=DATE:20260902
 DTEND;VALUE=DATE:20260903
 SUMMARY:Sigma: Migrate off Domo with Coding Agents
@@ -92,7 +126,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:879d2d2e41370f78ac1c@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART:20260902T090000Z
 DTEND:20260902T100000Z
 SUMMARY:Snowflake: Getting Started with Apache Iceberg: Practical Training 
@@ -108,7 +142,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:3494f16d588af8f6be36@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART:20260903T160000Z
 DTEND:20260903T170000Z
 SUMMARY:MotherDuck: Time Travel & Schema Evolution: DuckLake Handles Change
@@ -126,7 +160,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:0d4ee7587dcff52877d5@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART;VALUE=DATE:20260904
 DTEND;VALUE=DATE:20260905
 SUMMARY:Snowflake: SPN PULSE
@@ -140,7 +174,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:94e9ded59daaa9f822dd@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART;VALUE=DATE:20260908
 DTEND;VALUE=DATE:20260909
 SUMMARY:Snowflake: SPN Pulse Q3
@@ -152,8 +186,93 @@ CATEGORIES:Snowflake
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:102dfbe108d6212393b5@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+SUMMARY:Amplitude: The Championship Playbook: What Winning AI Teams Do Diff
+ erently
+DESCRIPTION:Amplitude — Online. Join us on Sept 9th for a fast\, 20-minut
+ e session where we break down six iconic football plays and show you the A
+ mplitude AI feature behind each one. https://amplitude.com/2026-09-09-cham
+ pionship-playbook\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://amplitude.com/2026-09-09-championship-playbook
+CATEGORIES:Amplitude
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:6a26776c73608ba3b4f4@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260911
+SUMMARY:Databricks: Unity Catalog Workshop
+DESCRIPTION:Databricks — Online. Join us for a live session where you wil
+ l learn how to simplify data and AI governance with Databricks Data + AI P
+ latform. https://www.databricks.com/resources/webinar/unity-catalog-unifie
+ d-open-governance-data-and-ai?scid=701Vp000016QhdFIAS&utm_medium=website&u
+ tm_source=databricks\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://www.databricks.com/resources/webinar/unity-catalog-unified-open
+ -governance-data-and-ai?scid=701Vp000016QhdFIAS&utm_medium=website&utm_sou
+ rce=databricks
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:92a0525543dd8e8a713c@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:Databricks: AI Powered Data Engineering: Lakeflow
+DESCRIPTION:Databricks — Online. Join us for a hands-on workshop where yo
+ u will learn how to build and deploy declarative streaming ETL pipelines a
+ t scale with Spark Declarative Pipelines and Databricks Workflows on the D
+ atabricks Data + AI Platform https://www.databricks.com/resources/webinar/
+ ai-powered-data-engineering-lakeflow-techniques-modern-data-professionals?
+ scid=701Vp000015WS93IAG&utm_medium=website&utm_source=databricks\n\nNo sta
+ rt time published — check the link.
+LOCATION:Online
+URL:https://www.databricks.com/resources/webinar/ai-powered-data-engineerin
+ g-lakeflow-techniques-modern-data-professionals?scid=701Vp000015WS93IAG&ut
+ m_medium=website&utm_source=databricks
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:a1ea9d7eff9ea2c7ea51@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:Databricks: Future of Healthcare Finance\, with Genie
+DESCRIPTION:Databricks — Online. Join us for The Future of Healthcare Fin
+ ance\, with Genie. See how Databricks Genie helps healthcare finance teams
+  get trusted answers on margin\, cost trends\, revenue cycle\, and profita
+ bility. https://events.databricks.com/FY27Q3-WB-Healthcare/register\n\nNo 
+ start time published — check the link.
+LOCATION:Online
+URL:https://events.databricks.com/FY27Q3-WB-Healthcare/register
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:8d30469eccb4d0e8e93f@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART:20260917T100000Z
+DTEND:20260917T110000Z
+SUMMARY:Fivetran: Why NetSuite Data Fights Back — And How to Win Anyway
+DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/why-netsu
+ ite-data-fights-back-and-how-to-win-anyway\n\nEnd time is an assumed 1 hou
+ r.
+LOCATION:Online
+URL:https://go.fivetran.com/webinars/why-netsuite-data-fights-back-and-how-
+ to-win-anyway
+CATEGORIES:Fivetran
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:2b45bf5883ec2965d35d@risogroup.co
-DTSTAMP:20260824T061353Z
+DTSTAMP:20260825T061537Z
 DTSTART;VALUE=DATE:20260917
 DTEND;VALUE=DATE:20260918
 SUMMARY:Snowflake: SPN Partner Enablement Series - APJ
@@ -163,6 +282,130 @@ DESCRIPTION:Snowflake — Online. Partner Technical Deep Dive: Innovate\, A
 LOCATION:Online
 URL:https://www.snowflake.com/webinars/partner/enablement-series-apj/
 CATEGORIES:Snowflake
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:b340b905ba07a6a5a4f3@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART:20260922T170000Z
+DTEND:20260922T180000Z
+SUMMARY:Fivetran: Building Healthcare AI without rebuilding your Data Platf
+ orm
+DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/building-
+ healthcare-ai-without-rebuilding-your-data-platform\n\nEnd time is an assu
+ med 1 hour.
+LOCATION:Online
+URL:https://go.fivetran.com/webinars/building-healthcare-ai-without-rebuild
+ ing-your-data-platform
+CATEGORIES:Fivetran
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:02e09ade5b72f9a44c9a@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:Databricks: Closing the AI Context Gap
+DESCRIPTION:Databricks — Online. Closing the AI Context Gap https://www.d
+ atabricks.com/resources/webinar/closing-the-ai-context-gap\n\nNo start tim
+ e published — check the link.
+LOCATION:Online
+URL:https://www.databricks.com/resources/webinar/closing-the-ai-context-gap
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:bd203e89e5e67189023b@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:Databricks: Build\, Orchestrate and Improve Agents
+DESCRIPTION:Databricks — Online. Join this hands-on workshop to learn how
+  to build production-ready AI agent systems on Databricks https://www.data
+ bricks.com/resources/webinar/build-orchestrate-and-improve-agents-databric
+ ks?scid=701Vp000016Ql8zIAC&utm_medium=website&utm_source=databricks\n\nNo 
+ start time published — check the link.
+LOCATION:Online
+URL:https://www.databricks.com/resources/webinar/build-orchestrate-and-impr
+ ove-agents-databricks?scid=701Vp000016Ql8zIAC&utm_medium=website&utm_sourc
+ e=databricks
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:e7341719d4fcfc2662e4@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART;VALUE=DATE:20260929
+DTEND;VALUE=DATE:20260930
+SUMMARY:Databricks: The Databricks EMEA Learning Festival
+DESCRIPTION:Databricks — Online. The Databricks EMEA Learning Festival ht
+ tps://www.databricks.com/resources/webinar/emea-learning-festival-septembe
+ r\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://www.databricks.com/resources/webinar/emea-learning-festival-sep
+ tember
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:f33ed2066e983f5866f2@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART:20260929T171500Z
+DTEND:20260929T181500Z
+SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
+DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/sep-2026-
+ fivetran-dbt-labs-in-15-minutes\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://go.fivetran.com/webinars/sep-2026-fivetran-dbt-labs-in-15-minut
+ es
+CATEGORIES:Fivetran
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:d7f2b2e80db0df523c36@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART:20260930T130000Z
+DTEND:20260930T140000Z
+SUMMARY:Mixpanel: Know Before You Ship:
+DESCRIPTION:Mixpanel — Online. Ecommerce moves fast. Product cycles are s
+ horter. AI is accelerating build velocity. Customer expectations around pe
+ rsonalisation are rising. The bar keeps moving. The teams pulling ahead ar
+ e the ones who understand their customers deeply\, experiment relentlessly
+ \, and stay centered on what doesn't change: authenticity\, community\, an
+ d genuine connection. Join us for a live panel session with two ec https:/
+ /events.mixpanel.com/know-before-you-ship-ecommerce-emea/\n\nEnd time is a
+ n assumed 1 hour.
+LOCATION:Online
+URL:https://events.mixpanel.com/know-before-you-ship-ecommerce-emea/
+CATEGORIES:Mixpanel
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:e145f6ee390630cccbcc@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART:20261027T171500Z
+DTEND:20261027T181500Z
+SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
+DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/oct-2026-
+ fivetran-dbt-labs-in-15-minutes\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://go.fivetran.com/webinars/oct-2026-fivetran-dbt-labs-in-15-minut
+ es
+CATEGORIES:Fivetran
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:eb75dd563057fde388f5@risogroup.co
+DTSTAMP:20260825T061537Z
+DTSTART:20261124T181500Z
+DTEND:20261124T191500Z
+SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
+DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/nov-2026-
+ fivetran-dbt-labs-in-15-minutes\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://go.fivetran.com/webinars/nov-2026-fivetran-dbt-labs-in-15-minut
+ es
+CATEGORIES:Fivetran
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR
