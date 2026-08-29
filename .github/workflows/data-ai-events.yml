@@ -256,6 +256,7 @@ jobs:
           fi
 
       - name: Open and merge the publish PR
+        id: merge
         if: steps.stage.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -331,6 +332,92 @@ jobs:
           # protection ever tightens, this step fails loudly and the PR is left open for a
           # human — which is the right failure, not a reason to add --admin.
           gh pr merge "$PR" --squash --delete-branch
+
+          # The squash produces a NEW commit on main, so the branch tip is not what Pages
+          # builds. The verify step below needs that merge commit specifically. The API
+          # can briefly return a null mergeCommit right after the merge, hence the retry.
+          MERGE_SHA=""
+          for _ in $(seq 1 12); do
+            MERGE_SHA=$(gh pr view "$PR" --json mergeCommit --jq '.mergeCommit.oid // empty' 2>/dev/null || true)
+            [ -n "$MERGE_SHA" ] && break
+            sleep 5
+          done
+          # Validated before it reaches $GITHUB_OUTPUT, same reasoning as the bucket
+          # values in the check step: a multi-line value writes extra key=value lines.
+          if ! [[ "$MERGE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::could not read the merge commit for $PR (got '${MERGE_SHA}')"
+            echo "The merge itself succeeded. Whether Pages then published it is unverified."
+            exit 1
+          fi
+          echo "merged as $MERGE_SHA"
+          echo "merge_sha=$MERGE_SHA" >> "$GITHUB_OUTPUT"
+
+      # Everything above stops at the commit. That was the gap: on 2026-08-27 this job
+      # merged PR #85 and reported success, the Pages deploy for that commit then timed
+      # out after ten minutes and cancelled itself, and the live page sat on the previous
+      # day's build with no signal anywhere. The notification email said the listing had
+      # refreshed, because from this job's point of view it had.
+      #
+      # This is the same lesson as the missing marker and the stale build above, one step
+      # further down the chain: a green run that published nothing is worse than a red
+      # one. Committing to main is not publishing — Pages is what publishes, and it is
+      # allowed to fail on its own.
+      #
+      # Deliberately no retry. A timeout here is usually transient and the next daily run
+      # supersedes it anyway (which is exactly how 08-27 recovered), so the value is in
+      # the run going red and sending its failure mail, not in this job trying to heal it.
+      - name: Verify GitHub Pages actually published it
+        if: steps.stage.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MERGE_SHA: ${{ steps.merge.outputs.merge_sha }}
+        run: |
+          set -euo pipefail
+
+          # The deployment is created asynchronously after the push, so it is not there
+          # the instant the merge returns. Five minutes to appear at all.
+          DEPLOY_ID=""
+          for _ in $(seq 1 30); do
+            DEPLOY_ID=$(gh api \
+              "repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&sha=${MERGE_SHA}&per_page=1" \
+              --jq '.[0].id // empty' 2>/dev/null || true)
+            [ -n "$DEPLOY_ID" ] && break
+            sleep 10
+          done
+          if [ -z "$DEPLOY_ID" ]; then
+            echo "::error::no github-pages deployment appeared for ${MERGE_SHA} within 5 minutes"
+            echo "The commit is on main but Pages never picked it up. The live page is"
+            echo "still serving the previous build. Check the Pages settings and"
+            echo "https://www.githubstatus.com/ for a Pages incident."
+            exit 1
+          fi
+
+          # 15 minutes for a verdict. The 08-27 failure took 10m20s to declare itself, so
+          # a shorter budget would have reported "still deploying" on precisely the case
+          # this exists to catch.
+          STATE=""
+          for _ in $(seq 1 90); do
+            STATE=$(gh api "repos/${GITHUB_REPOSITORY}/deployments/${DEPLOY_ID}/statuses?per_page=1" \
+                      --jq '.[0].state // empty' 2>/dev/null || true)
+            case "$STATE" in
+              success|failure|error|inactive) break ;;
+            esac
+            sleep 10
+          done
+
+          if [ "$STATE" = "success" ]; then
+            echo "Pages published ${MERGE_SHA}."
+            exit 0
+          fi
+
+          # Includes the timed-out case, where STATE is still in_progress/queued/empty.
+          # Never report a state this step has not established.
+          echo "::error::Pages did not publish ${MERGE_SHA} — deployment ${DEPLOY_ID} is '${STATE:-unknown}'"
+          echo "The commit IS on main; the live page is NOT serving it and is still on the"
+          echo "previous build. Usually transient — re-run the failed deployment, or just"
+          echo "let tomorrow's run supersede it, which republishes the newer listing."
+          echo "  https://github.com/${GITHUB_REPOSITORY}/deployments"
+          exit 1
 
       # The only quiet outcome left. "Stale" is now a hard failure in the check step, so
       # this can no longer double as the report for a stopped collector — which is what
