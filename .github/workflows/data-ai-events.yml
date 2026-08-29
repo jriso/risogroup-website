@@ -25,6 +25,13 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  # For the Pages verification at the end. This repo is public, so the deployment reads
+  # actually succeed without it (verified on a probe run — both a job with this scope and
+  # one without returned the deployment and its statuses). It is declared anyway: naming
+  # a `permissions` block sets every unlisted scope to `none`, so the call works today
+  # only because the data is public, and the day the repo goes private the verifier would
+  # start reporting "no deployment appeared" instead of a permission error.
+  deployments: read
 
 concurrency:
   group: publish-data-ai-events
@@ -376,14 +383,32 @@ jobs:
 
           # The deployment is created asynchronously after the push, so it is not there
           # the instant the merge returns. Five minutes to appear at all.
+          #
+          # A failed API call is kept distinct from an empty result rather than being
+          # swallowed by `|| true`. Both used to land on "no deployment appeared", which
+          # is a claim about GitHub Pages; a rate-limit or an API outage is a claim about
+          # this step's own ability to look. Reporting one as the other sends whoever
+          # reads the failure mail to the wrong place.
           DEPLOY_ID=""
+          LAST_ERR=""
           for _ in $(seq 1 30); do
-            DEPLOY_ID=$(gh api \
+            if OUT=$(gh api \
               "repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&sha=${MERGE_SHA}&per_page=1" \
-              --jq '.[0].id // empty' 2>/dev/null || true)
-            [ -n "$DEPLOY_ID" ] && break
+              --jq '.[0].id // empty' 2>&1); then
+              DEPLOY_ID="$OUT"
+              [ -n "$DEPLOY_ID" ] && break
+            else
+              LAST_ERR="$OUT"
+            fi
             sleep 10
           done
+          if [ -z "$DEPLOY_ID" ] && [ -n "$LAST_ERR" ]; then
+            echo "::error::could not query the deployments API — verification is inconclusive"
+            echo "This says nothing about whether Pages published ${MERGE_SHA}; the check"
+            echo "itself could not run. Last error:"
+            echo "  ${LAST_ERR}"
+            exit 1
+          fi
           if [ -z "$DEPLOY_ID" ]; then
             echo "::error::no github-pages deployment appeared for ${MERGE_SHA} within 5 minutes"
             echo "The commit is on main but Pages never picked it up. The live page is"
@@ -392,27 +417,56 @@ jobs:
             exit 1
           fi
 
+          # The whole status history, not just the newest entry. GitHub marks a
+          # deployment `inactive` when a later one supersedes it, and that lands ON TOP
+          # of the `success` it already had — deployment 6146857876 in this repo reads
+          # `inactive, success, in_progress, queued, waiting` today for exactly that
+          # reason. Reading only `.[0]` would call a published commit a failure any time
+          # something else merged to main inside this window.
+          #
           # 15 minutes for a verdict. The 08-27 failure took 10m20s to declare itself, so
           # a shorter budget would have reported "still deploying" on precisely the case
           # this exists to catch.
-          STATE=""
+          STATES=""
           for _ in $(seq 1 90); do
-            STATE=$(gh api "repos/${GITHUB_REPOSITORY}/deployments/${DEPLOY_ID}/statuses?per_page=1" \
-                      --jq '.[0].state // empty' 2>/dev/null || true)
-            case "$STATE" in
-              success|failure|error|inactive) break ;;
-            esac
+            STATES=$(gh api "repos/${GITHUB_REPOSITORY}/deployments/${DEPLOY_ID}/statuses?per_page=100" \
+                       --jq '.[].state' 2>/dev/null || true)
+            # Success anywhere in the history is the answer, whatever sits above it.
+            if printf '%s\n' "$STATES" | grep -qx 'success'; then
+              echo "Pages published ${MERGE_SHA}."
+              exit 0
+            fi
+            if printf '%s\n' "$STATES" | grep -qxE 'failure|error'; then
+              break
+            fi
             sleep 10
           done
 
-          if [ "$STATE" = "success" ]; then
-            echo "Pages published ${MERGE_SHA}."
-            exit 0
+          # Reached only without a success. `inactive` here means superseded BEFORE it
+          # ever succeeded — main moved on mid-window. That is not this commit failing to
+          # publish, provided the thing that replaced it did publish: main is linear here
+          # and Pages only ever builds it, so a newer successful deployment is built from
+          # a descendant of this commit and carries its content to the live site.
+          if printf '%s\n' "$STATES" | grep -qx 'inactive'; then
+            NEWER=$(gh api \
+              "repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&per_page=10" \
+              --jq "[.[] | select(.id > ${DEPLOY_ID})] | .[0].id // empty" 2>/dev/null || true)
+            if [ -n "$NEWER" ]; then
+              NEWER_STATE=$(gh api "repos/${GITHUB_REPOSITORY}/deployments/${NEWER}/statuses?per_page=100" \
+                              --jq '[.[].state] | if index("success") then "success" else .[0] end' 2>/dev/null || true)
+              if [ "$NEWER_STATE" = "success" ]; then
+                echo "Deployment ${DEPLOY_ID} was superseded before finishing, but the newer"
+                echo "deployment ${NEWER} published successfully from a descendant commit."
+                echo "The live page carries ${MERGE_SHA}."
+                exit 0
+              fi
+            fi
           fi
 
-          # Includes the timed-out case, where STATE is still in_progress/queued/empty.
+          # Includes the timed-out case, where nothing terminal was ever observed.
           # Never report a state this step has not established.
-          echo "::error::Pages did not publish ${MERGE_SHA} — deployment ${DEPLOY_ID} is '${STATE:-unknown}'"
+          LATEST=$(printf '%s\n' "$STATES" | head -1)
+          echo "::error::Pages did not publish ${MERGE_SHA} — deployment ${DEPLOY_ID} is '${LATEST:-unknown}'"
           echo "The commit IS on main; the live page is NOT serving it and is still on the"
           echo "previous build. Usually transient — re-run the failed deployment, or just"
           echo "let tomorrow's run supersede it, which republishes the newer listing."
