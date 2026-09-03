@@ -12,53 +12,25 @@ X-WR-CALDESC:Webinars\, livestreams and meetups from the companies building
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:82963e28f92d989935a7@risogroup.co
-DTSTAMP:20260902T061552Z
-DTSTART;VALUE=DATE:20260902
-DTEND;VALUE=DATE:20260903
-SUMMARY:Databricks: Build Multi-Agent Systems Workshop
-DESCRIPTION:Databricks — Online. Build Multi-Agent Systems Workshop https
- ://www.databricks.com/resources/webinar/emea-foundational-workshops#ai-wor
- kshop\n\nNo start time published — check the link.
+UID:b8495e0e7f9f0d243518@risogroup.co
+DTSTAMP:20260903T061615Z
+DTSTART:20260903T130000Z
+DTEND:20260903T140000Z
+SUMMARY:MotherDuck: MotherDuck Builder Office Hours - September 3
+DESCRIPTION:MotherDuck — Online. Drop in anytime during this session\, an
+ d get a hand from a MotherDuck expert with any sticky question\, problem\,
+  or musing on your mind. Meet other builders on MotherDuck and hear how th
+ ey're solving similar challenges. https://motherduck.com/events/motherduck
+ -builder-office-hours-september-3-2026/\n\nEnd time is an assumed 1 hour.
 LOCATION:Online
-URL:https://www.databricks.com/resources/webinar/emea-foundational-workshop
- s#ai-workshop
-CATEGORIES:Databricks
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:5d0bb1966c9db6672f16@risogroup.co
-DTSTAMP:20260902T061552Z
-DTSTART;VALUE=DATE:20260902
-DTEND;VALUE=DATE:20260903
-SUMMARY:Sigma: Migrate off Domo with Coding Agents
-DESCRIPTION:Sigma — Online. Accelerate Domo-to-Sigma migrations with codi
- ng agents. https://events.sigmacomputing.com/migrateoffdomowithcodingagent
- s\n\nNo start time published — check the link.
-LOCATION:Online
-URL:https://events.sigmacomputing.com/migrateoffdomowithcodingagents
-CATEGORIES:Sigma
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:879d2d2e41370f78ac1c@risogroup.co
-DTSTAMP:20260902T061552Z
-DTSTART:20260902T090000Z
-DTEND:20260902T100000Z
-SUMMARY:Snowflake: Getting Started with Apache Iceberg: Practical Training 
- for Partners
-DESCRIPTION:Snowflake — Online. Live webinar https://www.snowflake.com/we
- binars/getting-started-with-apache-iceberg-practical-training-for-ee-partn
- ers-2026/\n\nEnd time is an assumed 1 hour.
-LOCATION:Online
-URL:https://www.snowflake.com/webinars/getting-started-with-apache-iceberg-
- practical-training-for-ee-partners-2026/
-CATEGORIES:Snowflake
+URL:https://motherduck.com/events/motherduck-builder-office-hours-september
+ -3-2026/
+CATEGORIES:MotherDuck
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:3494f16d588af8f6be36@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20260903T160000Z
 DTEND:20260903T170000Z
 SUMMARY:MotherDuck: Time Travel & Schema Evolution: DuckLake Handles Change
@@ -76,7 +48,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:0d4ee7587dcff52877d5@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260904
 DTEND;VALUE=DATE:20260905
 SUMMARY:Snowflake: SPN PULSE
@@ -90,7 +62,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:305b543750093d7e3c9c@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260908
 DTEND;VALUE=DATE:20260909
 SUMMARY:Databricks: Retail Data for Smarter Store Decisions
@@ -107,7 +79,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:94e9ded59daaa9f822dd@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260908
 DTEND;VALUE=DATE:20260909
 SUMMARY:Snowflake: SPN Pulse Q3
@@ -120,7 +92,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:102dfbe108d6212393b5@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260909
 DTEND;VALUE=DATE:20260910
 SUMMARY:Amplitude: The Championship Playbook: What Winning AI Teams Do Diff
@@ -136,7 +108,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:a0d0cabe3c983060e1a2@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260909
 DTEND;VALUE=DATE:20260910
 SUMMARY:Sigma: SUM: The New Analytics Skill Set: What Matters in an AI Worl
@@ -152,7 +124,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:de059f570fd67cb8dadc@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260909
 DTEND;VALUE=DATE:20260910
 SUMMARY:Sigma: How to Set Up your Coding Agent for Building in Sigma
@@ -166,7 +138,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:6a26776c73608ba3b4f4@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260910
 DTEND;VALUE=DATE:20260911
 SUMMARY:Databricks: Unity Catalog Workshop
@@ -183,8 +155,25 @@ CATEGORIES:Databricks
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:036fd284d90a0e8b0376@risogroup.co
+DTSTAMP:20260903T061615Z
+DTSTART:20260910T200000Z
+DTEND:20260910T210000Z
+SUMMARY:MotherDuck: MotherDuck Builder Office Hours - September 10
+DESCRIPTION:MotherDuck — Online. Drop in anytime during this session\, an
+ d get a hand from a MotherDuck expert with any sticky question\, problem\,
+  or musing on your mind. Meet other builders on MotherDuck and hear how th
+ ey're solving similar challenges. https://motherduck.com/events/motherduck
+ -builder-office-hours-september-10-2026/\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://motherduck.com/events/motherduck-builder-office-hours-september
+ -10-2026/
+CATEGORIES:MotherDuck
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:6ea800a2c0f55c82b873@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260915
 DTEND;VALUE=DATE:20260916
 SUMMARY:Databricks: Healthcare Data for Smarter Decisions
@@ -201,8 +190,25 @@ CATEGORIES:Databricks
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:2f33cb7aa06b15cfea4b@risogroup.co
+DTSTAMP:20260903T061615Z
+DTSTART:20260915T160000Z
+DTEND:20260915T170000Z
+SUMMARY:Metabase: Tour of Metabase: building dashboards with (or without) A
+ I
+DESCRIPTION:Metabase — Online. Get a complete end-to-end tour of Metabase
+  from connecting your first database to building dashboards\, documents\, 
+ and sharing with your organization—including AI-assisted exploration and
+  the MCP server in your workflow. https://www.metabase.com/events/building
+ -dashboards-ai\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://www.metabase.com/events/building-dashboards-ai
+CATEGORIES:Metabase
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:c860f546c54cd282703c@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20260916T160000Z
 DTEND:20260916T170000Z
 SUMMARY:MotherDuck: MotherDuck CLI: query\, pipelines\, dashboards for your
@@ -221,7 +227,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:f7a6242b6f718c8a2bec@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260916
 DTEND;VALUE=DATE:20260917
 SUMMARY:Sigma: Preview the Future of Building Applications with Sigma
@@ -235,7 +241,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:92a0525543dd8e8a713c@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260917
 DTEND;VALUE=DATE:20260918
 SUMMARY:Databricks: AI Powered Data Engineering: Lakeflow
@@ -255,7 +261,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:a1ea9d7eff9ea2c7ea51@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260917
 DTEND;VALUE=DATE:20260918
 SUMMARY:Databricks: Future of Healthcare Finance\, with Genie
@@ -271,7 +277,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:8d30469eccb4d0e8e93f@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20260917T100000Z
 DTEND:20260917T110000Z
 SUMMARY:Fivetran: Why NetSuite Data Fights Back — And How to Win Anyway
@@ -285,8 +291,25 @@ CATEGORIES:Fivetran
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:1f0d514691f335aaa7ec@risogroup.co
+DTSTAMP:20260903T061615Z
+DTSTART:20260917T130000Z
+DTEND:20260917T140000Z
+SUMMARY:MotherDuck: MotherDuck Builder Office Hours - September 17
+DESCRIPTION:MotherDuck — Online. Drop in anytime during this session\, an
+ d get a hand from a MotherDuck expert with any sticky question\, problem\,
+  or musing on your mind. Meet other builders on MotherDuck and hear how th
+ ey're solving similar challenges. https://motherduck.com/events/motherduck
+ -builder-office-hours-september-17-2026/\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://motherduck.com/events/motherduck-builder-office-hours-september
+ -17-2026/
+CATEGORIES:MotherDuck
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:2b45bf5883ec2965d35d@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260917
 DTEND;VALUE=DATE:20260918
 SUMMARY:Snowflake: SPN Partner Enablement Series - APJ
@@ -300,7 +323,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:b340b905ba07a6a5a4f3@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20260922T170000Z
 DTEND:20260922T180000Z
 SUMMARY:Fivetran: Building Healthcare AI without rebuilding your Data Platf
@@ -315,8 +338,24 @@ CATEGORIES:Fivetran
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:95bf7abe95924d858647@risogroup.co
+DTSTAMP:20260903T061615Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:Amplitude: AI Amplified: AI Use Cases for Product Managers
+DESCRIPTION:Amplitude — Online. In this session\, product coaches Raz and
+  Ana from JustMad explore practical AI use cases across the product lifecy
+ cle — from discovery and prioritization to experimentation and iteration
+ . https://amplitude.com/events/2026-09-ai-use-cases-for-product-managers\n
+ \nNo start time published — check the link.
+LOCATION:Online
+URL:https://amplitude.com/events/2026-09-ai-use-cases-for-product-managers
+CATEGORIES:Amplitude
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:02e09ade5b72f9a44c9a@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:Databricks: Closing the AI Context Gap
@@ -330,7 +369,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:61a5ee524a143dbd4a92@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20260923T170000Z
 DTEND:20260923T180000Z
 SUMMARY:Fivetran: Fivetran Product Showcase
@@ -343,7 +382,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb6825f4f58cd7f1f0a4@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:Sigma: Automate the Manual Work of FP&A with AI and Sigma
@@ -357,7 +396,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:0bdfb7cef88becd25677@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:Snowflake: From Customer Signals to Autonomous Experience
@@ -374,7 +413,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bd203e89e5e67189023b@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260924
 DTEND;VALUE=DATE:20260925
 SUMMARY:Databricks: Build\, Orchestrate and Improve Agents
@@ -391,8 +430,25 @@ CATEGORIES:Databricks
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:22336ea3d5ff38652abc@risogroup.co
+DTSTAMP:20260903T061615Z
+DTSTART:20260924T200000Z
+DTEND:20260924T210000Z
+SUMMARY:MotherDuck: MotherDuck Builder Office Hours - September 24
+DESCRIPTION:MotherDuck — Online. Drop in anytime during this session\, an
+ d get a hand from a MotherDuck expert with any sticky question\, problem\,
+  or musing on your mind. Meet other builders on MotherDuck and hear how th
+ ey're solving similar challenges. https://motherduck.com/events/motherduck
+ -builder-office-hours-september-24-2026/\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://motherduck.com/events/motherduck-builder-office-hours-september
+ -24-2026/
+CATEGORIES:MotherDuck
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:e7341719d4fcfc2662e4@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20260930
 SUMMARY:Databricks: The Databricks EMEA Learning Festival
@@ -407,7 +463,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:f33ed2066e983f5866f2@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20260929T171500Z
 DTEND:20260929T181500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -421,7 +477,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:d7f2b2e80db0df523c36@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20260930T130000Z
 DTEND:20260930T140000Z
 SUMMARY:Mixpanel: Know Before You Ship: Signal\, Decision-Making\, and Cust
@@ -441,7 +497,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:75a38ceee47c2d574033@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20261001T160000Z
 DTEND:20261001T170000Z
 SUMMARY:MotherDuck: Virtual Workshop: Build a Data Agent in 60 Minutes
@@ -459,7 +515,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:e145f6ee390630cccbcc@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20261027T171500Z
 DTEND:20261027T181500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -473,7 +529,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb75dd563057fde388f5@risogroup.co
-DTSTAMP:20260902T061552Z
+DTSTAMP:20260903T061615Z
 DTSTART:20261124T181500Z
 DTEND:20261124T191500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
