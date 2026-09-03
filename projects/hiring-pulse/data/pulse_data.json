@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T13:08:48.457977",
+  "generated_at": "2026-09-03T16:26:50.775717",
   "baseline_date": "2026-01-08",
   "flow_baseline_date": "2026-01-14",
   "n_scrapes": 70,
@@ -34128,7 +34128,7 @@
     "timeseries_path": "/Users/james/code/virgil/jobs/output/timeseries_jobs.csv",
     "timeseries_sha256": "2135d754566095c4eafb14dc223858143db008924a9feccebba44228da7ba4ab",
     "timeseries_max_date": "2026-08-29",
-    "manifest_combined": "8e95aa6502db8e79",
-    "manifest_built_at": "2026-09-01T16:13:54+00:00"
+    "manifest_combined": "378c085932b9d102",
+    "manifest_built_at": "2026-09-03T21:13:35+00:00"
   }
 }
