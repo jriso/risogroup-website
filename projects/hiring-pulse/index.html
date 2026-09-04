@@ -79,7 +79,7 @@
     <div id="site-navbar"></div>
     <script src="../../static/js/navbar.js"></script>
 
-    <main class="pulse-main" style="margin-top: 80px;">
+    <main class="pulse-main container" style="margin-top: 80px;">
         <nav class="pulse-breadcrumb"><a href="../">&larr; All Projects</a></nav>
         <div class="page-header">
             <h1>Hiring Pulse</h1>
@@ -87,19 +87,25 @@
             <p class="subtitle header-date" id="header-date"></p>
         </div>
 
-        <!-- Hero: role selector + chart -->
+        <!-- Hero: market-wide block, then role selector + role-scoped chart -->
         <section id="hero-section">
-            <div class="hero-pills-wrap"><nav class="hero-pills" id="hero-pills"></nav></div>
-            <div class="hero-stat-row">
-                <div class="hero-stat" id="hero-stat"></div>
+            <!-- Everything in this block is market-wide and does NOT respond to the role chips below -->
+            <div class="market-block" id="market-block">
+                <div class="hero-chart-header">
+                    <div class="dual-chart-label">All Roles &middot; Total Job Postings</div>
+                    <button class="chart-toggle-btn" id="overall-toggle" aria-expanded="true" aria-controls="overall-chart-wrap">Hide &#9650;</button>
+                </div>
                 <div class="market-stat" id="market-stat"></div>
-            </div>
-
-            <div class="overall-chart-wrap collapsed" id="overall-chart-wrap">
-                <div class="chart-container overall-chart">
-                    <canvas id="chart-overall"></canvas>
+                <div class="overall-chart-wrap" id="overall-chart-wrap">
+                    <div class="chart-container overall-chart">
+                        <canvas id="chart-overall"></canvas>
+                    </div>
                 </div>
             </div>
+
+            <!-- Everything below the chips is scoped to the selected role -->
+            <div class="dual-chart-label chips-label" id="chips-label">Select a role</div>
+            <div class="hero-pills-wrap"><nav class="hero-pills" id="hero-pills" aria-labelledby="chips-label"></nav></div>
 
             <div class="hero-chart-wrap">
                 <div class="hero-chart-header">
@@ -109,6 +115,7 @@
                         <button class="pill-btn active" data-mode="rel">Relative (%)</button>
                     </div>
                 </div>
+                <div class="hero-stat" id="hero-stat"></div>
                 <div class="chart-container hero-chart">
                     <canvas id="chart-delta"></canvas>
                 </div>
@@ -141,6 +148,7 @@
         <!-- Deep dive -->
         <section id="deep-dive-section">
             <div id="deep-dive-content" class="hidden">
+                <h2 class="section-title section-title-muted" id="deep-dive-title"></h2>
                 <p class="role-narrative" id="role-narrative"></p>
 
                 <div class="deep-dive-grid">
