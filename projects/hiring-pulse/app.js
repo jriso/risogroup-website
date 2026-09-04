@@ -180,7 +180,9 @@ async function init() {
     buildHeroPills();
     setupChartModeToggle();
     setupSummarySort();
-    renderVolumeSparkline();
+    renderMarketStat();
+    setupOverallToggle();
+    renderOverallChart();
 
     // Check URL hash for initial role
     const hashRole = window.location.hash.slice(1);
@@ -243,10 +245,10 @@ function setupChartModeToggle() {
 }
 
 // =============================================================================
-// Volume sparkline (static, rendered once)
+// Market stat + overall chart (market-wide, rendered once; ignores the role chips)
 // =============================================================================
 
-function renderVolumeSparkline() {
+function renderMarketStat() {
     const stock = DATA.stock[HERO_ROLES[0]];
     const latest = stock[stock.length - 1].total_jobs;
     const baseline = stock[0].total_jobs;
@@ -261,25 +263,22 @@ function renderVolumeSparkline() {
     const overallTip = `Job postings are ${relDelta >= 0 ? 'up' : 'down'} ${Math.abs(relDelta).toFixed(1)}% since ${bLabel}, comparing the same companies over time (companies added to our tracking since ${bLabel} aren't counted in this change). It reflects new roles posted and existing roles filled, estimated by resampling across 1,000 iterations.`;
 
     const marketEl = document.getElementById('market-stat');
-    marketEl.classList.add('clickable');
     marketEl.innerHTML =
         `<div class="market-stat-label">Overall Hiring <span class="th-info" data-tip="${overallTip}">?</span></div>` +
         `<div class="market-stat-value">${sign}${relDelta.toFixed(1)}%</div>` +
-        `<div class="market-stat-sub">vs ${bLabel}${sig} &middot; <span class="chart-hint" style="font-size:0.6rem;opacity:0.7">▼ chart</span></div>`;
+        `<div class="market-stat-sub">vs ${bLabel}${sig} &middot; all roles combined</div>`;
+}
 
-    let overallChartRendered = false;
-    const chartHint = marketEl.querySelector('.chart-hint');
-    marketEl.addEventListener('click', (e) => {
-        if (e.target.closest('.th-info')) return; // don't toggle on tooltip hover
-        const wrap = document.getElementById('overall-chart-wrap');
+// The chart is rendered once at init and stays alive when collapsed, so this
+// only hides the wrapper — no re-render is needed on re-expand.
+function setupOverallToggle() {
+    const btn = document.getElementById('overall-toggle');
+    const wrap = document.getElementById('overall-chart-wrap');
+
+    btn.addEventListener('click', () => {
         const isCollapsed = wrap.classList.toggle('collapsed');
-        chartHint.textContent = isCollapsed ? '▼ chart' : '▲ chart';
-        if (!overallChartRendered) {
-            requestAnimationFrame(() => {
-                renderOverallChart();
-                overallChartRendered = true;
-            });
-        }
+        btn.setAttribute('aria-expanded', String(!isCollapsed));
+        btn.innerHTML = isCollapsed ? 'Show &#9660;' : 'Hide &#9650;';
     });
 }
 
@@ -755,6 +754,8 @@ function renderDeepDive(role) {
 
     const breadthStr = `${latest.breadth.value.toFixed(1)}% of companies`;
     const deltaStr = breadthDir === 'flat' ? 'unchanged' : `${breadthDir} ${Math.abs(breadthDelta).toFixed(2)}pp`;
+
+    document.getElementById('deep-dive-title').textContent = `${label} in Detail`;
 
     document.getElementById('role-narrative').innerHTML =
         `<strong>${label}</strong> roles are posted by ${breadthStr} (${deltaStr} since ${bLabel}), ` +
