@@ -632,9 +632,12 @@
     color: var(--text);
 }
 
-.pulse-credit {
+/* Needs .pulse-main to outrank `.pulse-main section { margin-top: 0;
+   padding-top: 0 }` above, which silently ate this block's spacing and left
+   the heading sitting on top of its own divider. */
+.pulse-main .pulse-credit {
     margin-top: 3rem;
-    padding-top: 2rem;
+    padding-top: 2.5rem;
     border-top: 1px solid var(--border);
 }
 
