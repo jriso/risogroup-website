@@ -16,10 +16,13 @@
 
 /* Bootstrap handles base styles; we override selectively */
 
+/* Width and horizontal padding come from Bootstrap's .container (see the
+   `class="pulse-main container"` on <main>), so the page gutters track the
+   navbar's container at every breakpoint. Setting our own max-width here
+   would win on specificity and put the content out of line with the logo. */
 .pulse-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 1.5rem 3rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
     overflow-x: hidden;
 }
 
@@ -557,7 +560,7 @@
     /* navbar handled by shared navbar.js with Bootstrap hamburger */
     .page-header h1 { font-size: 1.4rem; }
     .page-header .subtitle { font-size: 0.75rem; }
-    .pulse-main { padding: 0.75rem 1rem 2rem; }
+    .pulse-main { padding-top: 0.75rem; padding-bottom: 2rem; }
 
     .hero-chart-wrap { max-width: 100%; }
     .market-block { max-width: 100%; }
@@ -601,7 +604,7 @@
 }
 
 @media (max-width: 480px) {
-    .pulse-main { padding: 0.75rem 0.75rem 1.5rem; }
+    .pulse-main { padding-top: 0.75rem; padding-bottom: 1.5rem; }
 
     .summary-table { font-size: 0.75rem; }
     .summary-table th, .summary-table td { padding: 0.35rem 0.5rem; }
@@ -630,31 +633,41 @@
 }
 
 .pulse-credit {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--border);
-    font-size: 0.9rem;
 }
 
+/* Matches .methodology h3 and .section-title-muted so the closing sections
+   read as one register instead of three */
 .pulse-credit h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
 }
 
+/* Flush left: bullets would indent the links past every other element on
+   the page, which is the whole reason this block looked bolted on */
 .pulse-credit ul {
-    padding-left: 1.25rem;
-    margin-bottom: 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
 }
 
 .pulse-credit li {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .pulse-credit a {
     color: var(--text);
     border-bottom: 1px solid var(--muted-line);
     text-decoration: none;
+    transition: border-bottom-color 0.15s;
 }
 
 .pulse-credit a:hover {
@@ -662,6 +675,15 @@
 }
 
 .pulse-credit-byline {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    line-height: 1.7;
+}
+
+.pulse-credit-byline a {
+    color: var(--text-muted);
 }
