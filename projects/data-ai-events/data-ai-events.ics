@@ -12,90 +12,8 @@ X-WR-CALDESC:Webinars\, livestreams and meetups from the companies building
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:92a0525543dd8e8a713c@risogroup.co
-DTSTAMP:20260917T061619Z
-DTSTART;VALUE=DATE:20260917
-DTEND;VALUE=DATE:20260918
-SUMMARY:Databricks: AI Powered Data Engineering: Lakeflow
-DESCRIPTION:Databricks — Online. Join us for a hands-on workshop where yo
- u will learn how to build and deploy declarative streaming ETL pipelines a
- t scale with Spark Declarative Pipelines and Databricks Workflows on the D
- atabricks Data + AI Platform https://www.databricks.com/resources/webinar/
- ai-powered-data-engineering-lakeflow-techniques-modern-data-professionals?
- scid=701Vp000015WS93IAG&utm_medium=website&utm_source=databricks\n\nNo sta
- rt time published — check the link.
-LOCATION:Online
-URL:https://www.databricks.com/resources/webinar/ai-powered-data-engineerin
- g-lakeflow-techniques-modern-data-professionals?scid=701Vp000015WS93IAG&ut
- m_medium=website&utm_source=databricks
-CATEGORIES:Databricks
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:a1ea9d7eff9ea2c7ea51@risogroup.co
-DTSTAMP:20260917T061619Z
-DTSTART;VALUE=DATE:20260917
-DTEND;VALUE=DATE:20260918
-SUMMARY:Databricks: Future of Healthcare Finance\, with Genie
-DESCRIPTION:Databricks — Online. Join us for The Future of Healthcare Fin
- ance\, with Genie. See how Databricks Genie helps healthcare finance teams
-  get trusted answers on margin\, cost trends\, revenue cycle\, and profita
- bility. https://events.databricks.com/FY27Q3-WB-Healthcare/register\n\nNo 
- start time published — check the link.
-LOCATION:Online
-URL:https://events.databricks.com/FY27Q3-WB-Healthcare/register
-CATEGORIES:Databricks
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:8d30469eccb4d0e8e93f@risogroup.co
-DTSTAMP:20260917T061619Z
-DTSTART:20260917T100000Z
-DTEND:20260917T110000Z
-SUMMARY:Fivetran: Why NetSuite Data Fights Back — And How to Win Anyway
-DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/why-netsu
- ite-data-fights-back-and-how-to-win-anyway\n\nEnd time is an assumed 1 hou
- r.
-LOCATION:Online
-URL:https://go.fivetran.com/webinars/why-netsuite-data-fights-back-and-how-
- to-win-anyway
-CATEGORIES:Fivetran
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:1f0d514691f335aaa7ec@risogroup.co
-DTSTAMP:20260917T061619Z
-DTSTART:20260917T130000Z
-DTEND:20260917T140000Z
-SUMMARY:MotherDuck: MotherDuck Builder Office Hours - September 17
-DESCRIPTION:MotherDuck — Online. Drop in anytime during this session\, an
- d get a hand from a MotherDuck expert with any sticky question\, problem\,
-  or musing on your mind. Meet other builders on MotherDuck and hear how th
- ey're solving similar challenges. https://motherduck.com/events/motherduck
- -builder-office-hours-september-17-2026/\n\nEnd time is an assumed 1 hour.
-LOCATION:Online
-URL:https://motherduck.com/events/motherduck-builder-office-hours-september
- -17-2026/
-CATEGORIES:MotherDuck
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:2b45bf5883ec2965d35d@risogroup.co
-DTSTAMP:20260917T061619Z
-DTSTART;VALUE=DATE:20260917
-DTEND;VALUE=DATE:20260918
-SUMMARY:Snowflake: SPN Partner Enablement Series - APJ
-DESCRIPTION:Snowflake — Online. Partner Technical Deep Dive: Innovate\, A
- ccelerate\, and Win https://www.snowflake.com/webinars/partner/enablement-
- series-apj/\n\nNo start time published — check the link.
-LOCATION:Online
-URL:https://www.snowflake.com/webinars/partner/enablement-series-apj/
-CATEGORIES:Snowflake
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:8f9143bf83e59766e25d@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260921
 DTEND;VALUE=DATE:20260922
 SUMMARY:PostHog: Replay Vision AMA
@@ -109,7 +27,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:b340b905ba07a6a5a4f3@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20260922T170000Z
 DTEND:20260922T180000Z
 SUMMARY:Fivetran: Building Healthcare AI without rebuilding your Data Platf
@@ -125,7 +43,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:95bf7abe95924d858647@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:Amplitude: AI Amplified: AI Use Cases for Product Managers
@@ -141,7 +59,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:02e09ade5b72f9a44c9a@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:Databricks: Closing the AI Context Gap
@@ -155,7 +73,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:61a5ee524a143dbd4a92@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20260923T170000Z
 DTEND:20260923T180000Z
 SUMMARY:Fivetran: Fivetran Product Showcase
@@ -168,7 +86,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:67ff77dd1a3e1d0b5241@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:Sigma: Getting Started with Sigma MCP and Sigma CLI
@@ -182,7 +100,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:0bdfb7cef88becd25677@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:Snowflake: From Customer Signals to Autonomous Experience
@@ -199,7 +117,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bd203e89e5e67189023b@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260924
 DTEND;VALUE=DATE:20260925
 SUMMARY:Databricks: Build\, Orchestrate and Improve Agents
@@ -217,7 +135,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:22336ea3d5ff38652abc@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20260924T200000Z
 DTEND:20260924T210000Z
 SUMMARY:MotherDuck: MotherDuck Builder Office Hours - September 24
@@ -234,7 +152,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:e7341719d4fcfc2662e4@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20260930
 SUMMARY:Databricks: The Databricks EMEA Learning Festival
@@ -249,7 +167,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:8638c3dce5f7cf716dc5@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20260929T170000Z
 DTEND:20260929T180000Z
 SUMMARY:Fivetran: From Data to AI: Building Retail Intelligence with Fivetr
@@ -265,7 +183,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:f33ed2066e983f5866f2@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20260929T171500Z
 DTEND:20260929T181500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -279,7 +197,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:2f33cb7aa06b15cfea4b@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20260929T160000Z
 DTEND:20260929T170000Z
 SUMMARY:Metabase: Tour of Metabase: building dashboards with (or without) A
@@ -296,21 +214,21 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:130fb1f8fedb2a73b779@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20260930
-SUMMARY:Sigma: SIGMA AGENTS: See our Agents in Action
+SUMMARY:Sigma: Sigma Agents: See our Agents in Action
 DESCRIPTION:Sigma — Online. Join for a live look at what’s new and what
   you can now do with Sigma Agents as a builder. https://events.sigmacomput
- ing.com/sigmaagentsga\n\nNo start time published — check the link.
+ ing.com/sigma-agents\n\nNo start time published — check the link.
 LOCATION:Online
-URL:https://events.sigmacomputing.com/sigmaagentsga
+URL:https://events.sigmacomputing.com/sigma-agents
 CATEGORIES:Sigma
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bfd60fe0b9884074159f@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Amplitude: Build AI Workflows that Save Time
@@ -325,7 +243,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:d7f2b2e80db0df523c36@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20260930T130000Z
 DTEND:20260930T140000Z
 SUMMARY:Mixpanel: Know Before You Ship: Signal\, Decision-Making\, and Cust
@@ -345,7 +263,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb6825f4f58cd7f1f0a4@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Sigma: Automate the Manual Work of FP&A with AI and Sigma
@@ -359,7 +277,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:75a38ceee47c2d574033@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20261001T160000Z
 DTEND:20261001T170000Z
 SUMMARY:MotherDuck: Virtual Workshop: Build a Data Agent in 60 Minutes
@@ -377,7 +295,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:4e6f0c4734af628e732c@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261014
 SUMMARY:Databricks: From AI Everywhere to AI That Delivers
@@ -391,7 +309,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:45d772a345478567efab@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:Databricks: Lakehouse for Unified Analytics and AI
@@ -410,7 +328,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:e145f6ee390630cccbcc@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20261027T171500Z
 DTEND:20261027T181500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -424,7 +342,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb75dd563057fde388f5@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART:20261124T181500Z
 DTEND:20261124T191500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -438,7 +356,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:74b575abffe95b737c61@risogroup.co
-DTSTAMP:20260917T061619Z
+DTSTAMP:20260918T061603Z
 DTSTART;VALUE=DATE:20261209
 DTEND;VALUE=DATE:20261210
 SUMMARY:Databricks: How Databricks Ships AI into Production
