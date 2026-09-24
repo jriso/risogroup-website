@@ -12,82 +12,8 @@ X-WR-CALDESC:Webinars\, livestreams and meetups from the companies building
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:95bf7abe95924d858647@risogroup.co
-DTSTAMP:20260923T061541Z
-DTSTART;VALUE=DATE:20260923
-DTEND;VALUE=DATE:20260924
-SUMMARY:Amplitude: AI Amplified: AI Use Cases for Product Managers
-DESCRIPTION:Amplitude — Online. In this session\, product coaches Raz and
-  Ana from JustMad explore practical AI use cases across the product lifecy
- cle — from discovery and prioritization to experimentation and iteration
- . https://amplitude.com/events/2026-09-ai-use-cases-for-product-managers\n
- \nNo start time published — check the link.
-LOCATION:Online
-URL:https://amplitude.com/events/2026-09-ai-use-cases-for-product-managers
-CATEGORIES:Amplitude
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:02e09ade5b72f9a44c9a@risogroup.co
-DTSTAMP:20260923T061541Z
-DTSTART;VALUE=DATE:20260923
-DTEND;VALUE=DATE:20260924
-SUMMARY:Databricks: Closing the AI Context Gap
-DESCRIPTION:Databricks — Online. Closing the AI Context Gap https://www.d
- atabricks.com/resources/webinar/closing-the-ai-context-gap\n\nNo start tim
- e published — check the link.
-LOCATION:Online
-URL:https://www.databricks.com/resources/webinar/closing-the-ai-context-gap
-CATEGORIES:Databricks
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:61a5ee524a143dbd4a92@risogroup.co
-DTSTAMP:20260923T061541Z
-DTSTART:20260923T170000Z
-DTEND:20260923T180000Z
-SUMMARY:Fivetran: Fivetran Product Showcase
-DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/2026-sep-
- fivetran-product-showcase\n\nEnd time is an assumed 1 hour.
-LOCATION:Online
-URL:https://go.fivetran.com/webinars/2026-sep-fivetran-product-showcase
-CATEGORIES:Fivetran
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:67ff77dd1a3e1d0b5241@risogroup.co
-DTSTAMP:20260923T061541Z
-DTSTART;VALUE=DATE:20260923
-DTEND;VALUE=DATE:20260924
-SUMMARY:Sigma: Getting Started with Sigma MCP and Sigma CLI
-DESCRIPTION:Sigma — Online. Set up Sigma MCP and CLI so you can start bui
- lding with Sigma. https://events.sigmacomputing.com/getstartedwithsigmamcp
- andcli\n\nNo start time published — check the link.
-LOCATION:Online
-URL:https://events.sigmacomputing.com/getstartedwithsigmamcpandcli
-CATEGORIES:Sigma
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:0bdfb7cef88becd25677@risogroup.co
-DTSTAMP:20260923T061541Z
-DTSTART;VALUE=DATE:20260923
-DTEND;VALUE=DATE:20260924
-SUMMARY:Snowflake: From Customer Signals to Autonomous Experience
-DESCRIPTION:Snowflake — Online. A hands-on virtual masterclass built for 
- telecom customer experience leaders and practitioners ready to put AI to w
- ork across the full customer journey. https://www.snowflake.com/webinars/v
- irtual-ai-masterclass-telecom-from-customer-signals-to-autonomous-experien
- ce/\n\nNo start time published — check the link.
-LOCATION:Online
-URL:https://www.snowflake.com/webinars/virtual-ai-masterclass-telecom-from-
- customer-signals-to-autonomous-experience/
-CATEGORIES:Snowflake
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:bd203e89e5e67189023b@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART;VALUE=DATE:20260924
 DTEND;VALUE=DATE:20260925
 SUMMARY:Databricks: Build\, Orchestrate and Improve Agents
@@ -105,7 +31,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:22336ea3d5ff38652abc@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20260924T200000Z
 DTEND:20260924T210000Z
 SUMMARY:MotherDuck: MotherDuck Builder Office Hours - September 24
@@ -122,7 +48,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:e7341719d4fcfc2662e4@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20260930
 SUMMARY:Databricks: The Databricks EMEA Learning Festival
@@ -137,7 +63,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:8638c3dce5f7cf716dc5@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20260929T170000Z
 DTEND:20260929T180000Z
 SUMMARY:Fivetran: From Data to AI: Building Retail Intelligence with Fivetr
@@ -153,7 +79,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:f33ed2066e983f5866f2@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20260929T171500Z
 DTEND:20260929T181500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -167,7 +93,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:2f33cb7aa06b15cfea4b@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20260929T160000Z
 DTEND:20260929T170000Z
 SUMMARY:Metabase: Tour of Metabase: building dashboards with (or without) A
@@ -184,7 +110,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:2b76687a8507c67b6054@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20260929T163000Z
 DTEND:20260929T173000Z
 SUMMARY:MotherDuck: We Classified 100\,000 Rows in 40 Seconds: Introducing 
@@ -203,7 +129,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:130fb1f8fedb2a73b779@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20260930
 SUMMARY:Sigma: Sigma Agents: See our Agents in Action
@@ -217,7 +143,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bfd60fe0b9884074159f@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Amplitude: Build AI Workflows that Save Time
@@ -232,7 +158,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:d7f2b2e80db0df523c36@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20260930T130000Z
 DTEND:20260930T140000Z
 SUMMARY:Mixpanel: Know Before You Ship: Signal\, Decision-Making\, and Cust
@@ -252,7 +178,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb6825f4f58cd7f1f0a4@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Sigma: Automate the Manual Work of FP&A with AI and Sigma
@@ -266,7 +192,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:75a38ceee47c2d574033@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20261001T160000Z
 DTEND:20261001T170000Z
 SUMMARY:MotherDuck: Virtual Workshop: Build a Data Agent in 60 Minutes
@@ -284,7 +210,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:4e6f0c4734af628e732c@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261014
 SUMMARY:Databricks: From AI Everywhere to AI That Delivers
@@ -298,7 +224,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:45d772a345478567efab@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:Databricks: Lakehouse for Unified Analytics and AI
@@ -317,7 +243,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:e145f6ee390630cccbcc@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20261027T171500Z
 DTEND:20261027T181500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -331,7 +257,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb75dd563057fde388f5@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART:20261124T181500Z
 DTEND:20261124T191500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -345,7 +271,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:74b575abffe95b737c61@risogroup.co
-DTSTAMP:20260923T061541Z
+DTSTAMP:20260924T061609Z
 DTSTART;VALUE=DATE:20261209
 DTEND;VALUE=DATE:20261210
 SUMMARY:Databricks: How Databricks Ships AI into Production
