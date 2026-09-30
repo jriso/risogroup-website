@@ -12,103 +12,8 @@ X-WR-CALDESC:Webinars\, livestreams and meetups from the companies building
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:e7341719d4fcfc2662e4@risogroup.co
-DTSTAMP:20260929T061516Z
-DTSTART;VALUE=DATE:20260929
-DTEND;VALUE=DATE:20260930
-SUMMARY:Databricks: The Databricks EMEA Learning Festival
-DESCRIPTION:Databricks — Online. The Databricks EMEA Learning Festival ht
- tps://www.databricks.com/resources/webinar/emea-learning-festival-septembe
- r\n\nNo start time published — check the link.
-LOCATION:Online
-URL:https://www.databricks.com/resources/webinar/emea-learning-festival-sep
- tember
-CATEGORIES:Databricks
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:8638c3dce5f7cf716dc5@risogroup.co
-DTSTAMP:20260929T061516Z
-DTSTART:20260929T170000Z
-DTEND:20260929T180000Z
-SUMMARY:Fivetran: From Data to AI: Building Retail Intelligence with Fivetr
- an + dbt Labs and Databricks
-DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/from-data
- -to-ai-building-retail-intelligence-with-fivetran-dbt-labs-and-databricks\
- n\nEnd time is an assumed 1 hour.
-LOCATION:Online
-URL:https://go.fivetran.com/webinars/from-data-to-ai-building-retail-intell
- igence-with-fivetran-dbt-labs-and-databricks
-CATEGORIES:Fivetran
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:f33ed2066e983f5866f2@risogroup.co
-DTSTAMP:20260929T061516Z
-DTSTART:20260929T171500Z
-DTEND:20260929T181500Z
-SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
-DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/sep-2026-
- fivetran-dbt-labs-in-15-minutes\n\nEnd time is an assumed 1 hour.
-LOCATION:Online
-URL:https://go.fivetran.com/webinars/sep-2026-fivetran-dbt-labs-in-15-minut
- es
-CATEGORIES:Fivetran
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:2f33cb7aa06b15cfea4b@risogroup.co
-DTSTAMP:20260929T061516Z
-DTSTART:20260929T160000Z
-DTEND:20260929T170000Z
-SUMMARY:Metabase: Tour of Metabase: building dashboards with (or without) A
- I
-DESCRIPTION:Metabase — Online. Get a complete end-to-end tour of Metabase
-  from connecting your first database to building dashboards\, documents\, 
- and sharing with your organization—including AI-assisted exploration and
-  the MCP server in your workflow. https://www.metabase.com/events/building
- -dashboards-ai\n\nEnd time is an assumed 1 hour.
-LOCATION:Online
-URL:https://www.metabase.com/events/building-dashboards-ai
-CATEGORIES:Metabase
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:2b76687a8507c67b6054@risogroup.co
-DTSTAMP:20260929T061516Z
-DTSTART:20260929T163000Z
-DTEND:20260929T173000Z
-SUMMARY:MotherDuck: We Classified 100\,000 Rows in 40 Seconds: Introducing 
- prompt_jev()
-DESCRIPTION:MotherDuck — Online. Classifying text at scale usually means 
- an LLM call per row or a specialized model you have to train. prompt_jev()
-  is SQL-native classification: 100\,000 rows at 89% accuracy in 40 seconds
- . Jacob Matson\, Dumky de Wilde\, and Hamilton Ulmer run it live. https://
- motherduck.com/events/we-classified-100000-rows-in-40-seconds-introducing-
- promptjev-2026/\n\nEnd time is an assumed 1 hour.
-LOCATION:Online
-URL:https://motherduck.com/events/we-classified-100000-rows-in-40-seconds-i
- ntroducing-promptjev-2026/
-CATEGORIES:MotherDuck
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:130fb1f8fedb2a73b779@risogroup.co
-DTSTAMP:20260929T061516Z
-DTSTART;VALUE=DATE:20260929
-DTEND;VALUE=DATE:20260930
-SUMMARY:Sigma: Sigma Agents: See our Agents in Action
-DESCRIPTION:Sigma — Online. Join for a live look at what’s new and what
-  you can now do with Sigma Agents as a builder. https://events.sigmacomput
- ing.com/sigma-agents\n\nNo start time published — check the link.
-LOCATION:Online
-URL:https://events.sigmacomputing.com/sigma-agents
-CATEGORIES:Sigma
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:bfd60fe0b9884074159f@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Amplitude: Build AI Workflows that Save Time
@@ -123,7 +28,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:d7f2b2e80db0df523c36@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART:20260930T130000Z
 DTEND:20260930T140000Z
 SUMMARY:Mixpanel: Know Before You Ship: Signal\, Decision-Making\, and Cust
@@ -143,7 +48,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb6825f4f58cd7f1f0a4@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Sigma: Automate the Manual Work of FP&A with AI and Sigma
@@ -157,7 +62,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:75a38ceee47c2d574033@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART:20261001T160000Z
 DTEND:20261001T170000Z
 SUMMARY:MotherDuck: Virtual Workshop: Build a Data Agent in 60 Minutes
@@ -174,8 +79,22 @@ CATEGORIES:MotherDuck
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:8dc8e9c9a5e4154bf541@risogroup.co
+DTSTAMP:20260930T061505Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+SUMMARY:Sigma: Building Headless Sigma Agent Experiences with Claude
+DESCRIPTION:Sigma — Online. Connect Sigma Agents to Claude and bring gove
+ rned answers into your apps. https://events.sigmacomputing.com/workwithsig
+ maagentsfromclaude\n\nNo start time published — check the link.
+LOCATION:Online
+URL:https://events.sigmacomputing.com/workwithsigmaagentsfromclaude
+CATEGORIES:Sigma
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:4e6f0c4734af628e732c@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261014
 SUMMARY:Databricks: From AI Everywhere to AI That Delivers
@@ -189,7 +108,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:d507ece918684e6fa9e8@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261015
 SUMMARY:Databricks: ABAC\, Metric Views and Genie Agents
@@ -204,7 +123,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:45d772a345478567efab@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:Databricks: Lakehouse for Unified Analytics and AI
@@ -223,7 +142,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:e145f6ee390630cccbcc@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART:20261027T171500Z
 DTEND:20261027T181500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -236,8 +155,28 @@ CATEGORIES:Fivetran
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:a6371819cd1a0630337e@risogroup.co
+DTSTAMP:20260930T061505Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:Hightouch: Customer Deep Dive: Agentic Lifecycle Marketing with Hig
+ htouch
+DESCRIPTION:Hightouch — Online. You already use Hightouch to activate you
+ r customer data. Now we're building on that foundation with our Agentic Ma
+ rketing Platform\, where AI agents help lifecycle teams proactively uncove
+ r opportunities and turn them into on-brand\, personalized campaigns. In t
+ his customer-only session\, Hightouch's Product team will share our agenti
+ c marketing vision and how Lifecycle Studio fully executes and opt https:/
+ /hightouch.com/events/2026-agentic-marketing-deep-dive\n\nNo start time pu
+ blished — check the link.
+LOCATION:Online
+URL:https://hightouch.com/events/2026-agentic-marketing-deep-dive
+CATEGORIES:Hightouch
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:acadd1c68db7e660aef1@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:Databricks: The AA: Data to AI-Powered Operations
@@ -253,8 +192,43 @@ CATEGORIES:Databricks
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:90c1dc23dc07aeb7a51a@risogroup.co
+DTSTAMP:20260930T061505Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:Databricks: Get Hands-on with Genie
+DESCRIPTION:Databricks — Online. Join us for this virtual\, hands-on work
+ shop to explore the Genie product family and learn how to build trusted\, 
+ production-ready data and AI solutions across the Databricks Data + AI Pla
+ tform. http://databricks.com/resources/webinar/get-hands-genie-ask-build-d
+ eploy-and-operate-agents?scid=701Vp00001FKWPBIA5&utm_medium=website&utm_so
+ urce=databricks\n\nNo start time published — check the link.
+LOCATION:Online
+URL:http://databricks.com/resources/webinar/get-hands-genie-ask-build-deplo
+ y-and-operate-agents?scid=701Vp00001FKWPBIA5&utm_medium=website&utm_source
+ =databricks
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:d5773841c022a387a04b@risogroup.co
+DTSTAMP:20260930T061505Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Databricks: The Emerging Blueprint for Agentic Apps
+DESCRIPTION:Databricks — Online. Learn how LTAP connects Postgres operati
+ onal data and lakehouse analytics without pipelines. https://www.databrick
+ s.com/resources/webinar/emerging-blueprint-agentic-apps\n\nNo start time p
+ ublished — check the link.
+LOCATION:Online
+URL:https://www.databricks.com/resources/webinar/emerging-blueprint-agentic
+ -apps
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:187cb323e858d7cb3c9b@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:Databricks: AI-Powered Data Engineering
@@ -274,7 +248,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb75dd563057fde388f5@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART:20261124T181500Z
 DTEND:20261124T191500Z
 SUMMARY:Fivetran: Fivetran & dbt Labs in 15 minutes
@@ -288,7 +262,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:74b575abffe95b737c61@risogroup.co
-DTSTAMP:20260929T061516Z
+DTSTAMP:20260930T061505Z
 DTSTART;VALUE=DATE:20261209
 DTEND;VALUE=DATE:20261210
 SUMMARY:Databricks: How Databricks Ships AI into Production
