@@ -89,11 +89,14 @@
 
         <!-- Hero: market-wide block, then role selector + role-scoped chart -->
         <section id="hero-section">
-            <!-- Everything in this block is market-wide and does NOT respond to the role chips below -->
+            <!-- Market-wide block. The role chips below only add an overlay line (removable via #overlay-clear); the all-roles figure never changes -->
             <div class="market-block" id="market-block">
                 <div class="hero-chart-header">
                     <div class="dual-chart-label">All Roles &middot; Total Job Postings</div>
-                    <button class="chart-toggle-btn" id="overall-toggle" aria-expanded="true" aria-controls="overall-chart-wrap">Hide &#9650;</button>
+                    <div class="chart-header-actions">
+                        <button class="chart-toggle-btn overlay-chip" id="overlay-clear" hidden></button>
+                        <button class="chart-toggle-btn" id="overall-toggle" aria-expanded="true" aria-controls="overall-chart-wrap">Hide &#9650;</button>
+                    </div>
                 </div>
                 <div class="market-stat" id="market-stat"></div>
                 <div class="overall-chart-wrap" id="overall-chart-wrap">
