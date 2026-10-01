@@ -10,7 +10,7 @@ const COLORS = {
     design:     { primary: '#1A5276', secondary: '#2E86AB', tertiary: '#4ECDC4' },
     sales:      { primary: '#00A86B', secondary: '#4ECDC4', tertiary: '#1D3557' },
     marketing:  { primary: '#F18F01', secondary: '#FF6B35', tertiary: '#E94F37' },
-    ga:         { primary: '#6A737D', secondary: '#AA96DA', tertiary: '#7B2CBF' },
+    ga:         { primary: '#D63384', secondary: '#AA96DA', tertiary: '#7B2CBF' },
     operations: { primary: '#1D3557', secondary: '#2E86AB', tertiary: '#1A5276' },
     other:      { primary: '#8B5CF6', secondary: '#AA96DA', tertiary: '#586069' },
 };
@@ -104,9 +104,10 @@ let heroChartMode = 'rel';
 // explicit role click turns the overlay on.
 let overlayRole = null;
 
-const OVERALL_COLOR = '#1A5276';
-// Light and dashed rather than the palette gray: G&A's own color is #6A737D
-const OVERALL_MUTED = '#A9B0B8';
+const OVERALL_COLOR = '#4F5B66';
+// With a role overlaid, the same line steps back (same color, half opacity,
+// thinner, no points) so it reads as the line from the default view
+const OVERALL_MUTED = OVERALL_COLOR + '80';
 
 // Chart.js defaults
 Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
@@ -397,7 +398,7 @@ function renderOverallChart() {
             return `${v >= 0 ? '+' : ''}${v.toFixed(1)}% (${abs.toLocaleString()} jobs)`;
         };
     } else {
-        // Role line on top with its band; the overall line becomes a gray
+        // Role line on top with its band; the overall line becomes a faded
         // reference with no band (role bands are 2-4x wider and two overlapping
         // bands turn to mud). Index 0 draws last, so the role line sits on top.
         const role = postingsChange(DATA.stock[overlayRole].map(d => d.volume));
@@ -428,7 +429,6 @@ function renderOverallChart() {
                 pointRadius: 0,
                 pointHoverRadius: 3,
                 borderWidth: 2,
-                borderDash: [5, 4],
                 fill: false,
                 tension: 0,
             },
