@@ -124,6 +124,36 @@
     margin-bottom: 0.5rem;
 }
 
+/* With a role overlaid, the market stat shows two figures side by side */
+.market-stat {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.75rem;
+}
+
+.stat-swatch {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 2px;
+    margin-right: 0.3rem;
+    vertical-align: -0.05rem;
+}
+
+.chart-header-actions {
+    display: flex;
+    gap: 0.4rem;
+    margin-left: auto;
+}
+
+.overlay-chip[hidden] {
+    display: none;
+}
+
+.overlay-chip .stat-swatch {
+    border-radius: 50%;
+}
+
 /* Market-wide block: sits ABOVE the role chips so its scope reads as global */
 .market-block {
     background: var(--card-bg);

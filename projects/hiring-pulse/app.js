@@ -10,7 +10,7 @@ const COLORS = {
     design:     { primary: '#1A5276', secondary: '#2E86AB', tertiary: '#4ECDC4' },
     sales:      { primary: '#00A86B', secondary: '#4ECDC4', tertiary: '#1D3557' },
     marketing:  { primary: '#F18F01', secondary: '#FF6B35', tertiary: '#E94F37' },
-    ga:         { primary: '#6A737D', secondary: '#AA96DA', tertiary: '#7B2CBF' },
+    ga:         { primary: '#D63384', secondary: '#AA96DA', tertiary: '#7B2CBF' },
     operations: { primary: '#1D3557', secondary: '#2E86AB', tertiary: '#1A5276' },
     other:      { primary: '#8B5CF6', secondary: '#AA96DA', tertiary: '#586069' },
 };
@@ -99,6 +99,15 @@ let summarySort = { col: 'share', asc: false };
 let charts = {};
 let heroYRange = null;
 let heroChartMode = 'rel';
+// Role plotted over the overall line on the top chart, or null for the single
+// line. Separate from activeRole, which is always set: only a role hash or an
+// explicit role click turns the overlay on.
+let overlayRole = null;
+
+const OVERALL_COLOR = '#4F5B66';
+// With a role overlaid, the same line steps back (same color, half opacity,
+// thinner, no points) so it reads as the line from the default view
+const OVERALL_MUTED = OVERALL_COLOR + '80';
 
 // Chart.js defaults
 Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
@@ -180,13 +189,14 @@ async function init() {
     buildHeroPills();
     setupChartModeToggle();
     setupSummarySort();
-    renderMarketStat();
     setupOverallToggle();
-    renderOverallChart();
+    setupOverlayClear();
 
-    // Check URL hash for initial role
+    // Check URL hash for initial role. A hash is only ever written by a role
+    // click, so it means someone picked that role: show it on the top chart.
     const hashRole = window.location.hash.slice(1);
     const initialRole = HERO_ROLES.includes(hashRole) ? hashRole : 'swe';
+    if (initialRole === hashRole) overlayRole = hashRole;
     setActiveRole(initialRole, false);
 }
 
@@ -194,7 +204,9 @@ function setActiveRole(role, updateHash = true) {
     activeRole = role;
     if (updateHash) {
         history.replaceState(null, '', '#' + role);
+        overlayRole = role;
     }
+    renderMarket();
 
     // Update pill styles
     document.querySelectorAll('.hero-pill').forEach(btn => {
@@ -245,32 +257,96 @@ function setupChartModeToggle() {
 }
 
 // =============================================================================
-// Market stat + overall chart (market-wide, rendered once; ignores the role chips)
+// Market stat + overall chart (market-wide; the selected role is overlaid only
+// while overlayRole is set)
 // =============================================================================
+
+// Postings % change vs baseline for one series (`total_jobs`, or a role's
+// `volume`). Uses delta, not value: delta compares the same companies over
+// time, while value is the raw count and includes companies added since.
+function postingsChange(series) {
+    const baselineValue = series[0].value;
+    const pct = v => baselineValue > 0 ? (v / baselineValue) * 100 : 0;
+    const latest = series[series.length - 1];
+    return {
+        baselineValue,
+        values: series.map(d => pct(d.delta)),
+        ciUpper: series.map(d => pct(d.ci_upper)),
+        ciLower: series.map(d => pct(d.ci_lower)),
+        latest: pct(latest.delta),
+        sig: latest.ci_lower > 0 || latest.ci_upper < 0,
+    };
+}
+
+function renderMarket() {
+    renderMarketStat();
+    renderOverlayChip();
+    renderOverallChart();
+}
 
 function renderMarketStat() {
     const stock = DATA.stock[HERO_ROLES[0]];
-    const latest = stock[stock.length - 1].total_jobs;
-    const baseline = stock[0].total_jobs;
+    const overall = postingsChange(stock.map(d => d.total_jobs));
 
     const bDate = new Date(DATA.baseline_date + 'T00:00:00');
     const bLabel = bDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
-    const relDelta = baseline.value > 0 ? (latest.delta / baseline.value) * 100 : 0;
-    const sign = relDelta >= 0 ? '+' : '';
-    const sig = (latest.ci_lower > 0 || latest.ci_upper < 0) ? ' *' : '';
+    const fmt = v => `${v >= 0 ? '+' : ''}${v.toFixed(1)}%`;
+    const swatch = color => overlayRole ? `<span class="stat-swatch" style="background:${color}"></span>` : '';
 
-    const overallTip = `Job postings are ${relDelta >= 0 ? 'up' : 'down'} ${Math.abs(relDelta).toFixed(1)}% since ${bLabel}, comparing the same companies over time (companies added to our tracking since ${bLabel} aren't counted in this change). It reflects new roles posted and existing roles filled, estimated by resampling across 1,000 iterations.`;
+    const overallTip = `Job postings are ${overall.latest >= 0 ? 'up' : 'down'} ${Math.abs(overall.latest).toFixed(1)}% since ${bLabel}, comparing the same companies over time (companies added to our tracking since ${bLabel} aren't counted in this change). It reflects new roles posted and existing roles filled, estimated by resampling across 1,000 iterations.`;
 
-    const marketEl = document.getElementById('market-stat');
-    marketEl.innerHTML =
-        `<div class="market-stat-label">Overall Hiring <span class="th-info" data-tip="${overallTip}">?</span></div>` +
-        `<div class="market-stat-value">${sign}${relDelta.toFixed(1)}%</div>` +
-        `<div class="market-stat-sub">vs ${bLabel}${sig} &middot; all roles combined</div>`;
+    let html =
+        `<div class="market-stat-item">` +
+        `<div class="market-stat-label">${swatch(OVERALL_MUTED)}Overall Hiring <span class="th-info" data-tip="${overallTip}">?</span></div>` +
+        `<div class="market-stat-value">${fmt(overall.latest)}</div>` +
+        `<div class="market-stat-sub">vs ${bLabel}${overall.sig ? ' *' : ''} &middot; all roles combined</div>` +
+        `</div>`;
+
+    if (overlayRole) {
+        const label = ROLE_LABELS[overlayRole];
+        const color = COLORS[overlayRole].primary;
+        const role = postingsChange(DATA.stock[overlayRole].map(d => d.volume));
+        const roleTip = `${label} job postings are ${role.latest >= 0 ? 'up' : 'down'} ${Math.abs(role.latest).toFixed(1)}% since ${bLabel}, comparing the same companies over time, just like Overall Hiring. Job counts in the chart are the ${bLabel} count plus that change, not a live count. The gap between the ${label} line and the faded all-roles line is roughly the change in ${label}'s share of all postings.`;
+        html +=
+            `<div class="market-stat-item">` +
+            `<div class="market-stat-label">${swatch(color)}${label} <span class="th-info" data-tip="${roleTip}">?</span></div>` +
+            `<div class="market-stat-value" style="color:${color}">${fmt(role.latest)}</div>` +
+            `<div class="market-stat-sub">vs ${bLabel}${role.sig ? ' *' : ''} &middot; ${label} postings</div>` +
+            `</div>`;
+    }
+
+    document.getElementById('market-stat').innerHTML = html;
 }
 
-// The chart is rendered once at init and stays alive when collapsed, so this
-// only hides the wrapper — no re-render is needed on re-expand.
+// The "x Role" chip next to Hide/Show is the only way back to the single line,
+// so it lives on the chart rather than in the role pills.
+function setupOverlayClear() {
+    document.getElementById('overlay-clear').addEventListener('click', () => {
+        overlayRole = null;
+        // Without this a refresh would read the hash and bring the overlay back
+        history.replaceState(null, '', location.pathname + location.search);
+        renderMarket();
+        // The chip hides itself, so hand focus to its neighbour, not <body>
+        document.getElementById('overall-toggle').focus();
+    });
+}
+
+function renderOverlayChip() {
+    const chip = document.getElementById('overlay-clear');
+    if (!overlayRole) {
+        chip.hidden = true;
+        return;
+    }
+    const label = ROLE_LABELS[overlayRole];
+    chip.hidden = false;
+    chip.style.borderColor = COLORS[overlayRole].primary;
+    chip.setAttribute('aria-label', `Remove ${label} from the chart`);
+    chip.innerHTML = `<span class="stat-swatch" style="background:${COLORS[overlayRole].primary}"></span>${label} &times;`;
+}
+
+// The chart is not drawn while collapsed (Chart.js can't size a hidden canvas),
+// so re-expanding redraws it with whatever role is overlaid by then.
 function setupOverallToggle() {
     const btn = document.getElementById('overall-toggle');
     const wrap = document.getElementById('overall-chart-wrap');
@@ -279,58 +355,98 @@ function setupOverallToggle() {
         const isCollapsed = wrap.classList.toggle('collapsed');
         btn.setAttribute('aria-expanded', String(!isCollapsed));
         btn.innerHTML = isCollapsed ? 'Show &#9660;' : 'Hide &#9650;';
+        if (!isCollapsed) renderOverallChart();
     });
 }
 
 function renderOverallChart() {
     destroyChart('chart-overall');
+    if (document.getElementById('overall-chart-wrap').classList.contains('collapsed')) return;
     const ctx = document.getElementById('chart-overall').getContext('2d');
     const stock = DATA.stock[HERO_ROLES[0]];
     const dates = stock.map(d => d.date);
-    const baselineValue = stock[0].total_jobs.value;
+    const overall = postingsChange(stock.map(d => d.total_jobs));
+    const bLabel = new Date(DATA.baseline_date + 'T00:00:00')
+        .toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
-    // Convert bootstrapped delta to % change from baseline
-    // Use delta (not value) — delta is composition-controlled, value includes new companies
-    const values = stock.map(d => (d.total_jobs.delta / baselineValue) * 100);
-    const ciUpper = stock.map(d => (d.total_jobs.ci_upper / baselineValue) * 100);
-    const ciLower = stock.map(d => (d.total_jobs.ci_lower / baselineValue) * 100);
-    const color = '#1A5276';
+    const band = (ci, color) => [
+        { label: '_ci_upper', data: ci.ciUpper, borderColor: 'transparent', pointRadius: 0, fill: false },
+        { label: '_ci_lower', data: ci.ciLower, borderColor: 'transparent', pointRadius: 0, fill: '-1', backgroundColor: color + '18' },
+    ];
+
+    let datasets;
+    let tooltipLabel;
+    if (!overlayRole) {
+        datasets = [
+            {
+                label: 'Overall Hiring',
+                data: overall.values,
+                borderColor: OVERALL_COLOR,
+                backgroundColor: OVERALL_COLOR,
+                pointBackgroundColor: OVERALL_COLOR,
+                pointBorderColor: '#fff',
+                pointBorderWidth: 1,
+                pointRadius: 3,
+                borderWidth: 2.5,
+                fill: false,
+                tension: 0,
+            },
+            ...band(overall, OVERALL_COLOR),
+        ];
+        tooltipLabel = ctx => {
+            if (ctx.dataset.label.startsWith('_')) return null;
+            const v = ctx.parsed.y;
+            const abs = Math.round(overall.baselineValue + (v / 100) * overall.baselineValue);
+            return `${v >= 0 ? '+' : ''}${v.toFixed(1)}% (${abs.toLocaleString()} jobs)`;
+        };
+    } else {
+        // Role line on top with its band; the overall line becomes a faded
+        // reference with no band (role bands are 2-4x wider and two overlapping
+        // bands turn to mud). Index 0 draws last, so the role line sits on top.
+        const role = postingsChange(DATA.stock[overlayRole].map(d => d.volume));
+        const color = COLORS[overlayRole].primary;
+        const label = ROLE_LABELS[overlayRole];
+        const baselines = { [label]: role.baselineValue, 'All roles': overall.baselineValue };
+        datasets = [
+            {
+                label,
+                data: role.values,
+                borderColor: color,
+                backgroundColor: color,
+                pointBackgroundColor: color,
+                pointBorderColor: '#fff',
+                pointBorderWidth: 1,
+                pointRadius: 3,
+                borderWidth: 2.5,
+                fill: false,
+                tension: 0,
+            },
+            ...band(role, color),
+            {
+                label: 'All roles',
+                data: overall.values,
+                borderColor: OVERALL_MUTED,
+                backgroundColor: OVERALL_MUTED,
+                pointBackgroundColor: OVERALL_MUTED,
+                pointRadius: 0,
+                pointHoverRadius: 3,
+                borderWidth: 2,
+                fill: false,
+                tension: 0,
+            },
+        ];
+        tooltipLabel = ctx => {
+            if (ctx.dataset.label.startsWith('_')) return null;
+            const v = ctx.parsed.y;
+            const base = baselines[ctx.dataset.label];
+            const abs = Math.round(base + (v / 100) * base);
+            return `${ctx.dataset.label}: ${v >= 0 ? '+' : ''}${v.toFixed(1)}% (${abs.toLocaleString()} jobs)`;
+        };
+    }
 
     charts['chart-overall'] = new Chart(ctx, {
         type: 'line',
-        data: {
-            labels: dates,
-            datasets: [
-                {
-                    label: 'Overall Hiring',
-                    data: values,
-                    borderColor: color,
-                    backgroundColor: color,
-                    pointBackgroundColor: color,
-                    pointBorderColor: '#fff',
-                    pointBorderWidth: 1,
-                    pointRadius: 3,
-                    borderWidth: 2.5,
-                    fill: false,
-                    tension: 0,
-                },
-                {
-                    label: '_ci_upper',
-                    data: ciUpper,
-                    borderColor: 'transparent',
-                    pointRadius: 0,
-                    fill: false,
-                },
-                {
-                    label: '_ci_lower',
-                    data: ciLower,
-                    borderColor: 'transparent',
-                    pointRadius: 0,
-                    fill: '-1',
-                    backgroundColor: color + '18',
-                },
-            ]
-        },
+        data: { labels: dates, datasets },
         options: {
             responsive: true,
             maintainAspectRatio: false,
@@ -353,12 +469,8 @@ function renderOverallChart() {
             plugins: {
                 tooltip: {
                     callbacks: {
-                        label: ctx => {
-                            if (ctx.dataset.label.startsWith('_')) return null;
-                            const v = ctx.parsed.y;
-                            const abs = Math.round(baselineValue + (v / 100) * baselineValue);
-                            return `${v >= 0 ? '+' : ''}${v.toFixed(1)}% (${abs.toLocaleString()} jobs)`;
-                        },
+                        label: tooltipLabel,
+                        footer: () => overlayRole ? `Jobs = ${bLabel} count + same-company change` : null,
                     }
                 }
             }
