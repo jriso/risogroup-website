@@ -266,7 +266,7 @@ function setupChartModeToggle() {
 // time, while value is the raw count and includes companies added since.
 function postingsChange(series) {
     const baselineValue = series[0].value;
-    const pct = v => (v / baselineValue) * 100;
+    const pct = v => baselineValue > 0 ? (v / baselineValue) * 100 : 0;
     const latest = series[series.length - 1];
     return {
         baselineValue,
@@ -307,7 +307,7 @@ function renderMarketStat() {
         const label = ROLE_LABELS[overlayRole];
         const color = COLORS[overlayRole].primary;
         const role = postingsChange(DATA.stock[overlayRole].map(d => d.volume));
-        const roleTip = `${label} job postings are ${role.latest >= 0 ? 'up' : 'down'} ${Math.abs(role.latest).toFixed(1)}% since ${bLabel}, comparing the same companies over time, just like Overall Hiring. Job counts in the chart are the ${bLabel} count plus that change, not a live count. The gap between the ${label} line and the gray all-roles line is roughly the change in ${label}'s share of all postings.`;
+        const roleTip = `${label} job postings are ${role.latest >= 0 ? 'up' : 'down'} ${Math.abs(role.latest).toFixed(1)}% since ${bLabel}, comparing the same companies over time, just like Overall Hiring. Job counts in the chart are the ${bLabel} count plus that change, not a live count. The gap between the ${label} line and the faded all-roles line is roughly the change in ${label}'s share of all postings.`;
         html +=
             `<div class="market-stat-item">` +
             `<div class="market-stat-label">${swatch(color)}${label} <span class="th-info" data-tip="${roleTip}">?</span></div>` +
@@ -327,6 +327,8 @@ function setupOverlayClear() {
         // Without this a refresh would read the hash and bring the overlay back
         history.replaceState(null, '', location.pathname + location.search);
         renderMarket();
+        // The chip hides itself, so hand focus to its neighbour, not <body>
+        document.getElementById('overall-toggle').focus();
     });
 }
 
