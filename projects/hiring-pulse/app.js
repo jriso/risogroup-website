@@ -261,6 +261,13 @@ function setupChartModeToggle() {
 // while overlayRole is set)
 // =============================================================================
 
+// The comparison baseline, with its year: "Jan 8" alone becomes ambiguous once the
+// series runs into the next year.
+function baselineLabel() {
+    return new Date(DATA.baseline_date + 'T00:00:00')
+        .toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
 // Postings % change vs baseline for one series (`total_jobs`, or a role's
 // `volume`). Uses delta, not value: delta compares the same companies over
 // time, while value is the raw count and includes companies added since.
@@ -279,17 +286,25 @@ function postingsChange(series) {
 }
 
 function renderMarket() {
+    renderMarketTitle();
     renderMarketStat();
     renderOverlayChip();
     renderOverallChart();
+}
+
+// The chart plots % change since the baseline, not a count, and gains a line for
+// the overlaid role, so the title names both. The baseline date stays in the stat
+// captions, not the title, so the title does not anchor on a calendar date.
+function renderMarketTitle() {
+    const roles = overlayRole ? `All Roles vs ${ROLE_LABELS[overlayRole]}` : 'All Roles';
+    document.getElementById('market-chart-label').textContent = `${roles} \u00b7 Change in Job Postings`;
 }
 
 function renderMarketStat() {
     const stock = DATA.stock[HERO_ROLES[0]];
     const overall = postingsChange(stock.map(d => d.total_jobs));
 
-    const bDate = new Date(DATA.baseline_date + 'T00:00:00');
-    const bLabel = bDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const bLabel = baselineLabel();
 
     const fmt = v => `${v >= 0 ? '+' : ''}${v.toFixed(1)}%`;
     const swatch = color => overlayRole ? `<span class="stat-swatch" style="background:${color}"></span>` : '';
@@ -312,7 +327,7 @@ function renderMarketStat() {
             `<div class="market-stat-item">` +
             `<div class="market-stat-label">${swatch(color)}${label} <span class="th-info" data-tip="${roleTip}">?</span></div>` +
             `<div class="market-stat-value" style="color:${color}">${fmt(role.latest)}</div>` +
-            `<div class="market-stat-sub">vs ${bLabel}${role.sig ? ' *' : ''} &middot; ${label} postings</div>` +
+            `<div class="market-stat-sub">vs ${bLabel}${role.sig ? ' *' : ''} &middot; ${label} postings (count)</div>` +
             `</div>`;
     }
 
@@ -366,8 +381,7 @@ function renderOverallChart() {
     const stock = DATA.stock[HERO_ROLES[0]];
     const dates = stock.map(d => d.date);
     const overall = postingsChange(stock.map(d => d.total_jobs));
-    const bLabel = new Date(DATA.baseline_date + 'T00:00:00')
-        .toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const bLabel = baselineLabel();
 
     const band = (ci, color) => [
         { label: '_ci_upper', data: ci.ciUpper, borderColor: 'transparent', pointRadius: 0, fill: false },
@@ -509,8 +523,7 @@ function renderHeroStat() {
     const breadth = stockLatest.breadth.value;
     const intensityDelta = stockLatest.intensity.delta;
 
-    const bDate = new Date(DATA.baseline_date + 'T00:00:00');
-    const bLabel = bDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const bLabel = baselineLabel();
 
     const sign = intensityDelta >= 0 ? '+' : '';
     const ciLow = stockLatest.intensity.ci_lower;
@@ -698,8 +711,7 @@ function renderSummaryTable() {
     const latest = share[share.length - 1];
     const baselineDate = DATA.baseline_date;
 
-    const bDate = new Date(baselineDate + 'T00:00:00');
-    const bLabel = bDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const bLabel = baselineLabel();
 
     const arrow = col => summarySort.col === col ? (summarySort.asc ? ' \u25B2' : ' \u25BC') : '';
 
@@ -856,8 +868,7 @@ function renderDeepDive(role) {
     const share = DATA.share_timeseries;
     const latestShare = share[share.length - 1][role];
 
-    const bDate = new Date(DATA.baseline_date + 'T00:00:00');
-    const bLabel = bDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const bLabel = baselineLabel();
 
     const label = ROLE_LABELS[role];
     const breadthDelta = latest.breadth.delta;

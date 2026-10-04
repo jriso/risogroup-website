@@ -92,7 +92,7 @@
             <!-- Market-wide block. The role chips below only add an overlay line (removable via #overlay-clear); the all-roles figure never changes -->
             <div class="market-block" id="market-block">
                 <div class="hero-chart-header">
-                    <div class="dual-chart-label">All Roles &middot; Total Job Postings</div>
+                    <div class="dual-chart-label" id="market-chart-label">All Roles &middot; Change in Job Postings</div>
                     <div class="chart-header-actions">
                         <button class="chart-toggle-btn overlay-chip" id="overlay-clear" hidden></button>
                         <button class="chart-toggle-btn" id="overall-toggle" aria-expanded="true" aria-controls="overall-chart-wrap">Hide &#9650;</button>
@@ -135,7 +135,7 @@
                             <th class="col-role" rowspan="2">Role</th>
                             <th class="col-num" rowspan="2" id="th-jobs">Jobs</th>
                             <th class="col-num col-group-border" rowspan="2" id="th-share">Share</th>
-                            <th class="col-num col-group-border" colspan="3" id="th-change-group" style="text-align:center">Change vs Jan 8</th>
+                            <th class="col-num col-group-border" colspan="3" id="th-change-group" style="text-align:center">Change vs Baseline</th>
                         </tr>
                         <tr>
                             <th class="col-num col-group-border" id="th-abs">Abs (pp) <span class="th-info" data-tip="How many percentage points the role's share has moved since baseline. For example, +0.3 means the role went from 5.0% to 5.3% of all jobs.">?</span></th>
