@@ -279,9 +279,19 @@ function postingsChange(series) {
 }
 
 function renderMarket() {
+    renderMarketTitle();
     renderMarketStat();
     renderOverlayChip();
     renderOverallChart();
+}
+
+// The chart plots % change since the baseline, not a count, and gains a line for
+// the overlaid role, so the title names both.
+function renderMarketTitle() {
+    const bLabel = new Date(DATA.baseline_date + 'T00:00:00')
+        .toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const roles = overlayRole ? `All Roles vs ${ROLE_LABELS[overlayRole]}` : 'All Roles';
+    document.getElementById('market-chart-label').textContent = `${roles} \u00b7 Job Postings vs ${bLabel}`;
 }
 
 function renderMarketStat() {
@@ -312,7 +322,7 @@ function renderMarketStat() {
             `<div class="market-stat-item">` +
             `<div class="market-stat-label">${swatch(color)}${label} <span class="th-info" data-tip="${roleTip}">?</span></div>` +
             `<div class="market-stat-value" style="color:${color}">${fmt(role.latest)}</div>` +
-            `<div class="market-stat-sub">vs ${bLabel}${role.sig ? ' *' : ''} &middot; ${label} postings</div>` +
+            `<div class="market-stat-sub">vs ${bLabel}${role.sig ? ' *' : ''} &middot; ${label} postings (count)</div>` +
             `</div>`;
     }
 
