@@ -286,12 +286,11 @@ function renderMarket() {
 }
 
 // The chart plots % change since the baseline, not a count, and gains a line for
-// the overlaid role, so the title names both.
+// the overlaid role, so the title names both. The baseline date stays in the stat
+// captions, not the title, so the title does not anchor on a calendar date.
 function renderMarketTitle() {
-    const bLabel = new Date(DATA.baseline_date + 'T00:00:00')
-        .toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
     const roles = overlayRole ? `All Roles vs ${ROLE_LABELS[overlayRole]}` : 'All Roles';
-    document.getElementById('market-chart-label').textContent = `${roles} \u00b7 Job Postings vs ${bLabel}`;
+    document.getElementById('market-chart-label').textContent = `${roles} \u00b7 Change in Job Postings`;
 }
 
 function renderMarketStat() {
