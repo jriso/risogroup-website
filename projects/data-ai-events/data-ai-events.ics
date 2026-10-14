@@ -12,55 +12,8 @@ X-WR-CALDESC:Webinars\, livestreams and meetups from the companies building
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:4e6f0c4734af628e732c@risogroup.co
-DTSTAMP:20261013T061551Z
-DTSTART;VALUE=DATE:20261013
-DTEND;VALUE=DATE:20261014
-SUMMARY:Databricks: From AI Everywhere to AI That Delivers
-DESCRIPTION:Databricks — Online. Discover how to maximize ROI from your A
- I investments. https://www.databricks.com/resources/webinar/ai-everywhere-
- ai-delivers\n\nNo start time published — check the link.
-LOCATION:Online
-URL:https://www.databricks.com/resources/webinar/ai-everywhere-ai-delivers
-CATEGORIES:Databricks
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:73dc44e01d71a7793aef@risogroup.co
-DTSTAMP:20261013T061551Z
-DTSTART:20261013T140000Z
-DTEND:20261013T150000Z
-SUMMARY:Fivetran: Fivetran + dbt Deep Dive: From Raw Data to Business Impac
- t
-DESCRIPTION:Fivetran — Online. https://go.fivetran.com/webinars/fivetran-
- dbt-deep-dive-from-raw-data-to-business-impact\n\nEnd time is an assumed 1
-  hour.
-LOCATION:Online
-URL:https://go.fivetran.com/webinars/fivetran-dbt-deep-dive-from-raw-data-t
- o-business-impact
-CATEGORIES:Fivetran
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:2f33cb7aa06b15cfea4b@risogroup.co
-DTSTAMP:20261013T061551Z
-DTSTART:20261013T160000Z
-DTEND:20261013T170000Z
-SUMMARY:Metabase: Tour of Metabase: building dashboards with (or without) A
- I
-DESCRIPTION:Metabase — Online. Get a complete end-to-end tour of Metabase
-  from connecting your first database to building dashboards\, documents\, 
- and sharing with your organization—including AI-assisted exploration and
-  the MCP server in your workflow. https://www.metabase.com/events/building
- -dashboards-ai\n\nEnd time is an assumed 1 hour.
-LOCATION:Online
-URL:https://www.metabase.com/events/building-dashboards-ai
-CATEGORIES:Metabase
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:d507ece918684e6fa9e8@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261015
 SUMMARY:Databricks: ABAC\, Metric Views and Genie Agents
@@ -75,7 +28,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:54af3bc9f26e8d7962aa@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART:20261015T163000Z
 DTEND:20261015T173000Z
 SUMMARY:MotherDuck: Getting Everyone on the Same Numbers
@@ -93,7 +46,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:b810f4e9c7beb1d3a6ff@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:Databricks: Ask\, Build\, Deploy\, and Operate Agents
@@ -110,7 +63,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:45d772a345478567efab@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:Databricks: Lakehouse for Unified Analytics and AI
@@ -128,8 +81,27 @@ CATEGORIES:Databricks
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:e510f3d664f219460d10@risogroup.co
+DTSTAMP:20261014T061532Z
+DTSTART:20261021T163000Z
+DTEND:20261021T173000Z
+SUMMARY:MotherDuck: Behind the Agent: How Hazel Built an AI Coworker for Co
+ nsumer Brands
+DESCRIPTION:MotherDuck — Online. Hazel started out predicting customer li
+ fetime value\, then built an AI coworker that answers any question a consu
+ mer brand has about its business. Co-founder and CTO Patrik Devlin joins h
+ ost Alex Monahan to talk through the data stack underneath it. https://mot
+ herduck.com/events/behind-the-agent-how-hazel-built-an-ai-coworker-for-con
+ sumer-brands-2026/\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://motherduck.com/events/behind-the-agent-how-hazel-built-an-ai-co
+ worker-for-consumer-brands-2026/
+CATEGORIES:MotherDuck
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:9c79722336f04643da9d@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:Sigma: Build Sigma Apps with a Single Prompt using ChatGPT
@@ -143,7 +115,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:e145f6ee390630cccbcc@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART:20261027T171500Z
 DTEND:20261027T181500Z
 SUMMARY:Fivetran: Fivetran + dbt Labs in 15 minutes
@@ -157,7 +129,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:d28b808936958828e60d@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261028
 DTEND;VALUE=DATE:20261029
 SUMMARY:Databricks: Unify Streaming: Ingestion to Impact
@@ -173,7 +145,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:9a879a02068aa181b3ed@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART:20261028T160000Z
 DTEND:20261028T170000Z
 SUMMARY:Fivetran: Data\, trust\, and autonomy: An executive conversation on
@@ -189,7 +161,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:c0af7861b4d3f14ffb7e@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261028
 DTEND;VALUE=DATE:20261029
 SUMMARY:Sigma: Setting up Claude skills for Sigma
@@ -203,7 +175,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:a6371819cd1a0630337e@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261030
 SUMMARY:Hightouch: Exclusive Look: Agentic Lifecycle Marketing with Hightou
@@ -223,7 +195,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:acadd1c68db7e660aef1@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:Databricks: The AA: Data to AI-Powered Operations
@@ -240,7 +212,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:90c1dc23dc07aeb7a51a@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:Databricks: Get Hands-on with Genie
@@ -259,7 +231,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:d5773841c022a387a04b@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:Databricks: The Emerging Blueprint for Agentic Apps
@@ -275,7 +247,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:1132e9375b5088ef564c@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:Sigma: Turn Complex Scheduling into a Sigma App with Self-Service O
@@ -290,7 +262,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:8e1c660b1f1b7a4841cb@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART:20261110T170000Z
 DTEND:20261110T180000Z
 SUMMARY:Snowflake: I Downloaded Coco Desktop Now What Webinar
@@ -305,7 +277,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:187cb323e858d7cb3c9b@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:Databricks: AI-Powered Data Engineering
@@ -325,7 +297,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:2f8c415806d614594680@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART:20261112T193000Z
 DTEND:20261112T203000Z
 SUMMARY:Fivetran: Liberate your data in 15 minutes: Apache Iceberg™ data 
@@ -341,7 +313,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:0960673d0462f3f7c575@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Databricks: Real-Time Fraud Detection on AWS
@@ -358,7 +330,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:f0236e706dfd5c885bb8@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART:20261117T181500Z
 DTEND:20261117T191500Z
 SUMMARY:Fivetran: Fivetran + dbt Labs in 15 minutes
@@ -371,8 +343,24 @@ CATEGORIES:Fivetran
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:893cce75a754522eed85@risogroup.co
+DTSTAMP:20261014T061532Z
+DTSTART:20261117T180000Z
+DTEND:20261117T190000Z
+SUMMARY:Snowflake: Prompt to Pipeline: Hands-On Data Engineering with Corte
+ x Code
+DESCRIPTION:Snowflake — Online. https://www.snowflake.com/webinars/prompt
+ -to-pipeline-hands-on-data-engineering-with-cortex-code-20261117/\n\nEnd t
+ ime is an assumed 1 hour.
+LOCATION:Online
+URL:https://www.snowflake.com/webinars/prompt-to-pipeline-hands-on-data-eng
+ ineering-with-cortex-code-20261117/
+CATEGORIES:Snowflake
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:68d1d7187cc21728505c@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 SUMMARY:Databricks: Build\, Orchestrate and Improve Agents
@@ -390,7 +378,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:f49b62d919c334df7565@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 SUMMARY:Hightouch: Exclusive Look: Agentic Lifecycle Marketing with Hightou
@@ -410,7 +398,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:fc758d570d05306134d1@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART:20261119T160000Z
 DTEND:20261119T170000Z
 SUMMARY:Fivetran: Fivetran en 15 minutes
@@ -423,7 +411,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb75dd563057fde388f5@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART:20261124T181500Z
 DTEND:20261124T191500Z
 SUMMARY:Fivetran: Fivetran + dbt Labs in 15 minutes
@@ -436,8 +424,28 @@ CATEGORIES:Fivetran
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:f6cb1283251d56163c8e@risogroup.co
+DTSTAMP:20261014T061532Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:Databricks: Building Applications with Lakebase
+DESCRIPTION:Databricks — Online. Join us for a hands-on workshop where yo
+ u will learn how to build modern\, data-driven applications using Lakebase
+  \, a fully managed Postgres database on the Databricks Data Intelligence 
+ Platform that brings operational workloads and analytics together on the s
+ ame data. http://databricks.com/resources/webinar/build-modern-application
+ s-databricks-lakebase-december?scid=701Vp000015VnM5IAK&utm_medium=website&
+ utm_source=databricks\n\nNo start time published — check the link.
+LOCATION:Online
+URL:http://databricks.com/resources/webinar/build-modern-applications-datab
+ ricks-lakebase-december?scid=701Vp000015VnM5IAK&utm_medium=website&utm_sou
+ rce=databricks
+CATEGORIES:Databricks
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:1524dbed8e562205b354@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
 SUMMARY:Databricks: Deliberate AI Decisions
@@ -457,7 +465,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:74b575abffe95b737c61@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20261209
 DTEND;VALUE=DATE:20261210
 SUMMARY:Databricks: How Databricks Ships AI into Production
@@ -474,7 +482,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:12ec3d1f3ff5f02b4b6c@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20270113
 DTEND;VALUE=DATE:20270114
 SUMMARY:Databricks: Data + AI World Tour Virtual EMEA
@@ -490,7 +498,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:5d804b49d210a10b5f00@risogroup.co
-DTSTAMP:20261013T061551Z
+DTSTAMP:20261014T061532Z
 DTSTART;VALUE=DATE:20270121
 DTEND;VALUE=DATE:20270122
 SUMMARY:Databricks: Data + AI World Tour Virtual AMER
