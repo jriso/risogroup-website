@@ -380,7 +380,6 @@ function renderOverallChart() {
     const stock = DATA.stock[HERO_ROLES[0]];
     const dates = stock.map(d => d.date);
     const overall = postingsChange(stock.map(d => d.total_jobs));
-    const bLabel = baselineLabel();
 
     const band = (ci, color) => [
         { label: '_ci_upper', data: ci.ciUpper, borderColor: 'transparent', pointRadius: 0, fill: false },
@@ -479,7 +478,6 @@ function renderOverallChart() {
                 tooltip: {
                     callbacks: {
                         label: tooltipLabel,
-                        footer: () => overlayRole ? `Jobs = ${bLabel} count + same-company change` : null,
                     }
                 }
             }
