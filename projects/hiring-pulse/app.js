@@ -276,7 +276,6 @@ function postingsChange(series) {
     const pct = v => baselineValue > 0 ? (v / baselineValue) * 100 : 0;
     const latest = series[series.length - 1];
     return {
-        baselineValue,
         values: series.map(d => pct(d.delta)),
         ciUpper: series.map(d => pct(d.ci_upper)),
         ciLower: series.map(d => pct(d.ci_lower)),
@@ -322,7 +321,7 @@ function renderMarketStat() {
         const label = ROLE_LABELS[overlayRole];
         const color = COLORS[overlayRole].primary;
         const role = postingsChange(DATA.stock[overlayRole].map(d => d.volume));
-        const roleTip = `${label} job postings are ${role.latest >= 0 ? 'up' : 'down'} ${Math.abs(role.latest).toFixed(1)}% since ${bLabel}, comparing the same companies over time, just like Overall Hiring. Job counts in the chart are the ${bLabel} count plus that change, not a live count. The gap between the ${label} line and the faded all-roles line is roughly the change in ${label}'s share of all postings.`;
+        const roleTip = `${label} job postings are ${role.latest >= 0 ? 'up' : 'down'} ${Math.abs(role.latest).toFixed(1)}% since ${bLabel}, comparing the same companies over time, just like Overall Hiring. The gap between the ${label} line and the faded all-roles line is roughly the change in ${label}'s share of all postings.`;
         html +=
             `<div class="market-stat-item">` +
             `<div class="market-stat-label">${swatch(color)}${label} <span class="th-info" data-tip="${roleTip}">?</span></div>` +
@@ -410,8 +409,7 @@ function renderOverallChart() {
         tooltipLabel = ctx => {
             if (ctx.dataset.label.startsWith('_')) return null;
             const v = ctx.parsed.y;
-            const abs = Math.round(overall.baselineValue + (v / 100) * overall.baselineValue);
-            return `${v >= 0 ? '+' : ''}${v.toFixed(1)}% (${abs.toLocaleString()} jobs)`;
+            return `${v >= 0 ? '+' : ''}${v.toFixed(1)}%`;
         };
     } else {
         // Role line on top with its band; the overall line becomes a faded
@@ -420,7 +418,6 @@ function renderOverallChart() {
         const role = postingsChange(DATA.stock[overlayRole].map(d => d.volume));
         const color = COLORS[overlayRole].primary;
         const label = ROLE_LABELS[overlayRole];
-        const baselines = { [label]: role.baselineValue, 'All roles': overall.baselineValue };
         datasets = [
             {
                 label,
@@ -452,9 +449,7 @@ function renderOverallChart() {
         tooltipLabel = ctx => {
             if (ctx.dataset.label.startsWith('_')) return null;
             const v = ctx.parsed.y;
-            const base = baselines[ctx.dataset.label];
-            const abs = Math.round(base + (v / 100) * base);
-            return `${ctx.dataset.label}: ${v >= 0 ? '+' : ''}${v.toFixed(1)}% (${abs.toLocaleString()} jobs)`;
+            return `${ctx.dataset.label}: ${v >= 0 ? '+' : ''}${v.toFixed(1)}%`;
         };
     }
 
