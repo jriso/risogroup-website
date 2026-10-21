@@ -114,8 +114,12 @@ Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Rob
 Chart.defaults.font.size = 12;
 Chart.defaults.color = '#586069';
 Chart.defaults.plugins.legend.display = false;
-Chart.defaults.elements.point.radius = 3;
-Chart.defaults.elements.point.hoverRadius = 5;
+Chart.defaults.elements.point.radius = 0;
+Chart.defaults.elements.point.hoverRadius = 4;
+Chart.defaults.elements.point.hoverBorderWidth = 2;
+Chart.defaults.elements.point.hoverBorderColor = '#fff';
+Chart.defaults.elements.line.borderJoinStyle = 'round';
+Chart.defaults.devicePixelRatio = Math.max(window.devicePixelRatio || 1, 2);
 Chart.defaults.elements.line.tension = 0;
 Chart.defaults.elements.line.borderWidth = 2.5;
 Chart.defaults.animation = false;
@@ -143,6 +147,42 @@ const zeroLinePlugin = {
     }
 };
 Chart.register(zeroLinePlugin);
+
+// Direct labels: datasets flagged `endLabel` are named in their own color at
+// the last point, which stands in for a legend. Labels sit inside the plot,
+// right-aligned to the end of the line (the higher line's label above it, the
+// lower one's below) so they cost no horizontal space on mobile. A white halo
+// keeps them legible over lines and bands.
+const endLabelPlugin = {
+    id: 'endLabel',
+    afterDatasetsDraw(chart) {
+        const { ctx, chartArea } = chart;
+        const items = [];
+        chart.data.datasets.forEach((ds, i) => {
+            if (!ds.endLabel) return;
+            const pt = chart.getDatasetMeta(i).data.slice(-1)[0];
+            if (pt && Number.isFinite(pt.y)) items.push({ ds, x: pt.x, y: pt.y });
+        });
+        items.sort((p, q) => p.y - q.y);
+        items.forEach((it, idx) => {
+            const above = idx === 0;
+            let y = it.y + (above ? -11 : 12);
+            y = Math.min(Math.max(y, chartArea.top + 6), chartArea.bottom - 6);
+            ctx.save();
+            ctx.font = "600 11px " + Chart.defaults.font.family;
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+            ctx.lineJoin = 'round';
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = '#fff';
+            ctx.strokeText(it.ds.label, it.x, y);
+            ctx.fillStyle = it.ds.borderColor;
+            ctx.fillText(it.ds.label, it.x, y);
+            ctx.restore();
+        });
+    }
+};
+Chart.register(endLabelPlugin);
 
 
 // =============================================================================
@@ -189,7 +229,6 @@ async function init() {
     buildHeroPills();
     setupChartModeToggle();
     setupSummarySort();
-    setupOverallToggle();
     setupOverlayClear();
 
     // Check URL hash for initial role. A hash is only ever written by a role
@@ -287,16 +326,13 @@ function postingsChange(series) {
 function renderMarket() {
     renderMarketTitle();
     renderMarketStat();
-    renderOverlayChip();
     renderOverallChart();
 }
 
-// The chart plots % change since the baseline, not a count, and gains a line for
-// the overlaid role, so the title names both. The baseline date stays in the stat
-// captions, not the title, so the title does not anchor on a calendar date.
+// The chart plots % change since the baseline, not a count. Series are named by
+// the end-of-line labels and stat swatches, so the title only says what is plotted.
 function renderMarketTitle() {
-    const roles = overlayRole ? `All Roles vs ${ROLE_LABELS[overlayRole]}` : 'All Roles';
-    document.getElementById('market-chart-label').textContent = `${roles} \u00b7 Change in Job Postings`;
+    document.getElementById('market-chart-label').textContent = 'Change in Job Postings';
 }
 
 function renderMarketStat() {
@@ -313,8 +349,8 @@ function renderMarketStat() {
     let html =
         `<div class="market-stat-item">` +
         `<div class="market-stat-label">${swatch(OVERALL_MUTED)}Overall Hiring <span class="th-info" data-tip="${overallTip}">?</span></div>` +
-        `<div class="market-stat-value">${fmt(overall.latest)}</div>` +
-        `<div class="market-stat-sub">vs ${bLabel}${overall.sig ? ' *' : ''} &middot; all roles combined</div>` +
+        `<div class="market-stat-value">${fmt(overall.latest)}${overlayRole && overall.sig ? ' *' : ''}</div>` +
+        (overlayRole ? '' : `<div class="market-stat-sub">vs ${bLabel}${overall.sig ? ' *' : ''} &middot; all roles combined</div>`) +
         `</div>`;
 
     if (overlayRole) {
@@ -324,58 +360,32 @@ function renderMarketStat() {
         const roleTip = `${label} job postings are ${role.latest >= 0 ? 'up' : 'down'} ${Math.abs(role.latest).toFixed(1)}% since ${bLabel}, comparing the same companies over time, just like Overall Hiring. The gap between the ${label} line and the faded all-roles line is roughly the change in ${label}'s share of all postings.`;
         html +=
             `<div class="market-stat-item">` +
-            `<div class="market-stat-label">${swatch(color)}${label} <span class="th-info" data-tip="${roleTip}">?</span></div>` +
-            `<div class="market-stat-value" style="color:${color}">${fmt(role.latest)}</div>` +
-            `<div class="market-stat-sub">vs ${bLabel}${role.sig ? ' *' : ''} &middot; ${label} postings (count)</div>` +
-            `</div>`;
+            `<div class="market-stat-label">${swatch(color)}${label} <span class="th-info" data-tip="${roleTip}">?</span><button class="stat-remove" aria-label="Remove ${label} from the chart">&times;</button></div>` +
+            `<div class="market-stat-value" style="color:${color}">${fmt(role.latest)}${role.sig ? ' *' : ''}</div>` +
+            `</div>` +
+            `<div class="market-stat-sub market-stat-caption">vs ${bLabel}</div>`;
     }
 
     document.getElementById('market-stat').innerHTML = html;
 }
 
-// The "x Role" chip next to Hide/Show is the only way back to the single line,
-// so it lives on the chart rather than in the role pills.
+// The x on the overlaid role's stat label is the only way back to the single
+// line, so it lives on the chart rather than in the role pills.
 function setupOverlayClear() {
-    document.getElementById('overlay-clear').addEventListener('click', () => {
+    document.getElementById('market-stat').addEventListener('click', e => {
+        if (!e.target.closest('.stat-remove')) return;
+        const removed = overlayRole;
         overlayRole = null;
         // Without this a refresh would read the hash and bring the overlay back
         history.replaceState(null, '', location.pathname + location.search);
         renderMarket();
-        // The chip hides itself, so hand focus to its neighbour, not <body>
-        document.getElementById('overall-toggle').focus();
-    });
-}
-
-function renderOverlayChip() {
-    const chip = document.getElementById('overlay-clear');
-    if (!overlayRole) {
-        chip.hidden = true;
-        return;
-    }
-    const label = ROLE_LABELS[overlayRole];
-    chip.hidden = false;
-    chip.style.borderColor = COLORS[overlayRole].primary;
-    chip.setAttribute('aria-label', `Remove ${label} from the chart`);
-    chip.innerHTML = `<span class="stat-swatch" style="background:${COLORS[overlayRole].primary}"></span>${label} &times;`;
-}
-
-// The chart is not drawn while collapsed (Chart.js can't size a hidden canvas),
-// so re-expanding redraws it with whatever role is overlaid by then.
-function setupOverallToggle() {
-    const btn = document.getElementById('overall-toggle');
-    const wrap = document.getElementById('overall-chart-wrap');
-
-    btn.addEventListener('click', () => {
-        const isCollapsed = wrap.classList.toggle('collapsed');
-        btn.setAttribute('aria-expanded', String(!isCollapsed));
-        btn.innerHTML = isCollapsed ? 'Show &#9660;' : 'Hide &#9650;';
-        if (!isCollapsed) renderOverallChart();
+        // The x disappears with the stat, so hand focus to that role's pill, not <body>
+        document.querySelector(`.hero-pill[data-role="${removed}"]`)?.focus();
     });
 }
 
 function renderOverallChart() {
     destroyChart('chart-overall');
-    if (document.getElementById('overall-chart-wrap').classList.contains('collapsed')) return;
     const ctx = document.getElementById('chart-overall').getContext('2d');
     const stock = DATA.stock[HERO_ROLES[0]];
     const dates = stock.map(d => d.date);
@@ -383,7 +393,7 @@ function renderOverallChart() {
 
     const band = (ci, color) => [
         { label: '_ci_upper', data: ci.ciUpper, borderColor: 'transparent', pointRadius: 0, fill: false },
-        { label: '_ci_lower', data: ci.ciLower, borderColor: 'transparent', pointRadius: 0, fill: '-1', backgroundColor: color + '18' },
+        { label: '_ci_lower', data: ci.ciLower, borderColor: 'transparent', pointRadius: 0, fill: '-1', backgroundColor: color + '2b' },
     ];
 
     let datasets;
@@ -398,7 +408,7 @@ function renderOverallChart() {
                 pointBackgroundColor: OVERALL_COLOR,
                 pointBorderColor: '#fff',
                 pointBorderWidth: 1,
-                pointRadius: 3,
+                pointRadius: 0,
                 borderWidth: 2.5,
                 fill: false,
                 tension: 0,
@@ -420,13 +430,14 @@ function renderOverallChart() {
         datasets = [
             {
                 label,
+                endLabel: true,
                 data: role.values,
                 borderColor: color,
                 backgroundColor: color,
                 pointBackgroundColor: color,
                 pointBorderColor: '#fff',
                 pointBorderWidth: 1,
-                pointRadius: 3,
+                pointRadius: 0,
                 borderWidth: 2.5,
                 fill: false,
                 tension: 0,
@@ -434,6 +445,7 @@ function renderOverallChart() {
             ...band(role, color),
             {
                 label: 'All roles',
+                endLabel: true,
                 data: overall.values,
                 borderColor: OVERALL_MUTED,
                 backgroundColor: OVERALL_MUTED,
@@ -462,15 +474,15 @@ function renderOverallChart() {
             scales: {
                 x: {
                     type: 'time',
-                    time: { unit: 'week', displayFormats: { week: 'MMM d' } },
+                    time: { unit: 'month', displayFormats: { month: 'MMM' } },
                     grid: { display: false },
-                    ticks: { maxTicksLimit: 8, font: { size: 11 } },
+                    ticks: { maxTicksLimit: 8, maxRotation: 0, autoSkipPadding: 12, font: { size: 11 } },
                 },
                 y: {
-                    grid: { color: '#e1e4e833', lineWidth: 0.5 },
+                    grid: { display: false },
                     ticks: {
                         font: { size: 11 },
-                        callback: v => (v >= 0 ? '+' : '') + v.toFixed(0) + '%',
+                        callback: v => Math.abs(v) < 0.5 ? '0%' : (v > 0 ? '+' : '') + v.toFixed(0) + '%',
                     },
                 }
             },
@@ -589,6 +601,7 @@ function renderHeroCharts() {
 
     datasets.push({
         label: ROLE_LABELS[activeRole],
+        endLabel: true,
         data: stock.map(d => isRel
             ? (baselineShare > 0 ? (d.intensity.delta / baselineShare) * 100 : 0)
             : d.intensity.delta
@@ -598,7 +611,7 @@ function renderHeroCharts() {
         pointBackgroundColor: color,
         pointBorderColor: '#fff',
         pointBorderWidth: 1,
-        pointRadius: 3,
+        pointRadius: 0,
         borderWidth: 3,
         fill: false,
         tension: 0,
@@ -617,7 +630,7 @@ function renderHeroCharts() {
         data: stock.map(d => isRel
             ? (baselineShare > 0 ? (d.intensity.ci_lower / baselineShare) * 100 : 0)
             : d.intensity.ci_lower),
-        borderColor: 'transparent', pointRadius: 0, fill: '-1', backgroundColor: color + '18',
+        borderColor: 'transparent', pointRadius: 0, fill: '-1', backgroundColor: color + '2b',
     });
 
     const yTickSuffix = isRel ? '%' : 'pp';
@@ -632,17 +645,17 @@ function renderHeroCharts() {
             scales: {
                 x: {
                     type: 'time',
-                    time: { unit: 'week', displayFormats: { week: 'MMM d' } },
+                    time: { unit: 'month', displayFormats: { month: 'MMM' } },
                     grid: { display: false },
-                    ticks: { maxTicksLimit: 8, font: { size: 11 } },
+                    ticks: { maxTicksLimit: 8, maxRotation: 0, autoSkipPadding: 12, font: { size: 11 } },
                 },
                 y: {
                     min: isRel ? heroYRange.rel.min : heroYRange.abs.min,
                     max: isRel ? heroYRange.rel.max : heroYRange.abs.max,
-                    grid: { color: '#e1e4e822', lineWidth: 0.5 },
+                    grid: { display: false },
                     ticks: {
                         font: { size: 11 },
-                        callback: v => (v >= 0 ? '+' : '') + (Math.abs(v) >= 10 ? v.toFixed(0) : v.toFixed(1)) + yTickSuffix,
+                        callback: v => Math.abs(v) < 1e-9 ? '0' + yTickSuffix : (v > 0 ? '+' : '') + (Math.abs(v) >= 10 ? v.toFixed(0) : v.toFixed(1)) + yTickSuffix,
                     },
                 }
             },
@@ -933,7 +946,7 @@ function renderShareChart(role) {
                 pointBackgroundColor: color,
                 pointBorderColor: '#fff',
                 pointBorderWidth: 1,
-                pointRadius: 4,
+                pointRadius: 0,
                 fill: true,
             }]
         },
@@ -944,12 +957,12 @@ function renderShareChart(role) {
             scales: {
                 x: {
                     type: 'time',
-                    time: { unit: 'week', displayFormats: { week: 'MMM d' } },
+                    time: { unit: 'month', displayFormats: { month: 'MMM' } },
                     grid: { display: false },
                     ticks: { maxTicksLimit: 8 },
                 },
                 y: {
-                    grid: { color: '#e1e4e833', lineWidth: 0.5 },
+                    grid: { color: '#e6e8eb', lineWidth: 1 },
                     ticks: { callback: v => v.toFixed(1) + '%' },
                 }
             },
@@ -990,7 +1003,7 @@ function makeLineWithCI(canvasId, data, { color, yLabel, yFormat }) {
 
     if (hasCI) {
         datasets.push({ label: '_ci_upper', data: ciUpper, borderColor: 'transparent', pointRadius: 0, fill: false });
-        datasets.push({ label: '_ci_lower', data: ciLower, borderColor: 'transparent', pointRadius: 0, fill: '-1', backgroundColor: color + '20' });
+        datasets.push({ label: '_ci_lower', data: ciLower, borderColor: 'transparent', pointRadius: 0, fill: '-1', backgroundColor: color + '2b' });
     }
 
     charts[canvasId] = new Chart(ctx, {
@@ -1000,8 +1013,8 @@ function makeLineWithCI(canvasId, data, { color, yLabel, yFormat }) {
             responsive: true, maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
             scales: {
-                x: { type: 'time', time: { unit: 'week', displayFormats: { week: 'MMM d' } }, grid: { display: false }, ticks: { maxTicksLimit: 8 } },
-                y: { grid: { color: '#e1e4e833', lineWidth: 0.5 }, ticks: {
+                x: { type: 'time', time: { unit: 'month', displayFormats: { month: 'MMM' } }, grid: { display: false }, ticks: { maxTicksLimit: 8, maxRotation: 0 } },
+                y: { grid: { color: '#e6e8eb', lineWidth: 1 }, ticks: {
                     callback: v => {
                         if (yFormat === 'pp') return v.toFixed(1) + 'pp';
                         if (yFormat === 'pct') return v.toFixed(1) + '%';
@@ -1034,8 +1047,8 @@ function makeSimpleLine(canvasId, seriesData, { color, yFormat }) {
             responsive: true, maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
             scales: {
-                x: { type: 'time', time: { unit: 'week', displayFormats: { week: 'MMM d' } }, grid: { display: false }, ticks: { maxTicksLimit: 8 } },
-                y: { grid: { color: '#e1e4e833', lineWidth: 0.5 }, ticks: { callback: v => {
+                x: { type: 'time', time: { unit: 'month', displayFormats: { month: 'MMM' } }, grid: { display: false }, ticks: { maxTicksLimit: 8, maxRotation: 0 } },
+                y: { grid: { color: '#e6e8eb', lineWidth: 1 }, ticks: { callback: v => {
                     if (yFormat === 'pct') return v.toFixed(1) + '%';
                     if (yFormat === 'int') return Math.round(v).toLocaleString();
                     return v.toFixed(2);
