@@ -1,0 +1,23 @@
+name: Notify on Hiring Pulse PR
+
+# The post-scrape job opens these PRs as jriso, and GitHub never notifies you
+# about your own activity. A comment from github-actions[bot] does notify.
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  notify:
+    if: startsWith(github.event.pull_request.title, 'Update Hiring Pulse data')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mention James
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" \
+            --body "@jriso Hiring Pulse data PR is ready for review and merge."
