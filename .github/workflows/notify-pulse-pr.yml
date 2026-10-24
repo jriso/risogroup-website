@@ -14,10 +14,14 @@ jobs:
     if: startsWith(github.event.pull_request.title, 'Update Hiring Pulse data')
     runs-on: ubuntu-latest
     steps:
+      # The repo is public and the dashboard uses only relative paths, so githack
+      # can serve the PR's commit as a working preview. Pinned to the head SHA at
+      # open time; a later push to the PR won't update this link.
       - name: Mention James
         env:
           GH_TOKEN: ${{ github.token }}
+          PREVIEW_URL: https://rawcdn.githack.com/${{ github.repository }}/${{ github.event.pull_request.head.sha }}/projects/hiring-pulse/
         run: |
           gh pr comment "${{ github.event.pull_request.number }}" \
             --repo "${{ github.repository }}" \
-            --body "@jriso Hiring Pulse data PR is ready for review and merge."
+            --body "@jriso Hiring Pulse data PR is ready for review and merge. Preview: $PREVIEW_URL"

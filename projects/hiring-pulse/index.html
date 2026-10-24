@@ -28,6 +28,12 @@
     <meta property="twitter:description" content="Which tech roles are growing? Engineering, AI, Data, Sales, and more. Live hiring trends from 1,100+ high-growth companies, updated twice weekly.">
     <meta property="twitter:image" content="https://risogroup.co/projects/hiring-pulse/og-image.png">
 
+    <!-- Analytics only fire on the live site, not on PR previews (githack) or localhost -->
+    <script>
+    window.rgTrack = /(^|\.)risogroup\.co$/.test(location.hostname);
+    if (!window.rgTrack) window['ga-disable-G-Z8SP11SCGP'] = true;
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8SP11SCGP"></script>
     <script>
@@ -231,7 +237,7 @@
     <!-- RudderStack Page Tracking -->
     <script>
         window.addEventListener("load", () => {
-            rudderanalytics.page();
+            if (window.rgTrack) rudderanalytics.page();
         });
     </script>
 </body>
