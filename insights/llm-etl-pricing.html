@@ -43,7 +43,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    if(/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)){window['ga-disable-G-Z8SP11SCGP']=true;}
+    if(!/^(www\.)?risogroup\.co$/.test(location.hostname)){window['ga-disable-G-Z8SP11SCGP']=true;}
     gtag('config', 'G-Z8SP11SCGP');
     </script>
 
@@ -71,7 +71,7 @@
         }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkName),"data-rsa-write-key","2qdCnXl6U1fKfCaGAWNs9QMnbAI")
         },
         window.rudderAnalyticsMount()
-        ;var loadOptions={};if(!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname))rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
+        ;var loadOptions={};if(/^(www\.)?risogroup\.co$/.test(location.hostname))rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
     </script>
 
     <!-- Structured Data (JSON-LD) -->
