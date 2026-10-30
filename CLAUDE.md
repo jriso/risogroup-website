@@ -33,7 +33,7 @@ All pages should include the RudderStack SDK snippet in the `<head>` section:
     }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkName),"data-rsa-write-key","2qdCnXl6U1fKfCaGAWNs9QMnbAI")
     },
     window.rudderAnalyticsMount()
-    ;var loadOptions={};rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
+    ;var loadOptions={};if(!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname))rudderanalytics.load("2qdCnXl6U1fKfCaGAWNs9QMnbAI","https://risogroupomyxs.dataplane.rudderstack.com",loadOptions)}}}();
 </script>
 ```
 
