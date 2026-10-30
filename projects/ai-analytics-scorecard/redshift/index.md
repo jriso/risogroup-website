@@ -37,15 +37,15 @@ What counts: Someone types a question the way they would say it out loud and the
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You provide questions in a prompt field and Amazon Q generative SQL responds with suggested SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: Amazon Q generative SQL is the built-in assistant in query editor v2. It writes a working query from a plain-English question; the tutorial shows 'How many venues are there?' producing SELECT COUNT(*). Under the row guidance, writing the query from a description counts as yes even inside a code editor. No preview label appears on the page or its parent section.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You provide questions in a prompt field and Amazon Q generative SQL responds with suggested SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: The built-in Q assistant produces SQL from a question; the parent page explicitly supports English natural-language analysis requests.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "You provide questions in a prompt field and Amazon Q generative SQL responds with suggested SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: In Amazon Redshift query editor v2, Amazon Q generative SQL allows users to type natural-language questions in a prompt field and generates working SQL queries against the connected database.
 
 ### I3: Can you refine the answer by carrying on the conversation?
@@ -56,15 +56,15 @@ What counts: The assistant holds the thread, so you can say “now split that by
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Iteratively ask follow-up questions to get more detailed analysis from the assistant."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The page goes on with an example of a follow-up that relies on the earlier answer: ask 'which state has the most venues?' and then 'which is the most popular venue from this state?'. It also says to correct a query with an instruction such as 'Provide venues from year 2008.' instead of restating the request. So the assistant keeps the conversation thread.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Iteratively ask follow-up questions to get more detailed analysis from the assistant."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The page demonstrates a follow-up about the most popular venue in the state identified by the preceding answer.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Iteratively ask follow-up questions to get more detailed analysis from the assistant."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The documentation instructs users to refine answers by iteratively asking follow-up questions in the chat panel (e.g. asking which state has the most venues, then asking for the most popular venue from that state).
 
 ### V3: Does the answer expose the query or analytical steps used to derive it?
@@ -75,15 +75,15 @@ What counts: The answer exposes the query or analytical steps used to derive it.
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: The assistant's answer is the SQL query itself. The user sees it in the chat panel and can add it to the notebook before running it, so the query behind the answer is always exposed.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You provide questions in a prompt field and Amazon Q generative SQL responds with suggested SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: The assistant exposes the actual generated SQL, which the user can inspect and execute in a notebook.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "It's a coding assistant that generates SQL statements based on your prompts and database schema."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The assistant returns generated SQL queries directly to the user in the chat panel, exposing the analytical steps and query logic.
 
 ### FIELDCITE: Does the answer say which specific tables, columns or metrics it was built from?
@@ -213,15 +213,15 @@ What counts: The assistant can read the calculation behind a chart or table in B
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "If the generated SQL query has errors or does not match your intent, provide instructions to the assistant on how to correct it instead of rephrasing the entire request."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Amazon Q generative SQL works on its previously generated SQL in the notebook's chat panel and revises it on instruction. That is SQL in the editor or notebook, not the calculation behind a chart in BI content, so per the row it is partly. (The quoted sentence spans soft-wrapped lines on the page.)
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "If the generated SQL query has errors or does not match your intent, provide instructions to the assistant on how to correct it instead of rephrasing the entire request."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Q can work from and correct its previous generated SQL in the editor conversation. This is inspection of SQL analyst work; reading the calculation behind a chart in published BI content is not documented.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "If the generated SQL query has errors or does not match your intent, provide instructions to the assistant on how to correct it instead of rephrasing the entire request."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Amazon Q generative SQL can read, iterate upon, and correct its previously generated SQL queries in the notebook chat editor when given instructions by the user, but this inspects SQL in editor/analyst work rather than reading calculations behind charts in published BI content.
 
 ### E_IW: Can the built-in assistant write the calculation behind a chart or table in BI content?
@@ -232,15 +232,15 @@ What counts: The assistant writes or changes the calculation behind a chart or t
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: The assistant writes SQL into a query editor v2 notebook cell, which is analyst work. The row guidance makes that partly. It is not documented writing the calculation behind a chart in BI content.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: The assistant authors a query directly into a notebook SQL cell. The row explicitly credits editor/notebook SQL as partial scope; persistent viewer-facing BI content is not established.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: Under the guidance rule ("Writing SQL in an editor, worksheet or notebook cell is partly"), the assistant writes suggested SQL into a notebook cell in query editor v2.
 
 ### E_OR: Can an outside coding agent read the calculation behind a specific chart or table in BI content?
@@ -292,15 +292,15 @@ What counts: The assistant builds persistent BI content with an owner, permissio
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: What the assistant produces persists only as notebook cells, which is analyst work. Under the row guidance that is partly. It is not documented building governed BI content.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: Q directly creates persistent notebook cells that can be saved/versioned and shared. These are analyst work; publication as governed BI content for viewers is not documented.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: Under the guidance rule ("Analyst work only (a notebook, a SQL file) is partly"), Amazon Q generative SQL builds and adds cells into a notebook (analyst work) rather than persistent governed BI content.
 
 ### D_OR: Can an outside coding agent read the contents of existing BI content?
@@ -350,15 +350,15 @@ What counts: Permitted users can browse or search across the workspace for saved
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "You can share your queries with your team."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-query-share.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-query-share.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142618/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-query-share.html)
   - Reasoning: Team members can see queries shared with their team, where the team is set by the sqlworkbench-team principal tag. That is explicit team sharing, not workspace-wide browse or search, and nothing mentions AI-created work, so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "- You can view queries that are My queries, Shared by me, or Shared to my team. These queries can appear as individual queries or within folders you created."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-save-queries.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-save-queries.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142738/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-save-queries.html)
   - Reasoning: Users can browse saved queries shared to their team, whose membership is controlled through the sqlworkbench-team principal tag. This establishes limited team discovery, but not workspace-wide browse or search covering colleagues' AI-created analytical assets.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "You can use these tags when setting up custom IAM policies or to search for resources."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-getting-started.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-getting-started.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142541/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-getting-started.html)
   - Reasoning: Query editor v2 resources (saved queries and charts) support tags that permitted users can use to search for resources across the workspace.
 
 ## Built-in agents
@@ -397,15 +397,15 @@ What counts: `yes`: a built-in agent can, on its own, cause a named side effect 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "You provide questions in a prompt field and Amazon Q generative SQL responds with suggested SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: The built-in AI (Amazon Q generative SQL) produces suggested SQL that the user adds to the notebook and runs. The overview page says 'Review the generated SQL before running it to ensure accuracy.' Per the row, generating code a person must then run is partly. No notification, webhook or autonomous write is documented. The page has no preview label.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: Amazon Q generates code that a person adds to a notebook, reviews and runs. This meets the row's explicit partial-credit rule for generated code requiring human execution; autonomous notifications, external calls or destination writes are not established.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: Under the guidance rule ("Generating code a person must then run is partly"), Amazon Q generative SQL generates code into notebook cells which a user must then review and run.
 
 ### AGENTESC: Does the documentation describe how an agent hands a task back to a person when it cannot proceed?
@@ -416,15 +416,15 @@ What counts: `yes`: a built-in agent that cannot finish a task stops and hands i
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "I generated SQL, but you'll have to edit it to work with your database."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142135/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html)
   - Reasoning: In the official tutorial, when Amazon Q generative SQL cannot produce valid SQL, it stops and tells the user in the chat to take over the edit. For an unknown entity it says 'I was not able to generate any SQL'. This hand-back happens only inside the conversation, like a clarifying exchange. No notification, review queue or pause awaiting another person's decision is documented, so the row is partly rather than yes.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "In this case, it gives you a message that it was not able to generate SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142135/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html)
   - Reasoning: The built-in assistant stops without generating SQL when the question refers to nonexistent widgets and notifies the person with an inability message. This documents the failure-notification form of handing control back to the user.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "In this case, it gives you a message that it was not able to generate SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142135/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-example.html)
   - Reasoning: The official tutorial documents that when Amazon Q generative SQL cannot generate SQL because the request refers to nonexistent entities (widgets), it stops and notifies the user with an inability message ('I was not able to generate any SQL'), documenting the failure-notification hand-off to the user.
 
 ### AGENTCHAIN: Can a customer configure one agent to delegate a bounded analytical task to another named agent?
@@ -547,7 +547,7 @@ What counts: `yes`: an admin or user can choose a specific named model version f
   - Reasoning: The corpus documents Amazon Q tiers and Redshift ML model choices, but no choice or fixed-version pin for the built-in SQL assistant's model. It also contains no explicit statement establishing that customers cannot choose one.
 - **Gemini 3.8 Flash**: no
   - Quote: "Amazon Q Developer is powered by Amazon Bedrock, and uses cross-region inference to distribute traffic across different AWS Regions to enhance large language model (LLM) inference performance and reliability."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: Model selection and inference are managed entirely by AWS and Amazon Bedrock with no customer option to pin or choose specific model versions.
 
 ### DETERM: Can you preserve the inputs, configuration and logic needed to reproduce or audit a built-in assistant answer?
@@ -558,15 +558,15 @@ What counts: The product preserves the inputs, configuration, model and analytic
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: The prompt and the generated query can be kept together in the notebook. The model, configuration and data snapshot are not documented as preserved, so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: The user can preserve the prompt and generated query together. Model version, complete generation configuration, and a data snapshot are not documented as preserved.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Choose Add to notebook to add a Markdown cell with your prompt and a SQL cell with the suggested SQL to your notebook."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142216/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-interact.html)
   - Reasoning: Users can preserve the prompt and the suggested SQL query together as Markdown and SQL cells in a query editor v2 notebook, keeping the analytical logic and input text, but model versions, configuration snapshots, and data state are not documented as preserved.
 
 ### CORRECT: Does a person’s correction to a built-in assistant answer change its later answers, and does the documentation say how far that reaches?
@@ -577,15 +577,15 @@ What counts: The documentation says a correction a person makes to a built-in as
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "It learns from these errors to produce better SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Submitting error text back to Amazon Q generative SQL is documented to improve its later SQL. The docs do not say how far the learning reaches (that user, others, or the account), so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "It learns from these errors to produce better SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The preceding sentence tells users to submit execution errors back to Q. The documentation says this improves later SQL but does not specify persistence or reach beyond that interaction.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "It learns from these errors to produce better SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Submitting error text back to Amazon Q generative SQL enables it to learn from errors to produce better SQL in later answers, but the documentation does not state the reach (whether it affects only that session, user, or account), earning partly under the guidance rule.
 
 ### CERTMATCH: Does the built-in assistant answer consistently with the product's certified or governed content?
@@ -611,15 +611,15 @@ What counts: A limit that actually blocks the built-in AI's usage once it is rea
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "When using Amazon Q Developer Free tier, the total number of prompts of all users of an AWS account is limited to 1,000 in a month."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142252/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html)
   - Reasoning: A fixed prompt allocation limits use of the built-in AI: 1,000 per account on the Free tier, 1,000 per user on Pro. It is set by the plan tier, not a cap the customer configures, so this is partly.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "When using Amazon Q Developer Pro tier, the total number of prompts that any individual user can submit is limited to 1,000 in a month."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142252/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html)
   - Reasoning: The built-in Q integration enforces a monthly submission limit, satisfying the row's hard AI-usage-limit criterion. The Free tier is capped at 1,000 prompts across the account. These are fixed prompt caps; a configurable dollar budget is not documented.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "When using Amazon Q Developer Free tier, the total number of prompts of all users of an AWS account is limited to 1,000 in a month."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142252/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai-settings.html)
   - Reasoning: A fixed prompt allocation caps built-in AI usage (1,000 prompts per month for all users on Free tier, or 1,000 per user on Pro tier) and blocks usage once reached, but this cap is determined by the tier allocation rather than a customer-configured budget limit, earning partly.
 
 ### LATENCY: Can customers measure the built-in AI’s response time on their own workload by agent, model or evaluation run?
@@ -669,15 +669,15 @@ What counts: A documented control that turns AI features on or off for a subset 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "To use Amazon Q generative SQL, you need permission `sqlworkbench:GetQSqlRecommendations` in your IAM policy, in addition to other permissions specified in the AWS managed policy for query editor v2."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Admins turn the chat capability on for the account in the Generative SQL settings. Each user also needs the dedicated IAM permission sqlworkbench:GetQSqlRecommendations, which can be granted to or withheld from particular IAM users, groups or roles.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "To use Amazon Q generative SQL, you need permission `sqlworkbench:GetQSqlRecommendations` in your IAM policy, in addition to other permissions specified in the AWS managed policy for query editor v2."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: In addition to the account-wide switch, an AI-specific IAM permission gates Q access for individual IAM identities; administrators can grant it to selected users/roles.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "To use Amazon Q generative SQL, you need permission `sqlworkbench:GetQSqlRecommendations` in your IAM policy, in addition to other permissions specified in the AWS managed policy for query editor v2."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Administrators can enable or disable AI features for specific users or groups by granting or withholding the sqlworkbench:GetQSqlRecommendations IAM permission.
 
 ### AIAPPROVE: Can the built-in assistant’s change to a governed analytical asset be held for human approval before it takes effect?
@@ -703,15 +703,15 @@ What counts: The customer controls where inference occurs. A model running in th
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "For example, a request made from a Amazon Q Developer profile created in the US is kept within the AWS Regions in the US."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: The Redshift generative SQL page links to this page for where data is processed. The geography where the customer creates its Amazon Q Developer profile decides which set of regions handles inference. That is a region choice, not inference running in the customer's own environment, so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "With bring your own model (BYOM), you can use a model trained outside of Amazon Redshift with Amazon SageMaker AI for in-database inference locally in Amazon Redshift."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/machine_learning_overview.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/machine_learning_overview.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141207/https://docs.aws.amazon.com/redshift/latest/dg/machine_learning_overview.html)
   - Reasoning: Redshift ML lets the customer import a model for inference inside the warehouse, and the page also distinguishes remote SageMaker endpoints. This establishes location control for SQL ML only; customer control over Q generative SQL inference placement is not established.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The following table describes what Regions your requests may be routed to depending on the geography where the request originated."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: Customers control where inference occurs at the geography level based on where the Amazon Q Developer profile is created (e.g. requests originating in the US geography are routed only to US inference regions), but inference is hosted on AWS-managed Bedrock infrastructure rather than in the customer's own cloud tenant or environment.
 
 ### GOVBIND: Do your existing row-level security and column permissions apply to what the BUILT-IN assistant returns?
@@ -735,15 +735,15 @@ What counts: `yes`: names the services that receive AI prompts or data, what the
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Amazon Q Developer is powered by Amazon Bedrock, and uses cross-region inference to distribute traffic across different AWS Regions to enhance large language model (LLM) inference performance and reliability."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: The docs name the receiving services (Amazon Q Developer, powered by Amazon Bedrock). They also say what is sent: the Redshift page says 'Your input is used as contextual prompts to the FM', and this page says requests and output results may move between regions. Retention is not stated, so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Amazon Q Developer is powered by Amazon Bedrock, and uses cross-region inference to distribute traffic across different AWS Regions to enhance large language model (LLM) inference performance and reliability."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: Q requests are routed to Amazon Bedrock for inference. The Redshift Q page says input is used as contextual prompts and identifies queries/data/schema as protected inputs, but these pages do not state retention duration for AI prompts/data.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Although cross-region inferencing doesn’t change where your data is stored, your requests and output results may move outside of the Region where the data originally resides."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: The documentation names the services (Amazon Q Developer / Amazon Bedrock) and describes data transferred (prompts and output results across regions), but omits data retention duration, earning partly under the guidance rule.
 
 ### AIRESIDENCY: Does the product documentation say where AI requests are processed and stored?
@@ -754,15 +754,15 @@ What counts: `yes`: the product documentation states the regions where AI reques
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Cross-region inference requests are kept within the AWS Regions that are part of the geography where the data originally resides."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: The page lists the processing regions for each geography for Amazon Q generative SQL. It defers storage location to another page outside the corpus, and it does not cover Redshift's other AI features. Processing only, for some features, is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Cross-region inference requests are kept within the AWS Regions that are part of the geography where the data originally resides."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: The page lists Q inference-region sets for the US, Europe, and Asia Pacific, including the Redshift integration. It does not give the storage-region details here or cover storage and processing for all Redshift AI features.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Cross-region inference requests are kept within the AWS Regions that are part of the geography where the data originally resides."
-  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140455/https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/cross-region-processing.html)
   - Reasoning: The documentation specifies the processing regions for cross-region inference by geographic region, but does not state the storage regions within this corpus, earning partly under the guidance rule ("processing without storage, is partly").
 
 ### NOTRAIN: Does the vendor state your data is not used to train AI models, by default?
@@ -773,15 +773,15 @@ What counts: A statement that customer data is not used to train AI models by de
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Your queries, data, and database schemas are not used to train a generative AI foundation model (FM)."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: A plain statement with no opt-out needed: customer queries, data and schemas are not used to train the model.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Your queries, data, and database schemas are not used to train a generative AI foundation model (FM)."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The built-in Q documentation states this protection without requiring an opt-out.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Your queries, data, and database schemas are not used to train a generative AI foundation model (FM)."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The documentation explicitly states that customer queries, data, and schemas are not used to train foundation models.
 
 ### AIRESTRICT: Can an administrator restrict which data the assistant may use, separately from user permissions?
@@ -792,15 +792,15 @@ What counts: `yes`: an administrator can enforce, across the workspace or tenant
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "This field is crucial when you want to limit the scope of SQL queries to a defined subset of available tables."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The query editor v2 administrator uploads a custom context for a cluster or workgroup. Its TablesToInclude, TablesToExclude, ColumnsToInclude and ColumnsToExclude fields limit which tables and columns the assistant considers. These are structured scope settings, separate from user permissions and from the free-text AppendToPrompt guardrails.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Specifies the set of tables that are excluded from SQL generation."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The administrator uploads warehouse custom context containing the product-defined TablesToExclude setting. It excludes tables from Q SQL generation independently of user database permissions; this is a dedicated exclusion field, not a free-text instruction.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The query editor v2 administrator can specify a custom context to tailor the generated SQL to your environment."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: An administrator can restrict the data the assistant considers across the warehouse resource using TablesToInclude, TablesToExclude, ColumnsToInclude, and ColumnsToExclude in custom context, separately from user permissions.
 
 ## Agent access
@@ -813,11 +813,11 @@ What counts: `yes`: an outside agent can act under an identity or token scoped n
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You can also create your own IAM policy that allows access to specific resources."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141911/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html)
   - Reasoning: An outside agent calling the Data API can use its own IAM role. The policy can limit which Data API actions and which clusters or workgroups it may use, and the role maps to its own database user (IAMR:role) with its own grants. That gives the agent a scope narrower than the human's.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can also create your own IAM policy that allows access to specific resources."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141911/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html)
   - Reasoning: An outside agent can use a dedicated IAM role/temporary database identity with a restricted Data API policy and database grants, rather than inheriting all of the human's access. The role mapping and RBAC tutorial show identity-specific restrictions.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Use IAM roles or temporary credentials; avoid long-lived access keys."
@@ -832,15 +832,15 @@ What counts: `yes`: an outside agent can follow a number to its upstream sources
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Shows the definition of a view, including for materialized views and late-binding views."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141408/https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html)
   - Reasoning: An outside agent connected through Redshift's drivers or Data API can run SHOW VIEW and read a view's SQL. From that SQL it can infer the upstream tables and transformations. Redshift's metadata best-practices page recommends SHOW commands for 'tools, including those built with AI agents'. No dedicated lineage interface is documented, and per the row, reading a view's SQL and inferring its sources is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Shows the definition of a view, including for materialized views and late-binding views."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141408/https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html)
   - Reasoning: An outside agent using Redshift's SQL/Data API can inspect view SQL and infer its sources and transformations. This is view-definition inspection, not a documented traversal interface for lineage behind every number.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Shows the definition of a view, including for materialized views and late-binding views."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141408/https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html)
   - Reasoning: An outside agent using Redshift SQL drivers or the Data API can run SHOW VIEW to inspect view definitions and infer upstream source tables and transformations, but Redshift does not provide a dedicated programmatic lineage traversal interface.
 
 ### AGENTAUDIT: Are an outside agent’s actions logged with its identity and the analytical objects affected?
@@ -851,7 +851,7 @@ What counts: The product records actions taken by an outside agent, tied to its 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "When you connect to Amazon Redshift, set the optional application name driver property."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/discovering-metadata-application-name.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/discovering-metadata-application-name.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142100/https://docs.aws.amazon.com/redshift/latest/mgmt/discovering-metadata-application-name.html)
   - Reasoning: This page belongs to the metadata best-practices section, which addresses 'tools, including those built with AI agents'. An outside agent's connections can be tagged with an application name, which the same page says 'appears in the `application_name` column of `SYS_CONNECTION_LOG`' for auditing. That ties the agent's identity to its connections. The page does not record the analytical objects the agent affected, so this is partly.
 - **GPT-6.1 Sol**: nothing found
   - Reasoning: CloudTrail logs API caller identities, but the ExecuteStatement example omits the SQL. No documented outside-agent audit ties a delegated agent identity to the affected analytical objects; general API and user activity logs do not settle this row.
@@ -892,7 +892,7 @@ What counts: A change made by an outside agent to a governed analytical asset ca
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Restores a table from a snapshot to your Amazon Redshift Serverless instance."
-  - Source: https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_RestoreTableFromSnapshot.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_RestoreTableFromSnapshot.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140733/https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_RestoreTableFromSnapshot.html)
   - Reasoning: A table changed through any route, including an outside agent using the Data API, can be restored from a snapshot through the Redshift Serverless API. This is a generic restore. No page says it covers changes made specifically by an outside agent, so it is partly.
 - **GPT-6.1 Sol**: nothing found
   - Reasoning: Query editor v2 can restore saved SQL query versions. These are analyst work, and no outside-agent interface or rollback of an agent's governed analytical asset change is documented.
@@ -920,15 +920,15 @@ What counts: A documented way to enumerate objects, not just fetch one by id. Re
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "If neither `SchemaPattern` nor `TablePattern` are specified, then all tables in the database are returned."
-  - Source: https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140658/https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html)
   - Reasoning: Data API ListTables lists every table without knowing names in advance; ListDatabases and ListSchemas do the same for databases and schemas. The best-practices-discovering-metadata page recommends the driver metadata API and SHOW commands for tools 'including those built with AI agents'.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "If neither `SchemaPattern` nor `TablePattern` are specified, then all tables in the database are returned."
-  - Source: https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140658/https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html)
   - Reasoning: An outside agent can enumerate the database table inventory through the authenticated Data API without knowing table names in advance.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "List the tables in a database."
-  - Source: https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140658/https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html)
   - Reasoning: The Redshift Data API provides the ListTables operation (along with ListDatabases and ListSchemas) to allow outside agents to discover and enumerate tables without knowing their names in advance.
 
 ### AGENTAUTH: Does the vendor document how an outside agent authenticates, a service account, a token, or acting on behalf of a user?
@@ -939,15 +939,15 @@ What counts: A named credential type for programmatic access. Whose permissions 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "The Data API can use either credentials stored in AWS Secrets Manager or temporary database credentials."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141950/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html)
   - Reasoning: Programmatic access through the Data API has named credential types: a Secrets Manager secret, temporary IAM-derived credentials, or IAM Identity Center. The skill also tells agents to use IAM roles or temporary credentials.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "With this method, provide the `secret-arn` of a secret stored in AWS Secrets Manager which has `username` and `password`."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141950/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html)
   - Reasoning: The Data API documents Secrets Manager credentials for programmatic access and also documents IAM-derived temporary credentials; an outside agent can authenticate through these first-party routes.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The Data API can use either credentials stored in AWS Secrets Manager or temporary database credentials."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141950/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html)
   - Reasoning: Outside agents programmatically authenticate with Amazon Redshift using named credential types including AWS Secrets Manager or temporary database credentials.
 
 ### AGENTSKILL: Does the vendor publish skills or packaged instructions that teach an outside agent to use the product?
@@ -958,15 +958,15 @@ What counts: A vendor-published skill, plugin or instruction pack (for example a
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You can also use AI agent skills for natural-language queries (see System table skills for AWS Agent Toolkit on the GitHub website)."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html (checked 2026-10-26; archived https://web.archive.org/web/20261030143105/https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html)
   - Reasoning: The Redshift docs point to an AWS-published SKILL.md (aws/agent-toolkit-for-aws, querying-aws-redshift). It gives outside agents instructions, a decision tree and constraints for enabling, checking and querying Redshift system-table logs. It is vendor-published, not community-built, and no preview label appears.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can also use AI agent skills for natural-language queries (see System table skills for AWS Agent Toolkit on the GitHub website)."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html (checked 2026-10-26; archived https://web.archive.org/web/20261030143105/https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html)
   - Reasoning: Redshift's documentation links the AWS-published Agent Toolkit skills. The captured querying-aws-redshift/SKILL.md packages instructions for outside agents querying Redshift system-table logs.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "You can also use AI agent skills for natural-language queries (see System table skills for AWS Agent Toolkit on the GitHub website)."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html (checked 2026-10-26; archived https://web.archive.org/web/20261030143105/https://docs.aws.amazon.com/redshift/latest/mgmt/system-table-s3-tables.html)
   - Reasoning: Official Redshift documentation explicitly references and links to packaged AI agent skills (querying-aws-redshift with SKILL.md) in the aws/agent-toolkit-for-aws repository.
 
 ### AGENTCLI: Is there a command-line tool documented for use by outside agents?
@@ -996,15 +996,15 @@ What counts: A documented admin control over agent or MCP access, separate from 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "To access the Data API, a user must be authorized."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141753/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html)
   - Reasoning: Admins can allow or deny access to the Data API, the programmatic interface outside agents use, per IAM user, group or role, separately from database grants. The control is not specific to agents or MCP, so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "You can authorize a user to access the Data API by adding a managed policy, which is a predefined AWS Identity and Access Management (IAM) policy, to that user."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141753/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html)
   - Reasoning: An administrator can grant or withhold Data API access through IAM policies on users and roles assigned to groups. This provides partial control over the programmatic route an outside agent could use, separately from database grants, but no agent-specific or MCP-specific rollout control is documented.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "As a best practice, we recommend attaching permissions policies to an IAM role and then assigning it to users and groups as needed."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141753/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-access.html)
   - Reasoning: Administrators can allow or deny access to the Redshift Data API (the programmatic interface used by outside agents) per IAM user, group, or role using IAM policies, separately from database permissions; this is a general API access control rather than an agent-specific access control, earning partly.
 
 ### AGENTLIMIT: Can you cap or rate-limit what outside agents can consume?
@@ -1015,15 +1015,15 @@ What counts: A limit on agent-driven usage (rate limit, quota, spend or compute 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Each API in the Redshift Data API has a transactions per second quota before throttling requests."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141950/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html)
   - Reasoning: A general per-API rate limit, plus caps on active queries and sessions, applies to any Data API caller, agents included. Nothing agent-specific is documented, so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Each API in the Redshift Data API has a transactions per second quota before throttling requests."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141950/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html)
   - Reasoning: Outside agents using the first-party Data API are subject to its enforced API quotas. These are general interface quotas, not limits specific to agent-driven consumption.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "If the rate of request exceeds the quota, a `ThrottlingException` with HTTP Status Code: 400 is returned."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141950/https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html)
   - Reasoning: Under the guidance rule ("A general API rate limit that applies to agents is partly"), the Redshift Data API enforces request rate quotas that throttle agent requests with a ThrottlingException.
 
 ## Business context
@@ -1036,15 +1036,15 @@ What counts: Somewhere to write down what the schema does not say: which custome
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "For example, if your business unit uses a unique way to calculate a value, for example "in manufacturing division total sales is price * revenue" this can be documented here."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The custom context fields CustomDocuments, TableAnnotations, ColumnAnnotations, CuratedQueries and AppendToPrompt let an admin record business definitions the schema does not hold. Amazon Q generative SQL, the vendor's assistant, uses them when generating SQL.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "A custom context provides domain knowledge and preferences to provide fine-grained control over SQL generation."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: For the built-in Q assistant, administrators can supply CustomDocuments, annotations, curated queries, and extra prompt guidance, including business-specific calculation definitions.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "A custom context provides domain knowledge and preferences to provide fine-grained control over SQL generation."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Administrators can upload a custom context JSON file providing business domain knowledge, custom documents, and table/column annotations that teach Amazon Q generative SQL about business logic.
 
 ### C5: Can the business context you give the AI live in version control?
@@ -1055,15 +1055,15 @@ What counts: The business context lives in files you can diff, review and roll b
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "A custom context is defined in a JSON file which can be uploaded by the query editor v2 administrator to Amazon Q generative SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The assistant's business context is a JSON file the admin uploads, so it can be kept and diffed outside the product. The docs describe no version control, review or rollback, so this is partly.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "A custom context is defined in a JSON file which can be uploaded by the query editor v2 administrator to Amazon Q generative SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The built-in assistant's business context is a JSON file, so the actual context artifact can be kept in version control, diffed, reviewed, and rolled back before uploading. A native Git integration is not claimed.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "A custom context is defined in a JSON file which can be uploaded by the query editor v2 administrator to Amazon Q generative SQL."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Custom business context for Amazon Q generative SQL is defined in a JSON file uploaded by an administrator, so it can be maintained, reviewed, and diffed in external version control systems, but version control, diffing, and rollback are not built into the product itself.
 
 ### CTXSCOPE: Can different teams get different business context for the AI, rather than one global set?
@@ -1074,15 +1074,15 @@ What counts: Context attached to a workspace, team, audience or model rather tha
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "A resource specifies the scope or portion of a data asset to which the custom context is applied."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Each custom context entry is tied to a ResourceId, either a cluster id or a Serverless workgroup name. Different warehouses can therefore get different context for Amazon Q generative SQL instead of one tenant-wide set.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "A resource specifies the scope or portion of a data asset to which the custom context is applied."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Q custom context has separate resource entries identified by cluster ID or Serverless workgroup name. Teams using different warehouses can receive different context instead of a single tenant-global instruction set.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "A resource specifies the scope or portion of a data asset to which the custom context is applied."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Custom context is scoped to specific resources (cluster identifier or serverless workgroup name) rather than one global tenant-wide context.
 
 ### CTXTEST: Is there a way to validate business context before it affects the AI’s answers?
@@ -1132,15 +1132,15 @@ What counts: `yes`: a product setting that removes a table, field or answer from
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Use this when certain tables are irrelevant or should not be considered in the query generation process."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: TablesToExclude and ColumnsToExclude are structured settings specific to the AI that take tables or columns out of Amazon Q generative SQL's consideration. They are distinct from the free-text AppendToPrompt guardrails, which would count only as partly.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Specifies the set of tables that are excluded from SQL generation."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The TablesToExclude field is an AI-specific product setting in Q custom context; ColumnsToExclude likewise omits columns from generation. This goes beyond ordinary data permissions or a free-text request to avoid a field.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Specifies the set of tables that are excluded from SQL generation."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Custom context includes settings TablesToExclude and ColumnsToExclude that explicitly mark tables and columns off-limits to the AI during query generation.
 
 ### CTXOWNER: Is there a documented owner or approval workflow for business context?
@@ -1151,15 +1151,15 @@ What counts: `yes`: the documentation names who owns or approves business contex
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "The query editor v2 administrator can specify a custom context to tailor the generated SQL to your environment."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The docs name an owner role, the query editor v2 administrator, for the assistant's business context. No review or approval step for changes is described, so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "The query editor v2 administrator can specify a custom context to tailor the generated SQL to your environment."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: The query editor v2 administrator is the named role responsible for specifying the built-in Amazon Q assistant's business context. The documentation describes no review or approval step for context changes, so the named-owner portion earns partial credit.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The query editor v2 administrator can specify a custom context to tailor the generated SQL to your environment."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html (checked 2026-10-26; archived https://web.archive.org/web/20261030142425/https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-generative-ai.html)
   - Reasoning: Under the guidance rule ("A named owner role with no review step, or a review workflow with no named owner, is partly"), the documentation designates the query editor v2 administrator as the role that specifies and uploads custom context, but describes no review or approval workflow.
 
 ## Warehouse logic
@@ -1198,15 +1198,15 @@ What counts: `yes`: an outside agent can read warehouse-level logic (view defini
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Shows the definition of a view, including for materialized views and late-binding views."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141408/https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html)
   - Reasoning: Redshift is the warehouse. An outside agent connected through the Data API or drivers can run SHOW commands, which the metadata-discovery best practices recommend for tools built with AI agents. SHOW VIEW returns the full definition of views and materialized views, which is warehouse logic rather than just names.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Shows the definition of a view, including for materialized views and late-binding views."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141408/https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html)
   - Reasoning: Redshift exposes actual warehouse view definitions through SHOW VIEW. An outside coding agent can retrieve this logic over the first-party SQL interface/Data API, not merely table/column names.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "For applications and tools, including those built with AI agents, we recommend that you use the driver metadata API or `SHOW` commands for consistent, reliable, and performant metadata discovery."
-  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/best-practices-discovering-metadata.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/mgmt/best-practices-discovering-metadata.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141718/https://docs.aws.amazon.com/redshift/latest/mgmt/best-practices-discovering-metadata.html)
   - Reasoning: Redshift metadata discovery best practices explicitly recommend that tools and applications built with AI agents use SHOW commands (such as SHOW VIEW) or driver metadata APIs to discover warehouse metadata, allowing outside agents to retrieve the SQL definitions of views and materialized views.
 
 ### W_OW: Can an outside coding agent write logic into your warehouse?
@@ -1217,15 +1217,15 @@ What counts: An agent outside the product can author warehouse logic through it.
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Creates a view in a database."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_VIEW.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_VIEW.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141327/https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_VIEW.html)
   - Reasoning: Redshift is the warehouse. An outside agent with Data API credentials can run CREATE VIEW and CREATE MATERIALIZED VIEW through ExecuteStatement, authoring logic that lives in the warehouse.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "The following command creates or replaces a view called myuser from a table called USERS."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_VIEW.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_VIEW.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141327/https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_VIEW.html)
   - Reasoning: The documented CREATE OR REPLACE VIEW SQL interface authors persistent warehouse logic. An outside agent can submit that DDL through ExecuteStatement, subject to its database permissions.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Runs an SQL statement, which can be data manipulation language (DML) or data definition language (DDL)."
-  - Source: https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html (checked 2026-10-26; archived https://web.archive.org/web/20261030140529/https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html)
   - Reasoning: Outside coding agents can execute DDL statements (such as CREATE VIEW and CREATE MATERIALIZED VIEW) directly in Redshift via the Data API's ExecuteStatement action, authoring logic that lives in the warehouse.
 
 ### WHIMPORT: Can it use metric definitions you already maintain outside the tool?
@@ -1277,11 +1277,11 @@ What counts: An agent can see what a field means, its description and business d
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "To view comments, query the PG_DESCRIPTION system catalog."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141253/https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html)
   - Reasoning: Redshift stores a persisted description for tables, views and columns through COMMENT ON. An outside agent connected through Redshift's drivers or Data API can read it back with PG_DESCRIPTION or col_description. The same page's example returns the EVENTID column's meaning, 'Foreign-key reference to the EVENT table.' SHOW COLUMNS also returns a 'remarks' attribute, and the metadata best-practices page recommends SHOW commands for 'tools, including those built with AI agents'. The agent therefore reads what a field means rather than guessing from its name.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "The following example displays a comment on the EVENTID column (column number 5) of the SALES table."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141253/https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html)
   - Reasoning: An outside agent using Redshift's SQL interface can retrieve persisted column meaning with col_description, rather than infer it from names and types. This page demonstrates reading the EVENTID column comment and returns its foreign-key definition; RSQL and Data API provide the documented programmatic SQL routes.
 - **Gemini 3.8 Flash**: nothing found
   - Reasoning: Redshift has no shared metric definition layer or semantic layer for an outside coding agent to read.
@@ -1294,7 +1294,7 @@ What counts: The semantic layer is writable from outside the product.
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Creates or changes a comment about a database object."
-  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html (checked 2026-10-26)
+  - Source: https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html (checked 2026-10-26; archived https://web.archive.org/web/20261030141253/https://docs.aws.amazon.com/redshift/latest/dg/r_COMMENT.html)
   - Reasoning: An outside agent with object ownership or superuser rights can run COMMENT ON through Redshift's drivers or Data API to write a table's or column's shared description. That is writing descriptions only. No metric, dimension or join layer exists to edit, so by analogy with the M_IW guidance this is partly.
 - **GPT-6.1 Sol**: nothing found
   - Reasoning: Redshift SQL can change warehouse objects and comments, but no documented outside interface creates or edits a shared semantic layer of metrics, dimensions or joins. General DDL execution does not by itself establish this object.
