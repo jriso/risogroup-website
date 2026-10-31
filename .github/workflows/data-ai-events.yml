@@ -321,6 +321,8 @@ jobs:
                  --title "Data & AI Events: refresh listing (${EVENTS} events)" \
                  --body "Automated daily refresh of \`${DEST}\`.
 
+          Page: https://risogroup.co/${DEST}/
+
           Built and content-checked before staging. This job re-checks that the
           transfer is intact, then commits.
 
