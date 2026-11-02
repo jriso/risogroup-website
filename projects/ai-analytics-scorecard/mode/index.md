@@ -274,11 +274,11 @@ What counts: An outside agent can change the calculation behind a specific chart
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You can use the API to update a query’s text without accessing the report in the editor."
-  - Source: https://mode.com/developer/api-cookbook/reports/update-query-texts (checked 2026-10-26)
+  - Source: https://mode.com/developer/api-cookbook/reports/update-query-texts (checked 2026-10-26; archived https://web.archive.org/web/20261102070704/https://mode.com/developer/api-cookbook/reports/update-query-texts)
   - Reasoning: PATCH on a specific report query changes the SQL that feeds that query's charts, from outside the product.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can use the API to update a query’s text without accessing the report in the editor."
-  - Source: https://mode.com/developer/api-cookbook/reports/update-query-texts (checked 2026-10-26)
+  - Source: https://mode.com/developer/api-cookbook/reports/update-query-texts (checked 2026-10-26; archived https://web.archive.org/web/20261102070704/https://mode.com/developer/api-cookbook/reports/update-query-texts)
   - Reasoning: An outside agent can PATCH the exact report/query supplying a chart’s data and calculation. Chart styling need not be writable for this row; the chart-to-query path is documented separately.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "To update a query, send a PATCH request including the corresponding report and query tokens to the `queries` resource."
@@ -356,7 +356,7 @@ What counts: An outside agent can create BI content through the vendor's interfa
   - Reasoning: Through the API, an agent can add queries and filters to an existing report. There is no create-report endpoint (the Reports API has get, list, update, delete and archive), and charts can only be read, so building BI content is only partly covered.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "These include writing queries, building, sharing, or distributing reports, and managing members, workspaces, and data."
-  - Source: https://mode.com/developer/api-reference/introduction (checked 2026-10-26)
+  - Source: https://mode.com/developer/api-reference/introduction (checked 2026-10-26; archived https://web.archive.org/web/20260905121502/https://mode.com/developer/api-reference/introduction)
   - Reasoning: The vendor explicitly documents building reports through its API, the first-party route an outside agent can use. Report SQL and layout can be authored externally, and GitHub sync also accepts external report changes into Mode.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Any commit to the default branch in your GitHub repository will automatically trigger a push to Mode."
@@ -594,15 +594,15 @@ What counts: The product preserves the inputs, configuration, model and analytic
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "View History: The running history of each query execution, including the raw code (as written), rendered code (SQL sent to the database after processing all Liquid code), and any data that was returned."
-  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26; archived https://web.archive.org/web/20260417180831/https://mode.com/help/articles/querying-data)
   - Reasoning: AI Assist's answer is SQL generated in this same SQL editor, which the user inserts and runs. The ai-assist page says 'We can insert this code to run the SQL and use the results.' The editor's View History then keeps the executed code and the returned data for that run. Mode keeps the prompt and generation only when a user submits feedback. No record of the model version or AI configuration is documented, so the logic and data are kept but the model and configuration are not. That is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "- View History: The running history of each query execution, including the raw code (as written), rendered code (SQL sent to the database after processing all Liquid code), and any data that was returned. Select a historical query run and click Open to replace the code currently in the query editor with the code from that run."
-  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26; archived https://web.archive.org/web/20260417180831/https://mode.com/help/articles/querying-data)
   - Reasoning: AI Assist’s generated SQL can be inserted and run in this editor; its executed SQL and result data are then inspectable in query history. Mode also retains voluntarily submitted feedback prompts and generations. Neither record documents preserving the exact AI model version, full original prompt and all generation configuration together, so reproduction/audit support is partial.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "View History: The running history of each query execution, including the raw code (as written), rendered code (SQL sent to the database after processing all Liquid code), and any data that was returned."
-  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26; archived https://web.archive.org/web/20260417180831/https://mode.com/help/articles/querying-data)
   - Reasoning: Mode's SQL editor preserves a running 'View History' of each query execution containing the raw SQL code, rendered SQL, and returned data. When a user runs AI-generated SQL, the query logic and resulting data are preserved, but Mode does not record the AI prompt, configuration, or model version alongside it.
 
 ### CORRECT: Does a person’s correction to a built-in assistant answer change its later answers, and does the documentation say how far that reaches?
@@ -843,11 +843,11 @@ What counts: `yes`: an outside agent can act under an identity or token scoped n
   - Reasoning: Discovery API signature tokens are always read-only and cover only the batch API (Reports, Collections, Queries, Charts metadata). They are created from a Workspace admin's API key, so an outside agent can use a credential narrower than the admin's own access. Member tokens, by contrast, mimic the user's full access.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "These tokens mimic the individual user's access to the resources in the Workspace."
-  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26; archived https://web.archive.org/web/20261101224612/https://mode.com/help/articles/api-tokens)
   - Reasoning: An outside agent can use a Member API token, but that token inherits the member’s full access. Workspace tokens are broader admin credentials; neither documented token provides narrower per-agent scopes.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "These tokens mimic the individual user's access to the resources in the Workspace."
-  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26; archived https://web.archive.org/web/20261101224612/https://mode.com/help/articles/api-tokens)
   - Reasoning: Mode Member API tokens mimic the full access of the individual user across the workspace and cannot be scoped narrower than the human's own access.
 
 ### LINEAGE: Can an outside agent traverse the upstream sources and transformations behind a number?
@@ -979,11 +979,11 @@ What counts: A named credential type for programmatic access. Whose permissions 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Member API tokens are meant to be used by a single user for individual use cases, such as updating a specific Report or managing a Collection."
-  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26; archived https://web.archive.org/web/20261101224612/https://mode.com/help/articles/api-tokens)
   - Reasoning: Named credential types for programmatic access are documented: Workspace and Member API tokens (token plus secret, basic auth) and Discovery API signature tokens.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "An API token is used instead of your email address and account password whenever you programmatically authenticate to Mode with basic authentication."
-  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26; archived https://web.archive.org/web/20260617225315/https://mode.com/help/articles/api-reference)
   - Reasoning: The documented API-token and secret credentials with HTTP basic authentication provide a first-party authentication route for an outside agent or script.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "API tokens allow you to connect to Mode’s API programmatically."
@@ -1024,15 +1024,15 @@ What counts: A documented admin control over agent or MCP access, separate from 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "To enable the Member API tokens feature, Admins can navigate to your Workspace Settings > Features > API Keys > Member keys."
-  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26; archived https://web.archive.org/web/20261101224612/https://mode.com/help/articles/api-tokens)
   - Reasoning: Admins can turn member API access on or off for the whole workspace and revoke individual tokens. These are general API controls, not agent-specific controls for chosen users or groups.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "To enable the Member API tokens feature, Admins can navigate to your Workspace Settings > Features > API Keys > Member keys."
-  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-tokens (checked 2026-10-26; archived https://web.archive.org/web/20261101224612/https://mode.com/help/articles/api-tokens)
   - Reasoning: Admins can enable the Member API-token route for a workspace and revoke all or specific issued tokens. This controls the interface used by outside agents separately from data permissions, but no persistent user/group-specific agent allowlist or blocklist is documented.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "To enable the Member API tokens feature, Admins can navigate to your Workspace Settings > Features > API Keys > Member keys."
-  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26; archived https://web.archive.org/web/20260617225315/https://mode.com/help/articles/api-reference)
   - Reasoning: Mode allows administrators to enable or disable Member API token generation at the workspace level, but does not provide granular controls to allow or block agent access for particular users, groups, or individual workspaces.
 
 ### AGENTLIMIT: Can you cap or rate-limit what outside agents can consume?
@@ -1043,15 +1043,15 @@ What counts: A limit on agent-driven usage (rate limit, quota, spend or compute 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "As of today, our API rate limiting is approximately 40 requests every 10 seconds, or 4 requests per second per username."
-  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26; archived https://web.archive.org/web/20260617225315/https://mode.com/help/articles/api-reference)
   - Reasoning: A general API rate limit applies to agents calling the API. No agent-specific cap is documented.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "As of today, our API rate limiting is approximately 40 requests every 10 seconds, or 4 requests per second per username."
-  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26; archived https://web.archive.org/web/20260617225315/https://mode.com/help/articles/api-reference)
   - Reasoning: An outside agent using the Mode API is subject to its documented per-username throttle. This is a general API limit, not a separate customer-configured agent quota or spend cap.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "As of today, our API rate limiting is approximately 40 requests every 10 seconds, or 4 requests per second per username."
-  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/api-reference (checked 2026-10-26; archived https://web.archive.org/web/20260617225315/https://mode.com/help/articles/api-reference)
   - Reasoning: Mode documents a general API rate limit of approximately 40 requests every 10 seconds per username, which applies to programmatic and agent callers but is not separate or specifically configured for agents.
 
 ## Business context
@@ -1121,11 +1121,11 @@ What counts: A named validation, preview, staging or test step for context. Vers
   - Reasoning: No preview, staging or test step for field descriptions or other business context is documented. The Definitions 'Run to test and save' step tests SQL shared definitions, not business context, and no AI is involved.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "- Click Run to test and save your Definition. If the run succeeds, you or anyone else in your Workspace with access to the underlying connection can reference the Definition in their reports."
-  - Source: https://mode.com/help/articles/definitions (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/definitions (checked 2026-10-26; archived https://web.archive.org/web/20261102071024/https://mode.com/help/articles/definitions)
   - Reasoning: For an outside agent reading executable business context through the Definitions API, Mode provides a named Run test of the Definition before its saved logic is available for shared use. This validates the SQL business logic, without claiming an AI-answer evaluation suite.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Click Run to test and save your Definition. If the run succeeds, you or anyone else in your Workspace with access to the underlying connection can reference the Definition in their reports."
-  - Source: https://mode.com/help/articles/definitions (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/definitions (checked 2026-10-26; archived https://web.archive.org/web/20261102071024/https://mode.com/help/articles/definitions)
   - Reasoning: Mode provides a mandatory validation test step ('Click Run to test and save your Definition') ensuring the business logic executes successfully against the warehouse before the Definition can be saved and shared for downstream use, including by an outside agent.
 
 ### CTXSHOWN: Does an answer say which piece of business context shaped it?
@@ -1241,15 +1241,15 @@ What counts: An agent outside the product can author warehouse logic through it.
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Creating, dropping, and altering tables and views"
-  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26; archived https://web.archive.org/web/20260417180831/https://mode.com/help/articles/querying-data)
   - Reasoning: This page lists warehouse DDL among the statements Mode executes against the connected database, given database permissions, which ties SQL execution to warehouse objects such as views. An outside agent can reach this through Mode's first-party REST API. Create a query (POST to the queries resource with raw_query and data_source_id) is at https://mode.com/developer/api-reference/analytics/queries, and Create a report run is at https://mode.com/developer/api-reference/analytics/report-runs. Together they let the agent author view logic in the warehouse through Mode.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "- Creating, dropping, and altering tables and views"
-  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26; archived https://web.archive.org/web/20260417180831/https://mode.com/help/articles/querying-data)
   - Reasoning: Mode explicitly permits DDL against connected databases, including warehouse tables and views, subject to database permissions. An outside agent can submit SQL through the Queries API and execute the report/query via the documented run APIs, so the first-party route can write warehouse logic.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Creating, dropping, and altering tables and views"
-  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/querying-data (checked 2026-10-26; archived https://web.archive.org/web/20260417180831/https://mode.com/help/articles/querying-data)
   - Reasoning: Mode explicitly documents that queries executed against connected databases are not limited to SELECT statements and can execute warehouse DDL including 'Creating, dropping, and altering tables and views'. An outside coding agent can author and execute these statements via Mode's first-party REST API (POST /{account}/reports/{report}/queries), thereby authoring warehouse logic through Mode.
 
 ### WHIMPORT: Can it use metric definitions you already maintain outside the tool?
@@ -1315,7 +1315,7 @@ What counts: An agent can see what a field means, its description and business d
   - Reasoning: Through the API, an outside agent can GET a Dataset's field descriptions, which carry the business meaning of each field. The Definitions endpoints also return shared Definitions.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "To retrieve information about a single Definition, send a GET request including the definition token to the `definitions` resource."
-  - Source: https://mode.com/developer/api-reference/analytics/definitions (checked 2026-10-26)
+  - Source: https://mode.com/developer/api-reference/analytics/definitions (checked 2026-10-26; archived https://web.archive.org/web/20261102070823/https://mode.com/developer/api-reference/analytics/definitions)
   - Reasoning: The Definition response contains its source SQL and description, so an outside agent can read Mode’s maintained shared business logic. Dataset field_descriptions GET additionally exposes field business meanings rather than only column names.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Field descriptions can be added to Datasets to build shared understanding around business and logic definition."
@@ -1330,15 +1330,15 @@ What counts: The semantic layer is writable from outside the product.
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Similar to the example for updating query texts, you can also use the Mode API to update a Definition’s text without going into the Definitions editor."
-  - Source: https://mode.com/developer/api-cookbook/reports/update-definition-texts (checked 2026-10-26)
+  - Source: https://mode.com/developer/api-cookbook/reports/update-definition-texts (checked 2026-10-26; archived https://web.archive.org/web/20260417181010/https://mode.com/developer/api-cookbook/reports/update-definition-texts)
   - Reasoning: The Definitions API supports POST and PATCH, so the shared definition layer is writable from outside Mode.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Similar to the example for updating query texts, you can also use the Mode API to update a Definition’s text without going into the Definitions editor."
-  - Source: https://mode.com/developer/api-cookbook/reports/update-definition-texts (checked 2026-10-26)
+  - Source: https://mode.com/developer/api-cookbook/reports/update-definition-texts (checked 2026-10-26; archived https://web.archive.org/web/20260417181010/https://mode.com/developer/api-cookbook/reports/update-definition-texts)
   - Reasoning: The first-party API lets an outside agent change the SQL source of shared Definitions, not merely documentation. Definition create, PATCH and delete routes are also documented.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "To create a new Definition, send a POST request to the `definitions` resource."
-  - Source: https://mode.com/developer/api-reference/analytics/definitions (checked 2026-10-26)
+  - Source: https://mode.com/developer/api-reference/analytics/definitions (checked 2026-10-26; archived https://web.archive.org/web/20261102070823/https://mode.com/developer/api-reference/analytics/definitions)
   - Reasoning: Mode provides API endpoints to create and update shared Definitions and Dataset field descriptions from outside the product.
 
 ### WHPUSH: Can definitions written in the tool be pushed back down to the warehouse?
@@ -1362,14 +1362,14 @@ What counts: `yes`: the product documents a direct path from a calculation writt
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You can create a dataset directly from a SQL query in an existing report, as long as the query has run successfully and returned a non-zero number of rows."
-  - Source: https://mode.com/help/articles/datasets (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/datasets (checked 2026-10-26; archived https://web.archive.org/web/20260417184821/https://mode.com/help/articles/datasets)
   - Reasoning: A one-off report query can be promoted in place ('Create a Dataset from this Query' > Promote) into a reusable, shareable, schedulable Dataset. No developer has to rewrite it.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "This process takes a snapshot of your SQL query and saves and executes it as a reusable dataset."
-  - Source: https://mode.com/help/articles/datasets (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/datasets (checked 2026-10-26; archived https://web.archive.org/web/20260417184821/https://mode.com/help/articles/datasets)
   - Reasoning: Mode directly promotes a successfully run SQL query from an existing report into a named Dataset in a Collection, without rewriting its calculation. That maintained reusable Dataset can power multiple reports and refresh on a schedule.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "You can create a dataset directly from a SQL query in an existing report, as long as the query has run successfully and returned a non-zero number of rows."
-  - Source: https://mode.com/help/articles/datasets (checked 2026-10-26)
+  - Source: https://mode.com/help/articles/datasets (checked 2026-10-26; archived https://web.archive.org/web/20260417184821/https://mode.com/help/articles/datasets)
   - Reasoning: Mode provides a direct one-click workflow ('Click Promote') to turn a SQL query from an individual report into a maintained shared Dataset without rewriting it.
 

@@ -37,15 +37,15 @@ What counts: Someone types a question the way they would say it out loud and the
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "MotherDuck's AI features help you fix broken queries, rewrite SQL in plain English, and generate queries from scratch — all without leaving the editor."
-  - Source: https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour (checked 2026-10-26; archived https://web.archive.org/web/20260927145448/https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour)
   - Reasoning: The built-in UI AI (Edit) writes queries from a plain-English description inside the editor, which the row counts as yes. Agent chat also answers plain-English questions about data in the UI (key-tasks/ai-and-motherduck/agent-chat). prompt_query is a SQL function and was not relied on.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "MotherDuck's AI features help you fix broken queries, rewrite SQL in plain English, and generate queries from scratch — all without leaving the editor."
-  - Source: https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour (checked 2026-10-26; archived https://web.archive.org/web/20260927145448/https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour)
   - Reasoning: The built-in web editor AI generates SQL from a plain-English request from scratch. This does not require a prebuilt dashboard or an existing SQL query; Agent chat separately supports natural-language Dive creation.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "MotherDuck's AI features help you fix broken queries, rewrite SQL in plain English, and generate queries from scratch — all without leaving the editor."
-  - Source: https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour (checked 2026-10-26; archived https://web.archive.org/web/20260927145448/https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour)
   - Reasoning: MotherDuck allows users to generate SQL queries from scratch using plain English descriptions directly in the editor.
 
 ### I3: Can you refine the answer by carrying on the conversation?
@@ -56,7 +56,7 @@ What counts: The assistant holds the thread, so you can say “now split that by
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Review the suggestion, then iterate with follow-up prompts if needed:"
-  - Source: https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour (checked 2026-10-26; archived https://web.archive.org/web/20260927145448/https://motherduck.com/docs/getting-started/interfaces/motherduck-quick-tour)
   - Reasoning: The built-in Edit assistant keeps the thread so follow-up prompts refine its suggestion. Agent chat also keeps one conversation per Dive. Edit was labeled [Preview] in an April 2025 archived release note, but the current feature pages carry no stage label, so it is treated as GA.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "- **One conversation per Dive.** Sessions are scoped to a specific Dive. Each one has its own chat."
@@ -64,7 +64,7 @@ What counts: The assistant holds the thread, so you can say “now split that by
   - Reasoning: The built-in agent maintains a conversation scoped to a Dive, including its current filters and selections. This supports conversational refinement during the open session; chats are not retained after the tab closes.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "If the suggestion is not as desired, it can be further clarified with follow-up prompts."
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui (checked 2026-10-26; archived https://web.archive.org/web/20260825135731/https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui)
   - Reasoning: MotherDuck supports conversational refinement where initial suggestions can be further clarified with follow-up prompts.
 
 ### V3: Does the answer expose the query or analytical steps used to derive it?
@@ -79,11 +79,11 @@ What counts: The answer exposes the query or analytical steps used to derive it.
   - Reasoning: In Agent chat you can ask how numbers are calculated, and the Dive's source (with its SQL) can be opened. The docs don't say a chat answer automatically shows the query or steps behind it, so this is partial.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "- **MotherDuck UI:** Open the Dive viewer, switch to the **Source** tab, and choose **Find in source** from the menu."
-  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26; archived https://web.archive.org/web/20261009215407/https://motherduck.com/docs/key-tasks/dives)
   - Reasoning: Agent chat writes the Dive code and analytical queries, and the Dive viewer exposes that source for inspection. Thus the generated analytical logic is available with the persistent answer, rather than only a rendered result.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Output of this SQL statement is a single column table that contains the AI-generated SQL query."
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui (checked 2026-10-26; archived https://web.archive.org/web/20260825135731/https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui)
   - Reasoning: MotherDuck's AI functions (such as prompt_sql and UI Edit) output and expose the generated SQL query used to derive the answer.
 
 ### FIELDCITE: Does the answer say which specific tables, columns or metrics it was built from?
@@ -124,7 +124,7 @@ What counts: The AI can clean or reshape data and leaves transformation steps, c
   - Reasoning: Agent chat produces inspectable SQL for data changes but does not run it, and Edit rewrites SQL in the editor. The AI leaves logic for a person to run but does not clean or reshape data itself, so this is partial.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "In the Edit dialog, enter your prompt (e.g., "extract the domain from the url, using a regex") and click Suggest edit."
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui (checked 2026-10-26; archived https://web.archive.org/web/20260825135731/https://motherduck.com/docs/key-tasks/ai-and-motherduck/ai-features-in-ui)
   - Reasoning: The built-in SQL Edit feature reshapes a field from natural-language instructions and leaves the suggested SQL visible for review and application. This is inspectable transformation logic, although the user applies the edit.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "When you ask for a data change, it writes the SQL for you to run."
@@ -360,7 +360,7 @@ What counts: An outside agent can create BI content through the vendor's interfa
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Connect your AI assistant to the MotherDuck MCP Server, then ask it to create a visualization."
-  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26; archived https://web.archive.org/web/20261009215407/https://motherduck.com/docs/key-tasks/dives)
   - Reasoning: Outside agents create persistent Dives with save_dive through MCP, or with the CLI including a PR workflow.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "The `save_dive` tool creates a new Dive in your MotherDuck workspace."
@@ -398,15 +398,15 @@ What counts: Permitted users can browse or search across the workspace for saved
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "This view makes it easier to find Dives created by others in your team."
-  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26; archived https://web.archive.org/web/20261009215407/https://motherduck.com/docs/key-tasks/dives)
   - Reasoning: Settings → Dives lists every Dive in the organization, searchable and filterable by status, including AI-created Dives.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "For a complete list of all Dives in your organization, go to **Settings** → **Dives**."
-  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26; archived https://web.archive.org/web/20261009215407/https://motherduck.com/docs/key-tasks/dives)
   - Reasoning: The organization-wide Dives listing explicitly helps users find Dives created by teammates, including AI-created Dives. Their ability to query underlying data remains permission-bound.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "For a complete list of all Dives in your organization, go to **Settings** → **Dives**."
-  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26; archived https://web.archive.org/web/20261009215407/https://motherduck.com/docs/key-tasks/dives)
   - Reasoning: Users can discover and list all saved Dives across the organization on the Settings → Dives page.
 
 ## Built-in agents
@@ -593,7 +593,7 @@ What counts: The same interface, authored from outside the product.
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "The AI agent handles the SQL, chart configuration, styling and saving."
-  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26; archived https://web.archive.org/web/20261009215407/https://motherduck.com/docs/key-tasks/dives)
   - Reasoning: Outside agents build and save persistent Dive apps through the MCP server (save_dive) or the CLI (dive push).
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "The `save_dive` tool creates a new Dive in your MotherDuck workspace."
@@ -631,7 +631,7 @@ What counts: `yes`: an admin or user can choose a specific named model version f
   - Reasoning: Agent chat documents Amazon Bedrock hosting, and SQL assistant functions document Azure OpenAI integration. Model selection in custom Flight code or general AI functions does not establish a fixed-version choice for the built-in assistant; no explicit prohibition establishes a no verdict either.
 - **Gemini 3.8 Flash**: no
   - Quote: "These capabilities are provided by MotherDuck's integration with Azure OpenAI."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261007092840/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant)
   - Reasoning: MotherDuck uses fixed underlying LLM integrations (Azure OpenAI for SQL Assistant, Amazon Bedrock for Agent chat) with no user or admin configuration to select or pin specific model versions.
 
 ### DETERM: Can you preserve the inputs, configuration and logic needed to reproduce or audit a built-in assistant answer?
@@ -691,11 +691,11 @@ What counts: A limit that actually blocks the built-in AI's usage once it is rea
   - Reasoning: An admin-adjustable per-session cap on AI Units exists, but only for the Advanced AI functions (prompt, embedding, prompt_jev). No cap is documented for Agent chat or the SQL assistant.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "When the AI session cap has been reached or an unexpected error occurs while computing prompt responses, the function returns `NULL` for the affected rows instead of failing the entire query."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/prompt (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/prompt (checked 2026-10-26; archived https://web.archive.org/web/20261023175936/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/prompt)
   - Reasoning: A real session cap stops Advanced AI-function responses, and admins can change the cap. This covers those built-in AI functions; it does not establish a cap for Agent chat or every SQL-assistant feature.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The AI session cap safeguards your spend; it is not a throughput limit."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/prompt (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/prompt (checked 2026-10-26; archived https://web.archive.org/web/20261023175936/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/prompt)
   - Reasoning: MotherDuck provides an admin-configurable per-session cap on AI Units that blocks execution of Advanced AI functions (prompt, embedding, prompt_jev) once reached, but no spend cap is documented for Agent chat or the SQL assistant.
 
 ### LATENCY: Can customers measure the built-in AI’s response time on their own workload by agent, model or evaluation run?
@@ -861,15 +861,15 @@ What counts: A statement that customer data is not used to train AI models by de
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "The data processed by MotherDuck's AI functionality is **not** used for model training."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261007092840/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant)
   - Reasoning: An unconditional statement that data processed by MotherDuck's AI is not used for training, with no opt-out required. Agent chat's page adds that Bedrock does not share prompts with model providers.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "The data processed by MotherDuck's AI functionality is **not** used for model training."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261007092840/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant)
   - Reasoning: MotherDuck states the policy for its AI functionality without requiring a customer opt-out.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The data processed by MotherDuck's AI functionality is **not** used for model training."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261007092840/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant)
   - Reasoning: MotherDuck explicitly guarantees that customer data processed by its AI functionality is not used for model training.
 
 ### AIRESTRICT: Can an administrator restrict which data the assistant may use, separately from user permissions?
@@ -880,15 +880,15 @@ What counts: `yes`: an administrator can enforce, across the workspace or tenant
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "You can specify which tables and columns should be considered using the optional `include_tables` parameter."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261007092840/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant)
   - Reasoning: The SQL assistant can be limited per call with include_tables, a scope the caller sets rather than an admin-enforced, tenant-wide restriction. Agent chat simply uses the user's own permissions.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "You can specify which tables and columns should be considered using the optional `include_tables` parameter."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261007092840/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant)
   - Reasoning: The built-in SQL assistant supports table/column scoping per invocation. The caller supplies this scope; the documentation does not establish an admin-enforced workspace/tenant restriction separate from user permissions. Agent chat otherwise uses the user's account permissions.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "You can specify which tables and columns should be considered during SQL generation using the `include_tables` parameter."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant/prompt-sql (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant/prompt-sql (checked 2026-10-26; archived https://web.archive.org/web/20260515041028/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/ai-functions/sql-assistant/prompt-sql)
   - Reasoning: The prompt_sql assistant function can be scoped per invocation with the include_tables parameter, but this is a caller-specified scope rather than an administrator-enforced tenant-wide restriction separate from user permissions.
 
 ## Agent access
@@ -920,11 +920,11 @@ What counts: `yes`: an outside agent can follow a number to its upstream sources
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "List views in database: `SELECT database_name, schema_name, view_name, comment, sql FROM duckdb_views() WHERE database_name = 'your_database';`"
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents (checked 2026-10-26; archived https://web.archive.org/web/20260614101340/https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents)
   - Reasoning: An outside agent can read a view's SQL and work out its sources, which the row counts as partial. There is no documented lineage interface, and list_views returns no definitions or dependencies.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "- List views in database: `SELECT database_name, schema_name, view_name, comment, sql FROM duckdb_views() WHERE database_name = 'your_database';`"
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents (checked 2026-10-26; archived https://web.archive.org/web/20260614101340/https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents)
   - Reasoning: The documented outside-agent schema workflow reads a warehouse view's defining SQL, from which upstream sources and transformations can be inferred. It is not a traversable product lineage graph.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The `query` tool executes SQL queries against your MotherDuck databases."
@@ -947,7 +947,7 @@ What counts: The product records actions taken by an outside agent, tied to its 
   - Reasoning: This explicitly ties outside-MCP activity to its delegated service-account identity. QUERY_HISTORY retains the executed SQL, which identifies the analytical objects accessed; individual application-user question logging remains the customer's responsibility.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The `MD_INFORMATION_SCHEMA.QUERY_HISTORY` view provides a consolidated view of all queries run across an organization."
-  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/md_information_schema/query_history (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/motherduck-sql-reference/md_information_schema/query_history (checked 2026-10-26; archived https://web.archive.org/web/20261011170719/https://motherduck.com/docs/sql-reference/motherduck-sql-reference/md_information_schema/query_history)
   - Reasoning: Outside agent queries land in the general QUERY_HISTORY view under the connection's token identity (service account or OAuth user), with USER_NAME and USER_AGENT columns, but there is no dedicated agent-specific audit log tracking affected analytical objects.
 
 ### APPROVE: Can an outside agent’s change to a governed analytical asset be held for human approval?
@@ -996,7 +996,7 @@ What counts: A change made by an outside agent to a governed analytical asset ca
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Users can ask their agent to refer to and clone prior versions for continued iterations."
-  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/dives (checked 2026-10-26; archived https://web.archive.org/web/20261009215407/https://motherduck.com/docs/key-tasks/dives)
   - Reasoning: Every agent edit to a Dive is saved as a version, and earlier versions can be restored by the agent or with MD_GET_DIVE_VERSION plus MD_UPDATE_DIVE_CONTENT (documented 'Roll back' example).
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Use this to read the code that was live at an earlier point, or to restore it by passing it back to [`MD_UPDATE_DIVE_CONTENT`](../md-update-dive-content)."
@@ -1123,7 +1123,7 @@ What counts: A limit on agent-driven usage (rate limit, quota, spend or compute 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "**Query timeout:** 55 seconds. Queries exceeding this limit will be cancelled server-side and the tool will respond with an error message."
-  - Source: https://motherduck.com/docs/sql-reference/mcp/core/query-rw (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/mcp/core/query-rw (checked 2026-10-26; archived https://web.archive.org/web/20261102071609/https://motherduck.com/docs/sql-reference/mcp/core/query-rw)
   - Reasoning: The MCP query tools have fixed result-size and timeout limits, and read-scaling pool size bounds concurrency. There is no customer-configurable quota, rate limit or spend cap for agents.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "- **Query timeout:** 55 seconds, to stay within common client timeouts. Queries exceeding this limit will be cancelled server-side and the tool will respond with an error message."
@@ -1228,7 +1228,7 @@ What counts: The specific instruction, description or rule surfaced with the ans
   - Reasoning: For an outside agent using MotherDuck Guides, the page's Guide-routing test inspects tool calls/logs to establish which Guide it opened or skipped. This reveals context use through logs, rather than surfacing the specific business instruction with the answer. Guides are labeled Preview in the release notes.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "You can inspect which SQL query the MCP executed by expanding the tool call in the conversation:"
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows (checked 2026-10-26; archived https://web.archive.org/web/20261011171235/https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows)
   - Reasoning: Which business context Guide or query was retrieved by an agent is visible only by expanding tool call logs in the client conversation; the final response text does not surface the specific business rule or context instruction that shaped it.
 
 ### CTXINHERIT: Can the AI use column descriptions, dbt docs or warehouse comments as context?
@@ -1239,7 +1239,7 @@ What counts: Context ingested from the warehouse or a modelling tool, not retype
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Agents read comments on every schema introspection."
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows (checked 2026-10-26; archived https://web.archive.org/web/20261011171235/https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows)
   - Reasoning: Table and column comments set with COMMENT ON in the warehouse are returned by the MCP schema tools (list_columns, list_views), so agents use them as context without retyping.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Agents read comments on every schema introspection."
@@ -1330,11 +1330,11 @@ What counts: `yes`: an outside agent can read warehouse-level logic (view defini
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "List views in database: `SELECT database_name, schema_name, view_name, comment, sql FROM duckdb_views() WHERE database_name = 'your_database';`"
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents (checked 2026-10-26; archived https://web.archive.org/web/20260614101340/https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents)
   - Reasoning: The vendor's agent query guide tells agents how to read view SQL definitions through MotherDuck. get_flight and flight pull also return Flight transformation source.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "- List views in database: `SELECT database_name, schema_name, view_name, comment, sql FROM duckdb_views() WHERE database_name = 'your_database';`"
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents (checked 2026-10-26; archived https://web.archive.org/web/20260614101340/https://motherduck.com/docs/key-tasks/ai-and-motherduck/building-analytics-agents)
   - Reasoning: The outside-agent instructions explicitly retrieve the defining SQL of warehouse views, going beyond table/column names and types. Agents can run this through MotherDuck's documented SQL query route.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Macros encapsulate reusable SQL logic; knowing which ones exist helps the AI assistant reuse them instead of rebuilding the logic in every query."
@@ -1353,11 +1353,11 @@ What counts: An agent outside the product can author warehouse logic through it.
   - Reasoning: Outside agents create and edit Flights, the warehouse-side ingest and transformation jobs, through the MCP server. query_rw can also change schema. Flights are GA (Sept 3, 2026).
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Use the MotherDuck MCP to create a table with the result instead of returning all rows in the chat."
-  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows (checked 2026-10-26; archived https://web.archive.org/web/20261011171235/https://motherduck.com/docs/key-tasks/ai-and-motherduck/mcp-workflows)
   - Reasoning: The documented outside-agent workflow persists generated query results as a warehouse table, with CREATE TABLE AS SELECT specified elsewhere on this page. Together with the first-party query_rw schema-write tool, this establishes writing a warehouse transformation rather than only producing a local SQL file.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The `query_rw` tool executes SQL against your MotherDuck databases, including operations that change data or schema."
-  - Source: https://motherduck.com/docs/sql-reference/mcp/core/query-rw (checked 2026-10-26)
+  - Source: https://motherduck.com/docs/sql-reference/mcp/core/query-rw (checked 2026-10-26; archived https://web.archive.org/web/20261102071609/https://motherduck.com/docs/sql-reference/mcp/core/query-rw)
   - Reasoning: Outside agents can create and alter warehouse logic, tables, views, and schemas using the query_rw MCP tool.
 
 ### WHIMPORT: Can it use metric definitions you already maintain outside the tool?

@@ -37,15 +37,15 @@ What counts: Someone types a question the way they would say it out loud and the
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Sigma Assistant is a natural language query (NLQ) interface that allows you to ask questions about your data and interact with AI-generated responses."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Sigma Assistant, the built-in assistant, takes plain-English questions in the 'Ask me anything about your data' box and answers them by running its own queries. No SQL or existing dashboard is needed.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Sigma Assistant is a natural language query (NLQ) interface that allows you to ask questions about your data and interact with AI-generated responses."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: The built-in Assistant accepts natural-language data questions and generates answers, queries, and charts without a prebuilt dashboard.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Sigma Assistant is a natural language query (NLQ) interface that allows you to ask questions about your data and interact with AI-generated responses."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Users can ask questions in plain English and Sigma Assistant generates answers and queries against connected data platforms.
 
 ### I3: Can you refine the answer by carrying on the conversation?
@@ -56,15 +56,15 @@ What counts: The assistant holds the thread, so you can say “now split that by
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You can continue to ask follow-up questions to refine your analysis or understanding of the data source."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: The same step's example is the follow-up 'Please break down sales by region', which Assistant answers in the context of the earlier question. The page also says Assistant iterates 'without losing context'.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Assistant uses multi-step reasoning to handle comparisons, trends, rankings, forecasts, and time-based or geographic questions, and supports conversations, so you can ask follow-up questions and iterate on a specific data analysis task without losing context."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: The built-in Assistant explicitly retains conversational context for follow-up analysis.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Assistant uses multi-step reasoning to handle comparisons, trends, rankings, forecasts, and time-based or geographic questions, and supports conversations, so you can ask follow-up questions and iterate on a specific data analysis task without losing context."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Sigma Assistant maintains multi-turn conversational context, allowing users to ask follow-up questions and refine answers iteratively.
 
 ### V3: Does the answer expose the query or analytical steps used to derive it?
@@ -75,15 +75,15 @@ What counts: The answer exposes the query or analytical steps used to derive it.
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Click **View SQL** to review the exact query Assistant sent to your data platform."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Each Assistant response has 'Worked for...' and 'Gathered data from...' panels showing its steps, plus the exact SQL it ran.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Click **View SQL** to review the exact query Assistant sent to your data platform."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: The response exposes its exact executed SQL, alongside expandable reasoning and query results.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Click **View SQL** to review the exact query Assistant sent to your data platform."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Sigma Assistant exposes the exact SQL query sent to the underlying data platform for users to inspect the analytical steps.
 
 ### FIELDCITE: Does the answer say which specific tables, columns or metrics it was built from?
@@ -94,15 +94,15 @@ What counts: Named tables, columns or metrics attached to the answer, such as a 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Review the sources used by Assistant throughout your conversation."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: The summary panel lists the specific tables and data models the answer used (for example F_SALES). No column- or metric-level citation is documented apart from the SQL text, which belongs to V3, so this is partial.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "* Review the sources used by Assistant throughout your conversation. Select a source to preview the data and confirm it is the relevant source. When previewing a source, click **Open table** or **Open data model** () to open the source in a new tab."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Assistant exposes named table and data-model sources in its conversation summary panel; the page illustrates F_SALES among the sources. This is conversation-level source attribution, rather than a specific table, column, or metric citation attached to each answer. Generated SQL is not counted as field citation.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Review the sources used by Assistant throughout your conversation."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Sigma Assistant cites the tables and data sources used to construct answers in a conversation summary, but does not attach citations for specific individual columns or metrics.
 
 ### FILEUPLOAD: Can the AI analyze a CSV or spreadsheet a user uploads?
@@ -151,15 +151,15 @@ What counts: The AI joins or blends at least two sources, for example two databa
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Data sources can be from different connections."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: A Sigma agent can be given data sources from different connections and uses them together. The agents overview adds that it reasons 'across multiple related data sources, even if those sources are in different connections'.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "* **Sophisticated analysis of complex datasets**: An agent can perform sophisticated analysis such as "Identify unused servers by analyzing the currently running applications and server inventory" by reasoning across multiple related data sources, even if those sources are in different connections."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: A built-in Sigma agent combines information across related sources, explicitly including different connections; this exceeds joining tables in one database.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "An agent can perform sophisticated analysis such as "Identify unused servers by analyzing the currently running applications and server inventory" by reasoning across multiple related data sources, even if those sources are in different connections."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Sigma agents can reason across and combine multiple data sources in a single analysis, even across different database connections.
 
 ### VIZCHOOSE: Can the AI select and create a visualization suited to the analytical question?
@@ -170,15 +170,15 @@ What counts: The AI selects and creates a chart or table suited to the question,
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Review responses and explore AI-generated charts and tables."
-  - Source: https://help.sigmacomputing.com/docs/getting-started-with-ai (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/getting-started-with-ai (checked 2026-10-26; archived https://web.archive.org/web/20260819151534/https://help.sigmacomputing.com/docs/getting-started-with-ai)
   - Reasoning: Assistant generates the chart or table itself in answer to the question (the region question returns a bar chart), and the user can add it to a workbook.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Extract factual information from your data, identify the drivers behind a metric, detect anomalies and get guided next steps, segment your data into meaningful groups, or ask questions that generate charts you can explore in a workbook."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: The built-in Assistant can generate charts from analytical questions rather than requiring the user to choose an existing visualization.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "When Sigma Assistant includes a chart in its response, you can click **Add to workbook** to add it directly to the workbook canvas."
-  - Source: https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook (checked 2026-10-26; archived https://web.archive.org/web/20261102040611/https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook)
   - Reasoning: Sigma Assistant autonomously selects and creates chart visualizations suited to the user's natural language question and adds them to the workbook.
 
 ### INVESTIGATE: Can the AI identify what contributed to a change, with calculations a person can check?
@@ -189,15 +189,15 @@ What counts: `yes`: the built-in assistant breaks a change down into contributin
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Extract factual information from your data, identify the drivers behind a metric, detect anomalies and get guided next steps, segment your data into meaningful groups, or ask questions that generate charts you can explore in a workbook."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Assistant is documented to identify the drivers behind a metric. No documented output breaks a change into per-segment contributions with a calculation a person can check, so this is partial.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "* **Analyze key drivers of customer satisfaction**: Based on customer satisfaction survey data, an agent can identify, explain, and rank the drivers that contribute to low or high customer satisfaction scores. For specific customers represented in the survey data, the agent can send Slack or Microsoft Teams messages, such as to notify customer success managers about accounts that might be a churn risk."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Built-in agents identify and rank drivers, and Assistant supports questions about a sales dip. Neither passage establishes a calculated segment-by-segment contribution to a change that a person can verify.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Based on customer satisfaction survey data, an agent can identify, explain, and rank the drivers that contribute to low or high customer satisfaction scores."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Sigma agents can identify and rank drivers contributing to metrics, but do not provide inspectable mathematical segment contribution tables.
 
 ### FORECAST: Can the AI produce a forecast and expose the assumptions behind it?
@@ -208,15 +208,15 @@ What counts: The AI creates a forecast and exposes its horizon, inputs and assum
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Assistant uses multi-step reasoning to handle comparisons, trends, rankings, forecasts, and time-based or geographic questions, and supports conversations, so you can ask follow-up questions and iterate on a specific data analysis task without losing context."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Assistant produces forecasts, but nothing says the answer exposes the forecast's horizon, inputs, or assumptions. Partial.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Assistant uses multi-step reasoning to handle comparisons, trends, rankings, forecasts, and time-based or geographic questions, and supports conversations, so you can ask follow-up questions and iterate on a specific data analysis task without losing context."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: The built-in Assistant explicitly handles forecasts, but its forecast horizon, inputs, and assumptions are not documented as exposed. The separate Python forecasting recipe requires a customer-provided model.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "An agent can run forecasting calculations based on the contents of an input table and informed by policy documents in an external system, then present results in a structured format for review and approval."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Sigma agents can execute forecasting calculations based on input data and external documents, but do not automatically break out and expose underlying statistical assumptions, confidence intervals, or mathematical parameters.
 
 ### SCENARIO: Can the AI calculate and compare what-if scenarios, each with its changed assumptions stated?
@@ -227,15 +227,15 @@ What counts: A user can define more than one what-if scenario with the AI, the c
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "When performing scenario analysis, the agent can state assumptions and uncertainty, and evaluate the output of a possible scenario compared with real outcomes provided in an input table."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: A Sigma agent can generate what-if scenarios and state their assumptions. The documented comparison is a scenario against real outcomes, not several scenarios calculated side by side, so this is partial.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "* **Perform scenario analysis for strategic planning**: An agent can analyze possible scenarios that could affect the product supply chain by generating what-if scenarios based on user inputs and data, running scenarios using external models defined in Python code or stored procedures. When performing scenario analysis, the agent can state assumptions and uncertainty, and evaluate the output of a possible scenario compared with real outcomes provided in an input table."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: The built-in agent can generate scenarios and state assumptions. Calculation depends on customer-defined external models, and the documentation does not establish first-party calculation and side-by-side comparison of multiple scenarios.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "When performing scenario analysis, the agent can state assumptions and uncertainty, and evaluate the output of a possible scenario compared with real outcomes provided in an input table."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Sigma agents can evaluate what-if scenarios against input tables and state assumptions, but do not provide automated side-by-side scenario modeling matrices.
 
 ### FRESHNESS: Does the answer expose data freshness or staleness to the user?
@@ -339,11 +339,11 @@ What counts: The assistant can open existing BI content and work from what it sh
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "When viewing the published version of a workbook, you can use Sigma Assistant to ask about the entire workbook or specific elements, or you can ask it to reason about the workbook data."
-  - Source: https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook (checked 2026-10-26; archived https://web.archive.org/web/20261102040611/https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook)
   - Reasoning: Assistant opens existing published workbooks (BI content) and answers from their pages and elements.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Sigma Assistant lets you ask natural language questions about workbook data and content."
-  - Source: https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook (checked 2026-10-26; archived https://web.archive.org/web/20261102040611/https://help.sigmacomputing.com/docs/sigma-assistant-in-the-workbook)
   - Reasoning: The built-in Assistant works from existing published workbooks, their pages and elements, and the data they show.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "**Sigma Assistant in the workbook** lets you ask natural language questions about workbook data when viewing a workbook, and build or edit dashboards and apps using natural language when editing a workbook draft."
@@ -455,15 +455,15 @@ What counts: An assistant someone configures once, with its own instructions, da
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Sigma agents are specific to a workbook, based on the predefined context of the data elements in the workbook and the access granted on the workbook."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: A Sigma agent is configured once with instructions, data sources, and tools and saved in a workbook. Colleagues with workbook access reuse it through a chat element, the API, or MCP, and the workbook's grants control their access.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Sigma agents are specific to a workbook, based on the predefined context of the data elements in the workbook and the access granted on the workbook."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: A saved built-in Sigma agent has workbook-scoped instructions, data, tools, and access. Colleagues with workbook access reuse it through its chat element.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Instructions and data sources provide the context, while actions and agents configured in your data platform provide the tools for an agent to take action or enrich insights."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Sigma supports building reusable, configurable agents with customized instructions, data sources, and tools to automate analytical workflows.
 
 ### AGENTSCHED: Can the product’s AI or an agent rerun a defined analysis on a schedule or trigger and deliver a fresh result or alert?
@@ -474,15 +474,15 @@ What counts: The product’s AI or an agent can rerun a defined analytical task 
 
 - **Claude Opus 5.5**: yes, preview
   - Quote: "When an automated action sequence calls an agent, the agent runs once with the prompt included with the configured action, then runs its available tools (such as querying data sources), and returns structured output."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: A Sigma agent can rerun on a schedule with no user present, query fresh data, and deliver output via Slack, Teams, or email. The automated action sequences that run it are labeled '(Beta)', so the stage is preview.
 - **GPT-6.1 Sol**: yes, preview
   - Quote: "In this example, an agent runs every night to review the last 24 hours of usage data across multiple sources and send an email with the summary."
-  - Source: https://help.sigmacomputing.com/docs/example-agent-implementations (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/example-agent-implementations (checked 2026-10-26; archived https://web.archive.org/web/20261102061136/https://help.sigmacomputing.com/docs/example-agent-implementations)
   - Reasoning: The scheduled task actually reruns a Sigma agent on fresh usage data and delivers its result by email. The automated action sequence feature used to schedule it is public beta.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "You can call an agent as part of an automated action sequence to automate multi-step workflows that gather data, generate structured output, and trigger downstream actions without any user interaction."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: Sigma agents can be called within automated action sequences triggered by schedules, events, or webhooks to run analyses and downstream actions autonomously.
 
 ### AGENTACT: Can an agent do something beyond answering, write back, notify, call another system?
@@ -493,15 +493,15 @@ What counts: `yes`: a built-in agent can, on its own, cause a named side effect 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "For specific customers represented in the survey data, the agent can send Slack or Microsoft Teams messages, such as to notify customer success managers about accounts that might be a churn risk."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Using action tools, a Sigma agent can itself send Slack, Teams, or email notifications, call APIs, and write to input tables. Those are side effects outside the analytics content.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "* **Cluster and segment prospective customers**: An agent can review metadata for prospective customers and identify meaningful clusters. For each cluster, the agent can summarize why each segment is different, then suggest specific actions to take for each group. For example, accelerate prospective customer outreach by prompting the agent to draft an email message and send it to a list of relevant recipients in each cluster, then call an API to update an internal outreach tracker."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: A built-in agent can send emails and call an external API through configured action tools. These are side effects outside analytical content.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "A notification action uses the action variables to send the summary and description to a Slack channel, Microsoft Teams, or email."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: Sigma agents can execute actions beyond answering questions, such as calling webhook and notification actions that post summaries to Slack, Microsoft Teams, or email, or modifying input tables.
 
 ### AGENTESC: Does the documentation describe how an agent hands a task back to a person when it cannot proceed?
@@ -512,15 +512,15 @@ What counts: `yes`: a built-in agent that cannot finish a task stops and hands i
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "If your question is vague, Assistant might prompt you to clarify what you're asking for before responding."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Only in-conversation clarifying questions are documented. Tool approval prompts gate actions; they are not a hand-off when the agent cannot proceed. No notification or review-queue hand-off exists for built-in agents.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "If your question is vague, Assistant might prompt you to clarify what you're asking for before responding."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: The built-in Assistant asks the user for clarification. No general stop-and-escalate mechanism for blocked tasks is established.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "If your question is vague, Assistant might prompt you to clarify what you're asking for before responding."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Sigma Assistant prompts the user for clarification when a question is ambiguous, but there is no documented formal escalation or handoff to a designated human analyst or team when the AI cannot answer.
 
 ### AGENTCHAIN: Can a customer configure one agent to delegate a bounded analytical task to another named agent?
@@ -531,15 +531,15 @@ What counts: A customer can configure one agent to delegate a bounded analytical
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "A Sigma agent can function as an orchestrator, instructing a set of warehouse agents to perform narrowly scoped tasks on specific data sources, and summarizing the responses to inform further analysis or take action in Sigma."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: The customer adds named Snowflake Cortex or Databricks Genie agents as tools on a Sigma agent, each with a description of when to call it and access controlled by 'Can use' grants. The Sigma agent then delegates bounded tasks to them.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "A Sigma agent can function as an orchestrator, instructing a set of warehouse agents to perform narrowly scoped tasks on specific data sources, and summarizing the responses to inform further analysis or take action in Sigma."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: A customer adds named warehouse agents as tools, supplies descriptions and routing instructions, and grants access to those tools. The documented RECENT_SALES example is explicit bounded delegation.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "A Sigma agent can function as an orchestrator, instructing a set of warehouse agents to perform narrowly scoped tasks on specific data sources, and summarizing the responses to inform further analysis or take action in Sigma."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: A Sigma agent can orchestrate and delegate bounded analytical tasks to other named warehouse agents (such as Snowflake Cortex Agents or Databricks Genie Agents) configured as tools.
 
 ### MCPCLIENT: Can the built-in assistant connect out to external tools or MCP servers you configure?
@@ -613,7 +613,7 @@ What counts: The assistant creates a persistent first-class app with an owner, p
   - Reasoning: Assistant builds persistent workbook apps (input tables, forms, actions) on live governed data, with an owner and permissions.
 - **GPT-6.1 Sol**: yes, preview
   - Quote: "Assistant builds the app using an input table, form, and actions that record and clear form entries."
-  - Source: https://help.sigmacomputing.com/docs/app-tutorial-data-collection (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/app-tutorial-data-collection (checked 2026-10-26; archived https://web.archive.org/web/20260819151516/https://help.sigmacomputing.com/docs/app-tutorial-data-collection)
   - Reasoning: The built-in Assistant constructs a persistent native app in a saved workbook, with live warehouse-backed input-table writes and normal ownership/access controls. This is shipped Assistant generation, not a person implementing an AI capability from general-purpose primitives.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Accelerate the development of AI-powered apps from idea to working product."
@@ -725,7 +725,7 @@ What counts: The documentation says a correction a person makes to a built-in as
 
 - **Claude Opus 5.5**: no
   - Quote: "To help the agent remember important context from conversations, add an input table to your workbook and create an action tool for the agent to use."
-  - Source: https://help.sigmacomputing.com/docs/example-agent-implementations (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/example-agent-implementations (checked 2026-10-26; archived https://web.archive.org/web/20261102061136/https://help.sigmacomputing.com/docs/example-agent-implementations)
   - Reasoning: The only documented way for something a user tells a Sigma agent to change its later answers is this example. The customer builds 'agent memory' themselves from general tools: an input table, an Insert row action tool, instructions telling the agent to use it, and the table added back as a data source. The grading standard says a tutorial showing how to build a capability yourself with the vendor's general-purpose tools is customer-built, and customer-built capabilities earn no. No first-party feature is documented. Assistant feedback ('Good response'/'Bad response', with details shared with Sigma) and the Explain-this-chart Helpful/Not helpful buttons only rate answers. Editing data model AI context is configuration an editor changes, not a correction to an answer.
 - **GPT-6.1 Sol**: nothing found
   - Reasoning: The documented response rating sends feedback to Sigma, without saying it changes later answers. Editing published AI context changes later chats, but the documentation does not connect a correction to an assistant answer to that mechanism. The agent-memory example describes a customer-configured storage workflow, not a documented correction-learning capability.
@@ -860,7 +860,7 @@ What counts: `yes`: the built-in assistant's change to governed BI content or sh
   - Reasoning: Assistant's build-mode changes stay in a workbook draft until the same user publishes them. Protected version tags have named approvers, but that workflow is not documented for AI changes, and agent tool approvals go only to the requester. Partial.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Use a protected tag to enforce a request approval process for setting tags on workbook, data model, or report versions."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-version-tags (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-version-tags (checked 2026-10-26; archived https://web.archive.org/web/20260813221113/https://help.sigmacomputing.com/docs/create-and-manage-version-tags)
   - Reasoning: Protected tags route general content promotion requests to designated approvers, but the documentation does not connect this enforcement to Assistant changes. Assistant build work also stays in a requester-edited draft; this is only partial approval coverage.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Plan mode gathers context, makes decisions, and outlines a structured approach without building or editing anything."
@@ -896,15 +896,15 @@ What counts: `yes`: the documentation states that the built-in assistant answers
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "For example, if row-level security or column-level security is applied to a data source, Sigma Assistant only works with data that you have access to."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Sigma Assistant runs as the asking user, so existing row-level and column-level security applies to what it returns. The workbook page says the same: 'Sigma Assistant inherits your permissions and data access.'
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "By default, warehouse agents such as a Snowflake Cortex Agent or a Databricks Genie Agent use the data in your data platform directly, so any data transformations and restrictions applied to your data in Sigma, such as row-level security, are not applied when you interact with the agent from Sigma."
-  - Source: https://help.sigmacomputing.com/docs/use-warehouse-agents-sigma (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/use-warehouse-agents-sigma (checked 2026-10-26; archived https://web.archive.org/web/20261102034146/https://help.sigmacomputing.com/docs/use-warehouse-agents-sigma)
   - Reasoning: Native Sigma Assistant respects the asking user’s row and column security, but warehouse-agent surfaces available within Assistant explicitly bypass Sigma-applied restrictions. The row prescribes partly for this documented exception.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "All data access grants that apply elsewhere in Sigma also apply in Sigma Assistant."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Sigma Assistant strictly binds to the user's data access permissions, enforcing row-level security and column-level restrictions on all generated queries.
 
 ### AIDATAFLOW: Does the product documentation say which services receive AI prompts or data, and what they receive?
@@ -915,15 +915,15 @@ What counts: `yes`: names the services that receive AI prompts or data, what the
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "When you use the **Explain this chart** feature, Sigma captures a snapshot of the chart and passes this image, along with the chart’s underlying data, to your configured AI provider."
-  - Source: https://help.sigmacomputing.com/docs/explain-visualizations-with-ai (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/explain-visualizations-with-ai (checked 2026-10-26; archived https://web.archive.org/web/20260810161742/https://help.sigmacomputing.com/docs/explain-visualizations-with-ai)
   - Reasoning: The docs name the receiving service (the configured AI provider or warehouse model) and what it receives. The AI notice says prompts, input data, customer data, and user info are sent. Retention at the provider is not stated (only Sigma's chat history retention is), so this is partial.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "* When you configure an External AI Model , Input Data , Prompts , Customer Data , and User Information used for AI-enabled features will be sent to that External AI Model under your organization’s API credentials and will be handled per that External AI Model’s terms and your configuration."
-  - Source: https://help.sigmacomputing.com/docs/notice-for-enabling-ai-enabled-features-in-sigma (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/notice-for-enabling-ai-enabled-features-in-sigma (checked 2026-10-26; archived https://web.archive.org/web/20261102034148/https://help.sigmacomputing.com/docs/notice-for-enabling-ai-enabled-features-in-sigma)
   - Reasoning: The documentation names possible receiving providers and identifies inputs, prompts, customer data, and user information sent to the selected service. It does not establish retention periods at all receiving services.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "When you enable a Warehouse AI Model , your Input Data , Prompts , Customer Data , and User Information are transmitted to the AI/LLM hosted or run by your Data Warehouse ."
-  - Source: https://help.sigmacomputing.com/docs/notice-for-enabling-ai-enabled-features-in-sigma (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/notice-for-enabling-ai-enabled-features-in-sigma (checked 2026-10-26; archived https://web.archive.org/web/20261102034148/https://help.sigmacomputing.com/docs/notice-for-enabling-ai-enabled-features-in-sigma)
   - Reasoning: Sigma documents that when enabling a warehouse AI model, input data, prompts, customer data, and user information are transmitted to the warehouse LLM, but it does not specify retention periods for all external providers.
 
 ### AIRESIDENCY: Does the product documentation say where AI requests are processed and stored?
@@ -995,7 +995,7 @@ What counts: `yes`: an outside agent can act under an identity or token scoped n
   - Reasoning: The documented API issues an impersonation bearer token for another user and performs calls under that identity. An admin can delegate a narrower non-admin identity to an outside agent rather than its full admin access.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Connect your AI assistant to the Sigma MCP server so it can search documents, query data, and build workbooks using the same permissions you have in your Sigma organization."
-  - Source: https://help.sigmacomputing.com/docs/interact-with-ai-tools (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/interact-with-ai-tools (checked 2026-10-26; archived https://web.archive.org/web/20261102010356/https://help.sigmacomputing.com/docs/interact-with-ai-tools)
   - Reasoning: Outside agents connecting through the Sigma MCP server act under the delegated permissions of the authorizing user, without separate narrower scoping specific to the agent.
 
 ### LINEAGE: Can an outside agent traverse the upstream sources and transformations behind a number?
@@ -1044,11 +1044,11 @@ What counts: `yes`: an outside agent's change to governed BI content or shared d
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Use a protected tag to enforce a request approval process for setting tags on workbook, data model, or report versions."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-version-tags (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-version-tags (checked 2026-10-26; archived https://web.archive.org/web/20260813221113/https://help.sigmacomputing.com/docs/create-and-manage-version-tags)
   - Reasoning: When an outside agent edits a workbook over MCP, 'Sigma publishes a new version' immediately. Protected version tags provide named approvers, but that general workflow is not documented for agent changes, so this is partial.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Use a protected tag to enforce a request approval process for setting tags on workbook, data model, or report versions."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-version-tags (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-version-tags (checked 2026-10-26; archived https://web.archive.org/web/20260813221113/https://help.sigmacomputing.com/docs/create-and-manage-version-tags)
   - Reasoning: This is a general document promotion workflow with designated approvers, not a policy holding outside-agent writes. MCP edits immediately publish a version, and agent action approvals are skipped through the API.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The Sigma MCP server cannot create workbooks in a shared folder, even if you have **Can edit** access to the folder."
@@ -1063,15 +1063,15 @@ What counts: A reviewer can see a before/after diff of changes an outside agent 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Each published version includes a detailed list of changes, called the edit history."
-  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26; archived https://web.archive.org/web/20260819145706/https://help.sigmacomputing.com/docs/workbook-versions-and-version-history)
   - Reasoning: Version and edit history lets editors review and compare changes. Nothing says it is a diff of changes made by an outside agent, so this is the generic case: partial.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "You can use the version and edit history to review drafted changes, compare or revert to older published versions, identify who on your team made a specific edit or set of changes, or identify which version is tagged with a specific version tag."
-  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26; archived https://web.archive.org/web/20260819145706/https://help.sigmacomputing.com/docs/workbook-versions-and-version-history)
   - Reasoning: Sigma provides general workbook change comparison and edit history. The documentation does not explicitly show a before/after diff of changes made by an outside agent.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Each published version includes a detailed list of changes, called the edit history."
-  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26; archived https://web.archive.org/web/20260819145706/https://help.sigmacomputing.com/docs/workbook-versions-and-version-history)
   - Reasoning: Sigma provides an edit history listing changes for workbook versions, but this is a generic change history rather than a diff specifically covering changes made by an outside agent.
 
 ### AGENTUNDO: Can an outside agent’s change to a governed analytical asset be rolled back?
@@ -1086,11 +1086,11 @@ What counts: A change made by an outside agent to a governed analytical asset ca
   - Reasoning: An outside agent's MCP edit becomes a new published version in version history. The version-history page documents 'Restore version as draft' to revert to an earlier published version.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "To return a workbook to a previously published version, or to a specific change in the workbook version history, restore a previous change or version to draft."
-  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26; archived https://web.archive.org/web/20260819145706/https://help.sigmacomputing.com/docs/workbook-versions-and-version-history)
   - Reasoning: MCP edits publish a new workbook version, and version history can restore its predecessor and republish it. This reverts governed workbook content, not separately written input-table data.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "To return a workbook to a previously published version, or to a specific change in the workbook version history, restore a previous change or version to draft."
-  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/workbook-versions-and-version-history (checked 2026-10-26; archived https://web.archive.org/web/20260819145706/https://help.sigmacomputing.com/docs/workbook-versions-and-version-history)
   - Reasoning: Changes made to workbooks, including those made by external agents or the MCP server, can be reverted by restoring an earlier change or published version from the workbook version history.
 
 ### MCPSERVER: Does the vendor support an MCP server with documented authentication for outside agents?
@@ -1177,15 +1177,15 @@ What counts: A vendor-supported command-line tool whose documentation addresses 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Simplify requests to the Sigma REST API for users and AI assistants"
-  - Source: https://help.sigmacomputing.com/docs/sigma-cli (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-cli (checked 2026-10-26; archived https://web.archive.org/web/20261102040207/https://help.sigmacomputing.com/docs/sigma-cli)
   - Reasoning: Sigma's CLI is documented for AI assistants, and a vendor 'sigma-cli' agent skill exists. Non-interactive authentication works through API client-credential profiles.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "* Simplify requests to the Sigma REST API for users and AI assistants"
-  - Source: https://help.sigmacomputing.com/docs/sigma-cli (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-cli (checked 2026-10-26; archived https://web.archive.org/web/20261102040207/https://help.sigmacomputing.com/docs/sigma-cli)
   - Reasoning: Sigma supports a CLI explicitly intended for AI assistants, including structured API commands and saved API-client-credential profiles for noninteractive requests.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Configure the Sigma CLI to give agents simple, structured commands for the Sigma REST API."
-  - Source: https://help.sigmacomputing.com/docs/interact-with-ai-tools (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/interact-with-ai-tools (checked 2026-10-26; archived https://web.archive.org/web/20261102010356/https://help.sigmacomputing.com/docs/interact-with-ai-tools)
   - Reasoning: Sigma provides and documents a first-party CLI specifically designed to give AI agents structured commands for the Sigma REST API.
 
 ### AGENTROLLOUT: Can an administrator allow or block outside-agent access for particular users, groups or workspaces?
@@ -1236,11 +1236,11 @@ What counts: Somewhere to write down what the schema does not say: which custome
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Add organization-specific context, such as the fiscal year quarters that your organization uses to conduct business or the names of subsidiary organizations."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: Agent instructions hold business context that the Sigma agent reads before answering. Data models also take AI context for Sigma Assistant (Beta).
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "* Add organization-specific context, such as the fiscal year quarters that your organization uses to conduct business or the names of subsidiary organizations."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: Customers put business knowledge into built-in Sigma agent instructions read when the agent answers. Data-model AI context is an additional beta mechanism.
 - **Gemini 3.8 Flash**: yes, preview
   - Quote: "Add AI context to a data model to improve the accuracy and consistency of Sigma Assistant responses when answering questions that use the data model as a source."
@@ -1274,11 +1274,11 @@ What counts: Context attached to a workspace, team, audience or model rather tha
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Sigma agents are specific to a workbook, based on the predefined context of the data elements in the workbook and the access granted on the workbook."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Context belongs to a single agent in a workbook, and data model AI context belongs to a single model. Different teams can get different context; there is no single global set.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Sigma agents are specific to a workbook, based on the predefined context of the data elements in the workbook and the access granted on the workbook."
-  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/sigma-agents (checked 2026-10-26; archived https://web.archive.org/web/20260810162016/https://help.sigmacomputing.com/docs/sigma-agents)
   - Reasoning: Built-in agents have different workbook-specific instructions and data, with workbook access controlling their audiences. This supports team-specific context rather than one tenant-wide instruction set.
 - **Gemini 3.8 Flash**: yes, preview
   - Quote: "You can add AI context to a data model to help [Sigma Assistant](/docs/ask-natural-language-queries-with-assistant) better understand how to use your data model as a data source."
@@ -1388,7 +1388,7 @@ What counts: When your definitions live in dbt or a warehouse semantic view, the
   - Reasoning: The corpus establishes Assistant using Sigma data-model metrics, relationships, and descriptions, including imported dbt descriptions. It does not establish Assistant using warehouse-level definitions such as dbt model logic or warehouse semantic views. General access to warehouse data and separate warehouse-agent integrations do not settle that object and actor.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Sigma Assistant can answer questions about any data source that you have access to."
-  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant (checked 2026-10-26; archived https://web.archive.org/web/20261102010035/https://help.sigmacomputing.com/docs/ask-natural-language-queries-with-assistant)
   - Reasoning: Sigma Assistant directly reads tables, views, schemas, and logic defined in the connected cloud data warehouse.
 
 ### W_IW: Can the built-in assistant write logic into your warehouse?
@@ -1467,7 +1467,7 @@ What counts: The assistant answers using the metrics, dimensions and joins your 
   - Reasoning: The built-in Assistant uses shared metrics, and the adjacent relationship guidance establishes joins from the shared Sigma data model.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "If the data source contains metrics, and the columns used by the metric are visible in the data element, the agent can use the metrics."
-  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/build-agents (checked 2026-10-26; archived https://web.archive.org/web/20261102034503/https://help.sigmacomputing.com/docs/build-agents)
   - Reasoning: Sigma agents can read and use predefined metrics from data sources when the columns used by the metric are visible in the data element.
 
 ### M_IW: Can the built-in assistant change your shared definitions?
@@ -1535,15 +1535,15 @@ What counts: Work modelled in the BI tool can be written back out so it lives in
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Instead of storing data in a database table, a warehouse view saves a SQL statement that expresses specific query logic defined by an individual data element or input table in Sigma."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views (checked 2026-10-26; archived https://web.archive.org/web/20260819201438/https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views)
   - Reasoning: Logic modeled in Sigma can be saved to the data platform as a warehouse view.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Instead of storing data in a database table, a warehouse view saves a SQL statement that expresses specific query logic defined by an individual data element or input table in Sigma."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views (checked 2026-10-26; archived https://web.archive.org/web/20260819201438/https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views)
   - Reasoning: Sigma publishes element logic as a warehouse-resident SQL view that stays linked to published Sigma definitions.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Warehouse views are virtual tables saved to your data platform."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views (checked 2026-10-26; archived https://web.archive.org/web/20260819201438/https://help.sigmacomputing.com/docs/create-and-manage-workbook-warehouse-views)
   - Reasoning: Sigma allows definitions and analytical elements written in the tool to be saved back down to the data platform as virtual tables (warehouse views) queryable by other applications.
 
 ### PROMOTE: Can a one-off calculation be turned into a maintained shared definition the whole team reuses?
@@ -1554,14 +1554,14 @@ What counts: `yes`: the product documents a direct path from a calculation writt
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You can also create a data model from a table in a workbook."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-data-models (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-data-models (checked 2026-10-26; archived https://web.archive.org/web/20260812041456/https://help.sigmacomputing.com/docs/create-and-manage-data-models)
   - Reasoning: A workbook table and its calculations become a shared, reusable data model in a few menu clicks (Advanced options > Create data model). No developer has to rewrite them.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can also create a data model from a table in a workbook."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-data-models (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-data-models (checked 2026-10-26; archived https://web.archive.org/web/20260812041456/https://help.sigmacomputing.com/docs/create-and-manage-data-models)
   - Reasoning: The direct Create data model action converts an existing analysis table, including its calculated-column logic, into reusable model content that can be published and shared without a developer rewriting the calculation.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "You can also create a data model from a table in a workbook."
-  - Source: https://help.sigmacomputing.com/docs/create-and-manage-data-models (checked 2026-10-26)
+  - Source: https://help.sigmacomputing.com/docs/create-and-manage-data-models (checked 2026-10-26; archived https://web.archive.org/web/20260812041456/https://help.sigmacomputing.com/docs/create-and-manage-data-models)
   - Reasoning: Sigma allows users to promote an ad-hoc table or calculation in a workbook into a reusable, governed shared data model.
 
