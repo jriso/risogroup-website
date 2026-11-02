@@ -149,7 +149,7 @@ What counts: The AI joins or blends at least two sources, for example two databa
   - Reasoning: No documentation found for built-in Metabot joining or blending distinct data sources in one analysis. Layering charts from different databases and uploading a CSV are documented separately; neither establishes Metabot combining those sources.
 - **Gemini 3.8 Flash**: no
   - Quote: "You can only pick tables and saved questions that are from the same database as your starting data."
-  - Source: https://www.metabase.com/docs/latest/questions/query-builder/join (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/questions/query-builder/join (checked 2026-10-26; archived https://web.archive.org/web/20261021153335/https://www.metabase.com/docs/latest/questions/query-builder/join)
   - Reasoning: Metabase's query engine and query builder explicitly restrict queries and joins to tables and saved questions within the same database, preventing queries across multiple disparate data sources.
 
 ### VIZCHOOSE: Can the AI select and create a visualization suited to the analytical question?
@@ -275,7 +275,7 @@ What counts: An outside agent can retrieve, through the vendor's API, CLI, MCP s
   - Reasoning: An outside agent can read a specific question, including its query, through the vendor CLI or API.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "- MBQL queries (in Cards and elsewhere) are now serialized as MBQL 5 as opposed to MBQL 4 (aka legacy MBQL) in the application database and in REST API responses. While we do not officially support editing or introspection of MBQL via the REST API (please treat it as an opaque object), to support existing usages the `GET /api/card/:id` endpoint can return the Card `dataset_query` as MBQL 4 if you include the query parameter `?legacy-mbql=true`."
-  - Source: https://www.metabase.com/docs/latest/developers-guide/api-changelog (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/developers-guide/api-changelog (checked 2026-10-26; archived https://web.archive.org/web/20261102072628/https://www.metabase.com/docs/latest/developers-guide/api-changelog)
   - Reasoning: A documented per-card GET retrieves the query behind a specific saved question/chart, without downloading a whole workbook. The MBQL representation has an explicit introspection-support caveat; the supported agent CLI also documents reading question content.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "`mb` logs in to a Metabase instance and lets you or an AI agent read and write content over the Metabase API: questions, dashboards, collections, transforms, and more."
@@ -406,15 +406,15 @@ What counts: Permitted users can browse or search across the workspace for saved
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Searches consider items' titles, descriptions, and other metadata — you can even search the contents of your SQL queries."
-  - Source: https://www.metabase.com/docs/latest/exploration-and-organization/exploration (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/exploration-and-organization/exploration (checked 2026-10-26; archived https://web.archive.org/web/20261009154042/https://www.metabase.com/docs/latest/exploration-and-organization/exploration)
   - Reasoning: Search across the whole instance finds colleagues' saved items in any collection the user can view. That includes saved Metabot-created questions.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "As long as you're not the first user in your team's Metabase, the easiest way to start exploring your data is by looking at dashboards, charts, and lists that your teammates have already created."
-  - Source: https://www.metabase.com/docs/latest/exploration-and-organization/exploration (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/exploration-and-organization/exploration (checked 2026-10-26; archived https://web.archive.org/web/20261009154042/https://www.metabase.com/docs/latest/exploration-and-organization/exploration)
   - Reasoning: The page documents shared collections, workspace-wide content search, creator filters, and restriction of results to collections the user may view. Metabot-created charts saved to those collections use the same asset mechanism.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The command palette lets you create new things, search your content, or jump to anywhere in your Metabase."
-  - Source: https://www.metabase.com/docs/latest/exploration-and-organization/exploration (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/exploration-and-organization/exploration (checked 2026-10-26; archived https://web.archive.org/web/20261009154042/https://www.metabase.com/docs/latest/exploration-and-organization/exploration)
   - Reasoning: Permitted users can search and browse saved questions, dashboards, and models created across the workspace using the command palette and collections.
 
 ## Built-in agents
@@ -427,7 +427,7 @@ What counts: An assistant someone configures once, with its own instructions, da
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "System prompts let you customize instructions for Metabot."
-  - Source: https://www.metabase.com/docs/latest/ai/system-prompts (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/ai/system-prompts (checked 2026-10-26; archived https://web.archive.org/web/20260814184312/https://www.metabase.com/docs/latest/ai/system-prompts)
   - Reasoning: Admins can set Metabot's instructions (system prompts), its data scope (collection, verified content) and which groups may use it, and everyone then shares it. But this is one instance-wide assistant (plus an embedded variant). Users cannot save separate assistants for colleagues to reuse.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Each tab has its own enable toggle, verified or curated content setting, allowed collection, and prompt suggestions."
@@ -1046,7 +1046,7 @@ What counts: A documented way to enumerate objects, not just fetch one by id. Re
   - Reasoning: MCP search and browse tools, and the Agent API's search for tables and metrics, let an outside agent list what exists.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "- `GET /api/collection/tree` and `GET /api/collection/:id/items` These API endpoints will always return official collections first, before other items in the collection."
-  - Source: https://www.metabase.com/docs/latest/developers-guide/api-changelog (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/developers-guide/api-changelog (checked 2026-10-26; archived https://web.archive.org/web/20261102072628/https://www.metabase.com/docs/latest/developers-guide/api-changelog)
   - Reasoning: The documented API enumerates the collection tree and collection contents without requiring a known dashboard/question ID. Outside agents can use these authenticated APIs; MCP also documents browsing and searching.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The MCP server gives your agent tools for searching, browsing, querying, and creating content in your Metabase."
@@ -1262,7 +1262,7 @@ What counts: `yes`: a product setting that removes a table, field or answer from
   - Reasoning: The AI-specific trusted-content setting excludes tables and saved answers outside its allowlist, independently of ordinary permissions. Content must be outside all three allowed categories to be excluded; this is not a per-column deprecation claim.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "System prompts can only influence Metabot's behavior, not its access."
-  - Source: https://www.metabase.com/docs/latest/ai/system-prompts (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/ai/system-prompts (checked 2026-10-26; archived https://web.archive.org/web/20260814184312/https://www.metabase.com/docs/latest/ai/system-prompts)
   - Reasoning: Admins can instruct Metabot in system prompts to avoid specific tables or fields. Guidance written into the AI's instructions telling it not to use something is followed by the model but not enforced, which earns partly.
 
 ### CTXOWNER: Is there a documented owner or approval workflow for business context?
@@ -1273,15 +1273,15 @@ What counts: `yes`: the documentation names who owns or approves business contex
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Use this owner attribute to let people know who on your team is responsible for which table."
-  - Source: https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables (checked 2026-10-26; archived https://web.archive.org/web/20261021153302/https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables)
   - Reasoning: Tables, and the metadata the AI reads from them, can have a named owner, and Data Analysts curate the Library. No review or approval step for context changes is documented.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Use this owner attribute to let people know who on your team is responsible for which table."
-  - Source: https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables (checked 2026-10-26; archived https://web.archive.org/web/20261021153302/https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables)
   - Reasoning: Metabase supports a named responsible owner for a table, whose descriptions and field metadata supply business context to built-in Metabot according to AI settings. This is partial ownership coverage; no review or approval step for business-context changes is documented.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Table **owner** can be a Metabase user or an arbitrary email address."
-  - Source: https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables (checked 2026-10-26; archived https://web.archive.org/web/20261021153302/https://www.metabase.com/docs/latest/data-modeling/metadata/managing-tables)
   - Reasoning: Metabase documents an owner attribute for tables to assign responsibility for data assets, but lacks a review/approval step for changes. Under the rule, a named owner role with no review step is partly.
 
 ## Warehouse logic
@@ -1449,7 +1449,7 @@ What counts: Work modelled in the BI tool can be written back out so it lives in
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Runs the transform to create the output table in your database."
-  - Source: https://www.metabase.com/docs/latest/data-modeling/transforms/query (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/data-modeling/transforms/query (checked 2026-10-26; archived https://web.archive.org/web/20261011034220/https://www.metabase.com/docs/latest/data-modeling/transforms/query)
   - Reasoning: Models can be converted to transforms that write tables into the warehouse, and content is repointed to them. The logic itself stays in Metabase as a transform, not as warehouse code.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Conversion creates a transform from the model's query, runs it to produce the output table, and then updates all questions and dashboards that used the model to use the transform's table instead."
@@ -1476,6 +1476,6 @@ What counts: `yes`: the product documents a direct path from a calculation writt
   - Reasoning: The create-model-from-saved-question workflow directly converts an existing analysis into a reusable model, preserving its query and calculated columns without a developer re-expressing the calculation.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "You can turn a question saved to a collection into a model to let others know that the results make a good starting point for new questions."
-  - Source: https://www.metabase.com/docs/latest/questions/introduction (checked 2026-10-26)
+  - Source: https://www.metabase.com/docs/latest/questions/introduction (checked 2026-10-26; archived https://web.archive.org/web/20261008174453/https://www.metabase.com/docs/latest/questions/introduction)
   - Reasoning: Metabase provides a direct path to turn any question saved in a collection into a shared model without rewriting the logic.
 

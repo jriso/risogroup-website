@@ -172,7 +172,7 @@ What counts: The AI selects and creates a chart or table suited to the question,
   - Reasoning: The built-in report-generation AI chooses and creates the report analytics and visual blocks from an analytical use case and dataset. The user chooses the use case, rather than specifying a chart to restyle.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Auto Insights uses Recommended Charts to connect the best charts with the insights shown."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/create-insights/edit-missions.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/create-insights/edit-missions.html (checked 2026-10-26; archived https://web.archive.org/web/20260615170137/https://help.alteryx.com/aac/en/auto-insights/create-insights/edit-missions.html)
   - Reasoning: Alteryx Auto Insights automatically selects and creates visualizations suited to the discovered insights using Recommended Charts.
 
 ### INVESTIGATE: Can the AI identify what contributed to a change, with calculations a person can check?
@@ -187,11 +187,11 @@ What counts: `yes`: the built-in assistant breaks a change down into contributin
   - Reasoning: Built-in Alteryx Agents perform root-cause analysis of changes. The agent pages do not document a per-segment contribution breakdown with a checkable calculation. Auto Insights' What Caused This contributions are a classic feature that the agent is not documented to use.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Let’s take a look at this example, where we see Loyalist customers had contributed to a 0.31 increase in the overall average price for that month (0.2 increase)."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/contributions-explained.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/contributions-explained.html (checked 2026-10-26; archived https://web.archive.org/web/20260520093137/https://help.alteryx.com/aac/en/auto-insights/find-insights/contributions-explained.html)
   - Reasoning: Auto Insights documents segment contributions to a metric change, including positive and negative contributions and a worked contribution formula on this page. Its What Caused This AI analysis is also documented, and built-in Alteryx Agents support root-cause analysis.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Within the What Caused This section, for averages and ratios are 3 main columns: the main metric, numerator changes, and denominator changes."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/contributions-explained.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/contributions-explained.html (checked 2026-10-26; archived https://web.archive.org/web/20260520093137/https://help.alteryx.com/aac/en/auto-insights/find-insights/contributions-explained.html)
   - Reasoning: Auto Insights calculates and displays segment contributions in 'What Caused This', breaking down metric changes into segment influences with verifiable mathematical calculations.
 
 ### FORECAST: Can the AI produce a forecast and expose the assumptions behind it?
@@ -204,11 +204,11 @@ What counts: The AI creates a forecast and exposes its horizon, inputs and assum
   - Reasoning: Alteryx Agents list trend, root cause, common cause and outlier analysis, with no forecasting. Auto Insights, the engine behind them, states it 'does not do predictive modeling or forecasting'. The Ask Alteryx supported-tool list has no forecasting or time-series tools. Forecasting exists in Alteryx Machine Learning and the Designer predictive tools, but no page says the built-in AI produces a forecast.
 - **GPT-6.1 Sol**: no
   - Quote: "- Auto Insights does not do predictive modeling or forecasting–predictive modeling requires business acumen, knowledge, judgment, and overlays. However, if you have your own forecast scores, you can upload them into Auto Insights to trend and analyze."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/prepare-data.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/prepare-data.html (checked 2026-10-26; archived https://web.archive.org/web/20260510135043/https://help.alteryx.com/aac/en/auto-insights/prepare-data.html)
   - Reasoning: Auto Insights explicitly excludes forecasting. The documented built-in Agent analysis inventory and Ask Alteryx supported tool inventory provide no forecasting route; classic Designer time-series tools are not documented as driven by the assistant.
 - **Gemini 3.8 Flash**: no
   - Quote: "- Auto Insights does not do predictive modeling or forecasting–predictive modeling requires business acumen, knowledge, judgment, and overlays."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/prepare-data.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/prepare-data.html (checked 2026-10-26; archived https://web.archive.org/web/20260510135043/https://help.alteryx.com/aac/en/auto-insights/prepare-data.html)
   - Reasoning: The documentation explicitly states as a negative limit that Auto Insights does not perform predictive modeling or forecasting.
 
 ### SCENARIO: Can the AI calculate and compare what-if scenarios, each with its changed assumptions stated?
@@ -358,7 +358,7 @@ What counts: The assistant builds persistent BI content with an owner, permissio
   - Reasoning: The built-in AI creates a persistent Custom Report backed by a selected dataset; its data/insight blocks refresh with that dataset. This page documents report ownership and editor/viewer access, and sharing makes it an Alteryx One governed asset.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "- Select Open report for your preferred use case, and your automatically generated report opens in a new tab."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/playbooks-with-your-data.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/playbooks-with-your-data.html (checked 2026-10-26; archived https://web.archive.org/web/20260715192959/https://help.alteryx.com/aac/en/auto-insights/find-insights/playbooks-with-your-data.html)
   - Reasoning: Auto Insights AI Suggested Use Cases automatically generates complete multi-page Preset Reports and Custom Reports from natural language use case selections.
 
 ### D_OR: Can an outside coding agent read the contents of existing BI content?
@@ -415,7 +415,7 @@ What counts: `yes`: AI-created BI content can be shared with named users or grou
   - Reasoning: This same page documents AI-generated Custom Reports. The Share Insights guide supports sharing those report assets with named Users or Groups, and interactive viewers need their own underlying dataset access. PDF/email copies do not have this protection.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "- Select Users or Groups to share with."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/share-insights.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/share-insights.html (checked 2026-10-26; archived https://web.archive.org/web/20260517051824/https://help.alteryx.com/aac/en/auto-insights/share-insights.html)
   - Reasoning: Preset Reports and insights in Auto Insights can be shared directly with specified users and user groups.
 
 ### DISCOVERASSET: Can permitted users find colleagues' saved analytical assets through workspace-wide browse or search?
@@ -610,7 +610,7 @@ What counts: Claude Code or a script can pull the app's definition out through a
   - Reasoning: The Server workflow API explicitly includes analytic apps and returns their YXZP definition package. An outside agent can retrieve the app workflow and interface definition, rather than only execute the app.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Get the questions for the given Alteryx Analytics App"
-  - Source: https://help.alteryx.com/current/en/developer-help/apis/server-api-overview.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/developer-help/apis/server-api-overview.html (checked 2026-10-26; archived https://web.archive.org/web/20260511185831/https://help.alteryx.com/current/en/developer-help/apis/server-api-overview.html)
   - Reasoning: External agents can inspect analytic app questions, parameters, and interface requirements via Server API GET /v1/workflows/{appId}/questions.
 
 ### A_OW: Can an outside coding agent build a generated app?
@@ -655,15 +655,15 @@ What counts: `yes`: an admin or user can choose a specific named model version f
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "The LLM can be selected via the LLM Provider and Model."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26; archived https://web.archive.org/web/20260514193254/https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html)
   - Reasoning: Admins choose the LLM provider and model for the Auto Insights AI features, including the Custom Reports AI Assistant. No fixed version pin is documented. Alteryx Agents use Alteryx-managed models with no customer choice, and Ask Alteryx uses Gemini.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "- The LLM can be selected via the LLM Provider and Model."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26; archived https://web.archive.org/web/20260514193254/https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html)
   - Reasoning: Auto Insights lets administrators select a provider/model, including a customer Azure connection. It does not establish pinning a fixed named model version until explicitly changed; Alteryx Agents use managed models.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "- The LLM can be selected via the LLM Provider and Model."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26; archived https://web.archive.org/web/20260514193254/https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html)
   - Reasoning: Workspace Admins can select the LLM Provider and Model for Auto Insights AI capabilities, but model pinning/selection is not available for Alteryx Agents (which strictly use Alteryx-managed models).
 
 ### DETERM: Can you preserve the inputs, configuration and logic needed to reproduce or audit a built-in assistant answer?
@@ -708,7 +708,7 @@ What counts: When a question is already answered by certified BI content or a go
   - Reasoning: Alteryx One certifies assets with Data Labels, and agent pages describe 'trusted datasets' and 'trusted insights'. No page binds Ask Alteryx or Alteryx Agents to certified assets, or says a mismatch with certified content is prevented or flagged.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Custom Measures display in Explore Data Insights, Preset Reports, and Custom Reports, where you can curate the analysis further by adding filters and comparing across segments."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/manage-dataset/custom-measures.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/manage-dataset/custom-measures.html (checked 2026-10-26; archived https://web.archive.org/web/20260613223412/https://help.alteryx.com/aac/en/auto-insights/manage-dataset/custom-measures.html)
   - Reasoning: Auto Insights, the built-in AI virtual analyst, uses dataset-level Custom Measures in its analytical reports and insights. This establishes reuse of shared metric definitions, the partial scope specified by the row. It does not establish binding answers to certified content or preventing or flagging definition mismatches.
 - **Gemini 3.8 Flash**: nothing found
   - Reasoning: Alteryx supports data labels and asset certification for packages and assets in SDLC, but documentation does not bind assistant answers to certified definitions or state that deviations or mismatches from certified content are prevented or flagged.
@@ -821,15 +821,15 @@ What counts: The customer controls where inference occurs. A model running in th
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "These features connect to a large language model (LLM) – by default, this LLM is accessed via an Alteryx instance within Microsoft Azure Cognitive Services; however, you can instead use an LLM in your own Microsoft Azure Cognitive Services tenant."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26; archived https://web.archive.org/web/20260514193254/https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html)
   - Reasoning: Customers can run Auto Insights AI inference in their own Azure tenant. This covers only some AI features: Alteryx Agents state that customer-hosted models are not supported, and Ask Alteryx runs on Alteryx-configured Vertex AI.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "These features connect to a large language model (LLM) – by default, this LLM is accessed via an Alteryx instance within Microsoft Azure Cognitive Services; however, you can instead use an LLM in your own Microsoft Azure Cognitive Services tenant."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26; archived https://web.archive.org/web/20260514193254/https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html)
   - Reasoning: Customers can run Auto Insights inference through their own Azure tenant. The choice covers these Auto Insights AI features; it is not documented for Ask Alteryx or Alteryx Agents, so the product-wide row has limited scope.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "To use your own LLM to power AI capabilities in Auto Insights, you will need to first configure a new Connection in Alteryx One."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html (checked 2026-10-26; archived https://web.archive.org/web/20260514193254/https://help.alteryx.com/aac/en/auto-insights/for-it-and-security/generative-ai-within-auto-insights.html)
   - Reasoning: Auto Insights supports Bring Your Own Key/model via customer Microsoft Azure Cognitive Services OpenAI connections, but Ask Alteryx and Agent Studio rely strictly on vendor-managed models.
 
 ### GOVBIND: Do your existing row-level security and column permissions apply to what the BUILT-IN assistant returns?
@@ -977,11 +977,11 @@ What counts: The product records actions taken by an outside agent, tied to its 
   - Reasoning: Outside agents reach Alteryx through the MCP Server using OAuth 'on behalf of the end user'. No audit event is documented for MCP actions. Service-principal actions are tagged 'agent_type = SERVICE_PRINCIPAL', but service principals (Public Preview) are documented only for running workflows with AI Tools on Server, not as an outside-agent identity. The Sessions page identifies MCP client connections but logs no actions or objects. That leaves only a general activity log, which is insufficient.
 - **GPT-6.1 Sol**: yes, preview
   - Quote: "Actions performed by service principals appear in the Audit Log with: `agent_type = SERVICE_PRINCIPAL`"
-  - Source: https://help.alteryx.com/aac/en/platform/admin/admin-reference/admin-console/service-principals.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/platform/admin/admin-reference/admin-console/service-principals.html (checked 2026-10-26; archived https://web.archive.org/web/20260516080719/https://help.alteryx.com/aac/en/platform/admin/admin-reference/admin-console/service-principals.html)
   - Reasoning: Service principals provide non-human API identities and their actions are explicitly marked in audit records. The audit-events page documents affected workflow assetId and workflowName fields. This establishes identity-and-object auditing for outside automation using that service-principal workflow route, currently limited to workflows with AI Tools on Server. The service-principal feature is Public Preview.
 - **Gemini 3.8 Flash**: yes, preview
   - Quote: "Actions performed by service principals appear in the Audit Log with:"
-  - Source: https://help.alteryx.com/aac/en/platform/admin/admin-reference/admin-console/service-principals.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/platform/admin/admin-reference/admin-console/service-principals.html (checked 2026-10-26; archived https://web.archive.org/web/20260516080719/https://help.alteryx.com/aac/en/platform/admin/admin-reference/admin-console/service-principals.html)
   - Reasoning: Service principals acting as non-human automated agents to execute AI workflows log their actions in the Audit Log with agent_type = SERVICE_PRINCIPAL.
 
 ### APPROVE: Can an outside agent’s change to a governed analytical asset be held for human approval?
@@ -1034,7 +1034,7 @@ What counts: A change made by an outside agent to a governed analytical asset ca
   - Reasoning: Library assets, including the workflows an MCP agent can edit, can be restored to earlier versions. The documentation does not show that this covers changes made through the MCP Designer toolset.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can publish a specific workflow version in Server."
-  - Source: https://help.alteryx.com/current/en/server/use-alteryx-server-ui/workflows--server-user-interface/publish-a-workflow-version.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/server/use-alteryx-server-ui/workflows--server-user-interface/publish-a-workflow-version.html (checked 2026-10-26; archived https://web.archive.org/web/20260607135614/https://help.alteryx.com/current/en/server/use-alteryx-server-ui/workflows--server-user-interface/publish-a-workflow-version.html)
   - Reasoning: Server preserves versions and permits publishing an earlier one. The workflow API includes analytic apps and their versions, so a package/version uploaded by an outside agent can be reverted by republishing the earlier version.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "- Restore a previous workflow version or open a previous version as a new workflow."
@@ -1125,15 +1125,15 @@ What counts: A vendor-supported command-line tool whose documentation addresses 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "You can run workflows via the command line with `AlteryxEngineCmd.exe`, located in the Alteryx program files root directory."
-  - Source: https://help.alteryx.com/current/en/designer/workflows/run-workflows-via-command-line.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/designer/workflows/run-workflows-via-command-line.html (checked 2026-10-26; archived https://web.archive.org/web/20260510134546/https://help.alteryx.com/current/en/designer/workflows/run-workflows-via-command-line.html)
   - Reasoning: Alteryx provides a general command-line tool for running workflows, but its page gives no guidance for AI or coding agents. The skills are installed with the agents' own CLIs, not an Alteryx agent CLI.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "You can run workflows via the command line with `AlteryxEngineCmd.exe`, located in the Alteryx program files root directory."
-  - Source: https://help.alteryx.com/current/en/designer/workflows/run-workflows-via-command-line.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/designer/workflows/run-workflows-via-command-line.html (checked 2026-10-26; archived https://web.archive.org/web/20260510134546/https://help.alteryx.com/current/en/designer/workflows/run-workflows-via-command-line.html)
   - Reasoning: The vendor documents a noninteractive workflow/analytic-app command-line engine requiring an Engine API license. Skills document agent use of Designer Engine, but this CLI documentation does not establish a complete agent-specific CLI authentication flow, so credit is limited to the general CLI.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Plugin CLI is a command-line interface based on Typer, a tool that helps you build and manage custom plugins for Alteryx Designer."
-  - Source: https://help.alteryx.com/current/en/developer-help/platform-sdk/ayx-plugin-cli/ayx-plugin-cli-overview.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/developer-help/platform-sdk/ayx-plugin-cli/ayx-plugin-cli-overview.html (checked 2026-10-26; archived https://web.archive.org/web/20260413074330/https://help.alteryx.com/current/en/developer-help/platform-sdk/ayx-plugin-cli/ayx-plugin-cli-overview.html)
   - Reasoning: Alteryx provides the AYX Plugin CLI to build, test, and manage custom plugins and tools from the command line, though it does not provide a CLI for running ad-hoc data analyses.
 
 ### AGENTROLLOUT: Can an administrator allow or block outside-agent access for particular users, groups or workspaces?
@@ -1282,11 +1282,11 @@ What counts: `yes`: a product setting that removes a table, field or answer from
   - Reasoning: This is the built-in AI. An agent's author picks which datasets it may use, which keeps other datasets out of that agent's reach. There is no AI-specific setting to mark a table, field or answer as deprecated or off-limits, and Data Labels' Deprecated label is not tied to the AI.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Columns that are disabled from Relevant Segments/Breakdowns will not be available for use as a dimension for comparing metrics, in addition to not being shown in the 'What Caused This?' analysis for that measure"
-  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/what-caused-this.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/what-caused-this.html (checked 2026-10-26; archived https://web.archive.org/web/20260521053416/https://help.alteryx.com/aac/en/auto-insights/find-insights/what-caused-this.html)
   - Reasoning: This is a product-enforced field exclusion from Auto Insights automated AI root-cause analysis for the selected measure. It applies to that AI surface; it is not a claim that a deprecated label restricts every assistant.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "- Go to the AI Suggested Use Cases with your own data section, and select Enabled from the dropdown."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/playbooks-with-your-data.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/find-insights/playbooks-with-your-data.html (checked 2026-10-26; archived https://web.archive.org/web/20260715192959/https://help.alteryx.com/aac/en/auto-insights/find-insights/playbooks-with-your-data.html)
   - Reasoning: Administrators can selectively enable or disable AI suggested use cases for specific datasets to exclude sensitive topics or data from AI processing.
 
 ### CTXOWNER: Is there a documented owner or approval workflow for business context?
@@ -1387,7 +1387,7 @@ What counts: The assistant answers using the metrics, dimensions and joins your 
   - Reasoning: Auto Insights datasets have configured Measures, Segments and Custom Measures, and the MCP Insights toolset (an outside-agent route) lists them. But no page says the built-in Alteryx Agents or Ask Alteryx answer from those configured measures. The agent page instead tells creators to describe 'Key Measures' in custom instructions.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Custom Measures display in Explore Data Insights, Preset Reports, and Custom Reports, where you can curate the analysis further by adding filters and comparing across segments."
-  - Source: https://help.alteryx.com/aac/en/auto-insights/manage-dataset/custom-measures.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/aac/en/auto-insights/manage-dataset/custom-measures.html (checked 2026-10-26; archived https://web.archive.org/web/20260613223412/https://help.alteryx.com/aac/en/auto-insights/manage-dataset/custom-measures.html)
   - Reasoning: Auto Insights is a built-in AI-powered virtual analyst. Its analysis consumes shared dataset-level Custom Measures, including ratios constructed from configured Sum, Average, and Count measures. The quoted report-and-insight usage establishes that the built-in AI uses maintained definitions rather than inferring each calculation from raw column names.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Selecting a dataset allows the agent to answer questions and generate insights from that dataset."
@@ -1447,15 +1447,15 @@ What counts: Work modelled in the BI tool can be written back out so it lives in
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Use Write Data In-DB to create or update a table directly in the database."
-  - Source: https://help.alteryx.com/current/en/designer/tools/in-database/write-data-in-db-tool.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/designer/tools/in-database/write-data-in-db-tool.html (checked 2026-10-26; archived https://web.archive.org/web/20260514225617/https://help.alteryx.com/current/en/designer/tools/in-database/write-data-in-db-tool.html)
   - Reasoning: Logic built in an Alteryx In-Database workflow, or a Live Query workflow, runs in the database and writes its result to a table there. The output lives in the warehouse, but the logic stays in Alteryx as a workflow rather than becoming a view or model in the warehouse, so this is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Use Write Data In-DB to create or update a table directly in the database."
-  - Source: https://help.alteryx.com/current/en/designer/tools/in-database/write-data-in-db-tool.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/designer/tools/in-database/write-data-in-db-tool.html (checked 2026-10-26; archived https://web.archive.org/web/20260514225617/https://help.alteryx.com/current/en/designer/tools/in-database/write-data-in-db-tool.html)
   - Reasoning: In-Database workflows execute analytical transformations in the database and materialize results as warehouse tables. Live Query similarly writes computed results to warehouse tables. The output lives in the warehouse, but the maintained definition remains in Alteryx rather than being exported as a warehouse view, model, or semantic definition.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Use the Write Data In-DB tool to create or update a table in the database, or use the Data Stream Out tool to stream the In-DB results to a workflow for standard processing."
-  - Source: https://help.alteryx.com/current/en/designer/tools/in-database-overview.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/designer/tools/in-database-overview.html (checked 2026-10-26; archived https://web.archive.org/web/20260615232817/https://help.alteryx.com/current/en/designer/tools/in-database-overview.html)
   - Reasoning: In-Database workflows execute queries inside the database and can create or update a database table using the Write Data In-DB tool; however, the logic remains within the Alteryx workflow rather than being authored as a view or model in the warehouse.
 
 ### PROMOTE: Can a one-off calculation be turned into a maintained shared definition the whole team reuses?
@@ -1466,14 +1466,14 @@ What counts: `yes`: the product documents a direct path from a calculation writt
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "In addition to building a macro from scratch, you have the option to convert an existing workflow (or a portion of the workflow) to a macro."
-  - Source: https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html (checked 2026-10-26; archived https://web.archive.org/web/20260421105840/https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html)
   - Reasoning: Convert to Macro turns tools a user selects in a workflow built for one analysis directly into a macro file, with no developer re-expressing the logic. The macro is a reusable shared unit, and the same page says 'When changes are saved to a macro, it is automatically updated', so it is maintained wherever it is reused. That is a direct path from one-off logic to a maintained shared definition.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "In addition to building a macro from scratch, you have the option to convert an existing workflow (or a portion of the workflow) to a macro."
-  - Source: https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html (checked 2026-10-26; archived https://web.archive.org/web/20260421105840/https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html)
   - Reasoning: Convert to Macro directly packages selected existing workflow tools, preserving their analytical logic without a developer rewriting it. The same page documents saving and sharing the macro through Server or a repository, reusing it in other workflows, and automatically updating it when changes are saved. This provides a maintained shared unit for a calculation originally built in one analysis.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "In addition to building a macro from scratch, you have the option to convert an existing workflow (or a portion of the workflow) to a macro."
-  - Source: https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html (checked 2026-10-26)
+  - Source: https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html (checked 2026-10-26; archived https://web.archive.org/web/20260421105840/https://help.alteryx.com/current/en/designer/apps-and-macros/macros.html)
   - Reasoning: Convert to Macro allows users to select tools in an existing workflow and convert them directly into a macro (.yxmc), creating a reusable shared analytic asset without requiring a developer to re-express the logic in a modeling language.
 

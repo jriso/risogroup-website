@@ -37,15 +37,15 @@ What counts: Someone types a question the way they would say it out loud and the
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Connect to a workbook or data source and use natural language to perform visual analysis."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent, the built-in assistant, takes plain-English requests (examples on the same page such as 'How many action movies did each director make?') and builds the viz against the connected data without SQL or a pre-built dashboard. Tableau Agent in authoring is not labeled beta.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "After indexing is complete, Tableau Agent provides some suggested questions you could ask about your data to help you get started, or type your own questions into the text box using natural language to describe what you want."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: The built-in authoring assistant accepts a new natural-language analytical question against a connected data source and creates its visualization, without a prebuilt dashboard or user-written SQL.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Tableau Agent is a generative AI feature that helps you explore your data, create visualizations, and uncover insights with the help of a conversational assistant."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Users can ask Tableau Agent plain English questions to explore data and create visualizations without needing SQL or pre-built dashboards.
 
 ### I3: Can you refine the answer by carrying on the conversation?
@@ -56,11 +56,11 @@ What counts: The assistant holds the thread, so you can say “now split that by
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "When you type a question or request into the conversation pane, a combined prompt consisting of the user's input, metadata describing the current state of the viz (web authoring), or Tableau Prep flow, and historical context from the conversation pane flow through the Einstein Trust Layer to the LLM."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054828/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm)
   - Reasoning: Each Tableau Agent request carries the conversation history and the current viz state, so follow-ups like 'now split that by region' refer back to earlier turns. web_author_einstein.htm also says users can 'Ask more questions with Tableau Agent to iterate', and Tableau Agent in Pulse is documented as a conversation you deepen with follow-up questions.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "It's a conversational way to investigate your metrics. Your first question is just the start. Dig deeper by asking about different dimensions and time periods for additional insights."
-  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101222130/https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm)
   - Reasoning: This single documented list item establishes follow-up exploration in Tableau Agent in Pulse; the page also describes conversation history and time/dimension refinements.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "If you close and reopen the conversation pane while still in your same session, your conversation history persists."
@@ -75,15 +75,15 @@ What counts: The answer exposes the query or analytical steps used to derive it.
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "After Tableau Agent creates the viz, you can interact and modify it, just like if an analyst built and shared a viz with you."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent builds its answer as an ordinary viz in the authoring environment, and it explains any calculation it writes. That makes the fields, filters and calculations used inspectable. The documentation does not say the answer shows the query or a step-by-step trace, and Dashboard Q&A's generated SQL is not documented as shown to the user. That is partial exposure.
 - **GPT-6.1 Sol**: yes, preview
   - Quote: "Dashboard Q&A shows all of the reasoning steps that Tableau Agent took to find its answer, as well as a summary of the data it used, so you can be confident that the response is accurate."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard_narratives_overview.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard_narratives_overview.htm (checked 2026-10-26; archived https://web.archive.org/web/20261002064416/https://help.tableau.com/current/pro/desktop/en-us/dashboard_narratives_overview.htm)
   - Reasoning: Dashboard Q&A exposes the built-in agent’s analytical reasoning with the answer. This dashboard feature is beta.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Tableau Agent returns a summary about how to accomplish your task, and a suggested set of steps you can apply to your flow, even creating calculations if they are needed."
-  - Source: https://help.tableau.com/current/prep/en-us/prep_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/prep/en-us/prep_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923002213/https://help.tableau.com/current/prep/en-us/prep_einstein.htm)
   - Reasoning: Tableau Agent returns a summary and a suggested plan of analytical transformation steps that users can inspect before applying to their flow.
 
 ### FIELDCITE: Does the answer say which specific tables, columns or metrics it was built from?
@@ -94,15 +94,15 @@ What counts: Named tables, columns or metrics attached to the answer, such as a 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Click Metric Sources to see metrics considered as part of the analysis when the response is generated."
-  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101222130/https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm)
   - Reasoning: Tableau Agent in Pulse attaches citations and a Metric Sources list to each insight brief. These name the specific metrics the answer was built from, which is more than naming the dataset.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Click Metric Sources to see metrics considered as part of the analysis when the response is generated."
-  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101222130/https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm)
   - Reasoning: The answer exposes a Metric Sources list naming the actual metrics considered, rather than merely naming the dataset or showing SQL.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Click a citation link at the end of an insight to see its source."
-  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101222130/https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm)
   - Reasoning: Tableau Pulse answers attach citations and a Metric Sources button to explicitly show the specific metrics and fields used to derive the answer.
 
 ### FILEUPLOAD: Can the AI analyze a CSV or spreadsheet a user uploads?
@@ -113,7 +113,7 @@ What counts: A user can give the product a CSV or spreadsheet and use the AI to 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "However, you can also use Tableau Agent with live database connections, and uploaded files with the following file types:"
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: The page lists .csv, .txt and .xlsx among the uploaded file types Tableau Agent works with. A user can therefore give Tableau a CSV or spreadsheet and analyze it with the built-in AI.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Tableau Agent is recommended for use on data extract or file-based data for improved performance, but Tableau Agent for viz authoring also works with live connections, or uploaded files with .hyper, .csv, .txt, and .xlsx file types."
@@ -121,7 +121,7 @@ What counts: A user can give the product a CSV or spreadsheet and use the AI to 
   - Reasoning: The built-in authoring assistant explicitly analyzes uploaded CSV and Excel sources.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "However, you can also use Tableau Agent with live database connections, and uploaded files with the following file types:"
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent supports analyzing data directly from uploaded files including .csv and .xlsx spreadsheets.
 
 ### DATACLEAN: Can the AI clean or reshape data while leaving inspectable transformation logic?
@@ -132,15 +132,15 @@ What counts: The AI can clean or reshape data and leaves transformation steps, c
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Tableau Agent performs the steps for you, building out your flow and adding the changes to the Changes pane."
-  - Source: https://help.tableau.com/current/prep/en-us/prep_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/prep/en-us/prep_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923002213/https://help.tableau.com/current/prep/en-us/prep_einstein.htm)
   - Reasoning: Tableau Agent in Tableau Prep cleans and reshapes data (split, pivot, aggregate, filter, rename, and so on) and leaves inspectable artifacts: flow steps, calculations, and entries in the Changes pane that can be reviewed, edited or undone.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can evaluate and modify any changes listed in the Changes pane, as well as update the description added to the step in the flow pane."
-  - Source: https://help.tableau.com/current/prep/en-us/prep_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/prep/en-us/prep_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923002213/https://help.tableau.com/current/prep/en-us/prep_einstein.htm)
   - Reasoning: Tableau Agent in Prep creates cleaning/transformation plans and applies inspectable flow steps; the Changes pane retains their editable transformation logic.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Tableau Agent performs the steps for you, building out your flow and adding the changes to the Changes pane."
-  - Source: https://help.tableau.com/current/prep/en-us/prep_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/prep/en-us/prep_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923002213/https://help.tableau.com/current/prep/en-us/prep_einstein.htm)
   - Reasoning: Tableau Agent in Tableau Prep cleans and reshapes data using natural language instructions and records inspectable transformation steps in the Changes pane.
 
 ### MULTISOURCE: Can the AI combine two or more data sources in one analysis?
@@ -151,13 +151,13 @@ What counts: The AI joins or blends at least two sources, for example two databa
 
 - **Claude Opus 5.5**: no
   - Quote: "Tableau Agent only works with the primary data source in a data blend."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: The documentation explicitly limits Tableau Agent to one data source. It works only with the primary source in a blend, it 'can't ... do data modeling (such as creating joins or relationships)', and Tableau Agent in Prep lists Joins and Unions as unsupported. Tableau Agent in Pulse groups metrics but is not documented as joining two sources.
 - **GPT-6.1 Sol**: nothing found
   - Reasoning: No page establishes the built-in AI joining or blending distinct sources in one analysis. Authoring uses the selected source and only the primary source of a blend; Prep excludes joins and unions. Pulse compares grouped metrics, but the documentation does not establish AI combination of distinct sources.
 - **Gemini 3.8 Flash**: no
   - Quote: "Also, if you're using data blending, Tableau Agent can only be used with the primary data source."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau documentation explicitly states that Tableau Agent cannot combine multiple data sources and can only work with the primary data source in a blend.
 
 ### VIZCHOOSE: Can the AI select and create a visualization suited to the analytical question?
@@ -168,15 +168,15 @@ What counts: The AI selects and creates a chart or table suited to the question,
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Choose the best chart type for an analysis: "Show me the distribution of student's grades""
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent picks and builds a chart type suited to the question ('creates visualizations based on your data, just like Show Me'), from a list of supported chart types. It does not only modify a chart the user chose.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Choose the best chart type for an analysis: "Show me the distribution of student's grades""
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: This supported task lets the built-in assistant choose a chart type from an analytical request; the same page documents that it creates the resulting visualization.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Choose the best chart type for an analysis: "Show me the distribution of student's grades""
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent automatically selects and creates chart types (bar, heatmap, scatter plot, etc.) suited to the user's analytical question.
 
 ### INVESTIGATE: Can the AI identify what contributed to a change, with calculations a person can check?
@@ -187,7 +187,7 @@ What counts: `yes`: the built-in assistant breaks a change down into contributin
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Tableau Agent in Pulse highlights shared contributors, detects when trends move together or in opposite directions, flags outliers across metrics, and identifies metrics that are jointly above or below expected ranges."
-  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101222130/https://help.tableau.com/current/online/en-us/pulse_ask_discover_qa.htm)
   - Reasoning: Tableau Agent in Pulse, a built-in agent, answers 'what's driving changes' questions (the page's examples include Top Drivers, Top Detractors and Top Contributors) using Pulse's deterministic insight types. Top Drivers 'Shows values for dimension members that changed the most in the same direction as the observed change in the metric' (pulse_insights_platform_insight_types.htm). Each insight links to a checkable source chart through citations.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Shows values for dimension members that changed the most in the same direction as the observed change in the metric."
@@ -253,15 +253,15 @@ What counts: The assistant can read the calculation behind a chart or table in B
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Whether it’s a calculation that Tableau Agent created for you or one that exists as part of your data set, you can ask Tableau Agent to explain the calculation."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent reads and explains existing calculated fields that feed vizzes in a workbook, which is BI content.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Whether it’s a calculation that Tableau Agent created for you or one that exists as part of your data set, you can ask Tableau Agent to explain the calculation."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Inside a Tableau workbook worksheet, the built-in assistant reads and explains existing calculated fields used by visualizations. This is workbook chart logic, not an unrelated SQL-editor-only capability.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Explain calculations: "Explain the "Days to Ship Actual" calculation""
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent reads calculations behind charts and tables in workbooks and explains the calculation logic to the user.
 
 ### E_IW: Can the built-in assistant write the calculation behind a chart or table in BI content?
@@ -272,15 +272,15 @@ What counts: The assistant writes or changes the calculation behind a chart or t
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Simply ask Tableau Agent to help you create a calculation using natural language to describe what you want to do."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent writes and edits calculated fields in the Calculation Editor, adds them to the workbook's Data pane, and builds vizzes that use them. Those are the calculations behind charts in BI content.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Manually make your changes in the Calculation Editor and click OK or describe the changes you want to make in the Tableau Agent conversation pane, and let Tableau Agent make the changes for you."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: The assistant edits a workbook’s existing calculated field after it is opened in the Calculation Editor. The page also documents adding Agent-created fields to the Data pane and referencing them in a visualization.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Simply ask Tableau Agent to help you create a calculation using natural language to describe what you want to do."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent writes and creates calculated fields directly in worksheets and the Calculation Editor using natural language descriptions.
 
 ### E_OR: Can an outside coding agent read the calculation behind a specific chart or table in BI content?
@@ -291,15 +291,15 @@ What counts: An outside agent can retrieve, through the vendor's API, CLI, MCP s
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "For example, suppose you want to use a query variable to find the Sample_Superstore workbook."
-  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_examples.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_examples.html (checked 2026-10-26; archived https://web.archive.org/web/20260514191043/https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_examples.html)
   - Reasoning: The example query that follows filters a workbook, then sheets by name, and returns worksheetFields { name formula }. An outside agent can therefore retrieve the calculation behind a specific sheet through the Metadata API without downloading and parsing the workbook.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "`formula`: The formula for this field if it’s a calculation."
-  - Source: https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html (checked 2026-10-26; archived https://web.archive.org/web/20260615015443/https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html)
   - Reasoning: VDS metadata returns calculation formulas for a workbook data source through workbookDatasourceId, without downloading/parsing a whole workbook. The Metadata API example additionally maps a specified workbook/sheet to worksheetFields and their formulas, establishing retrieval of logic behind a specific chart.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Metadata - the information about your content and assets that you can query using the Metadata API."
-  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html (checked 2026-10-26; archived https://web.archive.org/web/20261102040913/https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html)
   - Reasoning: An outside agent can retrieve the exact calculation formula behind a specific sheet via the GraphQL Metadata API using worksheetFields { name formula }.
 
 ### E_OW: Can an outside coding agent write the calculation behind a specific chart or table in BI content?
@@ -310,15 +310,15 @@ What counts: An outside agent can change the calculation behind a specific chart
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Publishes a workbook on the specified site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_publishing.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_publishing.htm (checked 2026-10-26; archived https://web.archive.org/web/20260614195600/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_publishing.htm)
   - Reasoning: An outside agent can change a chart's calculation only by republishing the whole workbook file through the REST API. The Metadata API is read-only and no per-chart calculation write is documented, so it is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Publishes a workbook on the specified site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26; archived https://web.archive.org/web/20260514232451/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm)
   - Reasoning: An outside agent can publish/overwrite a native workbook file containing changed calculations. This establishes whole-workbook replacement; no direct chart-calculation editing endpoint was established.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "You can use the REST API to programmatically publish (upload) workbooks and data sources to the server."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_publish.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_publish.htm (checked 2026-10-26; archived https://web.archive.org/web/20260510152752/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_publish.htm)
   - Reasoning: Outside agents can author calculations by modifying workbook files and republishing or overwriting the workbook via the REST API Publish Workbook method, which replaces the whole workbook.
 
 ## Saved content, sharing & reuse
@@ -331,15 +331,15 @@ What counts: The assistant can open existing BI content and work from what it sh
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "When you type a question or request into the conversation pane, a combined prompt consisting of the user's input, metadata describing the current state of the viz (web authoring), or Tableau Prep flow, and historical context from the conversation pane flow through the Einstein Trust Layer to the LLM."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054828/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm)
   - Reasoning: Tableau Agent works inside an existing workbook ('creating a new workbook or opening an existing one') from the current state of the viz it is on. Tableau Agent in Dashboards (beta) also reads existing dashboards viz-by-viz for overviews, insights and Q&A.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Start by creating a new workbook or opening an existing one."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: The built-in authoring assistant works inside an existing workbook/worksheet and modifies its analysis and visualization; Tableau workbooks are BI content. The beta dashboard-reading feature is additional evidence but is not required for this GA path.
 - **Gemini 3.8 Flash**: yes, preview
   - Quote: "As a dashboard consumer use these capabilities to get a summary about your dashboards, get insights, and dive deeper into the data by asking your own questions."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm)
   - Reasoning: Tableau Agent in Dashboards (Beta) opens existing dashboards and answers questions, surfaces insights, and provides summaries based on the visualizations in the dashboard.
 
 ### D_IW: Can the built-in assistant build persistent, governed BI content?
@@ -350,15 +350,15 @@ What counts: The assistant builds persistent BI content with an owner, permissio
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Tableau Agent creates visualizations based on your data, just like Show Me in Tableau."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent builds worksheets in a Tableau workbook connected to live or published data sources. Once saved or published, these are persistent BI content with an owner and permissions. It cannot build dashboards, but a workbook sheet is BI content.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "After Tableau Agent creates the viz, you can interact and modify it, just like if an analyst built and shared a viz with you."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: The built-in assistant creates actual Tableau workbook charts rather than disposable HTML or an SQL file. The page supports live data connections; those native workbooks are saved/published through Tableau’s owner/permission-governed workbook workflow. It need not build a multi-chart dashboard to create BI content.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "After Tableau Agent creates the viz, you can interact and modify it, just like if an analyst built and shared a viz with you."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent builds persistent visual analyses in worksheets and workbooks backed by live data sources, which are saved and published with ownership and permissions.
 
 ### D_OR: Can an outside coding agent read the contents of existing BI content?
@@ -369,15 +369,15 @@ What counts: An outside agent can read the contents of existing BI content (its 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "The Metadata API surfaces the content and assets that comprise your Tableau Cloud site or Tableau Server, the content and asset roles, and how the content and assets relate to each other."
-  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html (checked 2026-10-26; archived https://web.archive.org/web/20260510083621/https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html)
   - Reasoning: Through the Metadata API, an outside agent reads workbooks, sheets, dashboards, calculated fields, filters and parameters. The REST API and VizQL Data Service return view and data-source data.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Downloads a workbook in `.twb` or `.twbx` format."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26; archived https://web.archive.org/web/20260514232451/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm)
   - Reasoning: The first-party REST API retrieves an existing native workbook, including its chart definitions, calculations/queries and filters; this is the analytical object itself. The page explicitly states its content/filter values are readable in plain text.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The Metadata API surfaces the content and assets that comprise your Tableau Cloud site or Tableau Server, the content and asset roles, and how the content and assets relate to each other."
-  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html (checked 2026-10-26; archived https://web.archive.org/web/20260510083621/https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html)
   - Reasoning: Outside agents can query the contents of existing BI content (workbooks, sheets, dashboards, fields, and queries) via the GraphQL Metadata API and REST API.
 
 ### D_OW: Can an outside coding agent build BI content?
@@ -388,15 +388,15 @@ What counts: An outside agent can create BI content through the vendor's interfa
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Publishes a workbook on the specified site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26; archived https://web.archive.org/web/20260514232451/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm)
   - Reasoning: An outside agent can create BI content by publishing a workbook to a site through the REST API, which is the vendor's documented interface.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Publishes a workbook on the specified site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26; archived https://web.archive.org/web/20260514232451/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm)
   - Reasoning: The Publish Workbook method lets an outside agent create persistent Tableau BI content from a native workbook definition through the supported API, subject to project publish permissions. This is an object-specific publishing API, not generic file storage.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "You can use the REST API to programmatically publish (upload) workbooks and data sources to the server."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_publish.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_publish.htm (checked 2026-10-26; archived https://web.archive.org/web/20260510152752/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_publish.htm)
   - Reasoning: Outside agents can create and publish BI content (workbooks) programmatically via the Tableau REST API Publish Workbook method.
 
 ### SHAREASSET: Can a user share AI-created BI content with named users or groups, with each viewer seeing only what their own permissions allow?
@@ -407,7 +407,7 @@ What counts: `yes`: AI-created BI content can be shared with named users or grou
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "After Tableau Agent creates the viz, you can interact and modify it, just like if an analyst built and shared a viz with you."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: AI-built vizzes are ordinary workbook content, so Tableau's normal sharing and row-level security should apply per viewer. The documentation does not explicitly state viewer-evaluated results for AI-created content. Pulse states per-user evaluation for insights, not for AI-built assets. Partial.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "And you can share content freely, knowing that you won't put security at risk because data policies that apply row-level security are always enforced."
@@ -415,7 +415,7 @@ What counts: `yes`: AI-created BI content can be shared with named users or grou
   - Reasoning: Agent-created charts are native saved Tableau workbooks and can be shared with named users through the workbook Share dialog. For the live governed-data path, virtual connections enforce their row-security policies for content consumers; sharing does not bypass those policies.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The data a user has access to while using Tableau Agent conforms to any row or column-level security policies that you have in place."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: AI-created workbooks can be shared with named users or groups, with data evaluated under each viewer's individual permissions and row-level security.
 
 ### DISCOVERASSET: Can permitted users find colleagues' saved analytical assets through workspace-wide browse or search?
@@ -426,11 +426,11 @@ What counts: Permitted users can browse or search across the workspace for saved
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Search can retrieve all the content that is available on your Site and in your Personal Space, but it will only show the content that you have access to view."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/search.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/search.htm (checked 2026-10-26; archived https://web.archive.org/web/20261102063445/https://help.tableau.com/current/pro/desktop/en-us/search.htm)
   - Reasoning: Site-wide quick and full search let permitted users find colleagues' views, workbooks and data sources, including AI-built workbooks once published.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Search can retrieve all the content that is available on your Site and in your Personal Space, but it will only show the content that you have access to view."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/search.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/search.htm (checked 2026-10-26; archived https://web.archive.org/web/20261102063445/https://help.tableau.com/current/pro/desktop/en-us/search.htm)
   - Reasoning: Permitted users can search site-wide saved Tableau assets, including the native workbook charts created with Agent; the page describes owner-based search and workbook/view filters.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Search shows results sorted by projects, workbooks, and views, just like the project-navigation screen."
@@ -470,11 +470,11 @@ What counts: The product’s AI or an agent can rerun a defined analytical task 
   - Reasoning: Pulse uses AI in Tableau to generate a fresh summary across followed metrics, and that summary is delivered in recurring email/Slack digests without anyone present. The AI reruns the defined metric analysis for each delivery, so this is more than an ordinary report schedule.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "These settings are useful if your data refreshes at a specific time or date so that Tableau Pulse digests include the latest data."
-  - Source: https://help.tableau.com/current/online/en-us/pulse_set_up.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/pulse_set_up.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923001937/https://help.tableau.com/current/online/en-us/pulse_set_up.htm)
   - Reasoning: Pulse schedules generation and delivery of fresh digests, and this page explicitly identifies personalized metric insight summaries as an AI in Tableau capability. The defined metrics and cadence drive recurring AI summaries without a person present.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Once every 24 hours, Tableau Pulse checks for alerts."
-  - Source: https://help.tableau.com/current/online/en-us/pulse_alerts.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/pulse_alerts.htm (checked 2026-10-26; archived https://web.archive.org/web/20260514221358/https://help.tableau.com/current/online/en-us/pulse_alerts.htm)
   - Reasoning: Tableau Pulse's AI-backed insights platform automatically reruns analysis once every 24 hours without a person present and delivers fresh results, trend change alerts, and metric digests via email and Slack.
 
 ### AGENTACT: Can an agent do something beyond answering, write back, notify, call another system?
@@ -504,11 +504,11 @@ What counts: `yes`: a built-in agent that cannot finish a task stops and hands i
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "For example, if you have high cardinality fields, fields with a lot of values, Tableau Agent might ask you to select the values you want."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent asks the user mid-conversation to pick filter values ('Add Filter' opens the Filter dialog). That is a clarifying hand-back during the conversation. No notification, review queue or paused hand-off is documented.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "For example, if you have high cardinality fields, fields with a lot of values, Tableau Agent might ask you to select the values you want."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: When the authoring agent cannot resolve filter values it asks the user to supply them and opens a filter dialog. This is conversational assistance, not a documented escalation queue or separate human hand-off.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "If you try to filter on a high cardinality field, Tableau Agent creates a filter for the field but might prompt you to select the values you want to include or exclude."
@@ -662,15 +662,15 @@ What counts: The product preserves the inputs, configuration, model and analytic
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "It stores the prompt and response for every LLM API call along with other audit data for a maximum of 30 days in your Salesforce Data 360 instance."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_usage.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_usage.htm (checked 2026-10-26; archived https://web.archive.org/web/20260511175809/https://help.tableau.com/current/tableau/en-us/tableau_gai_usage.htm)
   - Reasoning: The optional Audit Trail keeps prompts and responses, but not a data snapshot or the full configuration. Tableau Agent conversation history is cleared when the workbook closes. This is a partial record.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Prompts, responses, and Trust signals are logged and stored in Data Cloud."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101212646/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm)
   - Reasoning: The optional first-party AI audit trail preserves prompts and responses for inspection. It does not establish preservation of the data snapshot, complete configuration, selected model version, and executable analytical logic needed for full reproduction.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Prompts, responses, and Trust signals are logged and stored in Data Cloud."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101212646/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm)
   - Reasoning: Einstein Trust Layer logs prompts, responses, and trust signals in Data Cloud, but does not capture data snapshots or system configuration needed for complete reproduction.
 
 ### CORRECT: Does a person’s correction to a built-in assistant answer change its later answers, and does the documentation say how far that reaches?
@@ -704,7 +704,7 @@ What counts: When a question is already answered by certified BI content or a go
   - Reasoning: Tableau Knowledge grounds Tableau Agent in trusted definitions and tracks certification in graph health. Nothing says answers are bound to certified content or that a departure from it is prevented or flagged, so it is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Tableau Pulse is also based on a metric layer that provides a bounded, safe space for insights to be detected."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054828/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm)
   - Reasoning: Pulse grounds AI insights in its maintained metric definitions. There is no documented rule binding every assistant answer to certified content or preventing/flagging a mismatch, so semantic-layer grounding earns partial credit.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Agents use trusted business definitions and calculations from semantic models, metadata, relationships, and business preferences in the knowledge graph, rather than relying only on raw data."
@@ -766,15 +766,15 @@ What counts: The product records what the built-in assistant did, the prompt or 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Prompts, responses, and Trust signals are logged and stored in Data Cloud."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101212646/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm)
   - Reasoning: The Einstein audit trail logs the assistant's prompts and responses (Tableau+). The corpus does not document attribution to the asking user or the analytical objects touched. The Tableau activity log only records Tableau Agent settings changes (tabgpt_registration_event).
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Prompts, responses, and Trust signals are logged and stored in Data Cloud."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101212646/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm)
   - Reasoning: The Tableau+ Einstein audit trail explicitly records the built-in AI prompts and responses, establishing assistant-specific logging. This page does not establish a record tying those actions to both the asking user and the affected analytical objects. Gateway identity headers do not supply that missing object-level audit record.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "It stores the prompt and response for every LLM API call along with other audit data for a maximum of 30 days in your Salesforce Data 360 instance."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_usage.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_usage.htm (checked 2026-10-26; archived https://web.archive.org/web/20260511175809/https://help.tableau.com/current/tableau/en-us/tableau_gai_usage.htm)
   - Reasoning: Tableau logs prompts, responses, and user identity via Einstein Generative AI Audit & Feedback in Data Cloud / Custom Gateway headers, but does not log the specific analytical objects affected.
 
 ### AIROLLOUT: Can an administrator enable or disable AI features for particular users, groups or workspaces?
@@ -785,7 +785,7 @@ What counts: A documented control that turns AI features on or off for a subset 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You can turn on AI in Tableau features for either a single user group or for all users on your site."
-  - Source: https://help.tableau.com/current/online/en-us/setup_tabAI_site_setting.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/setup_tabAI_site_setting.htm (checked 2026-10-26; archived https://web.archive.org/web/20261024213639/https://help.tableau.com/current/online/en-us/setup_tabAI_site_setting.htm)
   - Reasoning: Admins turn each AI feature on per site and can restrict Tableau Agent in Pulse, Authoring and Prep to a single user group. Tableau Agent in Dashboards is further controlled by the AI Access permission. This is control over a subset of the tenant.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Yes. You can turn on AI in Tableau features for either a single user group or for all users on your site."
@@ -804,15 +804,15 @@ What counts: `yes`: the built-in assistant's change to governed BI content or sh
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "As soon as you start making changes to a new or existing workbook, we'll start to autosave the changes to a private draft version of your workbook."
-  - Source: https://help.tableau.com/current/online/en-us/autosave.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/autosave.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923001937/https://help.tableau.com/current/online/en-us/autosave.htm)
   - Reasoning: Web-authoring changes to a workbook, including those made with Tableau Agent in that workbook, stay in the author's private draft until the same user publishes them. The next sentence on the page says 'use Publish to replace the last published revision with your draft'. This is a general draft/publish workflow that the documentation does not connect to the assistant, and the requester publishes their own draft. Under the grading standard that is partly. No step routes an assistant change to a different named approver.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "As soon as you start making changes to a new or existing workbook, we'll start to autosave the changes to a private draft version of your workbook."
-  - Source: https://help.tableau.com/current/online/en-us/autosave.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/autosave.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923001937/https://help.tableau.com/current/online/en-us/autosave.htm)
   - Reasoning: The general web-authoring draft/publish workflow can hold workbook edits, including work containing Agent-created charts/calculations, until the editor publishes. It is not an AI-specific approval route or approval by another named person/role.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Publish the workbook to save the uploaded business preference document as part of your configuration settings."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm)
   - Reasoning: Changes made using the AI assistant remain in draft during authoring until the same user publishes the workbook; there is no documented workflow routing assistant writes to a different named person/role for approval.
 
 ## Data handling & AI governance
@@ -844,15 +844,15 @@ What counts: `yes`: the documentation states that the built-in assistant answers
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "The data a user has access to while using Tableau Agent conforms to any row or column-level security policies that you have in place."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent answers under the asking user's row- and column-level security. The Trust Layer page adds that grounding is retrieved 'based on the permissions of the user executing the prompt'. Dashboards (beta) refuses to answer when workbook-level user filters exist rather than bypassing them.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "The data a user has access to while using Tableau Agent conforms to any row or column-level security policies that you have in place."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: The built-in assistant respects existing row and column security for the asking user; this is not merely dataset-level permissioning.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The data a user has access to while using Tableau Agent conforms to any row or column-level security policies that you have in place."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent runs under the asking user's identity and strictly conforms to existing row-level security and column-level permissions.
 
 ### AIDATAFLOW: Does the product documentation say which services receive AI prompts or data, and what they receive?
@@ -863,15 +863,15 @@ What counts: `yes`: names the services that receive AI prompts or data, what the
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Due to our zero data retention policies in place with our third-party LLM providers, any data sent to the LLM isn’t retained and is deleted after a response is sent back."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054828/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm)
   - Reasoning: The product documentation names the receiving services: Azure OpenAI per feature, plus OpenAI or a Custom Gateway on Server. tableau_gai_data.htm itemizes per feature what is sent (questions, field metadata, up to 1000 sampled values, dashboard images, and so on). Retention is stated: zero retention at the LLM provider and up to 30 days for the audit trail in Data 360.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "When you type a question or request into the conversation pane, a combined prompt consisting of the user's input, metadata describing the current state of the viz (web authoring), or Tableau Prep flow, and historical context from the conversation pane flow through the Einstein Trust Layer to the LLM."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054828/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm)
   - Reasoning: The page describes the prompt/data payload, Einstein Trust Layer, Azure OpenAI and zero retention for Cloud, and separately direct requests to the customer’s Server LLM. Retention for customer-selected Server providers is left to their agreements, so this does not settle all documented routes.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Questions the customer types in the Tableau Agent text box."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_data.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_data.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054841/https://help.tableau.com/current/tableau/en-us/tableau_gai_data.htm)
   - Reasoning: The documentation explicitly names the services (OpenAI, Azure OpenAI, Data Cloud), specifies what data they receive per feature (queries, metadata, sampling), and states retention policies (zero retention by LLMs, 30 days in Data Cloud audit).
 
 ### AIRESIDENCY: Does the product documentation say where AI requests are processed and stored?
@@ -882,15 +882,15 @@ What counts: `yes`: the product documentation states the regions where AI reques
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Proximity to the nearest Azure OpenAI instance is determined by the Data Cloud region for your connected Salesforce org."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054828/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm)
   - Reasoning: Processing region is described for Tableau Cloud: the Data Cloud region, falling back to US. Audit data is stored 'in your Salesforce Data 360 instance' with no region stated, and Server processing depends on the customer's provider. This is processing without a full storage statement, so it is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "If a model isn’t available in your Data Cloud region, or if there isn't enough available capacity, then the requests are routed to the US region."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054828/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm)
   - Reasoning: Cloud inference uses geo-aware Azure routing based on the connected Salesforce/Data Cloud region, with a documented US fallback. Storage regions and the regions for every AI surface/customer Server provider are not specified here.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "If a model isn’t available in your Data Cloud region, or if there isn't enough available capacity, then the requests are routed to the US region."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054828/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust.htm)
   - Reasoning: The documentation states that for Tableau Cloud, LLM inference requests are routed to the nearest Azure OpenAI instance determined by the Data Cloud region of the connected Salesforce org, falling back to the US region if unavailable. However, audit data is stored in the customer's Salesforce Data 360 instance without explicit geographic storage regions stated, and Tableau Server inference depends on the customer's self-managed LLM provider. Documenting processing regions without complete storage residency across all AI surfaces earns partly.
 
 ### NOTRAIN: Does the vendor state your data is not used to train AI models, by default?
@@ -901,15 +901,15 @@ What counts: A statement that customer data is not used to train AI models by de
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "As you interact with Tableau Agent, neither your data nor your conversations that are sent to the Large Language Model (LLM) are saved to the LLM, and no customer data is ever used to train the model."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: This is a default statement that customer data is not used for training, with no opt-out required. The Trust Layer page repeats 'No data is used for LLM model training'. tableau_gai_data.htm says submitted data 'may be used to improve your services' but does not claim model training.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "No data is used for LLM model training or product improvements."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101212646/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm)
   - Reasoning: The Cloud Einstein Trust Layer states a default no-training policy, without an opt-out step. Customer-connected Server LLMs have their own provider agreements, as documented separately.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "No data is used for LLM model training or product improvements."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm (checked 2026-10-26; archived https://web.archive.org/web/20261101212646/https://help.tableau.com/current/tableau/en-us/tableau_gai_einstein_trust_layer.htm)
   - Reasoning: The Einstein Trust Layer enforces a zero-data retention policy where customer data is not used for training AI models.
 
 ### AIRESTRICT: Can an administrator restrict which data the assistant may use, separately from user permissions?
@@ -928,7 +928,7 @@ What counts: `yes`: an administrator can enforce, across the workspace or tenant
   - Reasoning: Knowledge graph creators select the content their connected AI consumes, separately from normal content permissions. This is per-graph author configuration rather than a workspace/tenant-wide administrator-enforced limit on all assistant data use.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "As a dashboard author you can turn each capability on or off at the dashboard level."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm)
   - Reasoning: Content authors can include or exclude specific worksheets or published data sources from the AI or knowledge graph, but there is no tenant-wide administrative data limit separate from user permissions.
 
 ## Agent access
@@ -941,7 +941,7 @@ What counts: `yes`: an outside agent can act under an identity or token scoped n
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "To ensure minimum access to administrative tasks and content, the JWT should contain access scopes that determine which methods are accessible to the connected app or UAT."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_auth.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_auth.htm (checked 2026-10-26; archived https://web.archive.org/web/20260714134633/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_auth.htm)
   - Reasoning: An outside agent using the REST API, VizQL Data Service or MCP can authenticate with a connected-app or UAT JWT whose access scopes restrict it to specific methods, for example tableau:viz_data_service:read or tableau:knowledge:read. That is narrower than the human's full access.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "To enable least-privileged access, the JWT must contain access scopes that define the API methods that are available to the UAT."
@@ -960,15 +960,15 @@ What counts: `yes`: an outside agent can follow a number to its upstream sources
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Lineage - reveals the origin of an object and its relationship to other related objects in Tableau Cloud or Tableau Server."
-  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html (checked 2026-10-26; archived https://web.archive.org/web/20261102040913/https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html)
   - Reasoning: The Metadata API (GraphQL) is a documented lineage interface. An outside agent can traverse upstreamTables, upstreamDatabases, upstreamDatasources and upstreamFlows and read calculated-field formulas behind content. The Knowledge Graph REST API also offers 'Get the lineage of a node'.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "For example, you can use `upstreamTablesConnection` to query the tables used by a data source, use `downstreamSheetsConnection` to query sheets used by a workbook, or `upstreamLinkedFlows` and `downstreamLinkedFlows` to query flows that are directly upstream or downstream of one another."
-  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html (checked 2026-10-26; archived https://web.archive.org/web/20260510083621/https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_model.html)
   - Reasoning: The first-party Metadata API exposes source tables, fields, workbooks and upstream transformation flows as traversable lineage. An outside agent can query those dependencies rather than infer them solely from SQL text.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Lineage - reveals the origin of an object and its relationship to other related objects in Tableau Cloud or Tableau Server."
-  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html (checked 2026-10-26; archived https://web.archive.org/web/20261102040913/https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_concepts.html)
   - Reasoning: Outside agents can traverse upstream sources and transformations (tables, databases, flows, data sources) programmatically using the GraphQL Metadata API lineage shortcuts.
 
 ### AGENTAUDIT: Are an outside agent’s actions logged with its identity and the analytical objects affected?
@@ -1066,11 +1066,11 @@ What counts: A documented way to enumerate objects, not just fetch one by id. Re
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Returns the workbooks on a site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm (checked 2026-10-26; archived https://web.archive.org/web/20260514232451/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_workbooks_and_views.htm)
   - Reasoning: The REST API's Query Workbooks for Site enumerates BI content without an id. The Metadata API lists databases and tables, Pulse lists metric definitions, and the Knowledge API lists graphs and sources.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "For example, if you are using the Tableau REST API and you want to find all the workbooks on your Tableau Cloud site or Tableau Server, you can make a GET request to return that information."
-  - Source: https://help.tableau.com/current/api/metadata_api/en-us/index.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/metadata_api/en-us/index.html (checked 2026-10-26; archived https://web.archive.org/web/20260712060803/https://help.tableau.com/current/api/metadata_api/en-us/index.html)
   - Reasoning: An outside agent can enumerate Tableau workbooks through the first-party REST API without knowing a workbook ID or title.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "By default, methods like Query Workbooks for Site return information about all of the workbooks on a Tableau Server site."
@@ -1085,7 +1085,7 @@ What counts: A named credential type for programmatic access. Whose permissions 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "To get a credentials token, you call Sign In and pass credentials of a valid user, either a Personal Access Token (PAT), a user name and password, along with the content URL (subpath) of the site you are signing in to."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_auth.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_auth.htm (checked 2026-10-26; archived https://web.archive.org/web/20260714134633/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_auth.htm)
   - Reasoning: Named programmatic credential types are documented: personal access tokens, connected-app JWTs and unified access tokens.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can use the same UAT configuration to sign in to the Tableau REST API using the Sign in with JWT method to generate a Tableau credentials token for Tableau Cloud."
@@ -1093,7 +1093,7 @@ What counts: A named credential type for programmatic access. Whose permissions 
   - Reasoning: The first-party API documents JWT/UAT authentication and a returned credentials token, a concrete outside-agent authentication route.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Personal access tokens (PATs) provide you and your Tableau Server users the ability to create long-lived authentication tokens."
-  - Source: https://help.tableau.com/current/server/en-us/security_personal_access_tokens.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/server/en-us/security_personal_access_tokens.htm (checked 2026-10-26; archived https://web.archive.org/web/20260526200425/https://help.tableau.com/current/server/en-us/security_personal_access_tokens.htm)
   - Reasoning: Tableau documents personal access tokens (PATs) and Unified Access Tokens (UATs) as named programmatic credential types for authenticating API and agent access.
 
 ### AGENTSKILL: Does the vendor publish skills or packaged instructions that teach an outside agent to use the product?
@@ -1136,15 +1136,15 @@ What counts: A documented admin control over agent or MCP access, separate from 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Tableau MCP now supports per-site configuration via the REST API, allowing administrators to customize settings at the site level."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_whats_new.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_whats_new.htm (checked 2026-10-26; archived https://web.archive.org/web/20260610065233/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_whats_new.htm)
   - Reasoning: Admins configure MCP access per site (a workspace-level scope), separate from user permissions. Settings such as INCLUDE_TOOLS/EXCLUDE_TOOLS and INCLUDE_TAGS allow or block what outside agents can use on that site. This is finer than an account-wide switch.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Replaces the current list of Tableau MCP settings for a given site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923001128/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm)
   - Reasoning: Admins have a dedicated per-site MCP settings API, including included/excluded tools in its examples. The corpus does not document a complete allow/block-access control for chosen users/groups; the established control is site-level MCP configuration.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Replaces the current list of Tableau MCP settings for a given site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923001128/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm)
   - Reasoning: Tableau MCP settings (including tool inclusions/exclusions and tags) can be configured at the site level, but documentation does not provide granular per-user or per-group rollout for outside MCP access.
 
 ### AGENTLIMIT: Can you cap or rate-limit what outside agents can consume?
@@ -1155,15 +1155,15 @@ What counts: A limit on agent-driven usage (rate limit, quota, spend or compute 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Gets the list of Tableau MCP settings for a specified site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923001128/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm)
   - Reasoning: The documented MCP site settings examples include MAX_RESULT_LIMIT and MAX_RESULT_LIMITS (for example query-datasource:1000), an agent-interface-specific cap on results. The corpus does not describe these keys' semantics, and no rate limit, quota or spend cap is documented for agents, so it is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Each Creator license on a site raises the cap for the entire site by 100 queries per hour."
-  - Source: https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_limitations.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_limitations.html (checked 2026-10-26; archived https://web.archive.org/web/20260412155947/https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_limitations.html)
   - Reasoning: The VDS analytical query interface enforces a site-wide usage cap. It applies to outside-agent requests through that interface but is not a separate per-agent quota/spend/rate control.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Gets the list of Tableau MCP settings for a specified site."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923001128/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_tableau_mcp.htm)
   - Reasoning: Tableau provides site-level MCP configuration settings through the REST API specifically to cap agent-driven query limits, such as MAX_RESULT_LIMIT and MAX_RESULT_LIMITS (e.g. query-datasource:1000).
 
 ## Business context
@@ -1195,7 +1195,7 @@ What counts: The business context lives in files you can diff, review and roll b
 
 - **Claude Opus 5.5**: partly, preview
   - Quote: "File formats: Supported file types are text files (.txt) and Markdown files (.md)."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm)
   - Reasoning: Workbook-level business preferences are plain .txt/.md files that can be downloaded, replaced or removed, so they can be kept and diffed outside Tableau. No version-control integration, diff or rollback is documented ('Undo and Redo are not currently supported'). Part of the beta Tableau Agent in Dashboards.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can either build a business preference by creating a single natural language instruction, or you can upload a file with your business preferences."
@@ -1203,7 +1203,7 @@ What counts: The business context lives in files you can diff, review and roll b
   - Reasoning: Knowledge accepts business-preference source files, including plain text and Markdown in the same section. Those files can be maintained and reviewed in version control and an earlier file can be uploaded again; no native Git synchronization is claimed.
 - **Gemini 3.8 Flash**: partly, preview
   - Quote: "Download the Business Preferences file first before publishing any updates, then upload it again."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm)
   - Reasoning: Workbook-level business preferences (.md or .txt files) used by Tableau Agent in Dashboards (Beta) can be downloaded, edited, and uploaded again, allowing teams to store, diff, and manage them in external version control systems. However, native version control integration, in-product diffing, and rollback are not supported ('Undo and Redo are not currently supported'), earning partly.
 
 ### CTXSCOPE: Can different teams get different business context for the AI, rather than one global set?
@@ -1233,11 +1233,11 @@ What counts: A named validation, preview, staging or test step for context. Vers
 
 - **Claude Opus 5.5**: yes, preview
   - Quote: "As a dashboard author, you can use Tableau Agent in Dashboards while in the authoring environment."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm)
   - Reasoning: The 'Test your output' step lets the author try the agent in the authoring draft before turning it on for consumers. Uploaded business preferences only take effect for consumers after the workbook is published ('Uploaded files aren’t saved when you close a draft'). This is a named test step for context. Beta.
 - **GPT-6.1 Sol**: yes, preview
   - Quote: "As a dashboard author, you can use Tableau Agent in Dashboards while in the authoring environment."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/pro/desktop/en-us/dashboard-narratives.htm)
   - Reasoning: Tableau Agent in Dashboards has a named Test your output step in authoring. In the same page, workbook business preferences are uploaded during authoring and saved by publishing; uploaded files are not saved on closing a draft. Authors can therefore test the context-driven answers before enabling them for consumers. This dashboard assistant is beta.
 - **Gemini 3.8 Flash**: yes, preview
   - Quote: "You can access this tool in the Tableau Next menu to test questions in Concierge, and then verify and calibrate results."
@@ -1265,15 +1265,15 @@ What counts: Context ingested from the warehouse or a modelling tool, not retype
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "The information it indexes includes field metadata such as field captions, field descriptions from comments(first 150 characters) in Tableau Desktop or from Tableau Catalog, data roles, and data types."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent uses existing field descriptions from Tableau Catalog, which can be inherited from upstream columns, and from semantic models brought in through the Tableau Semantics connector, so context need not be retyped. Ingesting warehouse column comments or dbt docs directly is not documented, so it is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "The information it indexes includes field metadata such as field captions, field descriptions from comments(first 150 characters) in Tableau Desktop or from Tableau Catalog, data roles, and data types."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: The built-in Tableau Agent indexes existing Catalog field descriptions. The Catalog documentation says descriptions can be inherited from upstream columns, and the Tableau Semantics connector retrieves source semantic metadata and descriptions. This provides a limited inherited-description route without retyping context into the assistant; direct ingestion of warehouse comments or dbt documentation is not established.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The information it indexes includes field metadata such as field captions, field descriptions from comments(first 150 characters) in Tableau Desktop or from Tableau Catalog, data roles, and data types."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Tableau Agent automatically indexes field descriptions and comments from the data source and Tableau Catalog as context for answers.
 
 ### CTXNEG: Can you mark a table, field or answer as deprecated or off-limits to the AI?
@@ -1284,7 +1284,7 @@ What counts: `yes`: a product setting that removes a table, field or answer from
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Hide fields you don’t need and Tableau Agent won’t use these hidden fields."
-  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/online/en-us/web_author_einstein.htm (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://help.tableau.com/current/online/en-us/web_author_einstein.htm)
   - Reasoning: Hiding a field is a product setting that removes it from Tableau Agent's reach, but it hides the field for everyone and is not AI-specific. Business preferences explicitly do not support 'Not for AI use' blocking, so it is partly.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "When you start a Tableau Agent session, if you see similarly named fields in a data source, hide the ones that aren't relevant. Tableau Agent won't ground its answers on hidden fields"
@@ -1376,7 +1376,7 @@ What counts: The product consumes definitions you already maintain in dbt, Cube 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "The semantic information contained in the model is also retrieved by the connector using semantic metadata queries."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/examples_tableau_semantics.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/examples_tableau_semantics.htm (checked 2026-10-26; archived https://web.archive.org/web/20260520221918/https://help.tableau.com/current/pro/desktop/en-us/examples_tableau_semantics.htm)
   - Reasoning: Tableau consumes semantic models maintained in Tableau Semantics (Data 360/Tableau Next) without rebuilding them. Consuming dbt, Cube or Snowflake semantic-view definitions is not documented beyond a 'dbt Semantic Layer' entry in Bridge's supported Exchange connector list, so it is partly.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "dbt Semantic Layer"
@@ -1397,7 +1397,7 @@ What counts: The assistant answers using the metrics, dimensions and joins your 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Fields in the data source including caption, description (used for viz generation only), role, field type, data type, default aggregation, calculation formulas, field table name, and placements of fields in the viz."
-  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_data.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/tableau/en-us/tableau_gai_data.htm (checked 2026-10-26; archived https://web.archive.org/web/20260923054841/https://help.tableau.com/current/tableau/en-us/tableau_gai_data.htm)
   - Reasoning: Tableau Agent is grounded in the published data source's defined calculations, default aggregations and roles, which is Tableau's shared definition layer. Tableau Knowledge adds 'trusted business definitions and calculations from semantic models' for agents.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "The analytic context for insights is based on the Tableau Pulse metric definition."
@@ -1435,11 +1435,11 @@ What counts: An agent can see what a field means, its description and business d
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "`description`: The description of the field (what appears under the Lineage tab for the data source) if you have enabled data catalog."
-  - Source: https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html (checked 2026-10-26; archived https://web.archive.org/web/20260615015443/https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html)
   - Reasoning: VizQL Data Service's Request Data Source Metadata returns each published-data-source field's description and calculation formula to an outside agent. The Knowledge Graph API returns semantic contexts.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "`description`: The description of the field (what appears under the Lineage tab for the data source) if you have enabled data catalog."
-  - Source: https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html (checked 2026-10-26; archived https://web.archive.org/web/20260615015443/https://help.tableau.com/current/api/vizql-data-service/en-us/docs/vds_get_data_source_info.html)
   - Reasoning: An outside agent using VDS metadata can retrieve field descriptions, and the same response exposes formulas, default aggregations and roles. This is readable shared meaning and business calculation logic, not only table/column names.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "AI agents including Tableau Agent for Knowledge in Tableau Cloud and any agent running over MCP query Tableau Knowledge graphs to answer questions for users."
@@ -1454,11 +1454,11 @@ What counts: The semantic layer is writable from outside the product.
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Create, update, and delete metric definitions"
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_pulse.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_pulse.htm (checked 2026-10-26; archived https://web.archive.org/web/20260607214034/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_pulse.htm)
   - Reasoning: Pulse metric definitions (measure, time dimension, aggregation, filterable dimensions) are a shared metric layer, and the Pulse REST API lets an outside agent create and edit them. The Knowledge Graph API also writes semantic contexts.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Updates a metric definition."
-  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_pulse.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_pulse.htm (checked 2026-10-26; archived https://web.archive.org/web/20260607214034/https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_pulse.htm)
   - Reasoning: The first-party Pulse REST API updates governed metric definitions; the page also documents creating/listing definitions, permissions and named write scopes. An outside agent can author these shared definitions programmatically.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Create a semantic context node carrying one or more statements."
@@ -1473,11 +1473,11 @@ What counts: Work modelled in the BI tool can be written back out so it lives in
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "This enables you to add or update data in your database with clean, prepped data from your flow each time the flow is run."
-  - Source: https://help.tableau.com/current/prep/en-us/prep_save_share.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/prep/en-us/prep_save_share.htm (checked 2026-10-26; archived https://web.archive.org/web/20261012120627/https://help.tableau.com/current/prep/en-us/prep_save_share.htm)
   - Reasoning: Cleaning and shaping logic built in Tableau Prep can be materialized as tables in an external database on every flow run. Write options include Create table, Append to table and Replace data. So the output of work modelled in Tableau lives in the warehouse. The logic itself stays a Tableau Prep flow and does not become a maintained view or model in the warehouse, so this is partial pushdown.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Save your flow output to a database to create, replace, or append the table data with your clean, prepared flow data. For more information, see Save flow output data to external databases."
-  - Source: https://help.tableau.com/current/prep/en-us/prep_save_share.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/prep/en-us/prep_save_share.htm (checked 2026-10-26; archived https://web.archive.org/web/20261012120627/https://help.tableau.com/current/prep/en-us/prep_save_share.htm)
   - Reasoning: Tableau Prep can materialize the results of its cleaning and shaping logic in an external database table. This is partial pushdown: the output data lives in the database, while the reusable transformation definition remains a Tableau Prep flow rather than becoming a maintained warehouse view or model.
 - **Gemini 3.8 Flash**: nothing found
   - Reasoning: Searches confirmed that calculations and semantic definitions created in Tableau remain in the tool or published data sources; documentation notes that operations such as default sorting are 'carried out by Tableau, not sent back to the source'. No mechanism exists to push modeled definitions back down as views or models in the warehouse.
@@ -1490,14 +1490,14 @@ What counts: `yes`: the product documents a direct path from a calculation writt
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "All of these refinements become part of the metadata contained in the data source that you publish and maintain."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/publish_datasources_about.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/publish_datasources_about.htm (checked 2026-10-26; archived https://web.archive.org/web/20260520220718/https://help.tableau.com/current/pro/desktop/en-us/publish_datasources_about.htm)
   - Reasoning: Calculations added while working with a view become part of the data source. Publishing it makes them a maintained shared definition that flows to all connected workbooks, without a developer rewriting them.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "In Tableau 2026.2 and later, you can publish your semantic overrides on a PDS rather than keeping those modifications in a workbook as a local data source."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/datasource_extend_compose.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/datasource_extend_compose.htm (checked 2026-10-26; archived https://web.archive.org/web/20261001235349/https://help.tableau.com/current/pro/desktop/en-us/datasource_extend_compose.htm)
   - Reasoning: A chart’s ad-hoc calculation can be copied to the Data pane as a named calculation; extended published data sources then publish workbook calculations/semantic overrides as a shared maintained PDS. This path does not require a developer to rewrite the formula.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "When you’re working with your view, you can add calculations, sets, groups, bins, and parameters; define any custom field formatting; hide unused fields; and so on."
-  - Source: https://help.tableau.com/current/pro/desktop/en-us/publish_datasources_about.htm (checked 2026-10-26)
+  - Source: https://help.tableau.com/current/pro/desktop/en-us/publish_datasources_about.htm (checked 2026-10-26; archived https://web.archive.org/web/20260520220718/https://help.tableau.com/current/pro/desktop/en-us/publish_datasources_about.htm)
   - Reasoning: Calculations added to an analysis can be published directly to Tableau Cloud/Server as part of a published data source, becoming a maintained shared definition without rewriting.
 

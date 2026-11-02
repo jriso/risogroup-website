@@ -58,7 +58,7 @@ What counts: The assistant holds the thread, so you can say “now split that by
   - Reasoning: The Workbook Agent keeps the thread. The documented example follows 'orders in California' with 'How about in just the last 30 days?' and gets a refined answer.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Ask follow-up questions, drill into subsets, re-aggregate results, or request summaries, all without leaving the page."
-  - Source: https://docs.omni.co/ai/dashboard-assistant (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/dashboard-assistant (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/ai/dashboard-assistant)
   - Reasoning: Chat with Content supports contextual follow-ups. The Workbook Agent guide also demonstrates following an orders question with a last-30-days refinement.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Iterate on the questions you ask to provide a more refined result."
@@ -168,15 +168,15 @@ What counts: The AI selects and creates a chart or table suited to the question,
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "The Omni Agent can automatically suggest and configure visualizations based on your query results, including charts, KPIs, and tables."
-  - Source: https://docs.omni.co/ai/visualizations (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/visualizations (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/visualizations)
   - Reasoning: The agent itself suggests and creates the visualization type from the results, beyond restyling a chart the user picked.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "The Omni Agent can automatically suggest and configure visualizations based on your query results, including charts, KPIs, and tables."
-  - Source: https://docs.omni.co/ai/visualizations (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/visualizations (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/visualizations)
   - Reasoning: The agent selects and configures visualizations from the query results, rather than only restyling a user-selected chart.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The Omni Agent can automatically suggest and configure visualizations based on your query results, including charts, KPIs, and tables."
-  - Source: https://docs.omni.co/ai/visualizations (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/visualizations (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/visualizations)
   - Reasoning: The Omni Agent automatically selects, suggests, and configures appropriate visualizations (charts, KPIs, tables) based on query results.
 
 ### INVESTIGATE: Can the AI identify what contributed to a change, with calculations a person can check?
@@ -195,7 +195,7 @@ What counts: `yes`: the built-in assistant breaks a change down into contributin
   - Reasoning: The documentation explicitly identifies a shipped built-in root-cause response, but does not show numerical segment contributions or a contribution calculation a person can verify.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The Omni Agent can call out anomalies, direction of trends, and notable comparisons — the kind of commentary that would otherwise require a data analyst"
-  - Source: https://docs.omni.co/guides/dashboards/dashboarding-best-practices (checked 2026-10-26)
+  - Source: https://docs.omni.co/guides/dashboards/dashboarding-best-practices (checked 2026-10-26; archived https://web.archive.org/web/20260809233106/https://docs.omni.co/guides/dashboards/dashboarding-best-practices)
   - Reasoning: Omni Agent highlights anomalies, trends, and comparisons, but does not provide checkable mathematical breakdowns showing each segment's exact percentage contribution to the change.
 
 ### FORECAST: Can the AI produce a forecast and expose the assumptions behind it?
@@ -206,15 +206,15 @@ What counts: The AI creates a forecast and exposes its horizon, inputs and assum
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "The Omni Agent will generate a new query if needed, analyze the query results, and generate a statistical forecast based on historical patterns in the data."
-  - Source: https://docs.omni.co/ai/forecasting (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/forecasting (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/forecasting)
   - Reasoning: The agent produces the forecast for a requested horizon. No page says the forecast exposes its model, inputs or assumptions so a person can challenge it.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "The Omni Agent will generate a new query if needed, analyze the query results, and generate a statistical forecast based on historical patterns in the data."
-  - Source: https://docs.omni.co/ai/forecasting (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/forecasting (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/forecasting)
   - Reasoning: The built-in agent generates forecasts from query results for a requested horizon. The page describes historical inputs and statistical processing, but does not establish that the answer exposes its chosen model and assumptions for challenge.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The Omni Agent can generate statistical forecasts for time-series data using natural language prompts."
-  - Source: https://docs.omni.co/ai/forecasting (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/forecasting (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/forecasting)
   - Reasoning: Omni Agent generates statistical time-series projections, but the documentation does not describe exposing the mathematical assumptions or confidence intervals behind the forecast.
 
 ### SCENARIO: Can the AI calculate and compare what-if scenarios, each with its changed assumptions stated?
@@ -265,7 +265,7 @@ What counts: The assistant can read the calculation behind a chart or table in B
   - Reasoning: When the built-in agent searches existing dashboards, it evaluates individual tiles and works from the underlying saved query to display a live preview. This reaches the query feeding a specific BI chart, beyond an isolated SQL editor.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The Omni Agent will focus on the selected chart until you remove the focus or close the chat panel."
-  - Source: https://docs.omni.co/ai/dashboard-assistant (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/dashboard-assistant (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/ai/dashboard-assistant)
   - Reasoning: With Chat with Content, the Omni Agent can focus on an individual chart or table in a dashboard, reading its underlying query and data to answer questions.
 
 ### E_IW: Can the built-in assistant write the calculation behind a chart or table in BI content?
@@ -280,7 +280,7 @@ What counts: The assistant writes or changes the calculation behind a chart or t
   - Reasoning: The built-in agent edits the charts in a published dashboard. It can also edit existing dashboards through drafts.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "You can add the calculation manually or by using the Workbook Agent."
-  - Source: https://docs.omni.co/guides/dashboards/calculated-field-filter (checked 2026-10-26)
+  - Source: https://docs.omni.co/guides/dashboards/calculated-field-filter (checked 2026-10-26; archived https://web.archive.org/web/20260418035620/https://docs.omni.co/guides/dashboards/calculated-field-filter)
   - Reasoning: This official tutorial adds a RANK calculation to the query powering an existing dashboard chart using the built-in Workbook Agent, then publishes it. The analytical object is a dashboard chart, not merely an unrelated editor cell.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The Workbook Agent can help you create and refine workbook queries using natural language."
@@ -335,11 +335,11 @@ What counts: The assistant can open existing BI content and work from what it sh
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Chat with Content allows you to interact with your content using natural language."
-  - Source: https://docs.omni.co/ai/dashboard-assistant (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/dashboard-assistant (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/ai/dashboard-assistant)
   - Reasoning: The assistant opens on published dashboards and works from the charts shown, including follow-ups and summaries.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Chat with Content allows you to interact with your content using natural language."
-  - Source: https://docs.omni.co/ai/dashboard-assistant (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/dashboard-assistant (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/ai/dashboard-assistant)
   - Reasoning: The built-in assistant opens alongside published content, can focus a selected chart, and works with its results through follow-ups, drilling and re-aggregation. The standalone agent can also find existing dashboards and execute their tiles.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Search existing dashboards for tiles and visualizations that already answer your question before generating a new query"
@@ -377,7 +377,7 @@ What counts: An outside agent can read the contents of existing BI content (its 
   - Reasoning: An outside agent reads the queries and filters of existing dashboards and workbooks through MCP content tools.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Retrieve the document's published state."
-  - Source: https://docs.omni.co/api/documents-v2/get-document-state (checked 2026-10-26)
+  - Source: https://docs.omni.co/api/documents-v2/get-document-state (checked 2026-10-26; archived https://web.archive.org/web/20260819200821/https://docs.omni.co/api/documents-v2/get-document-state)
   - Reasoning: The REST response exposes published BI content with its query presentations, filters/controls, settings and layout. An outside agent can call this directly or use the documented CLI; this is reading content, not only listing its name.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Lists the saved queries in a document, such as a workbook or app."
@@ -392,15 +392,15 @@ What counts: An outside agent can create BI content through the vendor's interfa
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Build and update dashboards programmatically"
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Vendor skills (omni-content-builder) and the Documents v2 create/draft/publish API let an outside agent create dashboards.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "* Build and update dashboards programmatically"
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: The vendor's official outside-agent skills create persistent Omni dashboards through the CLI and document v2 APIs, including tiles, filters, layouts and draft/publish workflow.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Build and update dashboards programmatically"
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Outside coding agents use Omni agent skills and the Documents API to programmatically build, update, and manage dashboards.
 
 ### SHAREASSET: Can a user share AI-created BI content with named users or groups, with each viewer seeing only what their own permissions allow?
@@ -411,15 +411,15 @@ What counts: `yes`: AI-created BI content can be shared with named users or grou
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Every app inherits the access rules already in place — connection permissions, the semantic model and data permissions, and content sharing all carry over."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The Omni Agent builds apps and dashboards that are shared like other content. App data and API calls are evaluated under the viewer's permissions, and access warnings show tiles restricted for lower roles.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Every app inherits the access rules already in place — connection permissions, the semantic model and data permissions, and content sharing all carry over."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The built-in Omni Agent creates saved apps from live model queries. Apps inherit semantic data access and content sharing; the page states viewer-identity enforcement, and the sharing guide supports named users/groups. This credit is for AI-created apps, not cached shared chat results.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Every AI query respects row-level security and user-level access controls."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: AI-generated content and dashboards are shared under standard document permissions and respect row-level security policies for each viewer.
 
 ### DISCOVERASSET: Can permitted users find colleagues' saved analytical assets through workspace-wide browse or search?
@@ -516,7 +516,7 @@ What counts: `yes`: a built-in agent that cannot finish a task stops and hands i
   - Reasoning: When permissions prevent completing a dashboard save, the built-in agent stops the save, notifies the person, and identifies who must grant access. This is a documented failure hand-back, rather than routine clarification.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Writes changes, then pauses for your approval before continuing."
-  - Source: https://docs.omni.co/ai/model-assistant (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/model-assistant (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/model-assistant)
   - Reasoning: Omni's Modeling Agent features a Review execution mode that explicitly pauses and asks for human approval before proceeding with proposed changes.
 
 ### AGENTCHAIN: Can a customer configure one agent to delegate a bounded analytical task to another named agent?
@@ -546,11 +546,11 @@ What counts: The vendor documents attaching an outside capability to its own AI.
   - Reasoning: Admins enable outside tool integrations, plus custom connections, for the built-in Omni Agent, and users toggle them per session. That attaches outside capabilities to Omni's own AI. Not supported in embedded instances.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "AI integrations extend the Omni Agent with context from the tools your team already uses, allowing it to reference files, messages, calendar events, and code alongside your Omni data."
-  - Source: https://docs.omni.co/integrations/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/integrations/ai (checked 2026-10-26; archived https://web.archive.org/web/20261102051904/https://docs.omni.co/integrations/ai)
   - Reasoning: Organization Admins configure first-party external integrations such as Google Drive, GitHub, Notion and Slack, whose tools the built-in agent can use. This is outbound capability attached to Omni's AI.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "AI integrations extend the Omni Agent with context from the tools your team already uses, allowing it to reference files, messages, calendar events, and code alongside your Omni data."
-  - Source: https://docs.omni.co/integrations/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/integrations/ai (checked 2026-10-26; archived https://web.archive.org/web/20261102051904/https://docs.omni.co/integrations/ai)
   - Reasoning: The built-in Omni Agent connects to external tools including Google Drive, Google Calendar, GitHub, Notion, and Slack to incorporate external context into analyses.
 
 ### CONTENTFIX: Can the product's AI find and fix BI content affected by a change in the data or its definitions?
@@ -561,15 +561,15 @@ What counts: When a column is renamed, a table changes or a shared definition is
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "The agent can also automatically detect and fix runtime errors in the app while you're working on a draft."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: Omni apps are persistent, governed BI content, and the built-in Omni Agent is documented detecting and fixing errors in the app the user is editing. That is the AI repairing one asset the user is already working on, which the row scores as partly. Finding downstream content affected by a data or definition change is done by the Content Validator, which a person runs. The only page showing the agent using the Content Validator is a demo ('Blobby Learns to Content Validate', demos/2026/20261002), and that page says demos are not a guarantee of release. The changelog lists no shipped AI content-validator feature. The Apps page carries no beta or preview label, so the feature counts as generally available.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "The agent can also automatically detect and fix runtime errors in the app while you're working on a draft."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The built-in Omni Agent detects and repairs errors in the particular app being edited. Omni apps are persistent, governed BI content, so this supports the limited case of fixing an asset the user is already working on. It does not establish the AI finding downstream BI assets affected by a warehouse or shared-definition change and repairing them or flagging their owners. The general Content Validator documents impact discovery and bulk repair for people; its AI integration appears in a demo that does not guarantee release.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The agent can also automatically detect and fix runtime errors in the app while you're working on a draft."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: Omni apps are persistent, governed BI content backed by live queries. The built-in Omni Agent can automatically detect and fix runtime errors in an app while the user is working on a draft. This covers the AI repairing one asset that the user is currently editing, which the row scores as partly. Omni does not document the AI automatically identifying and repairing all downstream BI content across the workspace affected by a data or definition change.
 
 ## Generated apps
@@ -582,15 +582,15 @@ What counts: The assistant can see the app that exists, its code, its layout, wh
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "When you ask the agent to change an app, it will make targeted edits by locating the exact snippet in the code and only modifying the relevant portions."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The built-in agent reads the app's code and also sees rendered elements through the App inspector.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "When you ask the agent to change an app, it will make targeted edits by locating the exact snippet in the code and only modifying the relevant portions."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The built-in agent reads existing app code to locate specific snippets and edit them. App inspection also sends selected rendered elements to the agent, so the existing app is available as context.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "When it's done, the app opens in the editor, where you can keep iterating in chat or by hand."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The built-in Omni Agent can open and inspect generated application code, layout, and queries, allowing users to iterate on them through conversational chat.
 
 ### A_IW: Can the built-in assistant build a persistent governed app backed by live data?
@@ -601,15 +601,15 @@ What counts: The assistant creates a persistent first-class app with an owner, p
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "The agent generates each query the app needs against your model, writes the HTML, and wires it to the data."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The Omni Agent creates a persistent, shareable app document paired with a workbook of live governed queries.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "* **In a chat** — Describe the interface and the data it should show in the Omni Agent. The agent generates each query the app needs against your model, writes the HTML, and wires it to the data. When it's done, the app opens in the editor, where you can keep iterating in chat or by hand."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The built-in Omni Agent creates a persistent app paired with a saved workbook and live governed queries. Apps inherit document ownership, content permissions and semantic data access; they are first-class shared content rather than disposable HTML.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The agent generates each query the app needs against your model, writes the HTML, and wires it to the data."
-  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26)
+  - Source: https://docs.omni.co/visualize-present/apps (checked 2026-10-26; archived https://web.archive.org/web/20261013152058/https://docs.omni.co/visualize-present/apps)
   - Reasoning: The built-in Omni Agent writes custom, persistent web applications by generating the queries against the model and authoring the HTML and JavaScript.
 
 ### A_OR: Can an outside coding agent read a generated app?
@@ -717,15 +717,15 @@ What counts: The documentation says a correction a person makes to a built-in as
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Changes are written to the model as YAML, making them available to all users querying through that model."
-  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/learn-from-conversation)
   - Reasoning: Learn from conversation turns a user's correction into model updates that change later answers. The reach is stated: all users querying through that model.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Changes are written to the model as YAML, making them available to all users querying through that model."
-  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/learn-from-conversation)
   - Reasoning: The learn-from-conversation flow turns user corrections into reviewed model context or field definitions that affect future queries. The documented reach is all users querying that model.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Changes are written to the model as YAML, making them available to all users querying through that model."
-  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/learn-from-conversation)
   - Reasoning: Learn from Conversation captures conversational corrections and writes them back into the shared model YAML, making the corrected logic available to all users across the organization.
 
 ### CERTMATCH: Does the built-in assistant answer consistently with the product's certified or governed content?
@@ -740,11 +740,11 @@ What counts: When a question is already answered by certified BI content or a go
   - Reasoning: The agent searches existing dashboards first and builds on governed semantic-model definitions. No rule binds answers to certified content or flags a mismatch.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "This means AI-generated queries use the same governed definitions as the rest of Omni, so results are consistent and trustworthy."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: Omni AI uses shared governed semantic definitions. No rule binds it to certified BI assets or prevents/flags a departure from a certified answer, so semantic-layer use earns partial scope.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "This means AI-generated queries use the same governed definitions as the rest of Omni, so results are consistent and trustworthy."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: The built-in assistant queries against governed shared model definitions and verified topics, but the documentation does not describe an automated mechanism that flags discrepancies against certified dashboards.
 
 ## Administration & observability
@@ -814,7 +814,7 @@ What counts: The product records what the built-in assistant did, the prompt or 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Logs of AI interactions, including prompts, responses, and linked sessions"
-  - Source: https://docs.omni.co/administration/analytics (checked 2026-10-26)
+  - Source: https://docs.omni.co/administration/analytics (checked 2026-10-26; archived https://web.archive.org/web/20260810031827/https://docs.omni.co/administration/analytics)
   - Reasoning: The Analytics AI dashboard logs assistant prompts, responses and sessions, and the AI Hub Usage dashboard breaks activity down by user. Neither documents recording the analytical objects the assistant touched. The audit log event types do not distinguish AI activity.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Retrieve the full result of a completed AI job, including all actions taken by the AI (queries generated, data retrieved) and the final summarized answer."
@@ -833,7 +833,7 @@ What counts: A documented control that turns AI features on or off for a subset 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Added granular model role permissions for AI access. Administrators can now control AI feature access and workbook access at the model role level, providing more fine-grained permission management."
-  - Source: https://docs.omni.co/changelog/2025 (checked 2026-10-26)
+  - Source: https://docs.omni.co/changelog/2025 (checked 2026-10-26; archived https://web.archive.org/web/20260521201754/https://docs.omni.co/changelog/2025)
   - Reasoning: Admins can switch off the 'Use Omni Agent' and 'Use routines' granular permissions in custom roles assigned to particular users and groups, as listed in the custom roles reference.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "If your organization uses [custom roles](https://docs.omni.co/administration/users/custom-roles.md), you'll need the **Use Omni Agent**, **Use workbooks**, and **Create apps** permissions."
@@ -841,7 +841,7 @@ What counts: A documented control that turns AI features on or off for a subset 
   - Reasoning: Custom roles have a granular Use Omni Agent permission that can be disabled, and admins can assign those roles to individual users or user groups. This enables selective AI rollout beyond the organization-wide feature toggle.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Enable and disable individual AI features in your Omni organization."
-  - Source: https://docs.omni.co/ai/settings/features (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/settings/features (checked 2026-10-26; archived https://web.archive.org/web/20261102073710/https://docs.omni.co/ai/settings/features)
   - Reasoning: Admins can toggle individual AI features on or off organization-wide in AI Hub > Features, but there is no granular rollout targeting specific user groups or roles.
 
 ### AIAPPROVE: Can the built-in assistant’s change to a governed analytical asset be held for human approval before it takes effect?
@@ -860,7 +860,7 @@ What counts: `yes`: the built-in assistant's change to governed BI content or sh
   - Reasoning: Model edits can pause for the requester's confirmation. The docs do not name a different human approver for that AI write; the general branch/PR workflow is also only partial under the approval rule.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Writes changes, then pauses for your approval before continuing."
-  - Source: https://docs.omni.co/ai/model-assistant (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/model-assistant (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/model-assistant)
   - Reasoning: Review mode pauses for approval before continuing, and changes land in drafts that the requester reviews and publishes. However, this is requester confirmation rather than approval by a separate named person or role.
 
 ## Data handling & AI governance
@@ -873,15 +873,15 @@ What counts: The customer controls where inference occurs. A model running in th
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Snowflake Cortex provides access to industry-leading large language models (LLMs) hosted directly within your Snowflake infrastructure."
-  - Source: https://docs.omni.co/ai/settings/model-providers/snowflake-cortex (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/settings/model-providers/snowflake-cortex (checked 2026-10-26; archived https://web.archive.org/web/20260413235532/https://docs.omni.co/ai/settings/model-providers/snowflake-cortex)
   - Reasoning: With the BYOK Snowflake Cortex provider set as the default, and its simple-task model handling light tasks, inference runs inside the customer's Snowflake account. BYOK requires the Enterprise plan.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Snowflake Cortex provides access to industry-leading large language models (LLMs) hosted directly within your Snowflake infrastructure."
-  - Source: https://docs.omni.co/ai/settings/model-providers/snowflake-cortex (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/settings/model-providers/snowflake-cortex (checked 2026-10-26; archived https://web.archive.org/web/20260413235532/https://docs.omni.co/ai/settings/model-providers/snowflake-cortex)
   - Reasoning: Customers can configure Cortex to power Omni AI in their Snowflake infrastructure and choose its region/cross-region policy. The documented OpenAI-compatible route also supports customer-hosted Ollama endpoints.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Snowflake Cortex provides access to industry-leading large language models (LLMs) hosted directly within your Snowflake infrastructure."
-  - Source: https://docs.omni.co/ai/settings/model-providers/snowflake-cortex (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/settings/model-providers/snowflake-cortex (checked 2026-10-26; archived https://web.archive.org/web/20260413235532/https://docs.omni.co/ai/settings/model-providers/snowflake-cortex)
   - Reasoning: Omni supports Bring Your Own Key (BYOK) connecting to customer-hosted LLMs in Snowflake Cortex as well as self-hosted endpoints via Ollama or custom providers.
 
 ### GOVBIND: Do your existing row-level security and column permissions apply to what the BUILT-IN assistant returns?
@@ -892,15 +892,15 @@ What counts: `yes`: the documentation states that the built-in assistant answers
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "**Permissions** — Every AI query respects row-level security and user-level access controls. Users only see data they're authorized to access."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: The built-in AI generates abstract Omni queries that run with the asking user's permissions, so row-level security and field-level access controls apply. The security page and Modeling Agent page say the same.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "* **Permissions** — Every AI query respects row-level security and user-level access controls. Users only see data they're authorized to access."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: The built-in AI respects the asking user's data access. The security guide describes generated queries honoring Omni permissions, and the Modeling Agent is grounded in field-level controls. Omni's model permissions cover both rows and fields.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Every AI query respects row-level security and user-level access controls."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: Omni enforces user permissions, access filters, and row-level security policies on every query generated by the AI.
 
 ### AIDATAFLOW: Does the product documentation say which services receive AI prompts or data, and what they receive?
@@ -972,11 +972,11 @@ What counts: `yes`: an administrator can enforce, across the workspace or tenant
   - Reasoning: ai_chat_topics and ai_fields limit what the AI sees across a model. The same pages warn the parameter 'changes what the AI is aware of, not what it has access to', so it is not a security boundary.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "This parameter changes what the AI is aware of, not what it has access to."
-  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26; archived https://web.archive.org/web/20260810161501/https://docs.omni.co/modeling/topics/parameters/ai-fields)
   - Reasoning: Modelers can curate AI-visible fields and topics separately from user permissions, but the docs explicitly say these context restrictions are not access boundaries. ai_chat_topics also excludes the Workbook Agent.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "This parameter changes what the AI is aware of, not what it has access to."
-  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26; archived https://web.archive.org/web/20260810161501/https://docs.omni.co/modeling/topics/parameters/ai-fields)
   - Reasoning: The ai_fields parameter restricts which fields are supplied to the AI context window, but the documentation explicitly notes that this changes awareness rather than serving as an enforced security boundary.
 
 ## Agent access
@@ -993,11 +993,11 @@ What counts: `yes`: an outside agent can act under an identity or token scoped n
   - Reasoning: An outside agent's MCP connection can be limited to one model and topic, narrower than the human's access. Organization keys can also run as a narrower user via X-MCP-User-ID, and admins can switch individual MCP tools off.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "MCP OAuth PATs inherit the creating user's in-app permissions."
-  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26; archived https://web.archive.org/web/20261101215136/https://docs.omni.co/ai/mcp/authentication)
   - Reasoning: MCP OAuth acts with the full human user's permissions. Service-account/API-key and impersonation routes are documented, but the docs do not establish a separately restricted agent token or delegated grant narrower than that user's access.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "A PAT is scoped to the user who creates it and will inherit their in-app permissions."
-  - Source: https://docs.omni.co/api/authentication (checked 2026-10-26)
+  - Source: https://docs.omni.co/api/authentication (checked 2026-10-26; archived https://web.archive.org/web/20260914173710/https://docs.omni.co/api/authentication)
   - Reasoning: External agent connections use Personal Access Tokens or OAuth which inherit the full permissions of the human user, rather than operating under an agent-specific restricted role.
 
 ### LINEAGE: Can an outside agent traverse the upstream sources and transformations behind a number?
@@ -1008,15 +1008,15 @@ What counts: `yes`: an outside agent can follow a number to its upstream sources
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "`dimensions` and `measures` - These blocks contain a `sql` property that defines which database columns are used for that field"
-  - Source: https://docs.omni.co/guides/api/data-lineage-integration (checked 2026-10-26)
+  - Source: https://docs.omni.co/guides/api/data-lineage-integration (checked 2026-10-26; archived https://web.archive.org/web/20260809233055/https://docs.omni.co/guides/api/data-lineage-integration)
   - Reasoning: An outside agent can trace a tile to its topic, view and table by reading the model YAML SQL through the API and inferring the sources. No dedicated lineage interface exists.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "By parsing the `query.fields` array and comparing it to the `dimensions` and `measures` in your YAML, you can identify exactly which database columns drive each dashboard tile."
-  - Source: https://docs.omni.co/guides/api/data-lineage-integration (checked 2026-10-26)
+  - Source: https://docs.omni.co/guides/api/data-lineage-integration (checked 2026-10-26; archived https://web.archive.org/web/20260809233055/https://docs.omni.co/guides/api/data-lineage-integration)
   - Reasoning: An outside agent can retrieve a dashboard's queries and model SQL mappings through documented APIs. The guide requires the caller to parse those definitions and assemble the lineage graph; it does not expose a ready-made upstream lineage traversal service.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "By parsing the query.fields array and comparing it to the dimensions and measures in your YAML, you can identify exactly which database columns drive each dashboard tile."
-  - Source: https://docs.omni.co/guides/api/data-lineage-integration (checked 2026-10-26)
+  - Source: https://docs.omni.co/guides/api/data-lineage-integration (checked 2026-10-26; archived https://web.archive.org/web/20260809233055/https://docs.omni.co/guides/api/data-lineage-integration)
   - Reasoning: Omni exposes query fields and YAML models which can be parsed to identify underlying columns, but does not provide an interactive visual column-to-dashboard lineage graph in the UI.
 
 ### AGENTAUDIT: Are an outside agent’s actions logged with its identity and the analytical objects affected?
@@ -1054,7 +1054,7 @@ What counts: `yes`: an outside agent's change to governed BI content or shared d
   - Reasoning: The first-party MCP route stages edits to existing dashboards for the requester to review and publish. It does not name a different required approver; new dashboards publish immediately. General Git review and Cursor confirmation also do not meet the separate-approver rule.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Each time Cursor uses an MCP tool, you'll be prompted to approve its usage."
-  - Source: https://docs.omni.co/ai/mcp/cursor (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/mcp/cursor (checked 2026-10-26; archived https://web.archive.org/web/20260914173736/https://docs.omni.co/ai/mcp/cursor)
   - Reasoning: External MCP clients prompt the requester to approve tool calls before execution, but this is requester confirmation rather than approval by an independent human reviewer.
 
 ### AGENTDIFF: Can a reviewer see a diff of what an outside agent changed in a governed analytical asset?
@@ -1065,11 +1065,11 @@ What counts: A reviewer can see a before/after diff of changes an outside agent 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "The detailed view to the right of the list of changes, compares the previous change to the currently selected version."
-  - Source: https://docs.omni.co/modeling/develop/history (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/develop/history (checked 2026-10-26; archived https://web.archive.org/web/20260810161534/https://docs.omni.co/modeling/develop/history)
   - Reasoning: Model history shows a before/after diff of each model change, and an outside agent's branch edits would appear there. No page says the diff covers changes made by an outside agent.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "To quickly understand what changed without opening the IDE, click the **Code** tab to view the "diff" of the underlying model YAML:"
-  - Source: https://docs.omni.co/modeling/develop/promotion (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/develop/promotion (checked 2026-10-26; archived https://web.archive.org/web/20261102052711/https://docs.omni.co/modeling/develop/promotion)
   - Reasoning: Omni exposes before/after YAML diffs for model changes and has a universal version-history comparison. The docs do not specifically demonstrate that reviewer diff for changes authored by an outside agent, so this is the generic-diff partial scope.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The content/metadata diff applied to a draft."
@@ -1084,15 +1084,15 @@ What counts: A change made by an outside agent to a governed analytical asset ca
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "You can restore a previously published version of a document using the **File > Version history** option."
-  - Source: https://docs.omni.co/content/develop/drafts (checked 2026-10-26)
+  - Source: https://docs.omni.co/content/develop/drafts (checked 2026-10-26; archived https://web.archive.org/web/20260809233106/https://docs.omni.co/content/develop/drafts)
   - Reasoning: Agent edits to dashboards land as drafts or published versions, and model edits land in model history. Earlier document versions and model versions can both be restored, which reverts the agent's change.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Model history in the developer IDE allows users to see the changes made to the model and restore to an older version."
-  - Source: https://docs.omni.co/modeling/develop/history (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/develop/history (checked 2026-10-26; archived https://web.archive.org/web/20260810161534/https://docs.omni.co/modeling/develop/history)
   - Reasoning: Outside agents can edit the semantic model through the official skills and YAML API. Model history restores earlier saved model versions without limiting the author of the changes, so an agent-authored shared-definition change can be rolled back.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Click Restore this version."
-  - Source: https://docs.omni.co/modeling/develop/history (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/develop/history (checked 2026-10-26; archived https://web.archive.org/web/20260810161534/https://docs.omni.co/modeling/develop/history)
   - Reasoning: The model IDE version history and document version history allow reverting or restoring prior versions if an agent introduces unwanted changes.
 
 ### MCPSERVER: Does the vendor support an MCP server with documented authentication for outside agents?
@@ -1111,7 +1111,7 @@ What counts: A vendor-supported MCP server gives outside agents access to the cu
   - Reasoning: Omni provides its hosted MCP server for customer data, queries, dashboards and apps with documented OAuth and API-key authentication. It needs no customer-built middleware and is not labeled preview on this page or its AI section parent.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The Omni MCP Server supports two authentication methods. Choose the one that best fits your needs:"
-  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26; archived https://web.archive.org/web/20261101215136/https://docs.omni.co/ai/mcp/authentication)
   - Reasoning: Omni provides a first-party Model Context Protocol (MCP) server supporting OAuth 2.1 and API key authentication for external AI clients.
 
 ### AGENTDISCOVER: Can an outside agent list what exists, dashboards, metrics, tables, without being told what to look for?
@@ -1141,7 +1141,7 @@ What counts: A named credential type for programmatic access. Whose permissions 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "OAuth lets MCP clients connect to Omni without requiring you to manually create and manage API keys."
-  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26; archived https://web.archive.org/web/20261101215136/https://docs.omni.co/ai/mcp/authentication)
   - Reasoning: Named credential types are documented: MCP OAuth PATs, personal access tokens and Organization API keys, the latter for service-account style automation.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "* **API key** - Manual key creation for centralized management or automated workflows."
@@ -1149,7 +1149,7 @@ What counts: A named credential type for programmatic access. Whose permissions 
   - Reasoning: The vendor names API keys and OAuth 2.1 as authentication methods for outside-agent MCP clients; API authentication also documents PATs and bearer headers.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "After authorization, all MCP queries use your Omni permissions and access controls."
-  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26; archived https://web.archive.org/web/20261101215136/https://docs.omni.co/ai/mcp/authentication)
   - Reasoning: The Omni MCP server supports OAuth 2.1 and API key authentication, allowing outside agents to connect and authenticate on behalf of a user while respecting their Omni permissions.
 
 ### AGENTSKILL: Does the vendor publish skills or packaged instructions that teach an outside agent to use the product?
@@ -1160,15 +1160,15 @@ What counts: A vendor-published skill, plugin or instruction pack (for example a
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "They are open-source skills that let you explore models, run queries, build dashboards, and manage your Omni instance — all without leaving your IDE."
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Omni publishes SKILL.md-based agent skills and plugins for Claude Code, Cursor, Codex and others.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "They work with AI coding assistants including Claude Code, Cursor, Codex, Cortex Code, CoCo, and more."
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Omni publishes an official open-source agent-skill/plugin package with model exploration, query, modeling, content-building and administrative skills. The install guide documents SKILL.md folders and supported coding-agent installation flows.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Omni's agent skills bring analytics capabilities directly into your development environment."
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Omni publishes open-source agent skills and instruction files (such as SKILL.md) for coding agents including Claude Code, Cursor, and Codex to explore models and build dashboards.
 
 ### AGENTCLI: Is there a command-line tool documented for use by outside agents?
@@ -1179,15 +1179,15 @@ What counts: A vendor-supported command-line tool whose documentation addresses 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "**Using a coding agent?** Paste this prompt into Claude Code, Cursor, Codex, or any coding agent and it will install the Omni CLI for you:"
-  - Source: https://docs.omni.co/developers/cli (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/cli (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/cli)
   - Reasoning: The vendor CLI docs address coding agents directly. Non-interactive authentication is documented through the OMNI_API_TOKEN environment variable (developers/cli/authentication).
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "**Using a coding agent?** Paste this prompt into Claude Code, Cursor, Codex, or any coding agent and it will install the Omni CLI for you:"
-  - Source: https://docs.omni.co/developers/cli (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/cli (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/cli)
   - Reasoning: The official CLI explicitly addresses coding-agent use and the linked authentication guide provides API-key authentication via OMNI_API_TOKEN for automated workflows, avoiding an interactive OAuth requirement.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Once the CLI is installed, you can use Omni's agent skills to bring analytics capabilities directly into AI coding assistants like Claude Code, Cursor, and Codex."
-  - Source: https://docs.omni.co/developers/cli (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/cli (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/cli)
   - Reasoning: Omni provides a dedicated CLI that outside AI coding assistants and developers use alongside agent skills, supporting headless authentication via API keys.
 
 ### AGENTROLLOUT: Can an administrator allow or block outside-agent access for particular users, groups or workspaces?
@@ -1202,7 +1202,7 @@ What counts: A documented admin control over agent or MCP access, separate from 
   - Reasoning: The MCP server toggle and per-tool settings apply to the whole organization. No per-user, group or workspace control over agent access is documented.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Disabling it returns a `403` for new authorization requests and blocks existing grants from making tool calls."
-  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/mcp/authentication (checked 2026-10-26; archived https://web.archive.org/web/20261101215136/https://docs.omni.co/ai/mcp/authentication)
   - Reasoning: Organization Admins can enforce the organization-wide MCP server switch, including blocking existing grants. No separately documented per-user/group/workspace MCP rollout control was found beyond ordinary user permissions and token revocation.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Controls whether users can authorize external AI tools (like Claude Desktop, ChatGPT, or Cursor) to connect to Omni via the MCP Server."
@@ -1221,7 +1221,7 @@ What counts: A limit on agent-driven usage (rate limit, quota, spend or compute 
   - Reasoning: MCP usage counts against the general org and per-user AI credit caps. No limit specific to the agent interface is documented.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "The Omni API allows **60 requests per minute per API key**."
-  - Source: https://docs.omni.co/api/rate-limits (checked 2026-10-26)
+  - Source: https://docs.omni.co/api/rate-limits (checked 2026-10-26; archived https://web.archive.org/web/20260809233106/https://docs.omni.co/api/rate-limits)
   - Reasoning: Outside agents using the vendor API or CLI encounter the ordinary per-key API rate limit. AI credits also cover MCP usage, but neither is documented as a distinct agent-only quota, so the general API-limit partial scope applies.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Too Many Requests - Rate limit exceeded (60 requests/minute)"
@@ -1238,7 +1238,7 @@ What counts: Somewhere to write down what the schema does not say: which custome
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "For example, if you tell the AI that "revenue should only include orders with status Complete, Shipped, or Processing," the AI can learn that rule and encode it into the model as field descriptions, `ai_context`, synonyms, or new field definitions."
-  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/learn-from-conversation)
   - Reasoning: Business rules are written into ai_context, descriptions and synonyms on the model, topics, views and fields. The Omni Agent, and MCP agents through the same pipeline, read them before answering.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Free text that provides context to the [Omni Agent](https://docs.omni.co/ai/chat.md) for all topics in the model."
@@ -1257,11 +1257,11 @@ What counts: The business context lives in files you can diff, review and roll b
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Using a git integration provides added development benefits of storing backups of model files and using pull requests to create collaborative and peer reviewed changes."
-  - Source: https://docs.omni.co/integrations/git (checked 2026-10-26)
+  - Source: https://docs.omni.co/integrations/git (checked 2026-10-26; archived https://web.archive.org/web/20260812162852/https://docs.omni.co/integrations/git)
   - Reasoning: AI context lives in model YAML files, which sync to Git for diffs, review and rollback.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Using a git integration provides added development benefits of storing backups of model files and using pull requests to create collaborative and peer reviewed changes."
-  - Source: https://docs.omni.co/integrations/git (checked 2026-10-26)
+  - Source: https://docs.omni.co/integrations/git (checked 2026-10-26; archived https://web.archive.org/web/20260812162852/https://docs.omni.co/integrations/git)
   - Reasoning: Business context for the built-in agent is stored in model YAML, including ai_context, descriptions and synonyms. Omni's Git integration versions those model files, supporting diffs, reviews and rollback.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Omni's git integration allows you to version control your model files by connecting an Omni model to a git repository."
@@ -1276,11 +1276,11 @@ What counts: Context attached to a workspace, team, audience or model rather tha
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "At query time, Omni substitutes each placeholder with the current user's attribute value, allowing you to tailor AI behavior per user or group."
-  - Source: https://docs.omni.co/modeling/develop/ai-optimization (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/develop/ai-optimization (checked 2026-10-26; archived https://web.archive.org/web/20260914173736/https://docs.omni.co/modeling/develop/ai-optimization)
   - Reasoning: ai_context is set per model, topic and view, and can be personalized per user or group through user attributes, so teams get different context.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "At query time, Omni substitutes each placeholder with the current user's attribute value, allowing you to tailor AI behavior per user or group."
-  - Source: https://docs.omni.co/modeling/develop/ai-optimization (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/develop/ai-optimization (checked 2026-10-26; archived https://web.archive.org/web/20260914173736/https://docs.omni.co/modeling/develop/ai-optimization)
   - Reasoning: The built-in Omni Agent can receive distinct business context per user/group through user attributes, and model/topic/view context also scopes it by dataset rather than tenant-wide only.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "This allows you to personalize the context for each user."
@@ -1352,15 +1352,15 @@ What counts: `yes`: a product setting that removes a table, field or answer from
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "If defined, only the specified fields will be added to the context window."
-  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26; archived https://web.archive.org/web/20260810161501/https://docs.omni.co/modeling/topics/parameters/ai-fields)
   - Reasoning: ai_fields, which supports exclusions, and ai_chat_topics are AI-specific product settings that take fields, views or topics out of the AI's context so it avoids them. Data access is governed separately.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "This parameter changes what the AI is aware of, not what it has access to."
-  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26; archived https://web.archive.org/web/20260810161501/https://docs.omni.co/modeling/topics/parameters/ai-fields)
   - Reasoning: ai_fields can exclude fields/views from the built-in agent's context, including tag-based exclusions. Because the documentation warns this does not remove access and the AI may infer schemas, it is curation/guidance rather than enforced off-limits data.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "An array of field selectors that determine which fields are provided to the Omni Agent's context window."
-  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/topics/parameters/ai-fields (checked 2026-10-26; archived https://web.archive.org/web/20260810161501/https://docs.omni.co/modeling/topics/parameters/ai-fields)
   - Reasoning: The ai_fields parameter supports negative selectors (such as -tag: or -fieldname) to explicitly exclude fields from the AI's context window.
 
 ### CTXOWNER: Is there a documented owner or approval workflow for business context?
@@ -1371,7 +1371,7 @@ What counts: `yes`: the documentation names who owns or approves business contex
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Enabling this setting will require all changes to the model to be made through a pull request."
-  - Source: https://docs.omni.co/integrations/git/settings (checked 2026-10-26)
+  - Source: https://docs.omni.co/integrations/git/settings (checked 2026-10-26; archived https://web.archive.org/web/20260810160424/https://docs.omni.co/integrations/git/settings)
   - Reasoning: Context lives in the model. A PR-required review workflow exists, and PR approval rules are delegated to the Git provider, but no owner role for business context is named. Modeler/admin edit permissions alone do not count.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "An array of email addresses for the topic owners."
@@ -1379,7 +1379,7 @@ What counts: `yes`: the documentation names who owns or approves business contex
   - Reasoning: A topic can name owners for the topic and its business context, used by the AI to identify subject-matter experts. Separate context suggestion and learning review flows exist, but this ownership parameter does not require the named owners to approve context changes.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "A review modal displays the proposed changes as model YAML"
-  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/learn-from-conversation)
   - Reasoning: Proposed model corrections are reviewed before being saved, but the review is performed by the user in session rather than routed to a dedicated context owner or data steward.
 
 ## Warehouse logic
@@ -1432,7 +1432,7 @@ What counts: `yes`: an outside agent can read warehouse-level logic (view defini
   - Reasoning: Warehouse metric-view logic, including SQL expressions shown on this page, is imported into Omni model fields. An outside agent can read those definitions through the documented model YAML API/CLI and model-explorer skill; this goes beyond table/column names and types.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Explore and inspect semantic models, topics, views, and fields"
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Outside coding agents inspect warehouse-backed models, topics, and views via Omni agent skills and API.
 
 ### W_OW: Can an outside coding agent write logic into your warehouse?
@@ -1466,11 +1466,11 @@ What counts: The product consumes definitions you already maintain in dbt, Cube 
   - Reasoning: Snowflake semantic views and dbt semantic-layer metrics are consumed directly and do not have to be rebuilt in Omni.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "This includes dimensions, entities, measures, and metrics, so you can use your dbt semantic definitions directly in Omni without recreating them."
-  - Source: https://docs.omni.co/integrations/dbt/semantic-layer (checked 2026-10-26)
+  - Source: https://docs.omni.co/integrations/dbt/semantic-layer (checked 2026-10-26; archived https://web.archive.org/web/20260813024504/https://docs.omni.co/integrations/dbt/semantic-layer)
   - Reasoning: The product imports externally maintained dbt metric definitions. It also documents importing Snowflake semantic views and Databricks metric views.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Omni's integration with dbt's semantic layer reads metadata from your dbt semantic layer project and maps it into your Omni model."
-  - Source: https://docs.omni.co/integrations/dbt/semantic-layer (checked 2026-10-26)
+  - Source: https://docs.omni.co/integrations/dbt/semantic-layer (checked 2026-10-26; archived https://web.archive.org/web/20260813024504/https://docs.omni.co/integrations/dbt/semantic-layer)
   - Reasoning: Omni imports metric and semantic definitions directly from dbt Semantic Layer and Snowflake semantic views.
 
 ## Shared definitions
@@ -1483,15 +1483,15 @@ What counts: The assistant answers using the metrics, dimensions and joins your 
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "This means AI-generated queries use the same governed definitions as the rest of Omni, so results are consistent and trustworthy."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: The assistant builds queries from the semantic model's metrics, dimensions and joins.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Omni's AI uses your defined metrics, relationships, and business logic — not guesswork on raw tables."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: The built-in assistant generates answers against the same semantic model containing shared metrics, dimensions and relationships.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Omni's AI is built on your organization's semantic model — the layer that defines your metrics, relationships, and business logic."
-  - Source: https://docs.omni.co/ai (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai (checked 2026-10-26; archived https://web.archive.org/web/20260914173646/https://docs.omni.co/ai)
   - Reasoning: The built-in assistant reads and queries against the shared semantic model layer, including views, metrics, joins, and topics.
 
 ### M_IW: Can the built-in assistant change your shared definitions?
@@ -1502,7 +1502,7 @@ What counts: `yes`: the built-in assistant can create or edit metrics, dimension
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "**New dimensions and measures** — define calculated fields that came up in the conversation"
-  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/learn-from-conversation (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/learn-from-conversation)
   - Reasoning: The built-in AI writes new dimensions and measures into the shared model. The Modeling Agent also drafts measures, topics and relationships.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "| **Apply model edits** | Apply the agent's edits to view, topic, and relationship files in the model |"
@@ -1510,7 +1510,7 @@ What counts: `yes`: the built-in assistant can create or edit metrics, dimension
   - Reasoning: The built-in agent edits semantic view, topic and relationship definitions. The Modeling Agent guide documents drafting and applying YAML, including new dimensions, measures and topics, rather than descriptions alone.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "The agent uses these insights to suggest views, measures (with appropriate aggregate_type and symmetric aggregation settings), relationships (with reversible semantics), and query views that align with how your team actually queries the data."
-  - Source: https://docs.omni.co/ai/model-assistant (checked 2026-10-26)
+  - Source: https://docs.omni.co/ai/model-assistant (checked 2026-10-26; archived https://web.archive.org/web/20260810031416/https://docs.omni.co/ai/model-assistant)
   - Reasoning: The Modeling Agent modifies semantic model YAML in the model IDE, creating and updating views, measures, dimensions, and relationships.
 
 ### M_OR: Can an outside coding agent read your shared definitions?
@@ -1521,7 +1521,7 @@ What counts: An agent can see what a field means, its description and business d
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Explore and inspect semantic models, topics, views, and fields"
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Vendor agent skills (omni-model-explorer) and the model YAML/view APIs let an outside agent read field definitions and descriptions.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "| **omni-model-explorer** | Discover and inspect models, topics, views, fields, dimensions, measures, and relationships |"
@@ -1529,7 +1529,7 @@ What counts: An agent can see what a field means, its description and business d
   - Reasoning: The first-party outside-agent model-explorer skill reads semantic definitions. Its CLI/model YAML API returns authored or fully resolved field definitions, including descriptions, SQL and joins, so the agent can read business meaning rather than infer it from column names.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Explore and inspect semantic models, topics, views, and fields"
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Outside coding agents inspect models, topics, views, and fields programmatically using Omni agent skills and REST API.
 
 ### M_OW: Can an outside coding agent change your shared definitions?
@@ -1540,7 +1540,7 @@ What counts: The semantic layer is writable from outside the product.
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "Create and edit model definitions in YAML"
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Vendor skills (omni-model-builder) let an outside agent create and edit views, dimensions, measures and relationships. askOmni model edits also save to a branch.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "| **omni-model-builder** | Create and edit views, topics, dimensions, measures, and relationships in YAML |"
@@ -1548,7 +1548,7 @@ What counts: The semantic layer is writable from outside the product.
   - Reasoning: Omni's official outside-agent skill authors the shared semantic layer through its CLI and model YAML APIs, including definitions and relationships.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Create and edit model definitions in YAML"
-  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26)
+  - Source: https://docs.omni.co/developers/agent-skills (checked 2026-10-26; archived https://web.archive.org/web/20260914173638/https://docs.omni.co/developers/agent-skills)
   - Reasoning: Outside coding agents create and edit semantic model definitions in YAML files using agent skills and Git integration.
 
 ### WHPUSH: Can definitions written in the tool be pushed back down to the warehouse?
@@ -1559,7 +1559,7 @@ What counts: Work modelled in the BI tool can be written back out so it lives in
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "While not every query needs to be pushed down to dbt, when you do create a query where you want to promote the logic into dbt, you can do so within Omni."
-  - Source: https://docs.omni.co/integrations/dbt/models (checked 2026-10-26)
+  - Source: https://docs.omni.co/integrations/dbt/models (checked 2026-10-26; archived https://web.archive.org/web/20260812043108/https://docs.omni.co/integrations/dbt/models)
   - Reasoning: Work modeled in Omni can be pushed to the dbt repo as a model and materialized in the warehouse.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "3. Creates the semantic view in Snowflake with [`SYSTEM$CREATE_SEMANTIC_VIEW_FROM_YAML`](https://docs.snowflake.com/en/sql-reference/stored-procedures/system_create_semantic_view_from_yaml), using your Snowflake connection or CLI."
@@ -1578,7 +1578,7 @@ What counts: `yes`: the product documents a direct path from a calculation writt
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "**In-Workbook Calculations**: Create Excel-like calculations directly in the workbook by combining columns. These calculations can be promoted for repeated use, making them accessible across multiple areas in Omni for non-technical users."
-  - Source: https://docs.omni.co/modeling/develop/guides/workbook-modeling (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/develop/guides/workbook-modeling (checked 2026-10-26; archived https://web.archive.org/web/20260514131712/https://docs.omni.co/modeling/develop/guides/workbook-modeling)
   - Reasoning: Workbook fields and calculations are promoted to the shared model with 'Promote to shared', and no developer has to rewrite them.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "Once added to the workbook model, you can then promote the calculation to the [shared model](https://docs.omni.co/modeling/develop/model-management#shared-model-promotion)."
@@ -1586,6 +1586,6 @@ What counts: `yes`: the product documents a direct path from a calculation writt
   - Reasoning: A calculation can be added directly from its result-column header to the workbook model and promoted to the maintained shared model. Supported calculations do not require developer re-expression in YAML; result-shape-dependent calculations have documented limitations.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "Shared model promotion pushes changes made in the workbook layer into the model layer so the changes are reusable and available in all workbooks."
-  - Source: https://docs.omni.co/modeling/develop/promotion (checked 2026-10-26)
+  - Source: https://docs.omni.co/modeling/develop/promotion (checked 2026-10-26; archived https://web.archive.org/web/20261102052711/https://docs.omni.co/modeling/develop/promotion)
   - Reasoning: Omni provides a one-click shared model promotion workflow that elevates ad-hoc calculations created in workbooks into governed shared model definitions.
 

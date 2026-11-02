@@ -50,7 +50,7 @@ What counts: The assistant holds the thread, so you can say “now split that by
   - Reasoning: There is no built-in assistant, so there is no conversation to carry on. The st.chat_message and st.chat_input elements are building blocks for customer-built chat apps.
 - **GPT-6.1 Sol**: no
   - Quote: "- Finally, we'll Build a ChatGPT-like app that leverages session state to remember conversational context, all within less than 50 lines of code."
-  - Source: https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/build-conversational-apps (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/build-conversational-apps (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/build-conversational-apps)
   - Reasoning: Conversational memory is explicitly implemented by the customer building a ChatGPT-like app with Session State and OpenAI. The documented capability is customer-built, which the verdict rules score no for a built-in-assistant row.
 - **Gemini 3.8 Flash**: nothing found
   - Reasoning: Streamlit does not provide a built-in assistant that maintains multi-turn conversation threads for refining data analyses.
@@ -275,15 +275,15 @@ What counts: An outside agent can read the contents of existing BI content (its 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "The provided class, AppTest, simulates a running app and provides methods to set up, manipulate, and inspect the app contents via API instead of a browser UI."
-  - Source: https://docs.streamlit.io/develop/api-reference/app-testing (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/app-testing (checked 2026-10-26; archived https://web.archive.org/web/20261021061512/https://docs.streamlit.io/develop/api-reference/app-testing)
   - Reasoning: AppTest is Streamlit's own Python API. A script or outside agent can use it to load an app and inspect its rendered contents (titles, dataframes, widget values) without a browser. It works on the app's source file, which is a code project people edit (analyst work), run as a local simulation. It does not read the deployed app viewers open, and it is not documented for agents. That is partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "The provided class, AppTest, simulates a running app and provides methods to set up, manipulate, and inspect the app contents via API instead of a browser UI."
-  - Source: https://docs.streamlit.io/develop/concepts/app-testing (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/concepts/app-testing (checked 2026-10-26; archived https://web.archive.org/web/20260607141914/https://docs.streamlit.io/develop/concepts/app-testing)
   - Reasoning: An outside script or coding agent can use the first-party AppTest API to read rendered elements and widget/filter state of an existing analytical app whose source it has. This is limited to a local simulated app; it does not retrieve a deployed app's full charts, underlying queries, and filters through a hosted content API.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "The provided class, AppTest, simulates a running app and provides methods to set up, manipulate, and inspect the app contents via API instead of a browser UI."
-  - Source: https://docs.streamlit.io/develop/concepts/app-testing (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/concepts/app-testing (checked 2026-10-26; archived https://web.archive.org/web/20260607141914/https://docs.streamlit.io/develop/concepts/app-testing)
   - Reasoning: Streamlit's native AppTest API allows an outside script or coding agent to inspect the contents, rendered elements, and widget states of a local Streamlit app via API without requiring a browser UI. However, this is limited to simulating local app source files (analyst work) rather than retrieving deployed BI content from the cloud, earning partial credit (partly).
 
 ### D_OW: Can an outside coding agent build BI content?
@@ -294,15 +294,15 @@ What counts: An outside agent can create BI content through the vendor's interfa
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: The vendor-published agent skills are documented for outside coding agents to build Streamlit apps. What the agent writes is the app's code project in the developer's repo, which is analyst work; publishing it as viewable BI content happens separately through deployment, not through an agent interface. That makes this partly.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: The first-party skills explicitly support outside AI agents authoring Streamlit apps, which are BI content under the supplied published-app definition. Streamlit's native app source, CLI, and Community Cloud publishing path make this an external app-authoring route; the agent's model remains outside Streamlit.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: Streamlit provides the streamlit skills command to install official AI-agent skills enabling outside coding agents to build Streamlit apps. Because the agent creates and modifies the application's code files in a repository (analyst work) rather than directly publishing or managing governed BI content through the vendor's cloud platform interface, this earns partial credit (partly).
 
 ### SHAREASSET: Can a user share AI-created BI content with named users or groups, with each viewer seeing only what their own permissions allow?
@@ -313,15 +313,15 @@ What counts: `yes`: AI-created BI content can be shared with named users or grou
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "Once you have added someone's email address to your app's viewer list, that person will be able to sign in and view your private app."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app (checked 2026-10-26; archived https://web.archive.org/web/20260813131831/https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app)
   - Reasoning: Streamlit documents AI-agent-built apps: its first-party `streamlit skills` exist 'to help AI agents build better Streamlit apps' (https://docs.streamlit.io/develop/api-reference/cli/skills). A deployed Community Cloud app, which is a published app viewers open, can be shared with named viewers by email. Nothing documents that the app's data is evaluated under each viewer's own permissions. The app runs with the developer's code and secrets, so this is sharing at the app-access level only: partly.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Once you have added someone's email address to your app's viewer list, that person will be able to sign in and view your private app."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app (checked 2026-10-26; archived https://web.archive.org/web/20260813131831/https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app)
   - Reasoning: Community Cloud shares persistent apps with named viewers, including apps an outside AI creates using the official skills. This establishes named-user app access, but not that analytical results are evaluated under each viewer's data permissions; the Snowflake connection can run with the app owner's role.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Once you have added someone's email address to your app's viewer list, that person will be able to sign in and view your private app."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app (checked 2026-10-26; archived https://web.archive.org/web/20260813131831/https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app)
   - Reasoning: Streamlit Community Cloud allows persistent apps (including apps authored by outside AI agents using official skills) to be shared with named viewers via email. However, sharing controls access at the application viewer level rather than evaluating underlying data queries under each individual viewer's database permissions, earning partial credit (partly).
 
 ### DISCOVERASSET: Can permitted users find colleagues' saved analytical assets through workspace-wide browse or search?
@@ -332,15 +332,15 @@ What counts: Permitted users can browse or search across the workspace for saved
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "If you are joining someone else's workspace you may already see some apps."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace (checked 2026-10-26; archived https://web.archive.org/web/20261102030115/https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace)
   - Reasoning: Community Cloud workspaces (permissions inherited from GitHub) let permitted colleagues browse apps deployed by others in the shared workspace. No workspace-wide search is documented (the Explore search covers the public community gallery), and there is no AI-created work, so the row is only partly met.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "If you are joining someone else's workspace you may already see some apps."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace (checked 2026-10-26; archived https://web.archive.org/web/20261102030115/https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace)
   - Reasoning: The workspace provides a My apps browse area and automatically exposes shared workspaces according to GitHub or viewer permissions. This lets permitted colleagues discover saved analytical apps, including the same app type authored through official AI-agent skills.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "When others sign in to Community Cloud, they will automatically see the workspaces they share with you."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace (checked 2026-10-26; archived https://web.archive.org/web/20261102030115/https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/explore-your-workspace)
   - Reasoning: Streamlit Community Cloud workspaces allow permitted colleagues sharing a GitHub repository or organization to see shared workspaces and browse the deployed apps created by colleagues within that workspace. No workspace-wide search across analytical assets is documented (the Explore search covers the public community gallery), earning partial credit (partly).
 
 ## Built-in agents
@@ -485,15 +485,15 @@ What counts: The same interface, authored from outside the product.
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: Vendor-published skills are documented for outside coding agents to author Streamlit apps, the product's app object. But the documented agent route only covers writing app code. No agent interface is documented that creates the persistent deployed app with an owner, permissions and governed data source, so this is partly.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: Outside coding agents are expressly supported in building Streamlit apps through official packaged skills and native APIs. The CLI creates and runs persistent Python app files, and Community Cloud deploys the same source, satisfying outside authorship of an app.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: Streamlit provides vendor-published official AI-agent skills (via the streamlit skills CLI command) that outside coding agents use to build Streamlit apps. However, the documented agent route only covers writing app code in the user's project files rather than creating and deploying the persistent governed app with an owner and permissions through the cloud platform interface, earning partial credit (partly).
 
 ## Evaluation & correctness
@@ -508,7 +508,7 @@ What counts: A saved set of questions with expected answers, a rubric, a model j
   - Reasoning: AppTest tests app code, not a built-in assistant's answers. The chat-feedback tutorial is a customer-built thumbs rating. No evals for a vendor assistant exist.
 - **GPT-6.1 Sol**: no
   - Quote: "When the simulated chat assistant responds, a function validates the response and highlights possible "errors" for the user to review."
-  - Source: https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/validate-and-edit-chat-responses (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/validate-and-edit-chat-responses (checked 2026-10-26; archived https://web.archive.org/web/20260806014948/https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/validate-and-edit-chat-responses)
   - Reasoning: The only documented response-validation example is customer-authored code evaluating a simulated chat assistant. The rules exclude customer-built capabilities; this is not an evaluation facility for a Streamlit built-in analytical assistant.
 - **Gemini 3.8 Flash**: nothing found
   - Reasoning: Streamlit provides no evaluation framework, benchmark test suites, rubrics, or LLM-judge tools for built-in assistant answers.
@@ -642,11 +642,11 @@ What counts: `yes`: the built-in assistant's change to governed BI content or sh
   - Reasoning: Streamlit has no built-in assistant, so no assistant change can be held for approval. The edit-your-app page says Codespaces edits do not reach the deployed app until committed. That describes a human developer's editing workflow and names no assistant or approver, so it does not settle this row.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Your edits do not affect your repository or deployed app until you commit those changes, which is explained in a later step."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app (checked 2026-10-26; archived https://web.archive.org/web/20261011110409/https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app)
   - Reasoning: The documented general app publishing workflow holds local edits until the same developer commits and pushes them. Under the grading standard this earns partial credit for a general publishing workflow, but it neither routes changes from a built-in assistant to a different approver nor names a required approving role.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Your edits do not affect your repository or deployed app until you commit those changes, which is explained in a later step."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app (checked 2026-10-26; archived https://web.archive.org/web/20261011110409/https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app)
   - Reasoning: Streamlit Community Cloud documents a general publishing workflow where code edits made in a development environment or Codespace are held locally and do not affect the deployed app until committed and pushed to the repository. A general publishing workflow that the documentation does not connect to AI changes earns partial credit (partly).
 
 ## Data handling & AI governance
@@ -780,11 +780,11 @@ What counts: `yes`: an outside agent's change to governed BI content or shared d
   - Reasoning: The edit-your-app page another reader cited describes a human developer's Codespaces edits being held until they commit. It names no outside agent and no approver, and it states that committed changes go live immediately. Under the grading standard it is not evidence about an outside agent's change. No other approval workflow exists in the corpus.
 - **GPT-6.1 Sol**: partly, generally available
   - Quote: "Your edits do not affect your repository or deployed app until you commit those changes, which is explained in a later step."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app (checked 2026-10-26; archived https://web.archive.org/web/20261011110409/https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app)
   - Reasoning: The documented general app publishing workflow holds local edits until the same developer commits and pushes them. Under the grading standard this earns partial credit for a general publishing workflow, but it neither routes changes from an outside agent to a different approver nor names a required approving role.
 - **Gemini 3.8 Flash**: partly, generally available
   - Quote: "Your edits do not affect your repository or deployed app until you commit those changes, which is explained in a later step."
-  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app (checked 2026-10-26; archived https://web.archive.org/web/20261011110409/https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app)
   - Reasoning: In Streamlit Community Cloud, changes to an app do not affect the deployed application until explicitly committed and pushed to the repository. A general publishing or code-review workflow not specifically documented for outside agent changes earns partial credit (partly), holding edits until published but not routing agent changes to an independent human approver.
 
 ### AGENTDIFF: Can a reviewer see a diff of what an outside agent changed in a governed analytical asset?
@@ -860,15 +860,15 @@ What counts: A vendor-published skill, plugin or instruction pack (for example a
 
 - **Claude Opus 5.5**: yes, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: Streamlit publishes official agent skills bundled in the pip package; streamlit skills symlinks them into .agents/skills/ and .claude/skills/ so outside coding agents load them. Vendor-published skill pack, no beta label.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: Streamlit ships official skills with the Python package and installs them into .agents/skills and .claude/skills for outside coding agents. This directly establishes vendor-published instruction packs.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: Streamlit publishes official AI-agent skills installed via the 'streamlit skills' command, creating symlinks in .agents/skills/ and .claude/skills/ to teach AI agents how to build Streamlit apps following current APIs.
 
 ### AGENTCLI: Is there a command-line tool documented for use by outside agents?
@@ -879,15 +879,15 @@ What counts: A vendor-supported command-line tool whose documentation addresses 
 
 - **Claude Opus 5.5**: partly, generally available
   - Quote: "This command installs Streamlit AI-agent skills to help AI agents build better Streamlit apps."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli/skills (checked 2026-10-26; archived https://web.archive.org/web/20261015061756/https://docs.streamlit.io/develop/api-reference/cli/skills)
   - Reasoning: The vendor-supported streamlit CLI documents agent use (skills install, plus a -y non-interactive option), but no non-interactive authentication is documented, which the row requires for yes.
 - **GPT-6.1 Sol**: yes, generally available
   - Quote: "If you use an AI coding agent, run `streamlit skills` to install Streamlit's official agent skills."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli (checked 2026-10-26; archived https://web.archive.org/web/20261022064619/https://docs.streamlit.io/develop/api-reference/cli)
   - Reasoning: The vendor explicitly documents its CLI for AI coding agents. The skills command documents --yes/-y for non-interactive installation; these are local package and app-development commands rather than an authenticated hosted analytical API.
 - **Gemini 3.8 Flash**: yes, generally available
   - Quote: "If you use an AI coding agent, run `streamlit skills` to install Streamlit's official agent skills."
-  - Source: https://docs.streamlit.io/develop/api-reference/cli (checked 2026-10-26)
+  - Source: https://docs.streamlit.io/develop/api-reference/cli (checked 2026-10-26; archived https://web.archive.org/web/20261022064619/https://docs.streamlit.io/develop/api-reference/cli)
   - Reasoning: Streamlit's command-line interface documentation explicitly addresses AI coding agents, directing them to use 'streamlit skills' to install official agent skills, with non-interactive support via the -y/--yes option.
 
 ### AGENTROLLOUT: Can an administrator allow or block outside-agent access for particular users, groups or workspaces?
