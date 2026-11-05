@@ -149,7 +149,7 @@ Take it as directional.
 - Resolution: 2x for retina displays
 - Background: White
 - Max width: 1200px
-- File size: < 500KB ideally
+- File size: < 500KB ideally. Ahrefs raises an error above ~1MB; run `pngquant --quality=80-95 --strip --force --output f.png f.png` on anything over 500KB
 
 **Naming and location:**
 ```
