@@ -367,10 +367,10 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
       <div class="ctrl-row">
         <div class="ctrl-header">
           <span class="ctrl-name">Cache read rate</span>
-          <span class="ctrl-val" id="cr-v">$0.50/MTok</span>
+          <span class="ctrl-val" id="cr-v">Listed</span>
         </div>
-        <input type="range" id="cr-slider" min="0.375" max="0.625" step="0.025" value="0.50">
-        <div class="tick-labels"><span>$0.375</span><span>$0.50 (listed)</span><span>$0.625</span></div>
+        <input type="range" id="cr-slider" min="0.75" max="1.25" step="0.05" value="1">
+        <div class="tick-labels"><span>-25%</span><span>Listed</span><span>+25%</span></div>
       </div>
       <div class="ctrl-row">
         <div class="ctrl-header"><span class="ctrl-name">Your subscription</span></div>
@@ -402,15 +402,23 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
         </div>
         <div class="m-section">
           <div class="m-heading">Pricing</div>
-          <div class="m-text">All rates from <a href="https://docs.anthropic.com/en/docs/about-claude/pricing" target="_blank">Anthropic's pricing page</a>. Cache writes split by tier:</div>
+          <div class="m-text">All rates from <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank">Anthropic's pricing page</a>. Cache writes split by tier:</div>
           <table class="m-table">
             <thead><tr><th>Model</th><th>Input</th><th>Output</th><th>Cache Read</th><th>CW 5m</th><th>CW 1h</th></tr></thead>
             <tbody>
+              <tr><td>Fable 5.1</td><td>$10</td><td>$50</td><td>$0.25</td><td>$12.50</td><td>$20</td></tr>
+              <tr><td>Mythos 5.1</td><td>$10</td><td>$50</td><td>$0.25</td><td>$12.50</td><td>$20</td></tr>
+              <tr><td>Opus 5.5</td><td>$4</td><td>$20</td><td>$0.20</td><td>$5</td><td>$8</td></tr>
+              <tr><td>Sonnet 5.5</td><td>$2</td><td>$10</td><td>$0.10</td><td>$2.50</td><td>$4</td></tr>
+              <tr><td>Haiku 5.5 (&le;100K prompt)</td><td>$0.10</td><td>$0.50</td><td>$0.01</td><td>$0.125</td><td>$0.20</td></tr>
+              <tr><td>Haiku 5.5 (&gt;100K prompt)</td><td>$0.50</td><td>$2.50</td><td>$0.05</td><td>$0.625</td><td>$1</td></tr>
               <tr><td>Fable 5</td><td>$10</td><td>$50</td><td>$1.00</td><td>$12.50</td><td>$20</td></tr>
               <tr><td>Mythos 5</td><td>$10</td><td>$50</td><td>$1.00</td><td>$12.50</td><td>$20</td></tr>
+              <tr><td>Opus 5</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Opus 4.8</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Opus 4.7</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
               <tr><td>Opus 4.6</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
+              <tr><td>Sonnet 5</td><td>$2</td><td>$10</td><td>$0.20</td><td>$2.50</td><td>$4</td></tr>
               <tr><td>Sonnet 4.6</td><td>$3</td><td>$15</td><td>$0.30</td><td>$3.75</td><td>$6</td></tr>
               <tr><td>Haiku 4.5</td><td>$1</td><td>$5</td><td>$0.10</td><td>$1.25</td><td>$2</td></tr>
               <tr><td>Opus 4.5</td><td>$5</td><td>$25</td><td>$0.50</td><td>$6.25</td><td>$10</td></tr>
@@ -429,7 +437,7 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
         </div>
         <div class="m-section">
           <div class="m-heading">What the range represents</div>
-          <div class="m-text">Cache read rate &plusmn;25% around listed price. Cache reads dominate cost (60-70%). Other factors ruled out: fast mode (zero usage), data residency (not applied), extended thinking (in output tokens), web search (zero).</div>
+          <div class="m-text">Cache read rates &plusmn;25% around listed prices. Cache reads dominate cost (60-70%). Other factors ruled out: fast mode (zero usage), data residency (not applied), extended thinking (in output tokens), web search (zero).</div>
         </div>
         <div class="m-section">
           <div class="m-heading">Limitations</div>
@@ -454,11 +462,19 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
 
 <script>
 const P={
+  'claude-fable-5-1':{i:10,o:50,cr:.25,c5:12.5,c1:20},
+  'claude-mythos-5-1':{i:10,o:50,cr:.25,c5:12.5,c1:20},
+  'claude-opus-5-5':{i:4,o:20,cr:.2,c5:5,c1:8},
+  'claude-sonnet-5-5':{i:2,o:10,cr:.1,c5:2.5,c1:4},
+  'claude-haiku-5-5':{i:.1,o:.5,cr:.01,c5:.125,c1:.2},
+  'claude-haiku-5-5:long':{i:.5,o:2.5,cr:.05,c5:.625,c1:1},
   'claude-fable-5':{i:10,o:50,cr:1,c5:12.5,c1:20},
   'claude-mythos-5':{i:10,o:50,cr:1,c5:12.5,c1:20},
+  'claude-opus-5':{i:5,o:25,cr:.5,c5:6.25,c1:10},
   'claude-opus-4-8':{i:5,o:25,cr:.5,c5:6.25,c1:10},
   'claude-opus-4-7':{i:5,o:25,cr:.5,c5:6.25,c1:10},
   'claude-opus-4-6':{i:5,o:25,cr:.5,c5:6.25,c1:10},
+  'claude-sonnet-5':{i:2,o:10,cr:.2,c5:2.5,c1:4},
   'claude-sonnet-4-6':{i:3,o:15,cr:.3,c5:3.75,c1:6},
   'claude-haiku-4-5-20251001':{i:1,o:5,cr:.1,c5:1.25,c1:2},
   'claude-opus-4-5-20251101':{i:5,o:25,cr:.5,c5:6.25,c1:10},
@@ -484,25 +500,27 @@ function copyCmd(){
 }
 // Current-gen list rates by family — fallback for models not in P, so an
 // unknown future model can't silently inherit a higher-priced legacy entry.
-const DR={fable:{i:10,o:50,cr:1,c5:12.5,c1:20},mythos:{i:10,o:50,cr:1,c5:12.5,c1:20},opus:{i:5,o:25,cr:.5,c5:6.25,c1:10},sonnet:{i:3,o:15,cr:.3,c5:3.75,c1:6},haiku:{i:1,o:5,cr:.1,c5:1.25,c1:2}};
+const DR={fable:P['claude-fable-5-1'],mythos:P['claude-mythos-5-1'],opus:P['claude-opus-5-5'],sonnet:P['claude-sonnet-5-5'],haiku:P['claude-haiku-5-5']};
 const FAMILIES=['fable','mythos','opus','sonnet','haiku'];
+// Strip a dated pin (claude-opus-5-5-20261201) only if the undated alias is
+// known; requires an 8-digit date so claude-opus-5-5 never resolves to claude-opus-5.
+function base(m){const x=m.match(/^(.+)-\d{8}$/);return x&&P[x[1]]?x[1]:m}
+function known(m){const[n,t]=m.split(':');return P[base(n)+(t?':'+t:'')]||P[base(n)]}
 function rate(m){
-  if(P[m])return P[m];
-  for(const[k,v]of Object.entries(P))if(m.startsWith(k+'-'))return v; // dated variant of a known alias
-  const seg=m.split('-');for(const f of FAMILIES)if(seg.includes(f))return DR[f]; // family token, not bare substring
+  const r=known(m);if(r)return r;
+  const seg=m.split(':')[0].split('-');for(const f of FAMILIES)if(seg.includes(f))return DR[f]; // family token, not bare substring
   return DR.opus;
 }
 // How confidently is a model priced? 'exact' = published rate for this exact id
 // (or a dated pin of a known alias); 'family:<tier>' = estimated from its tier;
 // 'default' = no tier match, priced as opus (least reliable).
 function coverage(m){
-  if(P[m])return'exact';
-  for(const k of Object.keys(P))if(m.startsWith(k+'-'))return'exact';
-  const seg=m.split('-');for(const f of FAMILIES)if(seg.includes(f))return'family:'+f; // family token, not bare substring
+  if(known(m))return'exact';
+  const seg=m.split(':')[0].split('-');for(const f of FAMILIES)if(seg.includes(f))return'family:'+f;
   return'default';
 }
 function calc(d,cr){
-  const c={input:0,output:0,cache_read:0,cache_write:0},mul=cr/.5;
+  const c={input:0,output:0,cache_read:0,cache_write:0},mul=cr;
   for(const[m,t]of Object.entries(d.models)){
     const r=rate(m);
     c.input+=t.i/1e6*r.i;c.output+=t.o/1e6*r.o;
@@ -543,9 +561,9 @@ function render(an){
   const cr=parseFloat($('cr-slider').value);
   const ab=document.querySelector('.plan-btn.on');
   const plan=PLANS[parseInt(ab?ab.dataset.p:'1')];
-  $('cr-v').textContent=`$${cr.toFixed(3)}/MTok`;
+  $('cr-v').textContent=cr===1?'Listed':`${cr>1?'+':''}${Math.round((cr-1)*100)}%`;
 
-  const b=calc(D,cr),lo=calc(D,.375),hi=calc(D,.625);
+  const b=calc(D,cr),lo=calc(D,.75),hi=calc(D,1.25);
 
   if(an)anim($('hero-num'),Math.round(b.total));
   else $('hero-num').textContent='$'+Math.round(b.total).toLocaleString();
@@ -659,7 +677,7 @@ function encodeShare(){
   const cr=parseFloat($('cr-slider').value);
   const ab=document.querySelector('.plan-btn.on');
   const pi=parseInt(ab?ab.dataset.p:'1');
-  const b=calc(D,cr),lo=calc(D,.375),hi=calc(D,.625);
+  const b=calc(D,cr),lo=calc(D,.75),hi=calc(D,1.25);
   let tt=0;for(const t of Object.values(D.models))tt+=t.i+t.o+t.cr+t.c5+t.c1;
   let mi,yearOff;
   if(D.month.match(/^\d{4}-\d{2}$/)){
