@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-11T14:18:23.733438",
+  "generated_at": "2026-11-14T15:58:29.668617",
   "baseline_date": "2026-01-08",
   "flow_baseline_date": "2026-01-14",
-  "n_scrapes": 91,
+  "n_scrapes": 92,
   "all_dates": [
     "2025-12-10",
     "2025-12-17",
@@ -94,7 +94,8 @@
     "2026-10-31",
     "2026-11-04",
     "2026-11-07",
-    "2026-11-11"
+    "2026-11-11",
+    "2026-11-14"
   ],
   "stock_dates": [
     "2026-01-08",
@@ -182,7 +183,8 @@
     "2026-10-31",
     "2026-11-04",
     "2026-11-07",
-    "2026-11-11"
+    "2026-11-11",
+    "2026-11-14"
   ],
   "share_timeseries": [
     {
@@ -4916,6 +4918,58 @@
         "count": 10558,
         "share": 37.43
       }
+    },
+    {
+      "date": "2026-11-14",
+      "total_jobs": 27747,
+      "data_ai": {
+        "count": 1160,
+        "share": 4.18
+      },
+      "data": {
+        "count": 571,
+        "share": 2.06
+      },
+      "ai": {
+        "count": 589,
+        "share": 2.12
+      },
+      "swe": {
+        "count": 5175,
+        "share": 18.65
+      },
+      "pm": {
+        "count": 1530,
+        "share": 5.51
+      },
+      "design": {
+        "count": 519,
+        "share": 1.87
+      },
+      "cs": {
+        "count": 827,
+        "share": 2.98
+      },
+      "sales": {
+        "count": 4025,
+        "share": 14.51
+      },
+      "marketing": {
+        "count": 999,
+        "share": 3.6
+      },
+      "ga": {
+        "count": 2178,
+        "share": 7.85
+      },
+      "operations": {
+        "count": 1020,
+        "share": 3.68
+      },
+      "other": {
+        "count": 10314,
+        "share": 37.17
+      }
     }
   ],
   "stock": {
@@ -7327,6 +7381,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 36.919592298980746,
+          "delta": -0.554785020804438,
+          "ci_lower": -2.7877947295423,
+          "ci_upper": 1.664355062413314
+        },
+        "volume": {
+          "value": 1160,
+          "delta": 50.0,
+          "ci_lower": -31.099999999999994,
+          "ci_upper": 131.0
+        },
+        "intensity": {
+          "value": 4.180632140411576,
+          "delta": -0.3510765337257111,
+          "ci_lower": -0.7167934296214781,
+          "ci_upper": -0.004726454740167883
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "data": [
@@ -9737,6 +9819,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 25.934314835787088,
+          "delta": -1.386962552011095,
+          "ci_lower": -3.4674063800277395,
+          "ci_upper": 0.554785020804438
+        },
+        "volume": {
+          "value": 571,
+          "delta": -26.0,
+          "ci_lower": -74.1,
+          "ci_upper": 23.0
+        },
+        "intensity": {
+          "value": 2.057880131185353,
+          "delta": -0.44966400214825497,
+          "ci_lower": -0.6594844177226608,
+          "ci_upper": -0.20221001823937587
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "ai": [
@@ -12147,6 +12257,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 22.310305775764437,
+          "delta": 2.0804438280166444,
+          "ci_lower": 0.0,
+          "ci_upper": 4.160887656033289
+        },
+        "volume": {
+          "value": 589,
+          "delta": 75.0,
+          "ci_lower": 20.900000000000006,
+          "ci_upper": 137.0
+        },
+        "intensity": {
+          "value": 2.1227520092262226,
+          "delta": 0.06851061744419495,
+          "ci_lower": -0.16642462531800367,
+          "ci_upper": 0.3516239491621754
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "swe": [
@@ -14557,6 +14695,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 66.93091732729332,
+          "delta": -0.6934812760055422,
+          "ci_lower": -2.635228848821086,
+          "ci_upper": 1.52565880721221
+        },
+        "volume": {
+          "value": 5175,
+          "delta": 584.0,
+          "ci_lower": 317.9,
+          "ci_upper": 874.1
+        },
+        "intensity": {
+          "value": 18.65066493674992,
+          "delta": 0.12222756397338408,
+          "ci_lower": -0.8836711927204522,
+          "ci_upper": 1.148611257907312
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "pm": [
@@ -16967,6 +17133,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 42.69535673839185,
+          "delta": 5.686546463245499,
+          "ci_lower": 3.328710124826628,
+          "ci_upper": 8.183079056865466
+        },
+        "volume": {
+          "value": 1530,
+          "delta": 209.0,
+          "ci_lower": 106.9,
+          "ci_upper": 318.1
+        },
+        "intensity": {
+          "value": 5.514109633473889,
+          "delta": 0.2858832918041836,
+          "ci_lower": -0.10698410394329308,
+          "ci_upper": 0.6592070561169057
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "design": [
@@ -19377,6 +19571,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 26.50056625141563,
+          "delta": -2.635228848821079,
+          "ci_lower": -4.993065187239942,
+          "ci_upper": 0.0
+        },
+        "volume": {
+          "value": 519,
+          "delta": -24.0,
+          "ci_lower": -65.0,
+          "ci_upper": 23.100000000000023
+        },
+        "intensity": {
+          "value": 1.870472483511731,
+          "delta": -0.4136563714496875,
+          "ci_lower": -0.6178692478107584,
+          "ci_upper": -0.20909110926715505
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "cs": [
@@ -21787,6 +22009,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 34.54133635334088,
+          "delta": 0.0,
+          "ci_lower": -2.635228848821079,
+          "ci_upper": 2.3578363384188634
+        },
+        "volume": {
+          "value": 827,
+          "delta": -67.0,
+          "ci_lower": -241.1,
+          "ci_upper": 47.0
+        },
+        "intensity": {
+          "value": 2.980502396655494,
+          "delta": -0.8394252092269388,
+          "ci_lower": -1.6356889132821204,
+          "ci_upper": -0.2779173665985123
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "sales": [
@@ -24197,6 +24447,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 63.53340883352209,
+          "delta": -0.27739251040221546,
+          "ci_lower": -2.635228848821072,
+          "ci_upper": 1.9417475728155367
+        },
+        "volume": {
+          "value": 4025,
+          "delta": 306.0,
+          "ci_lower": 79.9,
+          "ci_upper": 530.0
+        },
+        "intensity": {
+          "value": 14.50607272858327,
+          "delta": -0.805720708659015,
+          "ci_lower": -1.784330252756496,
+          "ci_upper": 0.11398089740339447
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "marketing": [
@@ -26607,6 +26885,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 40.20385050962628,
+          "delta": 1.3869625520110986,
+          "ci_lower": -1.2482662968099874,
+          "ci_upper": 4.0221914008321775
+        },
+        "volume": {
+          "value": 999,
+          "delta": 108.5,
+          "ci_lower": 28.900000000000006,
+          "ci_upper": 195.0
+        },
+        "intensity": {
+          "value": 3.6003892312682453,
+          "delta": 0.052458098158488786,
+          "ci_lower": -0.30982473838466335,
+          "ci_upper": 0.4098469129724856
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "ga": [
@@ -29017,6 +29323,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 50.28312570781427,
+          "delta": 2.9126213592233015,
+          "ci_lower": 0.27739251040221546,
+          "ci_upper": 5.409153952843269
+        },
+        "volume": {
+          "value": 2178,
+          "delta": 335.0,
+          "ci_lower": 207.0,
+          "ci_upper": 462.0
+        },
+        "intensity": {
+          "value": 7.8494972429451835,
+          "delta": 0.5681632050710741,
+          "ci_lower": 0.06445212590959519,
+          "ci_upper": 1.075426275415924
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "operations": [
@@ -31427,6 +31761,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 27.06681766704417,
+          "delta": 0.13869625520110773,
+          "ci_lower": -2.0804438280166444,
+          "ci_upper": 2.35783633841886
+        },
+        "volume": {
+          "value": 1020,
+          "delta": 99.5,
+          "ci_lower": 49.0,
+          "ci_upper": 159.0
+        },
+        "intensity": {
+          "value": 3.6760730889825926,
+          "delta": 0.19209398500841313,
+          "ci_lower": -0.05611656931929801,
+          "ci_upper": 0.45980949886881095
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ],
     "other": [
@@ -33837,6 +34199,34 @@
           "ci_upper": 3705.1
         },
         "n_companies": 722
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": {
+          "value": 80.63420158550396,
+          "delta": 2.635228848821086,
+          "ci_lower": 0.5547850208044309,
+          "ci_upper": 4.993065187239935
+        },
+        "volume": {
+          "value": 10314,
+          "delta": 1158.5,
+          "ci_lower": 790.8,
+          "ci_upper": 1553.0
+        },
+        "intensity": {
+          "value": 37.1715861174181,
+          "delta": 1.284544846397928,
+          "ci_lower": 0.10448981518758275,
+          "ci_upper": 2.4605180294947857
+        },
+        "total_jobs": {
+          "value": 27747,
+          "delta": 2748.0,
+          "ci_lower": 1929.8,
+          "ci_upper": 3657.7000000000003
+        },
+        "n_companies": 721
       }
     ]
   },
@@ -34776,6 +35166,17 @@
         "role_new": 31,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 2.844141069397042,
+        "breadth_per_day": 0.7442161462546514,
+        "volume": 13.666666666666666,
+        "intensity": 3.6251105216622457,
+        "total_new": 1131,
+        "role_new": 41,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "data": [
@@ -35713,6 +36114,17 @@
         "role_new": 17,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 1.8202502844141069,
+        "breadth_per_day": 0.45300113250283125,
+        "volume": 7.0,
+        "intensity": 1.8567639257294428,
+        "total_new": 1131,
+        "role_new": 21,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "ai": [
@@ -36650,6 +37062,17 @@
         "role_new": 14,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 1.8202502844141069,
+        "breadth_per_day": 0.42064390875262897,
+        "volume": 6.666666666666667,
+        "intensity": 1.7683465959328029,
+        "total_new": 1131,
+        "role_new": 20,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "swe": [
@@ -37587,6 +38010,17 @@
         "role_new": 157,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 10.466439135381114,
+        "breadth_per_day": 2.3297201100145606,
+        "volume": 51.333333333333336,
+        "intensity": 13.61626878868258,
+        "total_new": 1131,
+        "role_new": 154,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "pm": [
@@ -38524,6 +38958,17 @@
         "role_new": 45,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 6.143344709897611,
+        "breadth_per_day": 1.2619317262578869,
+        "volume": 24.666666666666668,
+        "intensity": 6.542882404951371,
+        "total_new": 1131,
+        "role_new": 74,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "design": [
@@ -39461,6 +39906,17 @@
         "role_new": 20,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 1.7064846416382253,
+        "breadth_per_day": 0.4691797443779323,
+        "volume": 6.666666666666667,
+        "intensity": 1.7683465959328029,
+        "total_new": 1131,
+        "role_new": 20,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "cs": [
@@ -40398,6 +40854,17 @@
         "role_new": 27,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 2.9579067121729237,
+        "breadth_per_day": 0.6956803106293481,
+        "volume": 14.333333333333334,
+        "intensity": 3.801945181255526,
+        "total_new": 1131,
+        "role_new": 43,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "sales": [
@@ -41335,6 +41802,17 @@
         "role_new": 156,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 8.75995449374289,
+        "breadth_per_day": 1.8928975893868307,
+        "volume": 53.666666666666664,
+        "intensity": 14.235190097259062,
+        "total_new": 1131,
+        "role_new": 161,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "marketing": [
@@ -42272,6 +42750,17 @@
         "role_new": 57,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 4.09556313993174,
+        "breadth_per_day": 1.0192525481313703,
+        "volume": 14.333333333333334,
+        "intensity": 3.801945181255526,
+        "total_new": 1131,
+        "role_new": 43,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "ga": [
@@ -43209,6 +43698,17 @@
         "role_new": 121,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 8.304891922639362,
+        "breadth_per_day": 2.0385050962627407,
+        "volume": 43.333333333333336,
+        "intensity": 11.494252873563218,
+        "total_new": 1131,
+        "role_new": 130,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "operations": [
@@ -44146,6 +44646,17 @@
         "role_new": 27,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 2.6166097838452784,
+        "breadth_per_day": 0.6147872512538424,
+        "volume": 12.333333333333334,
+        "intensity": 3.2714412024756854,
+        "total_new": 1131,
+        "role_new": 37,
+        "days": 3,
+        "n_companies": 879
       }
     ],
     "other": [
@@ -45083,15 +45594,26 @@
         "role_new": 351,
         "days": 4,
         "n_companies": 884
+      },
+      {
+        "date": "2026-11-14",
+        "breadth": 20.591581342434583,
+        "breadth_per_day": 4.125546028150785,
+        "volume": 142.66666666666666,
+        "intensity": 37.842617152961985,
+        "total_new": 1131,
+        "role_new": 428,
+        "days": 3,
+        "n_companies": 879
       }
     ]
   },
   "source": {
     "timeseries_file": "timeseries_jobs.csv",
-    "timeseries_sha256": "3a913fd52e0bf2f5bc7bf5220f29e4ca93655b93c89480ec8dc7b38a933207a3",
-    "timeseries_max_date": "2026-11-11",
+    "timeseries_sha256": "656fa3724379c56117615bddbb7e700a451e27299f31f7256dbf707011e26826",
+    "timeseries_max_date": "2026-11-14",
     "manifest_combined": "d779b5efa72df387",
-    "manifest_built_at": "2026-11-11T15:54:19+00:00",
-    "manifest_git_commit": "0154511b4"
+    "manifest_built_at": "2026-11-14T21:49:16+00:00",
+    "manifest_git_commit": "ac5b0e1b6"
   }
 }
