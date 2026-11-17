@@ -340,7 +340,18 @@ jobs:
           # 0 required approvals and no required checks, so this merges immediately. If
           # protection ever tightens, this step fails loudly and the PR is left open for a
           # human — which is the right failure, not a reason to add --admin.
-          gh pr merge "$PR" --squash --delete-branch
+          #
+          # Retried, because GitHub answers "Base branch was modified" when the merge
+          # lands in the seconds after the PR is created (seen 2026-11-17, with main
+          # unchanged). It is transient; a persistent failure still fails red below.
+          MERGED=0
+          for i in 1 2 3 4 5; do
+            if gh pr merge "$PR" --squash --delete-branch; then MERGED=1; break; fi
+            [ "$(gh pr view "$PR" --json state --jq .state 2>/dev/null)" = "MERGED" ] && { MERGED=1; break; }
+            echo "merge attempt $i failed, retrying in 15s"
+            sleep 15
+          done
+          [ "$MERGED" -eq 1 ] || { echo "::error::could not merge $PR after 5 attempts"; exit 1; }
 
           # The squash produces a NEW commit on main, so the branch tip is not what Pages
           # builds. The verify step below needs that merge commit specifically. The API
