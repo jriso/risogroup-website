@@ -12,66 +12,8 @@ X-WR-CALDESC:Webinars\, livestreams and meetups from the companies building
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:68d1d7187cc21728505c@risogroup.co
-DTSTAMP:20261118T215203Z
-DTSTART;VALUE=DATE:20261118
-DTEND;VALUE=DATE:20261119
-SUMMARY:Databricks: Build\, Orchestrate and Improve Agents
-DESCRIPTION:Databricks — Online. Join this hands-on workshop to learn how
-  to build production-ready AI agent systems on Databricks. https://www.dat
- abricks.com/resources/webinar/build-orchestrate-and-improve-agents-databri
- cks-0?scid=701Vp000016QLhaIAG&utm_medium=website&utm_source=databricks\n\n
- No start time published — check the link.
-LOCATION:Online
-URL:https://www.databricks.com/resources/webinar/build-orchestrate-and-impr
- ove-agents-databricks-0?scid=701Vp000016QLhaIAG&utm_medium=website&utm_sou
- rce=databricks
-CATEGORIES:Databricks
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:f49b62d919c334df7565@risogroup.co
-DTSTAMP:20261118T215203Z
-DTSTART;VALUE=DATE:20261118
-DTEND;VALUE=DATE:20261119
-SUMMARY:Hightouch: Exclusive Look: Agentic Lifecycle Marketing with Hightou
- ch
-DESCRIPTION:Hightouch — Online. You already use Hightouch to activate you
- r governed customer data. Now we're building on that foundation with our A
- gentic Marketing Platform\, where AI agents help lifecycle teams proactive
- ly uncover opportunities and turn them into on-brand\, personalised campai
- gns. In this customer-only session\, Hightouch's Product team will share: 
- - Our agentic marketing vision - Real life customer use-cases and  https:/
- /hightouch.com/events/2026-agentic-marketing-deep-dive-intl\n\nNo start ti
- me published — check the link.
-LOCATION:Online
-URL:https://hightouch.com/events/2026-agentic-marketing-deep-dive-intl
-CATEGORIES:Hightouch
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:4e9d820909a22d3c8a52@risogroup.co
-DTSTAMP:20261118T215203Z
-DTSTART;VALUE=DATE:20261118
-DTEND;VALUE=DATE:20261119
-SUMMARY:Sigma: Ask your data anything on Sigma
-DESCRIPTION:Sigma — Online. A partner-hosted livestream featuring Extreme
-  Networks' AI Agent built on Snowflake and Sigma. https://www.snowflake.co
- m/en/webinars/customer-webinar/ask-your-data-anything-inside-extreme-netwo
- rks-ai-agent-built-on-snowflake-semantic-views-and-sigma-2026-11-18/?utm_s
- ource=sigma&utm_medium=partner&utm_campaign=extreme-networks-webinar-partn
- er-led\n\nNo start time published — check the link.
-LOCATION:Online
-URL:https://www.snowflake.com/en/webinars/customer-webinar/ask-your-data-an
- ything-inside-extreme-networks-ai-agent-built-on-snowflake-semantic-views-
- and-sigma-2026-11-18/?utm_source=sigma&utm_medium=partner&utm_campaign=ext
- reme-networks-webinar-partner-led
-CATEGORIES:Sigma
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:2569a97b24e4fd016b1b@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 SUMMARY:Databricks: Unity Gateway Workshop
@@ -91,7 +33,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:fc758d570d05306134d1@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART:20261119T160000Z
 DTEND:20261119T170000Z
 SUMMARY:Fivetran: Fivetran en 15 minutes
@@ -104,7 +46,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:cd684f9884b74de4abce@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART:20261119T150000Z
 DTEND:20261119T160000Z
 SUMMARY:Mixpanel: Same Mission\, New Experiments
@@ -123,7 +65,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eb75dd563057fde388f5@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART:20261124T181500Z
 DTEND:20261124T191500Z
 SUMMARY:Fivetran: Fivetran + dbt Labs in 15 minutes
@@ -137,7 +79,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:7b076975d9d2bf590d30@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261125
 SUMMARY:Hex: Building context for trusted AI answers
@@ -150,7 +92,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:2f33cb7aa06b15cfea4b@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART:20261124T170000Z
 DTEND:20261124T180000Z
 SUMMARY:Metabase: Tour of Metabase: building dashboards with (or without) A
@@ -167,7 +109,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:9fc0944e55bb8725e168@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:Databricks: Processamento Unificado: Lakebase + LTAP
@@ -182,7 +124,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:0328e24203bf0c8b6f37@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261203
 SUMMARY:Databricks: Building Modern Apps with Lakebase
@@ -200,8 +142,25 @@ CATEGORIES:Databricks
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:785622fd882287fc4c33@risogroup.co
+DTSTAMP:20261119T061451Z
+DTSTART:20261202T180000Z
+DTEND:20261202T190000Z
+SUMMARY:MotherDuck: Self Healing Data Pipelines
+DESCRIPTION:MotherDuck — Online. More than half of data engineering time 
+ goes to maintenance. What if an agent fixed broken pipelines instead of ju
+ st sending alerts? See how MotherDuck designed its self-healing pipelines 
+ cookbook recipe using an agent harness\, zero-copy clones of production\, 
+ and isolated sandboxes. https://motherduck.com/events/self-healing-data-pi
+ pelines-2026/\n\nEnd time is an assumed 1 hour.
+LOCATION:Online
+URL:https://motherduck.com/events/self-healing-data-pipelines-2026/
+CATEGORIES:MotherDuck
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:f6cb1283251d56163c8e@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
 SUMMARY:Databricks: Building Applications with Lakebase
@@ -221,7 +180,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:1524dbed8e562205b354@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
 SUMMARY:Databricks: Deliberate AI Decisions
@@ -241,7 +200,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:b2270628728c71a7828f@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:Databricks: Data and AI with Azure Databricks
@@ -259,7 +218,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:44794a345347c6ced4e6@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:Hex: 4.0 Live Tour
@@ -272,7 +231,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:0d4ee7587dcff52877d5@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:Snowflake: SPN PULSE
@@ -286,7 +245,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:74b575abffe95b737c61@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261209
 DTEND;VALUE=DATE:20261210
 SUMMARY:Databricks: How Databricks Ships AI into Production
@@ -303,7 +262,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:4cc29565fe4986f3426c@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 SUMMARY:Databricks: Unity Gateway Workshop
@@ -321,7 +280,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:2b45bf5883ec2965d35d@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 SUMMARY:Snowflake: SPN Partner Enablement Series - APJ
@@ -335,7 +294,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:a5c7d795751dbcb05f13@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Databricks: Orquestração de Agentes em Escala
@@ -350,7 +309,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:12ec3d1f3ff5f02b4b6c@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20270113
 DTEND;VALUE=DATE:20270114
 SUMMARY:Databricks: Data + AI World Tour Virtual EMEA
@@ -366,7 +325,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:5d804b49d210a10b5f00@risogroup.co
-DTSTAMP:20261118T215203Z
+DTSTAMP:20261119T061451Z
 DTSTART;VALUE=DATE:20270121
 DTEND;VALUE=DATE:20270122
 SUMMARY:Databricks: Data + AI World Tour Virtual AMER
