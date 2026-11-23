@@ -2,7 +2,41 @@
 
 This guide documents the process for creating chart-based "Data Insight" posts for the Riso Group website. These are short (1 min read), chart-first posts that present a single compelling data finding with minimal text.
 
+## Current style: follow this, not the template further down
+
+Our font and design preferences changed. Posts from late October 2026 use a **newer style**, and
+it supersedes the HTML template in Step 6 wherever the two differ. Start from a recent post, not
+from the template: copy the structure of `insights/anthropic-vs-openai-data-roles.html` for a
+chart post, or `insights/analytics-agents-that-learn-your-business.html` for a table post.
+
+What the newer posts do differently from the template below:
+
+- **Font:** Inter, set in a page-local `<style>` block (title 2.5rem / 700 / -0.02em tracking,
+  body 1.125rem / 1.65). The older posts and `insights.css` default to Charter/Georgia serif.
+- **Header:** a date line under the title (`Month D, YYYY · N min read`). Still no subtitle.
+- **Navbar:** the shared `#site-navbar` + `navbar.js`, not inline navbar HTML.
+- **Analytics:** gtag and RudderStack are skipped off risogroup.co (hostname check), so local
+  previews send nothing. The page-tracking call stays.
+- **Structured data:** two JSON-LD blocks, `Article` and `BreadcrumbList`.
+- **Charts:** a `<figure class="chart-fig">` with title, subtitle, image and source line, not a
+  bare image. Findings are a `ul.points` list with bold lead-ins instead of a "Key Takeaways" heading.
+- **Methodology:** the inline-styled `insight-methodology` box, not `data-insight-methodology`.
+- **Index card:** copy the current top card in `insights/index.html`, which has changed from the
+  card markup in Step 7.
+- **Breadcrumb:** "Data Insight" is for posts that present our own data findings. A reference or asset post, such as a comparison table built from vendor documentation, uses "Insights".
+- **Homepage:** newer posts are not automatically featured there. Ask before touching `index.html`.
+
+If you change the style again, update this section and the reference posts below so the next post
+starts from the right place.
+
 ## Reference Posts
+
+Newer style (use these):
+
+- **Analytics agents that learn your business automatically** (Nov 23, 2026) - a reference table with short commentary. Not a Data Insight, so its breadcrumb reads "Insights"
+- **Data Roles at Anthropic vs. OpenAI** (Oct 29, 2026) - a chart post
+
+Older style (superseded, kept for history):
 
 - **ClickHouse Adoption** (Jan 16, 2025) - "ClickHouse adoption skews B2B"
 - **Which Data Roles Are in Demand?** (Jan 14, 2025)
